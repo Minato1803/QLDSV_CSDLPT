@@ -48,5 +48,33 @@ namespace QLSV
 
         }
 
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Program.logged)
+            {
+                if (e.CloseReason == CloseReason.UserClosing)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thoát Đăng Nhập", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Program.frmLogin.Close();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+
+        }
+
     }
+
+    
 }

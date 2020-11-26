@@ -27,33 +27,51 @@ namespace QLSV
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.servername = comboBoxKhoa.SelectedValue.ToString();
+            try
+            {
+                if(comboBoxKhoa.SelectedValue != null)
+                {
+                    Program.servername = comboBoxKhoa.SelectedValue.ToString();
+                }
+                
+            }
+            catch (NullReferenceException ex)
+            {
 
+            }
         }
 
-        //private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    if (userName.Text.Trim().Equals("") && passWord.Text.Trim().Equals(""))
-        //    {
-        //        Environment.Exit(0);
-        //    }
-        //    if (e.CloseReason == CloseReason.UserClosing)
-        //    {
-        //        DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thoát Đăng Nhập", MessageBoxButtons.YesNo);
-        //        if (result == DialogResult.Yes)
-        //        {
-        //            Environment.Exit(0);
-        //        }
-        //        else
-        //        {
-        //            e.Cancel = true;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        e.Cancel = true;
-        //    }
-        //}
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Program.logged)
+            {
+                if (userName.Text.Trim().Equals("") && passWord.Text.Trim().Equals(""))
+                {
+                    Environment.Exit(0);
+                }
+                if (e.CloseReason == CloseReason.UserClosing)
+                {
+                    DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thoát Đăng Nhập", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
+                
+        }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -76,7 +94,10 @@ namespace QLSV
                 Program.password = passWord.Text;
                 if (Program.KetNoi() == 1)
                 {
-                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
+                    MainForm main = new MainForm("Phòng giáo vụ","Tên");
+                    main.Show();
+                    this.Visible = false;
+                    return;
                 }
                 else
                 {
@@ -84,6 +105,7 @@ namespace QLSV
                     userName.Clear();
                     passWord.Clear();
                     userName.Focus();
+                    this.DialogResult = DialogResult.None;
                     return;
                 }
                 

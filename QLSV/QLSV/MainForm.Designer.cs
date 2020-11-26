@@ -248,8 +248,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormClosing += MainForm_FormClosing;
 
         }
+
+        
 
         #endregion
 

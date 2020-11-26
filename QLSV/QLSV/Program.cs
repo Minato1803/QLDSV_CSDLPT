@@ -18,7 +18,7 @@ namespace QLSV
         public static String connstr;
         public static SqlDataAdapter da;
         public static SqlDataReader myReader;
-        public static String servername = "MINATO";
+        public static String servername = "TNCNHAN\\TNCN";
         public static String servername1 = "";
         public static String servername2 = "";
         public static String servername3 = "";
@@ -34,8 +34,8 @@ namespace QLSV
         public static String mGroup = "";
         public static String mHoten = "";
         public static int mChinhanh = 0;
-
-
+        // trạng thái đăng nhập
+        public static Boolean logged = false;
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static LoginForm frmLogin;
         public static int KetNoi()
@@ -47,12 +47,13 @@ namespace QLSV
                       Program.mlogin + ";password=" + Program.password;
                 Program.conn.ConnectionString = Program.connstr;
                 Program.conn.Open();
+                logged = true;
                 return 1;
             }
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n" + e.Message, "", MessageBoxButtons.OK);
                 Program.conn.Close();
                 return 0;
             }
@@ -121,7 +122,6 @@ namespace QLSV
             Application.SetCompatibleTextRenderingDefault(false);
             frmLogin = new LoginForm();
             Application.Run(frmLogin);
-            //Application.Run(new MainForm("Phòng giáo vụ", "Trần Văn A"));
         }
     }
 }
