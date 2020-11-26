@@ -1,0 +1,70 @@
+site chủ: chứa csdl chính
+site 1: chứa danh sách sinh viên khoa cntt
+	ko bao gồm table học phí, ct học phí
+	link0-> site chủ
+	link1->site 2
+	link2->site 3
+site 2: chứa danh sách sinh viên khoa vt
+	ko bao gồm học phí, ct hoc phí	
+	link0-> site chủ
+	link1-> site 1
+	link2-> site 2
+site 3: chứa học phí của tất cả sv
+	bao gồm học phí, ct học phí, sinh viên, lớp
+	link0-> site chủ
+	link1-> site 1
+	link2-> site 2
+
+Phân quyền:
+->tạo các nhóm quyền trên db
+(database roles)Security /ROLE/Database Role : New
+	PGV (Site 0,1,2,3): db_securityadmin, db_accessadmin, datareader) 
+	Khoa (Site1, Site2): toàn quyền trên site của mình (db_owner, datareader)
+	User: data_owner 
+	PKeToan: toàn quyền trên site của mình (data_owner)
+
+->khi tạo tài khoản, các tài khoản sẽ nằm ở security-user,login và thuộc member role của nhóm quyền tương ứng
+
+
+-> muốn tạo login user cần 3 quyền: db_securityadmin, db_accessadmin, securityadmin. sysadmin chỉ được tạo ở SP (tạo ở site chủ và đẩy xuống các phân mảnh)
+
+SP tạo login
+CREATE PROC sp_TaoTaiKhoan
+	@LGNAME VARCHAR(50),
+	@PASS VARCHAR(50),
+	@USERNAME VARCHAR(50),
+	@ROLE VARCHAR(50)
+AS
+
+	-- check login , user bị trùng 
+	IF EXISTS(SELECT name FROM sys.server_principals 
+			WHERE TYPE IN ('U', 'S', 'G')	--U: Windows Login Accounts
+			AND name NOT LIKE '%##%'		--S: SQL Login Accounts
+			AND name = @LGNAME)				--G: Windows Group Login Accounts
+		RETURN 1	--Trùng Login
+	ELSE IF EXISTS(SELECT name FROM sys.database_principals
+					WHERE type_desc = 'SQL_USER'
+					AND name = @USERNAME)
+		RETURN 2	--Trùng User
+
+	-- băt đầu tạo tài khoản
+  DECLARE @RET INT
+  EXEC @RET= SP_ADDLOGIN @LGNAME, @PASS,'QLDSV'
+  IF (@RET =1) 
+     RETURN 3 -- tạo tài khoản không thành công
+ 
+  EXEC @RET= SP_GRANTDBACCESS @LGNAME, @USERNAME
+  IF (@RET =1) 
+  BEGIN
+       EXEC SP_DROPLOGIN @LGNAME
+       RETURN 3 -- tạo  tài khoảng không thành công
+  END
+  EXEC sp_addrolemember @ROLE, @USERNAME
+
+  --THEM ROLE SECURITYADMIN DE CO QUYEN TAO TAI KHOAN
+  IF @ROLE = 'PGV'  OR @ROLE = 'KHOA' 
+  	EXEC sp_addsrvrolemember @LGNAME, 'SecurityAdmin'
+
+  RETURN 0  -- THANH CONG
+
+	
