@@ -41,9 +41,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSet1TableAdapters.V_DSPMTableAdapter();
+            this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // userName
@@ -69,15 +71,17 @@
             // 
             // comboBoxKhoa
             // 
+            this.comboBoxKhoa.BackColor = System.Drawing.Color.LightCyan;
             this.comboBoxKhoa.DataSource = this.vDSPMBindingSource;
             this.comboBoxKhoa.DisplayMember = "TENKHOA";
             this.comboBoxKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKhoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxKhoa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKhoa.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.comboBoxKhoa.FormattingEnabled = true;
             this.comboBoxKhoa.Location = new System.Drawing.Point(417, 208);
             this.comboBoxKhoa.Name = "comboBoxKhoa";
-            this.comboBoxKhoa.Size = new System.Drawing.Size(207, 27);
+            this.comboBoxKhoa.Size = new System.Drawing.Size(207, 26);
             this.comboBoxKhoa.TabIndex = 2;
             this.comboBoxKhoa.ValueMember = "TENSERVER";
             this.comboBoxKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
@@ -152,8 +156,21 @@
             // 
             this.v_DSPMTableAdapter.ClearBeforeFill = true;
             // 
+            // svgImageBox1
+            // 
+            this.svgImageBox1.Cursor = System.Windows.Forms.Cursors.Help;
+            this.svgImageBox1.Location = new System.Drawing.Point(600, 147);
+            this.svgImageBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.svgImageBox1.Name = "svgImageBox1";
+            this.svgImageBox1.Size = new System.Drawing.Size(21, 21);
+            this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
+            this.svgImageBox1.SvgImage = global::QLSV.Properties.Resources.blind;
+            this.svgImageBox1.TabIndex = 8;
+            this.svgImageBox1.Click += new System.EventHandler(this.svgImageBox1_Click);
+            // 
             // LoginForm
             // 
+            this.AcceptButton = this.loginButton;
             this.ActiveGlowColor = System.Drawing.Color.White;
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.ForeColor = System.Drawing.Color.White;
@@ -162,6 +179,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 428);
+            this.Controls.Add(this.svgImageBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -170,15 +188,18 @@
             this.Controls.Add(this.passWord);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.comboBoxKhoa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.False;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("LoginForm.IconOptions.LargeImage")));
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sinh Viên";
             this.Load += new System.EventHandler(this.LoginForm_Load);
-            this.FormClosing += LoginForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +218,6 @@
         private QLDSVDataSet1 qLDSVDataSet;
         private System.Windows.Forms.BindingSource vDSPMBindingSource;
         private QLDSVDataSet1TableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
-
+        private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
     }
 }

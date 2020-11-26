@@ -11,11 +11,15 @@ using DevExpress.XtraEditors;
 
 namespace QLSV
 {
+    
     public partial class LoginForm : DevExpress.XtraEditors.XtraForm
     {
+        private bool showPass = false;
         public LoginForm()
         {
             InitializeComponent();
+            
+            
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -102,13 +106,30 @@ namespace QLSV
                 else
                 {
                     //MessageBox.Show("Tài khoản không tồn tại", "Lỗi", MessageBoxButtons.OK);
-                    userName.Clear();
+                    //userName.Clear();
                     passWord.Clear();
                     userName.Focus();
                     this.DialogResult = DialogResult.None;
                     return;
                 }
                 
+            }
+        }
+
+
+        private void svgImageBox1_Click(object sender, EventArgs e)
+        {
+            if (showPass)
+            {
+                showPass = false;
+                passWord.PasswordChar = '●';
+                svgImageBox1.SvgImage = Properties.Resources.blind;
+            }
+            else
+            {
+                showPass = true;
+                passWord.PasswordChar = '\0';
+                svgImageBox1.SvgImage = Properties.Resources.eye;
             }
         }
     }

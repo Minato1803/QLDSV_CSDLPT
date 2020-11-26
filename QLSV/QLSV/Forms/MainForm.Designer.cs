@@ -49,6 +49,13 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.dsSinhVien = new DevExpress.XtraBars.BarButtonItem();
+            this.dsDongHocPhi = new DevExpress.XtraBars.BarButtonItem();
+            this.bangDiemThi = new DevExpress.XtraBars.BarButtonItem();
+            this.bangDiemMonHoc = new DevExpress.XtraBars.BarButtonItem();
+            this.bangDiemTongKet = new DevExpress.XtraBars.BarButtonItem();
+            this.phieuDiem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,10 +75,16 @@
             this.qlDiem,
             this.qlHocPhi,
             this.bottomName,
-            this.bottomRule});
+            this.bottomRule,
+            this.dsSinhVien,
+            this.dsDongHocPhi,
+            this.bangDiemThi,
+            this.bangDiemMonHoc,
+            this.bangDiemTongKet,
+            this.phieuDiem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbon.MaxItemId = 16;
+            this.ribbon.MaxItemId = 22;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 385;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -103,6 +116,7 @@
             this.taoTaiKhoan.Caption = "Tạo Tài Khoản";
             this.taoTaiKhoan.Id = 5;
             this.taoTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("taoTaiKhoan.ImageOptions.SvgImage")));
+            this.taoTaiKhoan.LargeWidth = 100;
             this.taoTaiKhoan.Name = "taoTaiKhoan";
             this.taoTaiKhoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.taoTaiKhoan_ItemClick);
             // 
@@ -186,14 +200,18 @@
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup6});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Báo Cáo";
             // 
             // ribbonPageGroup2
             // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.dsSinhVien);
+            this.ribbonPageGroup2.ItemLinks.Add(this.dsDongHocPhi);
+            this.ribbonPageGroup2.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Danh Sách";
             // 
             // ribbonPage3
             // 
@@ -229,6 +247,64 @@
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1491, 24);
             // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.bangDiemThi);
+            this.ribbonPageGroup6.ItemLinks.Add(this.bangDiemMonHoc);
+            this.ribbonPageGroup6.ItemLinks.Add(this.bangDiemTongKet);
+            this.ribbonPageGroup6.ItemLinks.Add(this.phieuDiem);
+            this.ribbonPageGroup6.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Bảng Điểm";
+            // 
+            // dsSinhVien
+            // 
+            this.dsSinhVien.Caption = "Danh Sách Sinh Viên";
+            this.dsSinhVien.Id = 16;
+            this.dsSinhVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("dsSinhVien.ImageOptions.SvgImage")));
+            this.dsSinhVien.LargeWidth = 100;
+            this.dsSinhVien.Name = "dsSinhVien";
+            // 
+            // dsDongHocPhi
+            // 
+            this.dsDongHocPhi.Caption = "Danh Sách Đóng Học Phí";
+            this.dsDongHocPhi.Id = 17;
+            this.dsDongHocPhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("dsDongHocPhi.ImageOptions.SvgImage")));
+            this.dsDongHocPhi.LargeWidth = 100;
+            this.dsDongHocPhi.Name = "dsDongHocPhi";
+            // 
+            // bangDiemThi
+            // 
+            this.bangDiemThi.Caption = "Bảng Điểm Thi";
+            this.bangDiemThi.Id = 18;
+            this.bangDiemThi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bangDiemThi.ImageOptions.SvgImage")));
+            this.bangDiemThi.LargeWidth = 100;
+            this.bangDiemThi.Name = "bangDiemThi";
+            // 
+            // bangDiemMonHoc
+            // 
+            this.bangDiemMonHoc.Caption = "Bảng Điểm Môn Học";
+            this.bangDiemMonHoc.Id = 19;
+            this.bangDiemMonHoc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bangDiemMonHoc.ImageOptions.SvgImage")));
+            this.bangDiemMonHoc.LargeWidth = 100;
+            this.bangDiemMonHoc.Name = "bangDiemMonHoc";
+            // 
+            // bangDiemTongKet
+            // 
+            this.bangDiemTongKet.Caption = "Bảng Điểm Tổng Kết";
+            this.bangDiemTongKet.Id = 20;
+            this.bangDiemTongKet.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bangDiemTongKet.ImageOptions.SvgImage")));
+            this.bangDiemTongKet.LargeWidth = 100;
+            this.bangDiemTongKet.Name = "bangDiemTongKet";
+            // 
+            // phieuDiem
+            // 
+            this.phieuDiem.Caption = "Phiếu Điểm";
+            this.phieuDiem.Id = 21;
+            this.phieuDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("phieuDiem.ImageOptions.SvgImage")));
+            this.phieuDiem.LargeWidth = 100;
+            this.phieuDiem.Name = "phieuDiem";
+            // 
             // MainForm
             // 
             this.Appearance.Options.UseFont = true;
@@ -249,10 +325,10 @@
             this.ResumeLayout(false);
             this.PerformLayout();
             this.FormClosing += MainForm_FormClosing;
-
         }
 
-        
+
+
 
         #endregion
 
@@ -276,5 +352,12 @@
         private DevExpress.XtraBars.BarButtonItem qlHocPhi;
         private DevExpress.XtraBars.BarStaticItem bottomName;
         private DevExpress.XtraBars.BarStaticItem bottomRule;
+        private DevExpress.XtraBars.BarButtonItem dsSinhVien;
+        private DevExpress.XtraBars.BarButtonItem dsDongHocPhi;
+        private DevExpress.XtraBars.BarButtonItem bangDiemThi;
+        private DevExpress.XtraBars.BarButtonItem bangDiemMonHoc;
+        private DevExpress.XtraBars.BarButtonItem bangDiemTongKet;
+        private DevExpress.XtraBars.BarButtonItem phieuDiem;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }
