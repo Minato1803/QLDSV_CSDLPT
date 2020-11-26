@@ -19,9 +19,9 @@ namespace QLSV
         public static SqlDataAdapter da;
         public static SqlDataReader myReader;
         public static String servername = "MINATO";
-        public static String servername1 = "MINATO\\MSSQLSERVER1";
-        public static String servername2 = "MINATO\\MSSQLSERVER2";
-        public static String servername3 = "MINATO\\MSSQLSERVER3";
+        public static String servername1 = "";
+        public static String servername2 = "";
+        public static String servername3 = "";
         public static String username = "";
         public static String mlogin = "";
         public static String password = "";
@@ -33,7 +33,7 @@ namespace QLSV
         public static String passwordDN = "";
         public static String mGroup = "";
         public static String mHoten = "";
-        public static int mChinhanh = 0;;
+        public static int mChinhanh = 0;
 
 
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
@@ -53,6 +53,7 @@ namespace QLSV
             catch (Exception e)
             {
                 MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                Program.conn.Close();
                 return 0;
             }
         }

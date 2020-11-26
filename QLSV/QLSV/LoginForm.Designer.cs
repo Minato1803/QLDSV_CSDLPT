@@ -33,17 +33,17 @@
             this.userName = new System.Windows.Forms.TextBox();
             this.passWord = new System.Windows.Forms.TextBox();
             this.comboBoxKhoa = new System.Windows.Forms.ComboBox();
+            this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.loginButton = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
-            this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // userName
@@ -82,6 +82,17 @@
             this.comboBoxKhoa.Size = new System.Drawing.Size(241, 32);
             this.comboBoxKhoa.TabIndex = 2;
             this.comboBoxKhoa.ValueMember = "TENSERVER";
+            this.comboBoxKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
+            // 
+            // vDSPMBindingSource
+            // 
+            this.vDSPMBindingSource.DataMember = "V_DSPM";
+            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // loginButton
             // 
@@ -95,6 +106,7 @@
             this.loginButton.Size = new System.Drawing.Size(243, 39);
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Đăng Nhập";
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // pictureBox1
             // 
@@ -140,16 +152,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Khoa";
             // 
-            // qLDSVDataSet
-            // 
-            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
-            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vDSPMBindingSource
-            // 
-            this.vDSPMBindingSource.DataMember = "V_DSPM";
-            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
-            // 
             // v_DSPMTableAdapter
             // 
             this.v_DSPMTableAdapter.ClearBeforeFill = true;
@@ -178,16 +180,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sinh Viên";
             this.Load += new System.EventHandler(this.LoginForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         private System.Windows.Forms.ComboBox comboBoxKhoa;
         private System.Windows.Forms.TextBox userName;
         private System.Windows.Forms.TextBox passWord;
@@ -199,5 +200,6 @@
         private QLDSVDataSet qLDSVDataSet;
         private System.Windows.Forms.BindingSource vDSPMBindingSource;
         private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
+
     }
 }
