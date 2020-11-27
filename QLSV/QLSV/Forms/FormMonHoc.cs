@@ -16,7 +16,6 @@ namespace QLSV
         public FormMonHoc()
         {
             InitializeComponent();
-            
         }
     }
 }

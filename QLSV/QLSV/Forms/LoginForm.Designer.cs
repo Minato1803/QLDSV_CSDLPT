@@ -42,10 +42,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
+            this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // userName
@@ -57,6 +61,7 @@
             this.userName.Size = new System.Drawing.Size(208, 27);
             this.userName.TabIndex = 0;
             this.userName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userName.Leave += new System.EventHandler(this.userName_Leave);
             // 
             // passWord
             // 
@@ -68,6 +73,7 @@
             this.passWord.Size = new System.Drawing.Size(208, 27);
             this.passWord.TabIndex = 1;
             this.passWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passWord.Leave += new System.EventHandler(this.passWord_Leave);
             // 
             // comboBoxKhoa
             // 
@@ -160,13 +166,23 @@
             // 
             this.svgImageBox1.Cursor = System.Windows.Forms.Cursors.Help;
             this.svgImageBox1.Location = new System.Drawing.Point(600, 147);
-            this.svgImageBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.svgImageBox1.Margin = new System.Windows.Forms.Padding(5);
             this.svgImageBox1.Name = "svgImageBox1";
             this.svgImageBox1.Size = new System.Drawing.Size(21, 21);
             this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.svgImageBox1.SvgImage = global::QLSV.Properties.Resources.blind;
             this.svgImageBox1.TabIndex = 8;
             this.svgImageBox1.Click += new System.EventHandler(this.svgImageBox1_Click);
+            // 
+            // epUsername
+            // 
+            this.epUsername.ContainerControl = this;
+            this.epUsername.Icon = ((System.Drawing.Icon)(resources.GetObject("epUsername.Icon")));
+            // 
+            // epPassword
+            // 
+            this.epPassword.ContainerControl = this;
+            this.epPassword.Icon = ((System.Drawing.Icon)(resources.GetObject("epPassword.Icon")));
             // 
             // LoginForm
             // 
@@ -191,7 +207,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.False;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("LoginForm.IconOptions.LargeImage")));
-            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sinh Viên";
@@ -200,6 +215,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +236,7 @@
         private System.Windows.Forms.BindingSource vDSPMBindingSource;
         private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
+        private System.Windows.Forms.ErrorProvider epUsername;
+        private System.Windows.Forms.ErrorProvider epPassword;
     }
 }
