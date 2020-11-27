@@ -28,7 +28,7 @@ namespace QLSV
         public static String mlogin = "";
         public static String password = "";
 
-        public static String database = "QLDSV"
+        public static String database = "QLDSV";
         // RemoteLogin này là remote dùng để hỗ trợ kết nối ra ngoài ví dụ trong quá trình đăng nhập nó sẽ rẽ qua server 2
         // để đăng nhập truy vấn dữ liệu thì nó dùng login này để kết nối(hay là tạo link server)
         // vì nó giống nhau trên các phân mảnh là HTKN nối nó sẽ gán cứng vào.
