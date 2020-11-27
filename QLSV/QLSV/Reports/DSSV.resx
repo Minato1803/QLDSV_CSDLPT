@@ -117,16 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 60</value>
-  </metadata>
-  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNQX1JFUE9SVF9EU1NWIj48RmllbGQgTmFtZT0iSE8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVEVOIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBIQUkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTkdBWVNJTkgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTk9JU0lOSCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJESUFDSEkiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
-  </data>
   <metadata name="ds1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="sP_REPORT_DSSVTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 103</value>
-  </metadata>
+  <data name="ds1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0iZHMxIj48VmlldyBOYW1lPSJTUF9SRVBPUlRfRFNTViI+PEZpZWxkIE5hbWU9IkhPIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRFTiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQSEFJIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik5HQVlTSU5IIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik5PSVNJTkgiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRElBQ0hJIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+  </data>
 </root>
