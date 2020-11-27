@@ -181,6 +181,32 @@ namespace QLSV
             userName.Select();
         }
 
+        private void userName_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(userName.Text))
+            {
+                epUsername.Icon = Properties.Resources.exclamation;
+                epUsername.SetError(userName, "Tài khoản không được trống!");
+            }
+            else
+            {
+                epUsername.Clear();
+            }
+        }
+
+        private void passWord_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(passWord.Text))
+            {
+                epPassword.Icon = Properties.Resources.exclamation;
+                epPassword.SetError(passWord, "Mật khẩu không được trống!");
+            }
+            else
+            {
+                epPassword.Clear();
+            }
+        }
+
         // giới hạn vị trí con trỏ khi nhập
         //private void passWord_TextChanged(object sender, EventArgs e)
         //{
@@ -189,7 +215,7 @@ namespace QLSV
         //        passWord.Focus();
         //        passWord.Select(15,0);
         //    }
-                
+
         //}
 
     }

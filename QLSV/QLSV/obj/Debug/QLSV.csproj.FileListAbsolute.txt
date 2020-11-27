@@ -531,9 +531,9 @@ D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\bin\Debug\es\DevExpress.Diagram.v20.
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\bin\Debug\ja\DevExpress.Diagram.v20.2.Core.resources.dll
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\bin\Debug\ru\DevExpress.Diagram.v20.2.Core.resources.dll
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.Reports.DSSV.resources
-D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormMonHoc.resources
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormLop.resources
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormTaoTaiKhoan.resources
-E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormLop.resources
-E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormMonHoc.resources
-E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormTaoTaiKhoan.resources
+D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormMonHoc.resources
+D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormDiem.resources
+D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormHocPhi.resources
+D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormSinhVien.resources
