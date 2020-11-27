@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace QLSV
 {
@@ -74,14 +75,15 @@ namespace QLSV
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if(userName.Text.Trim().Equals(""))
+            if(string.IsNullOrEmpty(this.userName.Text))
             {
-                MessageBox.Show("Tên tài khoản không được rỗng","Lỗi",MessageBoxButtons.OK);
+                MessageBox.Show("Tên tài khoản không được rỗng", "Lỗi", MessageBoxButtons.OK);
+
                 userName.Focus();
                 return;
 
             }
-            else if (passWord.Text.Trim().Equals(""))
+            else if (string.IsNullOrEmpty(this.passWord.Text))
             {
                 MessageBox.Show("Mật khẩu không được rỗng", "Lỗi", MessageBoxButtons.OK);
                 passWord.Focus();
@@ -93,7 +95,52 @@ namespace QLSV
                 Program.password = passWord.Text;
                 if (Program.KetNoi() == 1)
                 {
-                    MainForm main = new MainForm("Phòng giáo vụ","Tên");
+                    Program.mKhoa = comboBoxKhoa.SelectedIndex;// 0: CNTT ,  1: VT, 2: KT
+
+                    // lưu thông tin đăng nhập đang có
+                    Program.mloginDN = Program.mlogin;
+                    Program.passwordDN = Program.password;
+
+                    // chạy sp đăng nhập, lấy ra thông tin username, họ tên, groupRole
+
+
+                    //SqlCommand cmd = new SqlCommand("[dbo].[SP_DANGNHAP]", Program.conn);
+
+                    //cmd.CommandType = CommandType.StoredProcedure;
+
+                    //cmd.Parameters.Add(new SqlParameter("@TENLOGIN", Program.mlogin));
+
+                    //// execute the command
+                    //Program.myReader = cmd.ExecuteReader();
+                    String strLenh = "exec [dbo].[SP_DANGNHAP] '" + Program.mlogin + "'";
+                    Program.myReader = Program.ExecSqlDataReader(strLenh);
+                    if (Program.myReader == null)
+                    {
+                        return;
+                    }
+                    Program.myReader.Read();
+                    
+                    Program.username = Program.myReader.GetString(0);     // Lay username
+                    if (Convert.IsDBNull(Program.username))
+                    {
+                        MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\nVui lòng xem lại username, password", "lỗi truy cập", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    try
+                    {
+                        Program.mHoten = Program.myReader.GetString(1);
+                        Program.mGroup = Program.myReader.GetString(2);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Login bạn nhập không có quyền truy cập vào chương trình", "", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    Program.myReader.Close();
+
+                    MainForm main = new MainForm(Program.mGroup, Program.mHoten);
                     main.Show();
                     this.Visible = false;
                     return;

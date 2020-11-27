@@ -17,5 +17,61 @@ namespace QLSV
         {
             InitializeComponent();
         }
+
+        private void FormTaoTaiKhoan_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLDSVDataSet.V_DSSV_TaoTK' table. You can move, or remove it, as needed.
+            this.v_DSSV_TaoTKTableAdapter.Fill(this.qLDSVDataSet.V_DSSV_TaoTK);
+            // TODO: This line of code loads data into the 'qLDSVDataSet.V_DSSV_TaoTK' table. You can move, or remove it, as needed.
+            this.v_DSSV_TaoTKTableAdapter.Fill(this.qLDSVDataSet.V_DSSV_TaoTK);
+            // TODO: This line of code loads data into the 'qLDSVDataSet.V_DSGV' table. You can move, or remove it, as needed.
+            this.v_DSGVTableAdapter.Fill(this.qLDSVDataSet.V_DSGV);
+            // TODO: This line of code loads data into the 'qLDSVDataSet.V_DSPM' table. You can move, or remove it, as needed.
+            this.v_DSPMTableAdapter.Fill(this.qLDSVDataSet.V_DSPM);
+
+        }
+
+        private void dangkiGiaoVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool CheckInfo()
+        {
+            bool check = false;
+
+
+            if(string.IsNullOrEmpty(this.userName.Text))
+                    {
+                MessageBox.Show("Tên tài khoản không được rỗng", "Lỗi", MessageBoxButtons.OK);
+                userName.Focus();
+            }
+            else if (userName.Text.Contains(" "))
+            {
+                MessageBox.Show("không được chứa khoảng trắng trong tên", "Lỗi", MessageBoxButtons.OK);
+                userName.Focus();
+            }
+            else if (string.IsNullOrEmpty(this.passWord.Text))
+            {
+                MessageBox.Show("Mật khẩu không được rỗng", "Lỗi", MessageBoxButtons.OK);
+                passWord.Focus();
+            }
+            else if (string.IsNullOrEmpty(this.confirmPassWord.Text))
+            {
+                MessageBox.Show("Mật khẩu không được rỗng", "Lỗi", MessageBoxButtons.OK);
+                confirmPassWord.Focus();
+            }
+            else if (confirmPassWord.Text != passWord.Text)
+            {
+                MessageBox.Show("Mật khẩu không khớp", "Lỗi", MessageBoxButtons.OK);
+                confirmPassWord.Focus();
+            }
+            else
+            {
+                check = true;
+            }
+
+            return check;
+        }
     }
 }

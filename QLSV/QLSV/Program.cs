@@ -18,7 +18,7 @@ namespace QLSV
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlDataAdapter da;
-        public static SqlDataReader myReader;
+        public static SqlDataReader myReader =null;
         public static String servername = "MINATO";
         public static String servername1 = "";
         public static String servername2 = "";
@@ -27,21 +27,23 @@ namespace QLSV
         // lưu các login và password từ các form khi chương trình chạy
         public static String mlogin = "";
         public static String password = "";
+        //MLoginDN là mã login đăng nhập và mật khẩu của nó
+        public static String mloginDN = "";
+        public static String passwordDN = "";
 
-        public static String database = "QLDSV"
+        public static String database = "QLDSV";
         // RemoteLogin này là remote dùng để hỗ trợ kết nối ra ngoài ví dụ trong quá trình đăng nhập nó sẽ rẽ qua server 2
         // để đăng nhập truy vấn dữ liệu thì nó dùng login này để kết nối(hay là tạo link server)
         // vì nó giống nhau trên các phân mảnh là HTKN nối nó sẽ gán cứng vào.
         public static String remotelogin = "HTKN";
         public static String remotepassword = "123456";
-        //MLoginDN là mã login đăng nhập và mật khẩu của nó
-        public static String mloginDN = "";
-        public static String passwordDN = "";
+       
         // 3 Mgroup , MHoten, MKhoa dùng để hiển thi thông tin login vào
         // MGroup là mã nhóm quyền khi của login đó đăng nhập vào.
         public static String mGroup = "";
         public static String mHoten = "";
         public static int mKhoa = 0;
+
         // trạng thái đăng nhập
         public static Boolean logged = false;
         // lưu danh sách các nhóm quyền
@@ -66,7 +68,7 @@ namespace QLSV
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n" + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu" + e.Message, "", MessageBoxButtons.OK);
                 Program.conn.Close();
                 return 0;
             }
