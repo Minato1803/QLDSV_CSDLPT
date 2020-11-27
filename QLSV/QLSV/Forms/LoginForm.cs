@@ -18,7 +18,7 @@ namespace QLSV
         public LoginForm()
         {
             InitializeComponent();
-            
+            this.FormClosing += LoginForm_FormClosing;
             
         }
 
@@ -125,6 +125,13 @@ namespace QLSV
                 passWord.PasswordChar = '\0';
                 svgImageBox1.SvgImage = Properties.Resources.eye;
             }
+        }
+
+        public void logOut()
+        {
+            passWord.Clear();
+            userName.Clear();
+            userName.Select();
         }
 
         // giới hạn vị trí con trỏ khi nhập

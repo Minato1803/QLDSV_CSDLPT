@@ -99,5 +99,15 @@ namespace QLSV.Properties {
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap man_desk {
+            get {
+                object obj = ResourceManager.GetObject("man-desk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

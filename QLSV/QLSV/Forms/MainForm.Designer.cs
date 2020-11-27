@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.dangXuat = new DevExpress.XtraBars.BarButtonItem();
@@ -56,7 +57,9 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -91,7 +94,7 @@
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage3});
-            this.ribbon.Size = new System.Drawing.Size(1491, 193);
+            this.ribbon.Size = new System.Drawing.Size(1491, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // dangXuat
@@ -136,6 +139,7 @@
             this.qlMonHoc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("qlMonHoc.ImageOptions.SvgImage")));
             this.qlMonHoc.LargeWidth = 75;
             this.qlMonHoc.Name = "qlMonHoc";
+            this.qlMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.qlMonHoc_ItemClick);
             // 
             // qlSinhVien
             // 
@@ -144,6 +148,7 @@
             this.qlSinhVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("qlSinhVien.ImageOptions.SvgImage")));
             this.qlSinhVien.LargeWidth = 75;
             this.qlSinhVien.Name = "qlSinhVien";
+            this.qlSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.qlSinhVien_ItemClick);
             // 
             // qlDiem
             // 
@@ -152,6 +157,7 @@
             this.qlDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("qlDiem.ImageOptions.SvgImage")));
             this.qlDiem.LargeWidth = 75;
             this.qlDiem.Name = "qlDiem";
+            this.qlDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.qlDiem_ItemClick);
             // 
             // qlHocPhi
             // 
@@ -159,6 +165,7 @@
             this.qlHocPhi.Id = 11;
             this.qlHocPhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("qlHocPhi.ImageOptions.SvgImage")));
             this.qlHocPhi.Name = "qlHocPhi";
+            this.qlHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.qlHocPhi_ItemClick);
             // 
             // bottomName
             // 
@@ -179,6 +186,7 @@
             this.dsSinhVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("dsSinhVien.ImageOptions.SvgImage")));
             this.dsSinhVien.LargeWidth = 100;
             this.dsSinhVien.Name = "dsSinhVien";
+            this.dsSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dsSinhVien_ItemClick);
             // 
             // dsDongHocPhi
             // 
@@ -187,6 +195,7 @@
             this.dsDongHocPhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("dsDongHocPhi.ImageOptions.SvgImage")));
             this.dsDongHocPhi.LargeWidth = 100;
             this.dsDongHocPhi.Name = "dsDongHocPhi";
+            this.dsDongHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dsDongHocPhi_ItemClick);
             // 
             // bangDiemThi
             // 
@@ -195,6 +204,7 @@
             this.bangDiemThi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bangDiemThi.ImageOptions.SvgImage")));
             this.bangDiemThi.LargeWidth = 100;
             this.bangDiemThi.Name = "bangDiemThi";
+            this.bangDiemThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bangDiemThi_ItemClick);
             // 
             // bangDiemMonHoc
             // 
@@ -203,6 +213,7 @@
             this.bangDiemMonHoc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bangDiemMonHoc.ImageOptions.SvgImage")));
             this.bangDiemMonHoc.LargeWidth = 100;
             this.bangDiemMonHoc.Name = "bangDiemMonHoc";
+            this.bangDiemMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bangDiemMonHoc_ItemClick);
             // 
             // bangDiemTongKet
             // 
@@ -211,6 +222,7 @@
             this.bangDiemTongKet.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bangDiemTongKet.ImageOptions.SvgImage")));
             this.bangDiemTongKet.LargeWidth = 100;
             this.bangDiemTongKet.Name = "bangDiemTongKet";
+            this.bangDiemTongKet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bangDiemTongKet_ItemClick);
             // 
             // phieuDiem
             // 
@@ -219,6 +231,7 @@
             this.phieuDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("phieuDiem.ImageOptions.SvgImage")));
             this.phieuDiem.LargeWidth = 100;
             this.phieuDiem.Name = "phieuDiem";
+            this.phieuDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.phieuDiem_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -299,22 +312,28 @@
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bottomRule);
             this.ribbonStatusBar.ItemLinks.Add(this.bottomName);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 855);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 863);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1491, 30);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1491, 22);
+            // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // MainForm
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 885);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("MainForm.IconOptions.LargeImage")));
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Ribbon = this.ribbon;
@@ -322,9 +341,10 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Quản Lý Sinh Viên";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.FormClosing += MainForm_FormClosing;
+
         }
 
 
@@ -359,5 +379,6 @@
         private DevExpress.XtraBars.BarButtonItem bangDiemTongKet;
         private DevExpress.XtraBars.BarButtonItem phieuDiem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
