@@ -78,6 +78,42 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDiem.Designer.cs">
+      <DependentUpon>FormDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHocPhi.Designer.cs">
+      <DependentUpon>FormHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSinhVien.Designer.cs">
+      <DependentUpon>FormSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLop.Designer.cs">
+      <DependentUpon>FormLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc.Designer.cs">
+      <DependentUpon>FormMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTaoTaiKhoan.Designer.cs">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +133,63 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportBangDiemThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportBangDiemThi.Designer.cs">
+      <DependentUpon>ReportBangDiemThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportBDMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportBDMonHoc.Designer.cs">
+      <DependentUpon>ReportBDMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportBDTongKet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportBDTongKet.Designer.cs">
+      <DependentUpon>ReportBDTongKet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDSDongHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportDSDongHocPhi.Designer.cs">
+      <DependentUpon>ReportDSDongHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDSSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportDSSinhVien.Designer.cs">
+      <DependentUpon>ReportDSSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPhieuDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPhieuDiem.Designer.cs">
+      <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\DSSV.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\DSSV.Designer.cs">
       <DependentUpon>DSSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTin.Designer.cs">
+      <DependentUpon>ThongTin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FormLop.resx">
+      <DependentUpon>FormLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMonHoc.resx">
+      <DependentUpon>FormMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTaoTaiKhoan.resx">
+      <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,7 +241,9 @@
   <ItemGroup>
     <None Include="Resources\blind.svg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\man-desk.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

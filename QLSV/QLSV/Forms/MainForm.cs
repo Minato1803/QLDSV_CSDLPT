@@ -18,6 +18,7 @@ namespace QLSV
         {
             InitializeComponent();
             initForm(rule, name);
+            this.FormClosing += MainForm_FormClosing;
             ribbon.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
         }
 
@@ -35,17 +36,20 @@ namespace QLSV
 
         private void taoTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            ShowMdiChildren(typeof(FormTaoTaiKhoan));
         }
 
         private void dangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            Program.logged = false;
+            Program.frmLogin.logOut();
+            this.Close();
+            Program.frmLogin.Show();
         }
 
         private void qlLop_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            ShowMdiChildren(typeof(FormLop));
         }
 
 
@@ -58,8 +62,8 @@ namespace QLSV
                     DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        //Program.frmLogin.Close();
-                        Environment.Exit(0);
+                        Program.frmLogin.Close();
+                        this.Dispose();
                     }
                     else
                     {
@@ -74,6 +78,71 @@ namespace QLSV
 
         }
 
+        private void qlMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FormMonHoc));
+        }
+
+        private void ShowMdiChildren(Type fType)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == fType)
+                {
+                    f.WindowState = FormWindowState.Maximized;
+                    f.Activate();
+                    return;
+                }
+            }
+            Form form = (Form)Activator.CreateInstance(fType);
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void qlSinhVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FormSinhVien));
+        }
+
+        private void qlDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FormDiem));
+        }
+
+        private void qlHocPhi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FormHocPhi));
+        }
+
+        private void dsSinhVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(ReportDSSinhVien));
+        }
+
+        private void dsDongHocPhi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(ReportDSDongHocPhi));
+        }
+
+        private void bangDiemThi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(ReportBangDiemThi));
+        }
+
+        private void bangDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(ReportBDMonHoc));
+        }
+
+        private void bangDiemTongKet_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(ReportBDTongKet));
+        }
+
+        private void phieuDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(ReportPhieuDiem));
+        }
     }
 
     
