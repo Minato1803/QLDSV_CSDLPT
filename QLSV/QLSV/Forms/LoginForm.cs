@@ -70,11 +70,6 @@ namespace QLSV
                     e.Cancel = true;
                 }
             }
-            else
-            {
-                Environment.Exit(0);
-            }
-                
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -116,7 +111,6 @@ namespace QLSV
             }
         }
 
-
         private void svgImageBox1_Click(object sender, EventArgs e)
         {
             if (showPass)
@@ -132,5 +126,17 @@ namespace QLSV
                 svgImageBox1.SvgImage = Properties.Resources.eye;
             }
         }
+
+        // giới hạn vị trí con trỏ khi nhập
+        //private void passWord_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (passWord.Text.Length>14)
+        //    {
+        //        passWord.Focus();
+        //        passWord.Select(15,0);
+        //    }
+                
+        //}
+
     }
 }

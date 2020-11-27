@@ -58,7 +58,7 @@ namespace QLSV
                     DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        Program.frmLogin.Close();
+                        //Program.frmLogin.Close();
                         Environment.Exit(0);
                     }
                     else
