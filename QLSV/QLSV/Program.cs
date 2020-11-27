@@ -14,30 +14,43 @@ namespace QLSV
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        // tạo đối tượng kết nối Conn , kêt nối Database bằng mã lệnh
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlDataAdapter da;
         public static SqlDataReader myReader;
-        public static String servername = "TNCNHAN\\TNCN";
+        public static String servername = "MINATO";
         public static String servername1 = "";
         public static String servername2 = "";
         public static String servername3 = "";
         public static String username = "";
+        // lưu các login và password từ các form khi chương trình chạy
         public static String mlogin = "";
         public static String password = "";
 
-        public static String database = "QLDSV";
+        public static String database = "QLDSV"
+        // RemoteLogin này là remote dùng để hỗ trợ kết nối ra ngoài ví dụ trong quá trình đăng nhập nó sẽ rẽ qua server 2
+        // để đăng nhập truy vấn dữ liệu thì nó dùng login này để kết nối(hay là tạo link server)
+        // vì nó giống nhau trên các phân mảnh là HTKN nối nó sẽ gán cứng vào.
         public static String remotelogin = "HTKN";
         public static String remotepassword = "123456";
+        //MLoginDN là mã login đăng nhập và mật khẩu của nó
         public static String mloginDN = "";
         public static String passwordDN = "";
+        // 3 Mgroup , MHoten, MKhoa dùng để hiển thi thông tin login vào
+        // MGroup là mã nhóm quyền khi của login đó đăng nhập vào.
         public static String mGroup = "";
         public static String mHoten = "";
-        public static int mChinhanh = 0;
+        public static int mKhoa = 0;
         // trạng thái đăng nhập
         public static Boolean logged = false;
+        // lưu danh sách các nhóm quyền
+        public static string[] NhomQuyen = new string[4] { "PGV", "KHOA", "USERS", "PKeToan" };
+        //biến dùng để chứa danh sách các phân mãnh từ viewDSPM (bằng code, ko kéo thả)
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static LoginForm frmLogin;
+
+        // hàm thực hiện kết nối tới Database
         public static int KetNoi()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open) Program.conn.Close();
@@ -59,6 +72,9 @@ namespace QLSV
             }
         }
 
+        // ExecSqlDataReader tôc độ tải về nhanh hơn ExecSqlDataTable vì đối tượng nó chỉ quam tân chỉ select
+        // chỉ duyệt 1 chiều từ trên xuống
+        // vì vậy trong nghiệp vụ form báo cáo thì dùng datareader
         public static SqlDataReader ExecSqlDataReader(String strLenh)
         {
             SqlDataReader myreader;
@@ -77,7 +93,9 @@ namespace QLSV
                 return null;
             }
         }
-
+        // tải về cho phép xem xóa sửa
+        // duyệt 2 chiều dưới lên
+        // form nhập liệu thì dùng datatable.
         public static DataTable ExecSqlDataTable(String cmd)
         {
             DataTable dt = new DataTable();
@@ -87,7 +105,9 @@ namespace QLSV
             conn.Close();
             return dt;
         }
-
+        //thực thi các câu truy vấn như INSERT, DELETE, UPDATE. 
+        //Kiểm tra số dòng trong table của database bị thay đổi bởi 3 lệnh trên. 
+        //
         public static int ExecSqlNonQuery(String strlenh)
         {
             SqlCommand Sqlcmd = new SqlCommand(strlenh, conn);
