@@ -47,6 +47,8 @@
             this.bangDiemMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.bangDiemTongKet = new DevExpress.XtraBars.BarButtonItem();
             this.phieuDiem = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,8 +60,6 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -237,6 +237,22 @@
             this.phieuDiem.Name = "phieuDiem";
             this.phieuDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.phieuDiem_ItemClick);
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.AllowRightClickInMenu = false;
+            this.barStaticItem1.Caption = "|";
+            this.barStaticItem1.Id = 22;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.AllowRightClickInMenu = false;
+            this.barStaticItem2.Caption = "|";
+            this.barStaticItem2.Id = 23;
+            this.barStaticItem2.Name = "barStaticItem2";
+            this.barStaticItem2.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -317,7 +333,7 @@
             this.ribbonStatusBar.ItemLinks.Add(this.bottomRule);
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar.ItemLinks.Add(this.bottomName);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 863);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 861);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -327,28 +343,12 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.AllowRightClickInMenu = false;
-            this.barStaticItem1.Caption = "|";
-            this.barStaticItem1.Id = 22;
-            this.barStaticItem1.Name = "barStaticItem1";
-            this.barStaticItem1.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
-            // 
-            // barStaticItem2
-            // 
-            this.barStaticItem2.AllowRightClickInMenu = false;
-            this.barStaticItem2.Caption = "|";
-            this.barStaticItem2.Id = 23;
-            this.barStaticItem2.Name = "barStaticItem2";
-            this.barStaticItem2.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
-            // 
             // MainForm
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 885);
+            this.ClientSize = new System.Drawing.Size(1491, 883);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

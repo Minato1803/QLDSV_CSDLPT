@@ -41,6 +41,8 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.lanThi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -79,11 +81,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(776, 296);
+            this.label4.Location = new System.Drawing.Point(1130, 292);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 19);
+            this.label4.Size = new System.Drawing.Size(38, 19);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Lần Thi";
+            this.label4.Text = "Lần";
             // 
             // cbKhoa
             // 
@@ -115,14 +117,14 @@
             // lanThi
             // 
             this.lanThi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lanThi.Location = new System.Drawing.Point(866, 294);
+            this.lanThi.Location = new System.Drawing.Point(1174, 290);
             this.lanThi.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.lanThi.Name = "lanThi";
-            this.lanThi.Size = new System.Drawing.Size(120, 27);
+            this.lanThi.Size = new System.Drawing.Size(80, 27);
             this.lanThi.TabIndex = 11;
             this.lanThi.Value = new decimal(new int[] {
             1,
@@ -181,12 +183,32 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(764, 292);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 19);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Ngày Thi";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(866, 290);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(247, 29);
+            this.dateTimePicker1.TabIndex = 18;
+            // 
             // ReportBangDiemThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 656);
             this.ControlBox = false;
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.pictureBox1);
@@ -225,5 +247,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
