@@ -81,12 +81,32 @@ namespace QLSV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap At_the_office_amico {
+            get {
+                object obj = ResourceManager.GetObject("At the office-amico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage blind {
             get {
                 object obj = ResourceManager.GetObject("blind", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Business_Plan_amico {
+            get {
+                object obj = ResourceManager.GetObject("Business Plan-amico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -126,6 +146,16 @@ namespace QLSV.Properties {
         internal static System.Drawing.Bitmap curved_arrow {
             get {
                 object obj = ResourceManager.GetObject("curved-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Data_report_bro {
+            get {
+                object obj = ResourceManager.GetObject("Data report-bro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +256,16 @@ namespace QLSV.Properties {
         internal static System.Drawing.Bitmap stop {
             get {
                 object obj = ResourceManager.GetObject("stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Visual_data_pana {
+            get {
+                object obj = ResourceManager.GetObject("Visual data-pana", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

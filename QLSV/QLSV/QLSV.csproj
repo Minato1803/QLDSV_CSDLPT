@@ -136,18 +136,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reports\BDTHI.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\BDTHI.Designer.cs">
-      <DependentUpon>BDTHI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\DSDHP.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\DSDHP.Designer.cs">
-      <DependentUpon>DSDHP.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\ReportBangDiemThi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,10 +166,10 @@
     <Compile Include="Reports\ReportDSSinhVien.Designer.cs">
       <DependentUpon>ReportDSSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportPhieuDiem.cs">
+    <Compile Include="Reports\ReportPhieuDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportPhieuDiem.Designer.cs">
+    <Compile Include="Reports\ReportPhieuDiem.Designer.cs">
       <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\DSSV.cs">
@@ -231,18 +219,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\BDTHI.resx">
-      <DependentUpon>BDTHI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\DSDHP.resx">
-      <DependentUpon>DSDHP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\DSSV.resx">
       <DependentUpon>DSSV.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <EmbeddedResource Include="Reports\ReportBangDiemThi.resx">
+      <DependentUpon>ReportBangDiemThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportBDMonHoc.resx">
+      <DependentUpon>ReportBDMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportBDTongKet.resx">
+      <DependentUpon>ReportBDTongKet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportDSDongHocPhi.resx">
+      <DependentUpon>ReportDSDongHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportDSSinhVien.resx">
+      <DependentUpon>ReportDSSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportPhieuDiem.resx">
+      <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -320,6 +318,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exclamation %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data report-bro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visual data-pana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Business Plan-amico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\At the office-amico.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

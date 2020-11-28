@@ -17,5 +17,10 @@ namespace QLSV
         {
             InitializeComponent();
         }
+
+        private void quitFormBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
