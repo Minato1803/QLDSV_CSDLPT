@@ -136,6 +136,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\BDTHI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BDTHI.Designer.cs">
+      <DependentUpon>BDTHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DSDHP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DSDHP.Designer.cs">
+      <DependentUpon>DSDHP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportBangDiemThi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,10 +231,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\BDTHI.resx">
+      <DependentUpon>BDTHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DSDHP.resx">
+      <DependentUpon>DSDHP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\DSSV.resx">
       <DependentUpon>DSSV.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

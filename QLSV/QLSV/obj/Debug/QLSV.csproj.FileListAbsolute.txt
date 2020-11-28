@@ -537,3 +537,11 @@ D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormMonHoc.resources
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormDiem.resources
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormHocPhi.resources
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.FormSinhVien.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormDiem.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormHocPhi.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormLop.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormMonHoc.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormSinhVien.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormTaoTaiKhoan.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.Reports.DSDHP.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.Reports.BDTHI.resources
