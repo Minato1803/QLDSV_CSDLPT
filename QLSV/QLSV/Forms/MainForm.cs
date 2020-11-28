@@ -41,10 +41,15 @@ namespace QLSV
 
         private void dangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Program.logged = false;
-            Program.frmLogin.logOut();
-            this.Close();
-            Program.frmLogin.Show();
+            DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất?", "Đăng Xuất", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Program.logged = false;
+                Program.frmLogin.logOut();
+                this.Close();
+                Program.frmLogin.Show();
+            }
+            
         }
 
         private void qlLop_ItemClick(object sender, ItemClickEventArgs e)
@@ -59,7 +64,7 @@ namespace QLSV
             {
                 if (e.CloseReason == CloseReason.UserClosing)
                 {
-                    DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Bạn có muốn thoát ứng dụng?", "Thông Báo", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         Program.frmLogin.Close();

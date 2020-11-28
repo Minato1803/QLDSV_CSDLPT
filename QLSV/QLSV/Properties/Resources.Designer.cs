@@ -91,6 +91,16 @@ namespace QLSV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap At_the_office_pana {
+            get {
+                object obj = ResourceManager.GetObject("At the office-pana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage blind {
@@ -126,6 +136,16 @@ namespace QLSV.Properties {
         internal static System.Drawing.Bitmap Campus1 {
             get {
                 object obj = ResourceManager.GetObject("Campus1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Career_progress_pana {
+            get {
+                object obj = ResourceManager.GetObject("Career progress-pana", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

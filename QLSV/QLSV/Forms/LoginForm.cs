@@ -56,7 +56,7 @@ namespace QLSV
                 }
                 if (e.CloseReason == CloseReason.UserClosing)
                 {
-                    DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thoát Đăng Nhập", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Bạn có muốn thoát ứng dụng?", "Thoát Đăng Nhập", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         Environment.Exit(0);
