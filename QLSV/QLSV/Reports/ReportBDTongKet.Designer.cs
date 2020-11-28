@@ -28,229 +28,166 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.inBtn2 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txMaLop = new System.Windows.Forms.TextBox();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.inBtnNhap = new DevExpress.XtraEditors.SimpleButton();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.cbKhoa = new System.Windows.Forms.ComboBox();
-            this.inBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbLop = new System.Windows.Forms.ComboBox();
-            this.maLop = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).BeginInit();
-            this.inBtn2.SuspendLayout();
-            this.tabNavigationPage1.SuspendLayout();
-            this.tabNavigationPage2.SuspendLayout();
+            this.tool = new System.Windows.Forms.ToolStrip();
+            this.addBtn = new System.Windows.Forms.ToolStripButton();
+            this.deleteBtn = new System.Windows.Forms.ToolStripButton();
+            this.adjustBtn = new System.Windows.Forms.ToolStripButton();
+            this.undoBtn = new System.Windows.Forms.ToolStripButton();
+            this.saveBtn = new System.Windows.Forms.ToolStripButton();
+            this.exitBtn = new System.Windows.Forms.ToolStripButton();
+            this.reloadBtn = new System.Windows.Forms.ToolStripButton();
+            this.quitFormBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.tool.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // tool
             // 
-            this.pictureBox1.Image = global::QLSV.Properties.Resources.At_the_office_pana;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(661, 652);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
+            this.tool.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tool.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tool.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addBtn,
+            this.deleteBtn,
+            this.adjustBtn,
+            this.undoBtn,
+            this.saveBtn,
+            this.exitBtn,
+            this.reloadBtn,
+            this.quitFormBtn,
+            this.toolStripSeparator1,
+            this.toolStripLabel1,
+            this.toolStripComboBox1});
+            this.tool.Location = new System.Drawing.Point(0, 0);
+            this.tool.Name = "tool";
+            this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.tool.Size = new System.Drawing.Size(1491, 27);
+            this.tool.TabIndex = 3;
+            this.tool.Text = "toolStrip1";
             // 
-            // inBtn2
+            // addBtn
             // 
-            this.inBtn2.Controls.Add(this.tabNavigationPage1);
-            this.inBtn2.Controls.Add(this.tabNavigationPage2);
-            this.inBtn2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inBtn2.Location = new System.Drawing.Point(779, 76);
-            this.inBtn2.Name = "inBtn2";
-            this.inBtn2.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage1,
-            this.tabNavigationPage2});
-            this.inBtn2.RegularSize = new System.Drawing.Size(612, 292);
-            this.inBtn2.SelectedPage = this.tabNavigationPage1;
-            this.inBtn2.Size = new System.Drawing.Size(612, 292);
-            this.inBtn2.TabIndex = 39;
-            this.inBtn2.Text = "tabPane1";
+            this.addBtn.Image = global::QLSV.Properties.Resources.add__1_;
+            this.addBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.addBtn.Size = new System.Drawing.Size(71, 24);
+            this.addBtn.Text = "Thêm";
             // 
-            // tabNavigationPage1
+            // deleteBtn
             // 
-            this.tabNavigationPage1.Caption = "Nhập Mã";
-            this.tabNavigationPage1.Controls.Add(this.label4);
-            this.tabNavigationPage1.Controls.Add(this.txMaLop);
-            this.tabNavigationPage1.Controls.Add(this.simpleButton3);
-            this.tabNavigationPage1.Controls.Add(this.inBtnNhap);
-            this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(612, 255);
+            this.deleteBtn.Image = global::QLSV.Properties.Resources.remove;
+            this.deleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.deleteBtn.Size = new System.Drawing.Size(62, 24);
+            this.deleteBtn.Text = "Xóa";
             // 
-            // label4
+            // adjustBtn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(140, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 21);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "Mã Lớp";
+            this.adjustBtn.Image = global::QLSV.Properties.Resources.pencil;
+            this.adjustBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.adjustBtn.Name = "adjustBtn";
+            this.adjustBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.adjustBtn.Size = new System.Drawing.Size(61, 24);
+            this.adjustBtn.Text = "Sửa";
             // 
-            // txMaLop
+            // undoBtn
             // 
-            this.txMaLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txMaLop.Location = new System.Drawing.Point(249, 97);
-            this.txMaLop.Name = "txMaLop";
-            this.txMaLop.Size = new System.Drawing.Size(283, 29);
-            this.txMaLop.TabIndex = 40;
+            this.undoBtn.Image = global::QLSV.Properties.Resources.curved_arrow;
+            this.undoBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.undoBtn.Name = "undoBtn";
+            this.undoBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.undoBtn.Size = new System.Drawing.Size(90, 24);
+            this.undoBtn.Text = "Phục Hồi";
             // 
-            // simpleButton3
+            // saveBtn
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Location = new System.Drawing.Point(352, 206);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(180, 49);
-            this.simpleButton3.TabIndex = 42;
-            this.simpleButton3.Text = "Thoát";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.saveBtn.Image = global::QLSV.Properties.Resources.cloud_computing;
+            this.saveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.saveBtn.Size = new System.Drawing.Size(58, 24);
+            this.saveBtn.Text = "Ghi";
             // 
-            // inBtnNhap
+            // exitBtn
             // 
-            this.inBtnNhap.Appearance.BackColor = System.Drawing.Color.Maroon;
-            this.inBtnNhap.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.inBtnNhap.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inBtnNhap.Appearance.Options.UseBackColor = true;
-            this.inBtnNhap.Appearance.Options.UseBorderColor = true;
-            this.inBtnNhap.Appearance.Options.UseFont = true;
-            this.inBtnNhap.Location = new System.Drawing.Point(144, 206);
-            this.inBtnNhap.Name = "inBtnNhap";
-            this.inBtnNhap.Size = new System.Drawing.Size(180, 49);
-            this.inBtnNhap.TabIndex = 41;
-            this.inBtnNhap.Text = "In Báo Cáo";
+            this.exitBtn.Image = global::QLSV.Properties.Resources.stop;
+            this.exitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.exitBtn.Size = new System.Drawing.Size(61, 24);
+            this.exitBtn.Text = "Hủy";
             // 
-            // tabNavigationPage2
+            // reloadBtn
             // 
-            this.tabNavigationPage2.Caption = "Chọn Từ Danh Sách";
-            this.tabNavigationPage2.Controls.Add(this.simpleButton2);
-            this.tabNavigationPage2.Controls.Add(this.cbKhoa);
-            this.tabNavigationPage2.Controls.Add(this.inBtn);
-            this.tabNavigationPage2.Controls.Add(this.label1);
-            this.tabNavigationPage2.Controls.Add(this.label2);
-            this.tabNavigationPage2.Controls.Add(this.cbLop);
-            this.tabNavigationPage2.Controls.Add(this.maLop);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(612, 255);
+            this.reloadBtn.Image = global::QLSV.Properties.Resources.refresh;
+            this.reloadBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.reloadBtn.Size = new System.Drawing.Size(90, 24);
+            this.reloadBtn.Text = "Làm Mới";
             // 
-            // simpleButton2
+            // quitFormBtn
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(352, 206);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(180, 49);
-            this.simpleButton2.TabIndex = 37;
-            this.simpleButton2.Text = "Thoát";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.quitFormBtn.Image = global::QLSV.Properties.Resources.power_button;
+            this.quitFormBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.quitFormBtn.Name = "quitFormBtn";
+            this.quitFormBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.quitFormBtn.Size = new System.Drawing.Size(72, 24);
+            this.quitFormBtn.Text = "Thoát";
             // 
-            // cbKhoa
+            // toolStripSeparator1
             // 
-            this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(144, 40);
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(388, 29);
-            this.cbKhoa.TabIndex = 32;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
-            // inBtn
+            // toolStripLabel1
             // 
-            this.inBtn.Appearance.BackColor = System.Drawing.Color.Maroon;
-            this.inBtn.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.inBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inBtn.Appearance.Options.UseBackColor = true;
-            this.inBtn.Appearance.Options.UseBorderColor = true;
-            this.inBtn.Appearance.Options.UseFont = true;
-            this.inBtn.Location = new System.Drawing.Point(144, 206);
-            this.inBtn.Name = "inBtn";
-            this.inBtn.Size = new System.Drawing.Size(180, 49);
-            this.inBtn.TabIndex = 36;
-            this.inBtn.Text = "In Báo Cáo";
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(49, 24);
+            this.toolStripLabel1.Text = "Khoa:";
             // 
-            // label1
+            // toolStripComboBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 21);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Khoa";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 21);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Tên Lớp";
-            // 
-            // cbLop
-            // 
-            this.cbLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(144, 102);
-            this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(247, 29);
-            this.cbLop.TabIndex = 33;
-            // 
-            // maLop
-            // 
-            this.maLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maLop.Location = new System.Drawing.Point(412, 102);
-            this.maLop.Name = "maLop";
-            this.maLop.Size = new System.Drawing.Size(120, 29);
-            this.maLop.TabIndex = 34;
+            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 27);
             // 
             // ReportBDTongKet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 656);
+            this.ClientSize = new System.Drawing.Size(1491, 268);
             this.ControlBox = false;
-            this.Controls.Add(this.inBtn2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.tool);
             this.Name = "ReportBDTongKet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng Điểm Tổng Kết";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).EndInit();
-            this.inBtn2.ResumeLayout(false);
-            this.tabNavigationPage1.ResumeLayout(false);
-            this.tabNavigationPage1.PerformLayout();
-            this.tabNavigationPage2.ResumeLayout(false);
-            this.tabNavigationPage2.PerformLayout();
+            this.tool.ResumeLayout(false);
+            this.tool.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraBars.Navigation.TabPane inBtn2;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txMaLop;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton inBtnNhap;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private System.Windows.Forms.ComboBox cbKhoa;
-        private DevExpress.XtraEditors.SimpleButton inBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbLop;
-        private System.Windows.Forms.TextBox maLop;
+
+        private System.Windows.Forms.ToolStrip tool;
+        private System.Windows.Forms.ToolStripButton addBtn;
+        private System.Windows.Forms.ToolStripButton deleteBtn;
+        private System.Windows.Forms.ToolStripButton adjustBtn;
+        private System.Windows.Forms.ToolStripButton undoBtn;
+        private System.Windows.Forms.ToolStripButton saveBtn;
+        private System.Windows.Forms.ToolStripButton exitBtn;
+        private System.Windows.Forms.ToolStripButton reloadBtn;
+        private System.Windows.Forms.ToolStripButton quitFormBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
     }
 }

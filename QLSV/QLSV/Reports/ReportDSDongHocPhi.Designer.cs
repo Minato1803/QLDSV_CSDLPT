@@ -58,7 +58,7 @@
             // 
             // inBtn
             // 
-            this.inBtn.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.inBtn.Appearance.BackColor = System.Drawing.Color.Yellow;
             this.inBtn.Appearance.BorderColor = System.Drawing.Color.Transparent;
             this.inBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inBtn.Appearance.ForeColor = System.Drawing.Color.Black;

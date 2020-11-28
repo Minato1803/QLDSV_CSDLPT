@@ -25,27 +25,7 @@ namespace QLSV
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

@@ -25,8 +25,8 @@ namespace QLSV
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLDSVDataSet.V_DSPM' table. You can move, or remove it, as needed.
-            this.v_DSPMTableAdapter.Fill(this.qLDSVDataSet.V_DSPM);
+            // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DSPM' table. You can move, or remove it, as needed.
+            this.v_DSPMTableAdapter1.Fill(this.qLDSVDataSet1.V_DSPM);
             Program.servername = comboBoxKhoa.SelectedValue.ToString();
         }
 
@@ -56,7 +56,7 @@ namespace QLSV
                 }
                 if (e.CloseReason == CloseReason.UserClosing)
                 {
-                    DialogResult result = MessageBox.Show("Bạn có muốn thoát ứng dụng?", "Thoát Đăng Nhập", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thoát Đăng Nhập", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         Environment.Exit(0);
@@ -75,17 +75,20 @@ namespace QLSV
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(this.userName.Text))
+            if (string.IsNullOrEmpty(this.userName.Text))
             {
-                MessageBox.Show("Tên tài khoản không được rỗng", "Lỗi", MessageBoxButtons.OK);
-
                 userName.Focus();
                 return;
 
             }
+            else if(userName.Text.Contains(" "))
+            {
+                userName.Clear();
+                userName.Focus();
+                return;
+            }
             else if (string.IsNullOrEmpty(this.passWord.Text))
             {
-                MessageBox.Show("Mật khẩu không được rỗng", "Lỗi", MessageBoxButtons.OK);
                 passWord.Focus();
                 return;
             }
@@ -154,9 +157,9 @@ namespace QLSV
                     this.DialogResult = DialogResult.None;
                     return;
                 }
-                
-            }
+
         }
+    }
 
         private void svgImageBox1_Click(object sender, EventArgs e)
         {
@@ -187,6 +190,11 @@ namespace QLSV
             {
                 epUsername.Icon = Properties.Resources.exclamation;
                 epUsername.SetError(userName, "Tài khoản không được trống!");
+            }
+            else if(userName.Text.Contains(" "))
+            {
+                epUsername.Icon = Properties.Resources.exclamation;
+                epUsername.SetError(userName, "Trong tài khoản không được chứa khoảng trống!");
             }
             else
             {

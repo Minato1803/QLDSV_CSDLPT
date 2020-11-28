@@ -16,25 +16,6 @@ namespace QLSV
         public ReportBDTongKet()
         {
             InitializeComponent();
-            txMaLop.Select();
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
         }
     }
 }

@@ -41,7 +41,7 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Location = new System.Drawing.Point(446, 290);
             this.simpleButton2.Name = "simpleButton2";
@@ -54,7 +54,7 @@
             // 
             this.inBtn.Appearance.BackColor = System.Drawing.Color.MediumOrchid;
             this.inBtn.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.inBtn.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inBtn.Appearance.Options.UseBackColor = true;
             this.inBtn.Appearance.Options.UseBorderColor = true;
             this.inBtn.Appearance.Options.UseFont = true;
@@ -93,20 +93,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(144, 210);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 21);
+            this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 18;
             this.label2.Text = "Tên Lớp";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(167, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 21);
+            this.label1.Size = new System.Drawing.Size(50, 19);
             this.label1.TabIndex = 17;
             this.label1.Text = "Khoa";
             // 

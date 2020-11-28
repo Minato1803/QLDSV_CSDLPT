@@ -4,7 +4,7 @@
 
     partial class QLDSVDataSet
     {
-        partial class DataTable1DataTable
+        partial class V_DSGVDataTable
         {
         }
     }

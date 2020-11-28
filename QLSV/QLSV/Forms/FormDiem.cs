@@ -20,14 +20,7 @@ namespace QLSV
 
         private void quitFormBtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            this.Close();
         }
-
     }
-
-    
 }
