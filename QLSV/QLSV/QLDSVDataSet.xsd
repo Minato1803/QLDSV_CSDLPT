@@ -2,14 +2,15 @@
 <xs:schema id="QLDSVDataSet" targetNamespace="http://tempuri.org/QLDSVDataSet.xsd" xmlns:mstns="http://tempuri.org/QLDSVDataSet.xsd" xmlns="http://tempuri.org/QLDSVDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLDSVConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLDSVConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLSV.Properties.Settings.GlobalReference.Default.QLDSVConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLDSVConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLDSVConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLSV.Properties.Settings.GlobalReference.Default.QLDSVConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DSPMTableAdapter" GeneratorDataComponentClassName="V_DSPMTableAdapter" Name="V_DSPM" UserDataComponentName="V_DSPMTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.V_DSPM" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDSVConnectionString1 (Settings)" DbObjectName="QLDSV.dbo.V_DSPM" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT TENKHOA, TENSERVER FROM dbo.V_DSPM</CommandText>
@@ -26,7 +27,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_REPORT_DSSVTableAdapter" GeneratorDataComponentClassName="SP_REPORT_DSSVTableAdapter" Name="SP_REPORT_DSSV" UserDataComponentName="SP_REPORT_DSSVTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.SP_REPORT_DSSV" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDSVConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_REPORT_DSSV</CommandText>
@@ -50,7 +51,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DSGVTableAdapter" GeneratorDataComponentClassName="V_DSGVTableAdapter" Name="V_DSGV" UserDataComponentName="V_DSGVTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.V_DSGV" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDSVConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT MAGV, HOTEN, MAKH FROM dbo.V_DSGV</CommandText>
@@ -68,7 +69,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_REPORT_DSDHPTableAdapter" GeneratorDataComponentClassName="SP_REPORT_DSDHPTableAdapter" Name="SP_REPORT_DSDHP" UserDataComponentName="SP_REPORT_DSDHPTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.SP_REPORT_DSDHP" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDSVConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_REPORT_DSDHP</CommandText>
@@ -91,7 +92,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DSSV_TaoTKTableAdapter" GeneratorDataComponentClassName="V_DSSV_TaoTKTableAdapter" Name="V_DSSV_TaoTK" UserDataComponentName="V_DSSV_TaoTKTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.V_DSSV_TaoTK" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDSVConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT MASV, HOTEN, MAKH, MALOP FROM dbo.V_DSSV_TaoTK</CommandText>
@@ -116,7 +117,7 @@
   <xs:element name="QLDSVDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLDSVDataSet" msprop:Generator_UserDSName="QLDSVDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="V_DSPM" msprop:Generator_TableClassName="V_DSPMDataTable" msprop:Generator_TableVarName="tableV_DSPM" msprop:Generator_TablePropName="V_DSPM" msprop:Generator_RowDeletingName="V_DSPMRowDeleting" msprop:Generator_RowChangingName="V_DSPMRowChanging" msprop:Generator_RowEvHandlerName="V_DSPMRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSPMRowDeleted" msprop:Generator_UserTableName="V_DSPM" msprop:Generator_RowChangedName="V_DSPMRowChanged" msprop:Generator_RowEvArgName="V_DSPMRowChangeEvent" msprop:Generator_RowClassName="V_DSPMRow">
+        <xs:element name="V_DSPM" msprop:Generator_TableClassName="V_DSPMDataTable" msprop:Generator_TableVarName="tableV_DSPM" msprop:Generator_RowChangedName="V_DSPMRowChanged" msprop:Generator_TablePropName="V_DSPM" msprop:Generator_RowDeletingName="V_DSPMRowDeleting" msprop:Generator_RowChangingName="V_DSPMRowChanging" msprop:Generator_RowEvHandlerName="V_DSPMRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSPMRowDeleted" msprop:Generator_RowClassName="V_DSPMRow" msprop:Generator_UserTableName="V_DSPM" msprop:Generator_RowEvArgName="V_DSPMRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TENKHOA" msprop:Generator_ColumnVarNameInTable="columnTENKHOA" msprop:Generator_ColumnPropNameInRow="TENKHOA" msprop:Generator_ColumnPropNameInTable="TENKHOAColumn" msprop:Generator_UserColumnName="TENKHOA" minOccurs="0">
@@ -136,7 +137,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_REPORT_DSSV" msprop:Generator_TableClassName="SP_REPORT_DSSVDataTable" msprop:Generator_TableVarName="tableSP_REPORT_DSSV" msprop:Generator_RowChangedName="SP_REPORT_DSSVRowChanged" msprop:Generator_TablePropName="SP_REPORT_DSSV" msprop:Generator_RowDeletingName="SP_REPORT_DSSVRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_DSSVRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_DSSVRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_DSSVRowDeleted" msprop:Generator_RowClassName="SP_REPORT_DSSVRow" msprop:Generator_UserTableName="SP_REPORT_DSSV" msprop:Generator_RowEvArgName="SP_REPORT_DSSVRowChangeEvent">
+        <xs:element name="SP_REPORT_DSSV" msprop:Generator_TableClassName="SP_REPORT_DSSVDataTable" msprop:Generator_TableVarName="tableSP_REPORT_DSSV" msprop:Generator_TablePropName="SP_REPORT_DSSV" msprop:Generator_RowDeletingName="SP_REPORT_DSSVRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_DSSVRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_DSSVRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_DSSVRowDeleted" msprop:Generator_UserTableName="SP_REPORT_DSSV" msprop:Generator_RowChangedName="SP_REPORT_DSSVRowChanged" msprop:Generator_RowEvArgName="SP_REPORT_DSSVRowChangeEvent" msprop:Generator_RowClassName="SP_REPORT_DSSVRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HO" msprop:Generator_ColumnVarNameInTable="columnHO" msprop:Generator_ColumnPropNameInRow="HO" msprop:Generator_ColumnPropNameInTable="HOColumn" msprop:Generator_UserColumnName="HO" minOccurs="0">
@@ -184,7 +185,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V_DSGV" msprop:Generator_TableClassName="V_DSGVDataTable" msprop:Generator_TableVarName="tableV_DSGV" msprop:Generator_TablePropName="V_DSGV" msprop:Generator_RowDeletingName="V_DSGVRowDeleting" msprop:Generator_RowChangingName="V_DSGVRowChanging" msprop:Generator_RowEvHandlerName="V_DSGVRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSGVRowDeleted" msprop:Generator_UserTableName="V_DSGV" msprop:Generator_RowChangedName="V_DSGVRowChanged" msprop:Generator_RowEvArgName="V_DSGVRowChangeEvent" msprop:Generator_RowClassName="V_DSGVRow">
+        <xs:element name="V_DSGV" msprop:Generator_TableClassName="V_DSGVDataTable" msprop:Generator_TableVarName="tableV_DSGV" msprop:Generator_RowChangedName="V_DSGVRowChanged" msprop:Generator_TablePropName="V_DSGV" msprop:Generator_RowDeletingName="V_DSGVRowDeleting" msprop:Generator_RowChangingName="V_DSGVRowChanging" msprop:Generator_RowEvHandlerName="V_DSGVRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSGVRowDeleted" msprop:Generator_RowClassName="V_DSGVRow" msprop:Generator_UserTableName="V_DSGV" msprop:Generator_RowEvArgName="V_DSGVRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MAGV" msprop:Generator_ColumnVarNameInTable="columnMAGV" msprop:Generator_ColumnPropNameInRow="MAGV" msprop:Generator_ColumnPropNameInTable="MAGVColumn" msprop:Generator_UserColumnName="MAGV">
@@ -211,7 +212,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_REPORT_DSDHP" msprop:Generator_TableClassName="SP_REPORT_DSDHPDataTable" msprop:Generator_TableVarName="tableSP_REPORT_DSDHP" msprop:Generator_TablePropName="SP_REPORT_DSDHP" msprop:Generator_RowDeletingName="SP_REPORT_DSDHPRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_DSDHPRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_DSDHPRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_DSDHPRowDeleted" msprop:Generator_UserTableName="SP_REPORT_DSDHP" msprop:Generator_RowChangedName="SP_REPORT_DSDHPRowChanged" msprop:Generator_RowEvArgName="SP_REPORT_DSDHPRowChangeEvent" msprop:Generator_RowClassName="SP_REPORT_DSDHPRow">
+        <xs:element name="SP_REPORT_DSDHP" msprop:Generator_TableClassName="SP_REPORT_DSDHPDataTable" msprop:Generator_TableVarName="tableSP_REPORT_DSDHP" msprop:Generator_RowChangedName="SP_REPORT_DSDHPRowChanged" msprop:Generator_TablePropName="SP_REPORT_DSDHP" msprop:Generator_RowDeletingName="SP_REPORT_DSDHPRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_DSDHPRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_DSDHPRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_DSDHPRowDeleted" msprop:Generator_RowClassName="SP_REPORT_DSDHPRow" msprop:Generator_UserTableName="SP_REPORT_DSDHP" msprop:Generator_RowEvArgName="SP_REPORT_DSDHPRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HOTEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
@@ -226,7 +227,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V_DSSV_TaoTK" msprop:Generator_TableClassName="V_DSSV_TaoTKDataTable" msprop:Generator_TableVarName="tableV_DSSV_TaoTK" msprop:Generator_TablePropName="V_DSSV_TaoTK" msprop:Generator_RowDeletingName="V_DSSV_TaoTKRowDeleting" msprop:Generator_RowChangingName="V_DSSV_TaoTKRowChanging" msprop:Generator_RowEvHandlerName="V_DSSV_TaoTKRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSSV_TaoTKRowDeleted" msprop:Generator_UserTableName="V_DSSV_TaoTK" msprop:Generator_RowChangedName="V_DSSV_TaoTKRowChanged" msprop:Generator_RowEvArgName="V_DSSV_TaoTKRowChangeEvent" msprop:Generator_RowClassName="V_DSSV_TaoTKRow">
+        <xs:element name="V_DSSV_TaoTK" msprop:Generator_TableClassName="V_DSSV_TaoTKDataTable" msprop:Generator_TableVarName="tableV_DSSV_TaoTK" msprop:Generator_RowChangedName="V_DSSV_TaoTKRowChanged" msprop:Generator_TablePropName="V_DSSV_TaoTK" msprop:Generator_RowDeletingName="V_DSSV_TaoTKRowDeleting" msprop:Generator_RowChangingName="V_DSSV_TaoTKRowChanging" msprop:Generator_RowEvHandlerName="V_DSSV_TaoTKRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSSV_TaoTKRowDeleted" msprop:Generator_RowClassName="V_DSSV_TaoTKRow" msprop:Generator_UserTableName="V_DSSV_TaoTK" msprop:Generator_RowEvArgName="V_DSSV_TaoTKRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MASV" msprop:Generator_ColumnVarNameInTable="columnMASV" msprop:Generator_ColumnPropNameInRow="MASV" msprop:Generator_ColumnPropNameInTable="MASVColumn" msprop:Generator_UserColumnName="MASV">

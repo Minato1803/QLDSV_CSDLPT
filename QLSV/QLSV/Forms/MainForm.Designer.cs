@@ -58,6 +58,8 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -84,10 +86,12 @@
             this.bangDiemThi,
             this.bangDiemMonHoc,
             this.bangDiemTongKet,
-            this.phieuDiem});
+            this.phieuDiem,
+            this.barStaticItem1,
+            this.barStaticItem2});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbon.MaxItemId = 22;
+            this.ribbon.MaxItemId = 24;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 385;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -311,6 +315,7 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.bottomRule);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar.ItemLinks.Add(this.bottomName);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 863);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -321,6 +326,22 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.AllowRightClickInMenu = false;
+            this.barStaticItem1.Caption = "|";
+            this.barStaticItem1.Id = 22;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.AllowRightClickInMenu = false;
+            this.barStaticItem2.Caption = "|";
+            this.barStaticItem2.Id = 23;
+            this.barStaticItem2.Name = "barStaticItem2";
+            this.barStaticItem2.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
             // 
             // MainForm
             // 
@@ -380,5 +401,7 @@
         private DevExpress.XtraBars.BarButtonItem phieuDiem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
     }
 }

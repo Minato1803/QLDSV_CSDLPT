@@ -73,5 +73,10 @@ namespace QLSV
 
             return check;
         }
+
+        private void clearGiaoVien_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
