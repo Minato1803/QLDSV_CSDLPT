@@ -21,7 +21,7 @@ namespace QLSV
         private void FormTaoTaiKhoan_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLDSVDataSet1.GIANGVIEN' table. You can move, or remove it, as needed.
-            this.gIANGVIENTableAdapter.Fill(this.qLDSVDataSet1.GIANGVIEN);
+            //this.gIANGVIENTableAdapter.Fill(this.qLDSVDataSet1.GIANGVIEN);
             // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DSSV_TaoTK' table. You can move, or remove it, as needed.
             this.v_DSSV_TaoTKTableAdapter1.Fill(this.qLDSVDataSet1.V_DSSV_TaoTK);
             // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DSGV' table. You can move, or remove it, as needed.
@@ -30,7 +30,7 @@ namespace QLSV
             this.v_DSPMTableAdapter1.Fill(this.qLDSVDataSet1.V_DSPM);
 
 
-
+            tabNavigationPage2.PageVisible = false;
         }
 
         private void dangkiGiaoVien_Click(object sender, EventArgs e)
