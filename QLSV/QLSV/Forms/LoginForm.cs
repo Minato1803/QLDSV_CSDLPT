@@ -26,7 +26,8 @@ namespace QLSV
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DSPM' table. You can move, or remove it, as needed.
-            this.v_DSPMTableAdapter1.Fill(this.qLDSVDataSet1.V_DSPM);
+            this.v_DSPMTableAdapter.Fill(this.qLDSVDataSet.V_DSPM);
+            comboBoxKhoa.SelectedIndex = 0;
             Program.servername = comboBoxKhoa.SelectedValue.ToString();
         }
 

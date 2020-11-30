@@ -33,6 +33,8 @@
             this.userName = new System.Windows.Forms.TextBox();
             this.passWord = new System.Windows.Forms.TextBox();
             this.comboBoxKhoa = new System.Windows.Forms.ComboBox();
+            this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.loginButton = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,15 +43,13 @@
             this.svgImageBox1 = new DevExpress.XtraEditors.SvgImageBox();
             this.epUsername = new System.Windows.Forms.ErrorProvider(this.components);
             this.epPassword = new System.Windows.Forms.ErrorProvider(this.components);
-            this.qLDSVDataSet1 = new QLSV.QLDSVDataSet();
-            this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.v_DSPMTableAdapter1 = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
+            this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // userName
@@ -94,6 +94,16 @@
             this.comboBoxKhoa.TabIndex = 2;
             this.comboBoxKhoa.ValueMember = "TENSERVER";
             this.comboBoxKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
+            // 
+            // vDSPMBindingSource
+            // 
+            this.vDSPMBindingSource.DataMember = "V_DSPM";
+            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // qLDSVDataSet1
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // loginButton
             // 
@@ -175,19 +185,9 @@
             this.epPassword.ContainerControl = this;
             this.epPassword.Icon = ((System.Drawing.Icon)(resources.GetObject("epPassword.Icon")));
             // 
-            // qLDSVDataSet1
-            // 
-            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet";
-            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vDSPMBindingSource
-            // 
-            this.vDSPMBindingSource.DataMember = "V_DSPM";
-            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet1;
-            // 
             // v_DSPMTableAdapter1
             // 
-            this.v_DSPMTableAdapter1.ClearBeforeFill = true;
+            this.v_DSPMTableAdapter.ClearBeforeFill = true;
             // 
             // LoginForm
             // 
@@ -217,12 +217,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sinh Viên";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,12 +239,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private QLDSVDataSet qLDSVDataSet;
+        private System.Windows.Forms.BindingSource vDSPMBindingSource;
         private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
         private DevExpress.XtraEditors.SvgImageBox svgImageBox1;
         private System.Windows.Forms.ErrorProvider epUsername;
         private System.Windows.Forms.ErrorProvider epPassword;
-        private QLDSVDataSet qLDSVDataSet1;
-        private System.Windows.Forms.BindingSource vDSPMBindingSource;
-        private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter1;
+
     }
 }

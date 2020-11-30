@@ -18,11 +18,13 @@ namespace QLSV
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlDataAdapter da;
+        public static BindingSource bds = new BindingSource();
+        public static BindingSource bds_dsgv = new BindingSource();
         public static SqlDataReader myReader =null;
         public static String servername = "MINATO";
-        public static String servername1 = "";
-        public static String servername2 = "";
-        public static String servername3 = "";
+
+        public static String[] GetServerName 
+                            = new string[3]{ "MINATO\\MSSQLSERVER1", "MINATO\\MSSQLSERVER2", "MINATO\\MSSQLSERVER3" };
         public static String username = "";
         // lưu các login và password từ các form khi chương trình chạy
         public static String mlogin = "";
@@ -40,10 +42,10 @@ namespace QLSV
        
         // 3 Mgroup , MHoten, MKhoa dùng để hiển thi thông tin login vào
         // MGroup là mã nhóm quyền khi của login đó đăng nhập vào.
-        public static String mGroup = "";
+        public static String mGroup = ""; // PGV KHOA USERS PKeToan
         public static String mHoten = "";
-        public static int mKhoa = 0;
-
+        public static int mKhoa = 0; //->0 CNTT 1 VT 2 KT
+        public static string[] TKhoa = new string[3] { "CNTT", "VT", "KT"};
         // trạng thái đăng nhập
         public static Boolean logged = false;
         // lưu danh sách các nhóm quyền

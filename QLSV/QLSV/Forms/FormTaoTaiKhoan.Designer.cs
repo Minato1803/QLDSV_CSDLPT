@@ -35,19 +35,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tabGV = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.clearGiaoVien = new DevExpress.XtraEditors.SimpleButton();
             this.dangkiGiaoVien = new DevExpress.XtraEditors.SimpleButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbRoles = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbMaGiaoVien = new System.Windows.Forms.ComboBox();
             this.vDSGVBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDSVDataSet1 = new QLSV.QLDSVDataSet();
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.tabSV = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.dangkiSinhVien = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,20 +55,23 @@
             this.cbMaSinhVien = new System.Windows.Forms.ComboBox();
             this.vDSSVTaoTKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbLop = new System.Windows.Forms.ComboBox();
+            this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.confirmPassWord = new DevExpress.XtraEditors.TextEdit();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.v_DSPMTableAdapter1 = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
-            this.v_DSGVTableAdapter1 = new QLSV.QLDSVDataSetTableAdapters.V_DSGVTableAdapter();
-            this.v_DSSV_TaoTKTableAdapter1 = new QLSV.QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter();
+            this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
+            this.v_DSGVTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSGVTableAdapter();
+            this.v_DSSV_TaoTKTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter();
+            this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
-            this.tabNavigationPage1.SuspendLayout();
+            this.tabGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSGVBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
-            this.tabNavigationPage2.SuspendLayout();
+            this.tabSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmPassWord.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
@@ -127,37 +130,37 @@
             // 
             this.tabPane1.Appearance.BackColor = System.Drawing.Color.White;
             this.tabPane1.Appearance.Options.UseBackColor = true;
-            this.tabPane1.Controls.Add(this.tabNavigationPage1);
-            this.tabPane1.Controls.Add(this.tabNavigationPage2);
+            this.tabPane1.Controls.Add(this.tabGV);
+            this.tabPane1.Controls.Add(this.tabSV);
             this.tabPane1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPane1.Location = new System.Drawing.Point(166, 303);
             this.tabPane1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.tabPane1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage1,
-            this.tabNavigationPage2});
+            this.tabGV,
+            this.tabSV});
             this.tabPane1.RegularSize = new System.Drawing.Size(302, 385);
-            this.tabPane1.SelectedPage = this.tabNavigationPage1;
+            this.tabPane1.SelectedPage = this.tabGV;
             this.tabPane1.Size = new System.Drawing.Size(302, 385);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
             // 
-            // tabNavigationPage1
+            // tabGV
             // 
-            this.tabNavigationPage1.Caption = "Giáo Viên";
-            this.tabNavigationPage1.Controls.Add(this.clearGiaoVien);
-            this.tabNavigationPage1.Controls.Add(this.dangkiGiaoVien);
-            this.tabNavigationPage1.Controls.Add(this.label8);
-            this.tabNavigationPage1.Controls.Add(this.comboBox1);
-            this.tabNavigationPage1.Controls.Add(this.label7);
-            this.tabNavigationPage1.Controls.Add(this.label6);
-            this.tabNavigationPage1.Controls.Add(this.cbMaGiaoVien);
-            this.tabNavigationPage1.Controls.Add(this.cbKhoa);
-            this.tabNavigationPage1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(302, 339);
+            this.tabGV.Caption = "Giáo Viên";
+            this.tabGV.Controls.Add(this.clearGiaoVien);
+            this.tabGV.Controls.Add(this.dangkiGiaoVien);
+            this.tabGV.Controls.Add(this.label8);
+            this.tabGV.Controls.Add(this.cbRoles);
+            this.tabGV.Controls.Add(this.label7);
+            this.tabGV.Controls.Add(this.label6);
+            this.tabGV.Controls.Add(this.cbMaGiaoVien);
+            this.tabGV.Controls.Add(this.cbKhoa);
+            this.tabGV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabGV.Name = "tabGV";
+            this.tabGV.Size = new System.Drawing.Size(302, 339);
             // 
             // clearGiaoVien
             // 
@@ -195,19 +198,24 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Vai trò";
             // 
-            // comboBox1
+            // cbRoles
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 208);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(301, 32);
-            this.comboBox1.TabIndex = 4;
+            this.cbRoles.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbRoles.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRoles.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.cbRoles.FormattingEnabled = true;
+            this.cbRoles.Items.AddRange(new object[] {
+            "PGV",
+            "KHOA",
+            "USERS",
+            "PKeToan"});
+            this.cbRoles.Location = new System.Drawing.Point(0, 208);
+            this.cbRoles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbRoles.Name = "cbRoles";
+            this.cbRoles.Size = new System.Drawing.Size(301, 32);
+            this.cbRoles.TabIndex = 4;
             // 
             // label7
             // 
@@ -232,6 +240,8 @@
             // cbMaGiaoVien
             // 
             this.cbMaGiaoVien.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbMaGiaoVien.DataSource = this.vDSGVBindingSource;
+            this.cbMaGiaoVien.DisplayMember = "HOTEN";
             this.cbMaGiaoVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaGiaoVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbMaGiaoVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -243,16 +253,17 @@
             this.cbMaGiaoVien.Size = new System.Drawing.Size(301, 32);
             this.cbMaGiaoVien.TabIndex = 1;
             this.cbMaGiaoVien.ValueMember = "MAGV";
+            this.cbMaGiaoVien.SelectedIndexChanged += new System.EventHandler(this.cbMaGiaoVien_SelectedIndexChanged);
             // 
             // vDSGVBindingSource
             // 
             this.vDSGVBindingSource.DataMember = "V_DSGV";
-            this.vDSGVBindingSource.DataSource = this.qLDSVDataSet1;
+            this.vDSGVBindingSource.DataSource = this.qLDSVDataSet;
             // 
-            // qLDSVDataSet1
+            // qLDSVDataSet
             // 
-            this.qLDSVDataSet1.DataSetName = "QLDSVDataSet";
-            this.qLDSVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbKhoa
             // 
@@ -270,25 +281,26 @@
             this.cbKhoa.Size = new System.Drawing.Size(301, 32);
             this.cbKhoa.TabIndex = 0;
             this.cbKhoa.ValueMember = "TENSERVER";
+            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
             // 
             // vDSPMBindingSource
             // 
             this.vDSPMBindingSource.DataMember = "V_DSPM";
-            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet1;
+            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
             // 
-            // tabNavigationPage2
+            // tabSV
             // 
-            this.tabNavigationPage2.Caption = "Sinh Viên";
-            this.tabNavigationPage2.Controls.Add(this.dangkiSinhVien);
-            this.tabNavigationPage2.Controls.Add(this.label5);
-            this.tabNavigationPage2.Controls.Add(this.label4);
-            this.tabNavigationPage2.Controls.Add(this.clearSinhVien);
-            this.tabNavigationPage2.Controls.Add(this.cbMaSinhVien);
-            this.tabNavigationPage2.Controls.Add(this.cbLop);
-            this.tabNavigationPage2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(302, 339);
+            this.tabSV.Caption = "Sinh Viên";
+            this.tabSV.Controls.Add(this.dangkiSinhVien);
+            this.tabSV.Controls.Add(this.label5);
+            this.tabSV.Controls.Add(this.label4);
+            this.tabSV.Controls.Add(this.clearSinhVien);
+            this.tabSV.Controls.Add(this.cbMaSinhVien);
+            this.tabSV.Controls.Add(this.cbLop);
+            this.tabSV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabSV.Name = "tabSV";
+            this.tabSV.Size = new System.Drawing.Size(302, 339);
             // 
             // dangkiSinhVien
             // 
@@ -302,6 +314,7 @@
             this.dangkiSinhVien.Size = new System.Drawing.Size(138, 42);
             this.dangkiSinhVien.TabIndex = 13;
             this.dangkiSinhVien.Text = "Đăng kí";
+            this.dangkiSinhVien.Click += new System.EventHandler(this.dangkiSinhVien_Click);
             // 
             // label5
             // 
@@ -354,12 +367,12 @@
             // vDSSVTaoTKBindingSource
             // 
             this.vDSSVTaoTKBindingSource.DataMember = "V_DSSV_TaoTK";
-            this.vDSSVTaoTKBindingSource.DataSource = this.qLDSVDataSet1;
+            this.vDSSVTaoTKBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // cbLop
             // 
             this.cbLop.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.cbLop.DataSource = this.vDSSVTaoTKBindingSource;
+            this.cbLop.DataSource = this.vGETDSLOPBindingSource;
             this.cbLop.DisplayMember = "MALOP";
             this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -371,7 +384,13 @@
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(301, 32);
             this.cbLop.TabIndex = 8;
-            this.cbLop.ValueMember = "MALOP";
+            this.cbLop.ValueMember = "MAKH";
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
+            // 
+            // vGETDSLOPBindingSource
+            // 
+            this.vGETDSLOPBindingSource.DataMember = "V_GETDSLOP";
+            this.vGETDSLOPBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // pictureBox1
             // 
@@ -399,17 +418,21 @@
             // 
             this.dxErrorProvider1.ContainerControl = this;
             // 
-            // v_DSPMTableAdapter1
+            // v_DSPMTableAdapter
             // 
-            this.v_DSPMTableAdapter1.ClearBeforeFill = true;
+            this.v_DSPMTableAdapter.ClearBeforeFill = true;
             // 
-            // v_DSGVTableAdapter1
+            // v_DSGVTableAdapter
             // 
-            this.v_DSGVTableAdapter1.ClearBeforeFill = true;
+            this.v_DSGVTableAdapter.ClearBeforeFill = true;
             // 
-            // v_DSSV_TaoTKTableAdapter1
+            // v_DSSV_TaoTKTableAdapter
             // 
-            this.v_DSSV_TaoTKTableAdapter1.ClearBeforeFill = true;
+            this.v_DSSV_TaoTKTableAdapter.ClearBeforeFill = true;
+            // 
+            // v_GETDSLOPTableAdapter
+            // 
+            this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
             // 
             // FormTaoTaiKhoan
             // 
@@ -417,7 +440,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1755, 821);
+            this.ClientSize = new System.Drawing.Size(1899, 965);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabPane1);
@@ -435,14 +458,15 @@
             this.Load += new System.EventHandler(this.FormTaoTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
-            this.tabNavigationPage1.ResumeLayout(false);
-            this.tabNavigationPage1.PerformLayout();
+            this.tabGV.ResumeLayout(false);
+            this.tabGV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSGVBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
-            this.tabNavigationPage2.ResumeLayout(false);
-            this.tabNavigationPage2.PerformLayout();
+            this.tabSV.ResumeLayout(false);
+            this.tabSV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmPassWord.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
@@ -460,8 +484,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabGV;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabSV;
         private System.Windows.Forms.ComboBox cbMaGiaoVien;
         private System.Windows.Forms.ComboBox cbKhoa;
         private System.Windows.Forms.ComboBox cbMaSinhVien;
@@ -471,23 +495,21 @@
         private DevExpress.XtraEditors.SimpleButton dangkiGiaoVien;
         private DevExpress.XtraEditors.SimpleButton clearGiaoVien;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbRoles;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.SimpleButton dangkiSinhVien;
         private DevExpress.XtraEditors.SimpleButton clearSinhVien;
         private System.Windows.Forms.PictureBox pictureBox1;
         private QLDSVDataSet qLDSVDataSet;
+        private System.Windows.Forms.BindingSource vDSPMBindingSource;
         private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
+        private System.Windows.Forms.BindingSource vDSGVBindingSource;
         private QLDSVDataSetTableAdapters.V_DSGVTableAdapter v_DSGVTableAdapter;
+        private System.Windows.Forms.BindingSource vDSSVTaoTKBindingSource;
         private QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter v_DSSV_TaoTKTableAdapter;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
-        private QLDSVDataSet qLDSVDataSet1;
-        private System.Windows.Forms.BindingSource vDSPMBindingSource;
-        private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter1;
-        private System.Windows.Forms.BindingSource vDSGVBindingSource;
-        private QLDSVDataSetTableAdapters.V_DSGVTableAdapter v_DSGVTableAdapter1;
-        private System.Windows.Forms.BindingSource vDSSVTaoTKBindingSource;
-        private QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter v_DSSV_TaoTKTableAdapter1;
+        private System.Windows.Forms.BindingSource vGETDSLOPBindingSource;
+        private QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter v_GETDSLOPTableAdapter;
     }
 }

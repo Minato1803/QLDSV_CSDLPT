@@ -663,6 +663,24 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_GETDSLOPTableAdapter" GeneratorDataComponentClassName="V_GETDSLOPTableAdapter" Name="V_GETDSLOP" UserDataComponentName="V_GETDSLOPTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLDSVConnectionString (Settings)" DbObjectName="QLDSV.dbo.V_GETDSLOP" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MALOP, TENLOP, MAKH FROM dbo.V_GETDSLOP</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MALOP" DataSetColumn="MALOP" />
+              <Mapping SourceColumn="TENLOP" DataSetColumn="TENLOP" />
+              <Mapping SourceColumn="MAKH" DataSetColumn="MAKH" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -671,7 +689,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
   <xs:element name="QLDSVDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLDSVDataSet" msprop:Generator_UserDSName="QLDSVDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CT_DONGHOCPHI" msprop:Generator_TableClassName="CT_DONGHOCPHIDataTable" msprop:Generator_TableVarName="tableCT_DONGHOCPHI" msprop:Generator_TablePropName="CT_DONGHOCPHI" msprop:Generator_RowDeletingName="CT_DONGHOCPHIRowDeleting" msprop:Generator_RowChangingName="CT_DONGHOCPHIRowChanging" msprop:Generator_RowEvHandlerName="CT_DONGHOCPHIRowChangeEventHandler" msprop:Generator_RowDeletedName="CT_DONGHOCPHIRowDeleted" msprop:Generator_UserTableName="CT_DONGHOCPHI" msprop:Generator_RowChangedName="CT_DONGHOCPHIRowChanged" msprop:Generator_RowEvArgName="CT_DONGHOCPHIRowChangeEvent" msprop:Generator_RowClassName="CT_DONGHOCPHIRow">
+        <xs:element name="CT_DONGHOCPHI" msprop:Generator_TableClassName="CT_DONGHOCPHIDataTable" msprop:Generator_TableVarName="tableCT_DONGHOCPHI" msprop:Generator_RowChangedName="CT_DONGHOCPHIRowChanged" msprop:Generator_TablePropName="CT_DONGHOCPHI" msprop:Generator_RowDeletingName="CT_DONGHOCPHIRowDeleting" msprop:Generator_RowChangingName="CT_DONGHOCPHIRowChanging" msprop:Generator_RowEvHandlerName="CT_DONGHOCPHIRowChangeEventHandler" msprop:Generator_RowDeletedName="CT_DONGHOCPHIRowDeleted" msprop:Generator_RowClassName="CT_DONGHOCPHIRow" msprop:Generator_UserTableName="CT_DONGHOCPHI" msprop:Generator_RowEvArgName="CT_DONGHOCPHIRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MASV" msprop:Generator_ColumnVarNameInTable="columnMASV" msprop:Generator_ColumnPropNameInRow="MASV" msprop:Generator_ColumnPropNameInTable="MASVColumn" msprop:Generator_UserColumnName="MASV">
@@ -695,7 +713,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DIEM" msprop:Generator_TableClassName="DIEMDataTable" msprop:Generator_TableVarName="tableDIEM" msprop:Generator_TablePropName="DIEM" msprop:Generator_RowDeletingName="DIEMRowDeleting" msprop:Generator_RowChangingName="DIEMRowChanging" msprop:Generator_RowEvHandlerName="DIEMRowChangeEventHandler" msprop:Generator_RowDeletedName="DIEMRowDeleted" msprop:Generator_UserTableName="DIEM" msprop:Generator_RowChangedName="DIEMRowChanged" msprop:Generator_RowEvArgName="DIEMRowChangeEvent" msprop:Generator_RowClassName="DIEMRow">
+        <xs:element name="DIEM" msprop:Generator_TableClassName="DIEMDataTable" msprop:Generator_TableVarName="tableDIEM" msprop:Generator_RowChangedName="DIEMRowChanged" msprop:Generator_TablePropName="DIEM" msprop:Generator_RowDeletingName="DIEMRowDeleting" msprop:Generator_RowChangingName="DIEMRowChanging" msprop:Generator_RowEvHandlerName="DIEMRowChangeEventHandler" msprop:Generator_RowDeletedName="DIEMRowDeleted" msprop:Generator_RowClassName="DIEMRow" msprop:Generator_UserTableName="DIEM" msprop:Generator_RowEvArgName="DIEMRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MASV" msprop:Generator_ColumnVarNameInTable="columnMASV" msprop:Generator_ColumnPropNameInRow="MASV" msprop:Generator_ColumnPropNameInTable="MASVColumn" msprop:Generator_UserColumnName="MASV">
@@ -718,7 +736,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GIANGVIEN" msprop:Generator_TableClassName="GIANGVIENDataTable" msprop:Generator_TableVarName="tableGIANGVIEN" msprop:Generator_TablePropName="GIANGVIEN" msprop:Generator_RowDeletingName="GIANGVIENRowDeleting" msprop:Generator_RowChangingName="GIANGVIENRowChanging" msprop:Generator_RowEvHandlerName="GIANGVIENRowChangeEventHandler" msprop:Generator_RowDeletedName="GIANGVIENRowDeleted" msprop:Generator_UserTableName="GIANGVIEN" msprop:Generator_RowChangedName="GIANGVIENRowChanged" msprop:Generator_RowEvArgName="GIANGVIENRowChangeEvent" msprop:Generator_RowClassName="GIANGVIENRow">
+        <xs:element name="GIANGVIEN" msprop:Generator_TableClassName="GIANGVIENDataTable" msprop:Generator_TableVarName="tableGIANGVIEN" msprop:Generator_RowChangedName="GIANGVIENRowChanged" msprop:Generator_TablePropName="GIANGVIEN" msprop:Generator_RowDeletingName="GIANGVIENRowDeleting" msprop:Generator_RowChangingName="GIANGVIENRowChanging" msprop:Generator_RowEvHandlerName="GIANGVIENRowChangeEventHandler" msprop:Generator_RowDeletedName="GIANGVIENRowDeleted" msprop:Generator_RowClassName="GIANGVIENRow" msprop:Generator_UserTableName="GIANGVIEN" msprop:Generator_RowEvArgName="GIANGVIENRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MAGV" msprop:Generator_ColumnVarNameInTable="columnMAGV" msprop:Generator_ColumnPropNameInRow="MAGV" msprop:Generator_ColumnPropNameInTable="MAGVColumn" msprop:Generator_UserColumnName="MAGV">
@@ -753,7 +771,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HOCPHI" msprop:Generator_TableClassName="HOCPHIDataTable" msprop:Generator_TableVarName="tableHOCPHI" msprop:Generator_TablePropName="HOCPHI" msprop:Generator_RowDeletingName="HOCPHIRowDeleting" msprop:Generator_RowChangingName="HOCPHIRowChanging" msprop:Generator_RowEvHandlerName="HOCPHIRowChangeEventHandler" msprop:Generator_RowDeletedName="HOCPHIRowDeleted" msprop:Generator_UserTableName="HOCPHI" msprop:Generator_RowChangedName="HOCPHIRowChanged" msprop:Generator_RowEvArgName="HOCPHIRowChangeEvent" msprop:Generator_RowClassName="HOCPHIRow">
+        <xs:element name="HOCPHI" msprop:Generator_TableClassName="HOCPHIDataTable" msprop:Generator_TableVarName="tableHOCPHI" msprop:Generator_RowChangedName="HOCPHIRowChanged" msprop:Generator_TablePropName="HOCPHI" msprop:Generator_RowDeletingName="HOCPHIRowDeleting" msprop:Generator_RowChangingName="HOCPHIRowChanging" msprop:Generator_RowEvHandlerName="HOCPHIRowChangeEventHandler" msprop:Generator_RowDeletedName="HOCPHIRowDeleted" msprop:Generator_RowClassName="HOCPHIRow" msprop:Generator_UserTableName="HOCPHI" msprop:Generator_RowEvArgName="HOCPHIRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MASV" msprop:Generator_ColumnVarNameInTable="columnMASV" msprop:Generator_ColumnPropNameInRow="MASV" msprop:Generator_ColumnPropNameInTable="MASVColumn" msprop:Generator_UserColumnName="MASV">
@@ -776,7 +794,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="KHOA" msprop:Generator_TableClassName="KHOADataTable" msprop:Generator_TableVarName="tableKHOA" msprop:Generator_TablePropName="KHOA" msprop:Generator_RowDeletingName="KHOARowDeleting" msprop:Generator_RowChangingName="KHOARowChanging" msprop:Generator_RowEvHandlerName="KHOARowChangeEventHandler" msprop:Generator_RowDeletedName="KHOARowDeleted" msprop:Generator_UserTableName="KHOA" msprop:Generator_RowChangedName="KHOARowChanged" msprop:Generator_RowEvArgName="KHOARowChangeEvent" msprop:Generator_RowClassName="KHOARow">
+        <xs:element name="KHOA" msprop:Generator_TableClassName="KHOADataTable" msprop:Generator_TableVarName="tableKHOA" msprop:Generator_RowChangedName="KHOARowChanged" msprop:Generator_TablePropName="KHOA" msprop:Generator_RowDeletingName="KHOARowDeleting" msprop:Generator_RowChangingName="KHOARowChanging" msprop:Generator_RowEvHandlerName="KHOARowChangeEventHandler" msprop:Generator_RowDeletedName="KHOARowDeleted" msprop:Generator_RowClassName="KHOARow" msprop:Generator_UserTableName="KHOA" msprop:Generator_RowEvArgName="KHOARowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MAKH" msprop:Generator_ColumnVarNameInTable="columnMAKH" msprop:Generator_ColumnPropNameInRow="MAKH" msprop:Generator_ColumnPropNameInTable="MAKHColumn" msprop:Generator_UserColumnName="MAKH">
@@ -797,7 +815,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LOP" msprop:Generator_TableClassName="LOPDataTable" msprop:Generator_TableVarName="tableLOP" msprop:Generator_TablePropName="LOP" msprop:Generator_RowDeletingName="LOPRowDeleting" msprop:Generator_RowChangingName="LOPRowChanging" msprop:Generator_RowEvHandlerName="LOPRowChangeEventHandler" msprop:Generator_RowDeletedName="LOPRowDeleted" msprop:Generator_UserTableName="LOP" msprop:Generator_RowChangedName="LOPRowChanged" msprop:Generator_RowEvArgName="LOPRowChangeEvent" msprop:Generator_RowClassName="LOPRow">
+        <xs:element name="LOP" msprop:Generator_TableClassName="LOPDataTable" msprop:Generator_TableVarName="tableLOP" msprop:Generator_RowChangedName="LOPRowChanged" msprop:Generator_TablePropName="LOP" msprop:Generator_RowDeletingName="LOPRowDeleting" msprop:Generator_RowChangingName="LOPRowChanging" msprop:Generator_RowEvHandlerName="LOPRowChangeEventHandler" msprop:Generator_RowDeletedName="LOPRowDeleted" msprop:Generator_RowClassName="LOPRow" msprop:Generator_UserTableName="LOP" msprop:Generator_RowEvArgName="LOPRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MALOP" msprop:Generator_ColumnVarNameInTable="columnMALOP" msprop:Generator_ColumnPropNameInRow="MALOP" msprop:Generator_ColumnPropNameInTable="MALOPColumn" msprop:Generator_UserColumnName="MALOP">
@@ -825,7 +843,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MONHOC" msprop:Generator_TableClassName="MONHOCDataTable" msprop:Generator_TableVarName="tableMONHOC" msprop:Generator_TablePropName="MONHOC" msprop:Generator_RowDeletingName="MONHOCRowDeleting" msprop:Generator_RowChangingName="MONHOCRowChanging" msprop:Generator_RowEvHandlerName="MONHOCRowChangeEventHandler" msprop:Generator_RowDeletedName="MONHOCRowDeleted" msprop:Generator_UserTableName="MONHOC" msprop:Generator_RowChangedName="MONHOCRowChanged" msprop:Generator_RowEvArgName="MONHOCRowChangeEvent" msprop:Generator_RowClassName="MONHOCRow">
+        <xs:element name="MONHOC" msprop:Generator_TableClassName="MONHOCDataTable" msprop:Generator_TableVarName="tableMONHOC" msprop:Generator_RowChangedName="MONHOCRowChanged" msprop:Generator_TablePropName="MONHOC" msprop:Generator_RowDeletingName="MONHOCRowDeleting" msprop:Generator_RowChangingName="MONHOCRowChanging" msprop:Generator_RowEvHandlerName="MONHOCRowChangeEventHandler" msprop:Generator_RowDeletedName="MONHOCRowDeleted" msprop:Generator_RowClassName="MONHOCRow" msprop:Generator_UserTableName="MONHOC" msprop:Generator_RowEvArgName="MONHOCRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MAMH" msprop:Generator_ColumnVarNameInTable="columnMAMH" msprop:Generator_ColumnPropNameInRow="MAMH" msprop:Generator_ColumnPropNameInTable="MAMHColumn" msprop:Generator_UserColumnName="MAMH">
@@ -846,7 +864,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SINHVIEN" msprop:Generator_TableClassName="SINHVIENDataTable" msprop:Generator_TableVarName="tableSINHVIEN" msprop:Generator_TablePropName="SINHVIEN" msprop:Generator_RowDeletingName="SINHVIENRowDeleting" msprop:Generator_RowChangingName="SINHVIENRowChanging" msprop:Generator_RowEvHandlerName="SINHVIENRowChangeEventHandler" msprop:Generator_RowDeletedName="SINHVIENRowDeleted" msprop:Generator_UserTableName="SINHVIEN" msprop:Generator_RowChangedName="SINHVIENRowChanged" msprop:Generator_RowEvArgName="SINHVIENRowChangeEvent" msprop:Generator_RowClassName="SINHVIENRow">
+        <xs:element name="SINHVIEN" msprop:Generator_TableClassName="SINHVIENDataTable" msprop:Generator_TableVarName="tableSINHVIEN" msprop:Generator_RowChangedName="SINHVIENRowChanged" msprop:Generator_TablePropName="SINHVIEN" msprop:Generator_RowDeletingName="SINHVIENRowDeleting" msprop:Generator_RowChangingName="SINHVIENRowChanging" msprop:Generator_RowEvHandlerName="SINHVIENRowChangeEventHandler" msprop:Generator_RowDeletedName="SINHVIENRowDeleted" msprop:Generator_RowClassName="SINHVIENRow" msprop:Generator_UserTableName="SINHVIEN" msprop:Generator_RowEvArgName="SINHVIENRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MASV" msprop:Generator_ColumnVarNameInTable="columnMASV" msprop:Generator_ColumnPropNameInRow="MASV" msprop:Generator_ColumnPropNameInTable="MASVColumn" msprop:Generator_UserColumnName="MASV">
@@ -905,7 +923,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V_DSGV" msprop:Generator_TableClassName="V_DSGVDataTable" msprop:Generator_TableVarName="tableV_DSGV" msprop:Generator_TablePropName="V_DSGV" msprop:Generator_RowDeletingName="V_DSGVRowDeleting" msprop:Generator_RowChangingName="V_DSGVRowChanging" msprop:Generator_RowEvHandlerName="V_DSGVRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSGVRowDeleted" msprop:Generator_UserTableName="V_DSGV" msprop:Generator_RowChangedName="V_DSGVRowChanged" msprop:Generator_RowEvArgName="V_DSGVRowChangeEvent" msprop:Generator_RowClassName="V_DSGVRow">
+        <xs:element name="V_DSGV" msprop:Generator_TableClassName="V_DSGVDataTable" msprop:Generator_TableVarName="tableV_DSGV" msprop:Generator_RowChangedName="V_DSGVRowChanged" msprop:Generator_TablePropName="V_DSGV" msprop:Generator_RowDeletingName="V_DSGVRowDeleting" msprop:Generator_RowChangingName="V_DSGVRowChanging" msprop:Generator_RowEvHandlerName="V_DSGVRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSGVRowDeleted" msprop:Generator_RowClassName="V_DSGVRow" msprop:Generator_UserTableName="V_DSGV" msprop:Generator_RowEvArgName="V_DSGVRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MAGV" msprop:Generator_ColumnVarNameInTable="columnMAGV" msprop:Generator_ColumnPropNameInRow="MAGV" msprop:Generator_ColumnPropNameInTable="MAGVColumn" msprop:Generator_UserColumnName="MAGV">
@@ -932,7 +950,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V_DSPM" msprop:Generator_TableClassName="V_DSPMDataTable" msprop:Generator_TableVarName="tableV_DSPM" msprop:Generator_TablePropName="V_DSPM" msprop:Generator_RowDeletingName="V_DSPMRowDeleting" msprop:Generator_RowChangingName="V_DSPMRowChanging" msprop:Generator_RowEvHandlerName="V_DSPMRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSPMRowDeleted" msprop:Generator_UserTableName="V_DSPM" msprop:Generator_RowChangedName="V_DSPMRowChanged" msprop:Generator_RowEvArgName="V_DSPMRowChangeEvent" msprop:Generator_RowClassName="V_DSPMRow">
+        <xs:element name="V_DSPM" msprop:Generator_TableClassName="V_DSPMDataTable" msprop:Generator_TableVarName="tableV_DSPM" msprop:Generator_RowChangedName="V_DSPMRowChanged" msprop:Generator_TablePropName="V_DSPM" msprop:Generator_RowDeletingName="V_DSPMRowDeleting" msprop:Generator_RowChangingName="V_DSPMRowChanging" msprop:Generator_RowEvHandlerName="V_DSPMRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSPMRowDeleted" msprop:Generator_RowClassName="V_DSPMRow" msprop:Generator_UserTableName="V_DSPM" msprop:Generator_RowEvArgName="V_DSPMRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TENKHOA" msprop:Generator_ColumnVarNameInTable="columnTENKHOA" msprop:Generator_ColumnPropNameInRow="TENKHOA" msprop:Generator_ColumnPropNameInTable="TENKHOAColumn" msprop:Generator_UserColumnName="TENKHOA" minOccurs="0">
@@ -952,7 +970,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="V_DSSV_TaoTK" msprop:Generator_TableClassName="V_DSSV_TaoTKDataTable" msprop:Generator_TableVarName="tableV_DSSV_TaoTK" msprop:Generator_TablePropName="V_DSSV_TaoTK" msprop:Generator_RowDeletingName="V_DSSV_TaoTKRowDeleting" msprop:Generator_RowChangingName="V_DSSV_TaoTKRowChanging" msprop:Generator_RowEvHandlerName="V_DSSV_TaoTKRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSSV_TaoTKRowDeleted" msprop:Generator_UserTableName="V_DSSV_TaoTK" msprop:Generator_RowChangedName="V_DSSV_TaoTKRowChanged" msprop:Generator_RowEvArgName="V_DSSV_TaoTKRowChangeEvent" msprop:Generator_RowClassName="V_DSSV_TaoTKRow">
+        <xs:element name="V_DSSV_TaoTK" msprop:Generator_TableClassName="V_DSSV_TaoTKDataTable" msprop:Generator_TableVarName="tableV_DSSV_TaoTK" msprop:Generator_RowChangedName="V_DSSV_TaoTKRowChanged" msprop:Generator_TablePropName="V_DSSV_TaoTK" msprop:Generator_RowDeletingName="V_DSSV_TaoTKRowDeleting" msprop:Generator_RowChangingName="V_DSSV_TaoTKRowChanging" msprop:Generator_RowEvHandlerName="V_DSSV_TaoTKRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DSSV_TaoTKRowDeleted" msprop:Generator_RowClassName="V_DSSV_TaoTKRow" msprop:Generator_UserTableName="V_DSSV_TaoTK" msprop:Generator_RowEvArgName="V_DSSV_TaoTKRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MASV" msprop:Generator_ColumnVarNameInTable="columnMASV" msprop:Generator_ColumnPropNameInRow="MASV" msprop:Generator_ColumnPropNameInTable="MASVColumn" msprop:Generator_UserColumnName="MASV">
@@ -986,7 +1004,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_REPORT_BDTHI" msprop:Generator_TableClassName="SP_REPORT_BDTHIDataTable" msprop:Generator_TableVarName="tableSP_REPORT_BDTHI" msprop:Generator_TablePropName="SP_REPORT_BDTHI" msprop:Generator_RowDeletingName="SP_REPORT_BDTHIRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_BDTHIRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_BDTHIRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_BDTHIRowDeleted" msprop:Generator_UserTableName="SP_REPORT_BDTHI" msprop:Generator_RowChangedName="SP_REPORT_BDTHIRowChanged" msprop:Generator_RowEvArgName="SP_REPORT_BDTHIRowChangeEvent" msprop:Generator_RowClassName="SP_REPORT_BDTHIRow">
+        <xs:element name="SP_REPORT_BDTHI" msprop:Generator_TableClassName="SP_REPORT_BDTHIDataTable" msprop:Generator_TableVarName="tableSP_REPORT_BDTHI" msprop:Generator_RowChangedName="SP_REPORT_BDTHIRowChanged" msprop:Generator_TablePropName="SP_REPORT_BDTHI" msprop:Generator_RowDeletingName="SP_REPORT_BDTHIRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_BDTHIRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_BDTHIRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_BDTHIRowDeleted" msprop:Generator_RowClassName="SP_REPORT_BDTHIRow" msprop:Generator_UserTableName="SP_REPORT_BDTHI" msprop:Generator_RowEvArgName="SP_REPORT_BDTHIRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MASV" msprop:Generator_ColumnVarNameInTable="columnMASV" msprop:Generator_ColumnPropNameInRow="MASV" msprop:Generator_ColumnPropNameInTable="MASVColumn" msprop:Generator_UserColumnName="MASV">
@@ -1007,7 +1025,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_REPORT_DSDHP" msprop:Generator_TableClassName="SP_REPORT_DSDHPDataTable" msprop:Generator_TableVarName="tableSP_REPORT_DSDHP" msprop:Generator_TablePropName="SP_REPORT_DSDHP" msprop:Generator_RowDeletingName="SP_REPORT_DSDHPRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_DSDHPRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_DSDHPRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_DSDHPRowDeleted" msprop:Generator_UserTableName="SP_REPORT_DSDHP" msprop:Generator_RowChangedName="SP_REPORT_DSDHPRowChanged" msprop:Generator_RowEvArgName="SP_REPORT_DSDHPRowChangeEvent" msprop:Generator_RowClassName="SP_REPORT_DSDHPRow">
+        <xs:element name="SP_REPORT_DSDHP" msprop:Generator_TableClassName="SP_REPORT_DSDHPDataTable" msprop:Generator_TableVarName="tableSP_REPORT_DSDHP" msprop:Generator_RowChangedName="SP_REPORT_DSDHPRowChanged" msprop:Generator_TablePropName="SP_REPORT_DSDHP" msprop:Generator_RowDeletingName="SP_REPORT_DSDHPRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_DSDHPRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_DSDHPRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_DSDHPRowDeleted" msprop:Generator_RowClassName="SP_REPORT_DSDHPRow" msprop:Generator_UserTableName="SP_REPORT_DSDHP" msprop:Generator_RowEvArgName="SP_REPORT_DSDHPRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HOTEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
@@ -1022,7 +1040,7 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_REPORT_DSSV" msprop:Generator_TableClassName="SP_REPORT_DSSVDataTable" msprop:Generator_TableVarName="tableSP_REPORT_DSSV" msprop:Generator_TablePropName="SP_REPORT_DSSV" msprop:Generator_RowDeletingName="SP_REPORT_DSSVRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_DSSVRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_DSSVRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_DSSVRowDeleted" msprop:Generator_UserTableName="SP_REPORT_DSSV" msprop:Generator_RowChangedName="SP_REPORT_DSSVRowChanged" msprop:Generator_RowEvArgName="SP_REPORT_DSSVRowChangeEvent" msprop:Generator_RowClassName="SP_REPORT_DSSVRow">
+        <xs:element name="SP_REPORT_DSSV" msprop:Generator_TableClassName="SP_REPORT_DSSVDataTable" msprop:Generator_TableVarName="tableSP_REPORT_DSSV" msprop:Generator_RowChangedName="SP_REPORT_DSSVRowChanged" msprop:Generator_TablePropName="SP_REPORT_DSSV" msprop:Generator_RowDeletingName="SP_REPORT_DSSVRowDeleting" msprop:Generator_RowChangingName="SP_REPORT_DSSVRowChanging" msprop:Generator_RowEvHandlerName="SP_REPORT_DSSVRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_REPORT_DSSVRowDeleted" msprop:Generator_RowClassName="SP_REPORT_DSSVRow" msprop:Generator_UserTableName="SP_REPORT_DSSV" msprop:Generator_RowEvArgName="SP_REPORT_DSSVRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="HO" msprop:Generator_ColumnVarNameInTable="columnHO" msprop:Generator_ColumnPropNameInRow="HO" msprop:Generator_ColumnPropNameInTable="HOColumn" msprop:Generator_UserColumnName="HO" minOccurs="0">
@@ -1064,6 +1082,33 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_GETDSLOP" msprop:Generator_TableClassName="V_GETDSLOPDataTable" msprop:Generator_TableVarName="tableV_GETDSLOP" msprop:Generator_TablePropName="V_GETDSLOP" msprop:Generator_RowDeletingName="V_GETDSLOPRowDeleting" msprop:Generator_RowChangingName="V_GETDSLOPRowChanging" msprop:Generator_RowEvHandlerName="V_GETDSLOPRowChangeEventHandler" msprop:Generator_RowDeletedName="V_GETDSLOPRowDeleted" msprop:Generator_UserTableName="V_GETDSLOP" msprop:Generator_RowChangedName="V_GETDSLOPRowChanged" msprop:Generator_RowEvArgName="V_GETDSLOPRowChangeEvent" msprop:Generator_RowClassName="V_GETDSLOPRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MALOP" msprop:Generator_ColumnVarNameInTable="columnMALOP" msprop:Generator_ColumnPropNameInRow="MALOP" msprop:Generator_ColumnPropNameInTable="MALOPColumn" msprop:Generator_UserColumnName="MALOP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENLOP" msprop:Generator_ColumnVarNameInTable="columnTENLOP" msprop:Generator_ColumnPropNameInRow="TENLOP" msprop:Generator_ColumnPropNameInTable="TENLOPColumn" msprop:Generator_UserColumnName="TENLOP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAKH" msprop:Generator_ColumnVarNameInTable="columnMAKH" msprop:Generator_ColumnPropNameInRow="MAKH" msprop:Generator_ColumnPropNameInTable="MAKHColumn" msprop:Generator_UserColumnName="MAKH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -1123,16 +1168,20 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC, r
       <xs:selector xpath=".//mstns:SP_REPORT_BDTHI" />
       <xs:field xpath="mstns:MASV" />
     </xs:unique>
+    <xs:unique name="V_GETDSLOP_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_GETDSLOP" />
+      <xs:field xpath="mstns:MALOP" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_CT_DONGHOCPHI_HOCPHI" msdata:parent="HOCPHI" msdata:child="CT_DONGHOCPHI" msdata:parentkey="MASV NIENKHOA HOCKY" msdata:childkey="MASV NIENKHOA HOCKY" msprop:Generator_UserChildTable="CT_DONGHOCPHI" msprop:Generator_ChildPropName="GetCT_DONGHOCPHIRows" msprop:Generator_UserRelationName="FK_CT_DONGHOCPHI_HOCPHI" msprop:Generator_RelationVarName="relationFK_CT_DONGHOCPHI_HOCPHI" msprop:Generator_UserParentTable="HOCPHI" msprop:Generator_ParentPropName="HOCPHIRowParent" />
-      <msdata:Relationship name="FK_DIEM_MONHOC1" msdata:parent="MONHOC" msdata:child="DIEM" msdata:parentkey="MAMH" msdata:childkey="MAMH" msprop:Generator_UserChildTable="DIEM" msprop:Generator_ChildPropName="GetDIEMRows" msprop:Generator_UserRelationName="FK_DIEM_MONHOC1" msprop:Generator_RelationVarName="relationFK_DIEM_MONHOC1" msprop:Generator_UserParentTable="MONHOC" msprop:Generator_ParentPropName="MONHOCRow" />
-      <msdata:Relationship name="FK_DIEM_SINHVIEN" msdata:parent="SINHVIEN" msdata:child="DIEM" msdata:parentkey="MASV" msdata:childkey="MASV" msprop:Generator_UserChildTable="DIEM" msprop:Generator_ChildPropName="GetDIEMRows" msprop:Generator_UserRelationName="FK_DIEM_SINHVIEN" msprop:Generator_RelationVarName="relationFK_DIEM_SINHVIEN" msprop:Generator_UserParentTable="SINHVIEN" msprop:Generator_ParentPropName="SINHVIENRow" />
-      <msdata:Relationship name="FK_GIANGVIEN_KHOA" msdata:parent="KHOA" msdata:child="GIANGVIEN" msdata:parentkey="MAKH" msdata:childkey="MAKH" msprop:Generator_UserChildTable="GIANGVIEN" msprop:Generator_ChildPropName="GetGIANGVIENRows" msprop:Generator_UserRelationName="FK_GIANGVIEN_KHOA" msprop:Generator_RelationVarName="relationFK_GIANGVIEN_KHOA" msprop:Generator_UserParentTable="KHOA" msprop:Generator_ParentPropName="KHOARow" />
-      <msdata:Relationship name="FK_HOCPHI_SINHVIEN" msdata:parent="SINHVIEN" msdata:child="HOCPHI" msdata:parentkey="MASV" msdata:childkey="MASV" msprop:Generator_UserChildTable="HOCPHI" msprop:Generator_ChildPropName="GetHOCPHIRows" msprop:Generator_UserRelationName="FK_HOCPHI_SINHVIEN" msprop:Generator_RelationVarName="relationFK_HOCPHI_SINHVIEN" msprop:Generator_UserParentTable="SINHVIEN" msprop:Generator_ParentPropName="SINHVIENRow" />
-      <msdata:Relationship name="FK_LOP_KHOA1" msdata:parent="KHOA" msdata:child="LOP" msdata:parentkey="MAKH" msdata:childkey="MAKH" msprop:Generator_UserChildTable="LOP" msprop:Generator_ChildPropName="GetLOPRows" msprop:Generator_UserRelationName="FK_LOP_KHOA1" msprop:Generator_ParentPropName="KHOARow" msprop:Generator_RelationVarName="relationFK_LOP_KHOA1" msprop:Generator_UserParentTable="KHOA" />
-      <msdata:Relationship name="FK_SINHVIEN_LOP" msdata:parent="LOP" msdata:child="SINHVIEN" msdata:parentkey="MALOP" msdata:childkey="MALOP" msprop:Generator_UserChildTable="SINHVIEN" msprop:Generator_ChildPropName="GetSINHVIENRows" msprop:Generator_UserRelationName="FK_SINHVIEN_LOP" msprop:Generator_ParentPropName="LOPRow" msprop:Generator_RelationVarName="relationFK_SINHVIEN_LOP" msprop:Generator_UserParentTable="LOP" />
+      <msdata:Relationship name="FK_CT_DONGHOCPHI_HOCPHI" msdata:parent="HOCPHI" msdata:child="CT_DONGHOCPHI" msdata:parentkey="MASV NIENKHOA HOCKY" msdata:childkey="MASV NIENKHOA HOCKY" msprop:Generator_UserChildTable="CT_DONGHOCPHI" msprop:Generator_ChildPropName="GetCT_DONGHOCPHIRows" msprop:Generator_UserRelationName="FK_CT_DONGHOCPHI_HOCPHI" msprop:Generator_ParentPropName="HOCPHIRowParent" msprop:Generator_RelationVarName="relationFK_CT_DONGHOCPHI_HOCPHI" msprop:Generator_UserParentTable="HOCPHI" />
+      <msdata:Relationship name="FK_DIEM_MONHOC1" msdata:parent="MONHOC" msdata:child="DIEM" msdata:parentkey="MAMH" msdata:childkey="MAMH" msprop:Generator_UserChildTable="DIEM" msprop:Generator_ChildPropName="GetDIEMRows" msprop:Generator_UserRelationName="FK_DIEM_MONHOC1" msprop:Generator_ParentPropName="MONHOCRow" msprop:Generator_RelationVarName="relationFK_DIEM_MONHOC1" msprop:Generator_UserParentTable="MONHOC" />
+      <msdata:Relationship name="FK_DIEM_SINHVIEN" msdata:parent="SINHVIEN" msdata:child="DIEM" msdata:parentkey="MASV" msdata:childkey="MASV" msprop:Generator_UserChildTable="DIEM" msprop:Generator_ChildPropName="GetDIEMRows" msprop:Generator_UserRelationName="FK_DIEM_SINHVIEN" msprop:Generator_ParentPropName="SINHVIENRow" msprop:Generator_RelationVarName="relationFK_DIEM_SINHVIEN" msprop:Generator_UserParentTable="SINHVIEN" />
+      <msdata:Relationship name="FK_GIANGVIEN_KHOA" msdata:parent="KHOA" msdata:child="GIANGVIEN" msdata:parentkey="MAKH" msdata:childkey="MAKH" msprop:Generator_UserChildTable="GIANGVIEN" msprop:Generator_ChildPropName="GetGIANGVIENRows" msprop:Generator_UserRelationName="FK_GIANGVIEN_KHOA" msprop:Generator_ParentPropName="KHOARow" msprop:Generator_RelationVarName="relationFK_GIANGVIEN_KHOA" msprop:Generator_UserParentTable="KHOA" />
+      <msdata:Relationship name="FK_HOCPHI_SINHVIEN" msdata:parent="SINHVIEN" msdata:child="HOCPHI" msdata:parentkey="MASV" msdata:childkey="MASV" msprop:Generator_UserChildTable="HOCPHI" msprop:Generator_ChildPropName="GetHOCPHIRows" msprop:Generator_UserRelationName="FK_HOCPHI_SINHVIEN" msprop:Generator_ParentPropName="SINHVIENRow" msprop:Generator_RelationVarName="relationFK_HOCPHI_SINHVIEN" msprop:Generator_UserParentTable="SINHVIEN" />
+      <msdata:Relationship name="FK_LOP_KHOA1" msdata:parent="KHOA" msdata:child="LOP" msdata:parentkey="MAKH" msdata:childkey="MAKH" msprop:Generator_UserChildTable="LOP" msprop:Generator_ChildPropName="GetLOPRows" msprop:Generator_UserRelationName="FK_LOP_KHOA1" msprop:Generator_RelationVarName="relationFK_LOP_KHOA1" msprop:Generator_UserParentTable="KHOA" msprop:Generator_ParentPropName="KHOARow" />
+      <msdata:Relationship name="FK_SINHVIEN_LOP" msdata:parent="LOP" msdata:child="SINHVIEN" msdata:parentkey="MALOP" msdata:childkey="MALOP" msprop:Generator_UserChildTable="SINHVIEN" msprop:Generator_ChildPropName="GetSINHVIENRows" msprop:Generator_UserRelationName="FK_SINHVIEN_LOP" msprop:Generator_RelationVarName="relationFK_SINHVIEN_LOP" msprop:Generator_UserParentTable="LOP" msprop:Generator_ParentPropName="LOPRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
