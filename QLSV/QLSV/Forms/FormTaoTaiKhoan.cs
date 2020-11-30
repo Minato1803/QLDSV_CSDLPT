@@ -198,7 +198,8 @@ namespace QLSV
             String login = userName.Text;
             String pass = passWord.Text;
             String user = cbMaGiaoVien.SelectedValue.ToString();
-            String role = cbRoles.GetItemText(cbLop.SelectedItem).ToString();
+            //String role = cbRoles.GetItemText(cbLop.SelectedItem);
+            String role = cbRoles.Text;
             Console.WriteLine(login + " ----- " + pass);
             Console.WriteLine(user + " ----- " + role);
             if(user == "System.Data.DataRowView" || role == "System.Data.DataRowView")
