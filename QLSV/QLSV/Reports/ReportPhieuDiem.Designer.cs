@@ -49,10 +49,10 @@
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.label3 = new System.Windows.Forms.Label();
             this.cbMaSinhVien = new System.Windows.Forms.ComboBox();
+            this.vDSSVTaoTKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maSV = new System.Windows.Forms.TextBox();
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
             this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
-            this.vDSSVTaoTKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DSSV_TaoTKTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
@@ -102,9 +102,11 @@
             // 
             // maLop
             // 
+            this.maLop.Enabled = false;
             this.maLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maLop.Location = new System.Drawing.Point(412, 102);
             this.maLop.Name = "maLop";
+            this.maLop.ReadOnly = true;
             this.maLop.Size = new System.Drawing.Size(120, 29);
             this.maLop.TabIndex = 34;
             // 
@@ -112,6 +114,7 @@
             // 
             this.cbLop.DataSource = this.vGETDSLOPBindingSource;
             this.cbLop.DisplayMember = "TENLOP";
+            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLop.FormattingEnabled = true;
             this.cbLop.Location = new System.Drawing.Point(144, 102);
@@ -135,6 +138,7 @@
             // 
             this.cbKhoa.DataSource = this.vDSPMBindingSource;
             this.cbKhoa.DisplayMember = "TENKHOA";
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
             this.cbKhoa.Location = new System.Drawing.Point(144, 40);
@@ -267,6 +271,7 @@
             // 
             this.cbMaSinhVien.DataSource = this.vDSSVTaoTKBindingSource;
             this.cbMaSinhVien.DisplayMember = "HOTEN";
+            this.cbMaSinhVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaSinhVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaSinhVien.FormattingEnabled = true;
             this.cbMaSinhVien.Location = new System.Drawing.Point(144, 168);
@@ -276,11 +281,18 @@
             this.cbMaSinhVien.ValueMember = "MASV";
             this.cbMaSinhVien.SelectedIndexChanged += new System.EventHandler(this.cbMaSinhVien_SelectedIndexChanged);
             // 
+            // vDSSVTaoTKBindingSource
+            // 
+            this.vDSSVTaoTKBindingSource.DataMember = "V_DSSV_TaoTK";
+            this.vDSSVTaoTKBindingSource.DataSource = this.qLDSVDataSet;
+            // 
             // maSV
             // 
+            this.maSV.Enabled = false;
             this.maSV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maSV.Location = new System.Drawing.Point(412, 168);
             this.maSV.Name = "maSV";
+            this.maSV.ReadOnly = true;
             this.maSV.Size = new System.Drawing.Size(120, 29);
             this.maSV.TabIndex = 37;
             // 
@@ -291,11 +303,6 @@
             // v_GETDSLOPTableAdapter
             // 
             this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
-            // 
-            // vDSSVTaoTKBindingSource
-            // 
-            this.vDSSVTaoTKBindingSource.DataMember = "V_DSSV_TaoTK";
-            this.vDSSVTaoTKBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // v_DSSV_TaoTKTableAdapter
             // 

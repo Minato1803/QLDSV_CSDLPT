@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.inBtn2 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -43,11 +44,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbLop = new System.Windows.Forms.ComboBox();
             this.maLop = new System.Windows.Forms.TextBox();
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
+            this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
+            this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
+            this.vGETDSLOPBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).BeginInit();
             this.inBtn2.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -155,12 +166,16 @@
             // 
             // cbKhoa
             // 
+            this.cbKhoa.DataSource = this.vDSPMBindingSource;
+            this.cbKhoa.DisplayMember = "TENKHOA";
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
             this.cbKhoa.Location = new System.Drawing.Point(144, 40);
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.Size = new System.Drawing.Size(388, 29);
             this.cbKhoa.TabIndex = 32;
+            this.cbKhoa.ValueMember = "TENSERVER";
             // 
             // inBtn
             // 
@@ -198,20 +213,55 @@
             // 
             // cbLop
             // 
+            this.cbLop.DataSource = this.vGETDSLOPBindingSource1;
+            this.cbLop.DisplayMember = "TENLOP";
+            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLop.FormattingEnabled = true;
             this.cbLop.Location = new System.Drawing.Point(144, 102);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(247, 29);
             this.cbLop.TabIndex = 33;
+            this.cbLop.ValueMember = "MALOP";
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
             // maLop
             // 
+            this.maLop.Enabled = false;
             this.maLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maLop.Location = new System.Drawing.Point(412, 102);
             this.maLop.Name = "maLop";
+            this.maLop.ReadOnly = true;
             this.maLop.Size = new System.Drawing.Size(120, 29);
             this.maLop.TabIndex = 34;
+            // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vGETDSLOPBindingSource
+            // 
+            this.vGETDSLOPBindingSource.DataMember = "V_GETDSLOP";
+            this.vGETDSLOPBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // v_GETDSLOPTableAdapter
+            // 
+            this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
+            // 
+            // vDSPMBindingSource
+            // 
+            this.vDSPMBindingSource.DataMember = "V_DSPM";
+            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // v_DSPMTableAdapter
+            // 
+            this.v_DSPMTableAdapter.ClearBeforeFill = true;
+            // 
+            // vGETDSLOPBindingSource1
+            // 
+            this.vGETDSLOPBindingSource1.DataMember = "V_GETDSLOP";
+            this.vGETDSLOPBindingSource1.DataSource = this.qLDSVDataSet;
             // 
             // ReportBDTongKet
             // 
@@ -225,6 +275,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bảng Điểm Tổng Kết";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ReportBDTongKet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).EndInit();
             this.inBtn2.ResumeLayout(false);
@@ -232,6 +283,10 @@
             this.tabNavigationPage1.PerformLayout();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,5 +307,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbLop;
         private System.Windows.Forms.TextBox maLop;
+        private QLDSVDataSet qLDSVDataSet;
+        private System.Windows.Forms.BindingSource vGETDSLOPBindingSource;
+        private QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter v_GETDSLOPTableAdapter;
+        private System.Windows.Forms.BindingSource vDSPMBindingSource;
+        private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
+        private System.Windows.Forms.BindingSource vGETDSLOPBindingSource1;
     }
 }

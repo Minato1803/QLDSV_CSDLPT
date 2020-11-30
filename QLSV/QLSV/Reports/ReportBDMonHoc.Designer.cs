@@ -28,19 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.maMon = new System.Windows.Forms.TextBox();
+            this.maLop = new System.Windows.Forms.TextBox();
+            this.cbMon = new System.Windows.Forms.ComboBox();
+            this.cbLop = new System.Windows.Forms.ComboBox();
+            this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
+            this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
+            this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -79,48 +90,61 @@
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // maMon
             // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(531, 235);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 27);
-            this.textBox2.TabIndex = 26;
+            this.maMon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maMon.Location = new System.Drawing.Point(531, 235);
+            this.maMon.Name = "maMon";
+            this.maMon.ReadOnly = true;
+            this.maMon.Size = new System.Drawing.Size(120, 27);
+            this.maMon.TabIndex = 26;
             // 
-            // textBox1
+            // maLop
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(531, 177);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 27);
-            this.textBox1.TabIndex = 25;
+            this.maLop.Enabled = false;
+            this.maLop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maLop.Location = new System.Drawing.Point(531, 177);
+            this.maLop.Name = "maLop";
+            this.maLop.ReadOnly = true;
+            this.maLop.Size = new System.Drawing.Size(120, 27);
+            this.maLop.TabIndex = 25;
             // 
-            // comboBox3
+            // cbMon
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(263, 235);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(247, 27);
-            this.comboBox3.TabIndex = 23;
+            this.cbMon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMon.FormattingEnabled = true;
+            this.cbMon.Location = new System.Drawing.Point(263, 235);
+            this.cbMon.Name = "cbMon";
+            this.cbMon.Size = new System.Drawing.Size(247, 27);
+            this.cbMon.TabIndex = 23;
             // 
-            // comboBox2
+            // cbLop
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(263, 177);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(247, 27);
-            this.comboBox2.TabIndex = 22;
+            this.cbLop.DataSource = this.vGETDSLOPBindingSource;
+            this.cbLop.DisplayMember = "TENLOP";
+            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLop.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.Location = new System.Drawing.Point(263, 177);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.Size = new System.Drawing.Size(247, 27);
+            this.cbLop.TabIndex = 22;
+            this.cbLop.ValueMember = "MALOP";
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cbKhoa
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(263, 115);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(388, 27);
-            this.comboBox1.TabIndex = 21;
+            this.cbKhoa.DataSource = this.vDSPMBindingSource;
+            this.cbKhoa.DisplayMember = "TENKHOA";
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.Location = new System.Drawing.Point(263, 115);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(388, 27);
+            this.cbKhoa.TabIndex = 21;
+            this.cbKhoa.ValueMember = "TENSERVER";
             // 
             // label4
             // 
@@ -162,20 +186,67 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Khoa";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(263, 301);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(129, 29);
+            this.numericUpDown1.TabIndex = 30;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vDSPMBindingSource
+            // 
+            this.vDSPMBindingSource.DataMember = "V_DSPM";
+            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // v_DSPMTableAdapter
+            // 
+            this.v_DSPMTableAdapter.ClearBeforeFill = true;
+            // 
+            // vGETDSLOPBindingSource
+            // 
+            this.vGETDSLOPBindingSource.DataMember = "V_GETDSLOP";
+            this.vGETDSLOPBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // v_GETDSLOPTableAdapter
+            // 
+            this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
+            // 
             // ReportBDMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 656);
             this.ControlBox = false;
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.maMon);
+            this.Controls.Add(this.maLop);
+            this.Controls.Add(this.cbMon);
+            this.Controls.Add(this.cbLop);
+            this.Controls.Add(this.cbKhoa);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -183,7 +254,12 @@
             this.Name = "ReportBDMonHoc";
             this.Text = "Bảng Điểm Môn Học";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ReportBDMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,14 +269,20 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox maMon;
+        private System.Windows.Forms.TextBox maLop;
+        private System.Windows.Forms.ComboBox cbMon;
+        private System.Windows.Forms.ComboBox cbLop;
+        private System.Windows.Forms.ComboBox cbKhoa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private QLDSVDataSet qLDSVDataSet;
+        private System.Windows.Forms.BindingSource vDSPMBindingSource;
+        private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
+        private System.Windows.Forms.BindingSource vGETDSLOPBindingSource;
+        private QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter v_GETDSLOPTableAdapter;
     }
 }
