@@ -58,11 +58,13 @@
             this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.confirmPassWord = new DevExpress.XtraEditors.TextEdit();
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
             this.v_DSGVTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSGVTableAdapter();
             this.v_DSSV_TaoTKTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter();
             this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
+            this.errorUser = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorPasswod = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorConfirm = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabGV.SuspendLayout();
@@ -74,7 +76,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmPassWord.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPasswod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorConfirm)).BeginInit();
             this.SuspendLayout();
             // 
             // userName
@@ -414,10 +418,6 @@
             this.confirmPassWord.Size = new System.Drawing.Size(302, 30);
             this.confirmPassWord.TabIndex = 2;
             // 
-            // dxErrorProvider1
-            // 
-            this.dxErrorProvider1.ContainerControl = this;
-            // 
             // v_DSPMTableAdapter
             // 
             this.v_DSPMTableAdapter.ClearBeforeFill = true;
@@ -434,13 +434,25 @@
             // 
             this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
             // 
+            // errorUser
+            // 
+            this.errorUser.ContainerControl = this;
+            // 
+            // errorPasswod
+            // 
+            this.errorPasswod.ContainerControl = this;
+            // 
+            // errorConfirm
+            // 
+            this.errorConfirm.ContainerControl = this;
+            // 
             // FormTaoTaiKhoan
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1899, 965);
+            this.ClientSize = new System.Drawing.Size(1915, 981);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabPane1);
@@ -469,7 +481,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmPassWord.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPasswod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorConfirm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,8 +522,10 @@
         private QLDSVDataSetTableAdapters.V_DSGVTableAdapter v_DSGVTableAdapter;
         private System.Windows.Forms.BindingSource vDSSVTaoTKBindingSource;
         private QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter v_DSSV_TaoTKTableAdapter;
-        private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
         private System.Windows.Forms.BindingSource vGETDSLOPBindingSource;
         private QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter v_GETDSLOPTableAdapter;
+        private System.Windows.Forms.ErrorProvider errorUser;
+        private System.Windows.Forms.ErrorProvider errorPasswod;
+        private System.Windows.Forms.ErrorProvider errorConfirm;
     }
 }

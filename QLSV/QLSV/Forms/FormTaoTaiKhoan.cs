@@ -54,7 +54,7 @@ namespace QLSV
                 cbMaSinhVien.DisplayMember = "HOTEN";
                 cbMaSinhVien.ValueMember = "MASV";
                 cbMaSinhVien.SelectedIndex = 0;
-
+                cbRoles.SelectedIndex = 0;
                 if (Program.mGroup.Equals("PkeToan"))
                 {
                     //chỉ hiển thị pKeToan
@@ -198,8 +198,13 @@ namespace QLSV
             String login = userName.Text;
             String pass = passWord.Text;
             String user = cbMaGiaoVien.SelectedValue.ToString();
-            String role = cbRoles.SelectedValue.ToString();
-
+            String role = cbRoles.GetItemText(cbLop.SelectedItem).ToString();
+            Console.WriteLine(login + " ----- " + pass);
+            Console.WriteLine(user + " ----- " + role);
+            if(user == "System.Data.DataRowView" || role == "System.Data.DataRowView")
+            {
+                return;
+            }
             String subLenh = " EXEC    @return_value = [dbo].[SP_TaoTaiKhoan] " +
 
                             " @LGNAME = N'" + login + "', " +
@@ -224,45 +229,49 @@ namespace QLSV
             }
             else if ((Program.mGroup == Program.NhomQuyen[0]))
             {
-                if (cbKhoa.SelectedValue.ToString() != Program.GetServerName[2] && Program.servername != ((DataRowView)Program.bds_dspm[2])["TENSERVER"].ToString())
+                if (cbKhoa.SelectedValue.ToString() == Program.GetServerName[2] && Program.servername != ((DataRowView)Program.bds_dspm[2])["TENSERVER"].ToString())
                 {
                     //site1 || site 2 --> site 3
-                    subLenh = " EXEC    @return_value = LINK2.QLDSV.[dbo].[SP_TAOLOGIN] " +
+                    subLenh = " EXEC    @return_value = LINK2.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
 
                                 " @LGNAME = N'" + login + "', " +
                                 " @PASS = N'" + pass + "', " +
                                 " @USERNAME = N'" + user + "', " +
                                 " @ROLE = N'" + role + "' ";
                 }
-                else if (cbKhoa.SelectedValue.ToString() == Program.GetServerName[0] && Program.servername == ((DataRowView)Program.bds_dspm[2])["TENSERVER"].ToString())
+                else if (cbKhoa.SelectedValue.ToString() == Program.GetServerName[0] && Program.servername != ((DataRowView)Program.bds_dspm[0])["TENSERVER"].ToString())
                 {
-                    //site3 --> site 1
-                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TAOLOGIN] " +
+                    //site3||site 2 --> site 1
+                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
 
                                 " @LGNAME = N'" + login + "', " +
                                 " @PASS = N'" + pass + "', " +
                                 " @USERNAME = N'" + user + "', " +
                                 " @ROLE = N'" + role + "' ";
                 }
-                else if (cbKhoa.SelectedValue.ToString() == Program.GetServerName[1] && Program.servername == ((DataRowView)Program.bds_dspm[2])["TENSERVER"].ToString())
+                else if (cbKhoa.SelectedValue.ToString() == Program.GetServerName[1] && Program.servername != ((DataRowView)Program.bds_dspm[1])["TENSERVER"].ToString())
                 {
-                    //site3 --> site 2
-                    subLenh = " EXEC    @return_value = LINK2.QLDSV.[dbo].[SP_TAOLOGIN] " +
+                    if(Program.servername == ((DataRowView)Program.bds_dspm[0])["TENSERVER"].ToString())
+                    {
+                        //site1 --> site 2
+                        subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
 
-                                " @LGNAME = N'" + login + "', " +
-                                " @PASS = N'" + pass + "', " +
-                                " @USERNAME = N'" + user + "', " +
-                                " @ROLE = N'" + role + "' ";
-                }
-                else if (cbKhoa.SelectedValue.ToString() != Program.GetServerName[2] && Program.servername != ((DataRowView)Program.bds_dspm[2])["TENSERVER"].ToString())
-                {
-                    //site1 --> site 2 || site2 --> site 1
-                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TAOLOGIN] " +
+                                    " @LGNAME = N'" + login + "', " +
+                                    " @PASS = N'" + pass + "', " +
+                                    " @USERNAME = N'" + user + "', " +
+                                    " @ROLE = N'" + role + "' ";
 
-                                " @LGNAME = N'" + login + "', " +
-                                " @PASS = N'" + pass + "', " +
-                                " @USERNAME = N'" + user + "', " +
-                                " @ROLE = N'" + role + "' ";
+                    }
+                    else if(Program.servername == ((DataRowView)Program.bds_dspm[2])["TENSERVER"].ToString())
+                    {
+                        //site3 --> site 2
+                        subLenh = " EXEC    @return_value = LINK2.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
+
+                                    " @LGNAME = N'" + login + "', " +
+                                    " @PASS = N'" + pass + "', " +
+                                    " @USERNAME = N'" + user + "', " +
+                                    " @ROLE = N'" + role + "' ";
+                    }
                 }
             }
 
@@ -287,20 +296,22 @@ namespace QLSV
             if (result == 1)
             {
                 //login trùng
+                errorUser.Icon = Properties.Resources.exclamation;
+                errorUser.SetError(userName, "Tên tài khoản đã tồn tại");
             }
             else if (result == 2)
             {
-                //đã có tk
+                errorUser.Icon = Properties.Resources.exclamation;
+                errorUser.SetError(userName, "Người dùng này đã có tài khoản");
 
             }
             else if (result == 3)
             {
-                //lỗi thực thi
+                MessageBox.Show("Lỗi tạo tài khoản \n vui lòng kiểm tra username và password","lỗi", MessageBoxButtons.OK);
             }
             else if (result == 0)
             {
-                //success
-
+                MessageBox.Show("Tạo tài khoản thành công", "thành công", MessageBoxButtons.OK);
             }
             return;
         }
@@ -322,7 +333,7 @@ namespace QLSV
             {
                 if(cbLop.SelectedValue.ToString() == "CNTT" && Program.servername == ((DataRowView)Program.bds_dspm[1])["TENSERVER"].ToString())
                 {
-                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TAOLOGIN] " +
+                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
 
                                 " @LGNAME = N'" + login + "', " +
                                 " @PASS = N'" + pass + "', " +
@@ -331,7 +342,7 @@ namespace QLSV
                 }
                 else if(cbLop.SelectedValue.ToString() == "VT" && Program.servername == ((DataRowView)Program.bds_dspm[0])["TENSERVER"].ToString())
                 {
-                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TAOLOGIN] " +
+                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
 
                                 " @LGNAME = N'" + login + "', " +
                                 " @PASS = N'" + pass + "', " +
@@ -357,24 +368,24 @@ namespace QLSV
             dataReader.Read();
             int result = int.Parse(dataReader.GetValue(0).ToString());
             dataReader.Close();
-
             if (result == 1)
             {
-                //login trùng
+                errorUser.Icon = Properties.Resources.exclamation;
+                errorUser.SetError(userName, "Tên tài khoản đã tồn tại");
             }
             else if (result == 2)
             {
-                //đã có tk
+                errorUser.Icon = Properties.Resources.exclamation;
+                errorUser.SetError(userName, "Người dùng này đã có tài khoản");
 
             }
             else if (result == 3)
             {
-                //lỗi thực thi
+                MessageBox.Show("Lỗi tạo tài khoản \n vui lòng kiểm tra username và password", "lỗi", MessageBoxButtons.OK);
             }
             else if (result == 0)
             {
-                //success
-
+                MessageBox.Show("Tạo tài khoản thành công", "thành công", MessageBoxButtons.OK);
             }
             return;
         }

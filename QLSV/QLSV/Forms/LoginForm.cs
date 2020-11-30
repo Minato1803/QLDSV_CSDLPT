@@ -28,7 +28,9 @@ namespace QLSV
             // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DSPM' table. You can move, or remove it, as needed.
             this.v_DSPMTableAdapter.Fill(this.qLDSVDataSet.V_DSPM);
             comboBoxKhoa.SelectedIndex = 0;
+            Program.bds_dspm.DataSource = qLDSVDataSet.V_DSPM;
             Program.servername = comboBoxKhoa.SelectedValue.ToString();
+
         }
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
