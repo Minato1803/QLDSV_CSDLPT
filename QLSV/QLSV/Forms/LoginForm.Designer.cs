@@ -56,10 +56,9 @@
             // 
             this.userName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userName.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.userName.Location = new System.Drawing.Point(486, 96);
-            this.userName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userName.Location = new System.Drawing.Point(417, 78);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(242, 32);
+            this.userName.Size = new System.Drawing.Size(208, 27);
             this.userName.TabIndex = 0;
             this.userName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.userName.Leave += new System.EventHandler(this.userName_Leave);
@@ -68,11 +67,10 @@
             // 
             this.passWord.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passWord.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.passWord.Location = new System.Drawing.Point(486, 177);
-            this.passWord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.passWord.Location = new System.Drawing.Point(417, 144);
             this.passWord.Name = "passWord";
             this.passWord.PasswordChar = '●';
-            this.passWord.Size = new System.Drawing.Size(242, 32);
+            this.passWord.Size = new System.Drawing.Size(208, 27);
             this.passWord.TabIndex = 1;
             this.passWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passWord.Leave += new System.EventHandler(this.passWord_Leave);
@@ -87,10 +85,9 @@
             this.comboBoxKhoa.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKhoa.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.comboBoxKhoa.FormattingEnabled = true;
-            this.comboBoxKhoa.Location = new System.Drawing.Point(486, 256);
-            this.comboBoxKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxKhoa.Location = new System.Drawing.Point(417, 208);
             this.comboBoxKhoa.Name = "comboBoxKhoa";
-            this.comboBoxKhoa.Size = new System.Drawing.Size(241, 31);
+            this.comboBoxKhoa.Size = new System.Drawing.Size(207, 26);
             this.comboBoxKhoa.TabIndex = 2;
             this.comboBoxKhoa.ValueMember = "TENSERVER";
             this.comboBoxKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
@@ -100,7 +97,7 @@
             this.vDSPMBindingSource.DataMember = "V_DSPM";
             this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
             // 
-            // qLDSVDataSet1
+            // qLDSVDataSet
             // 
             this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
             this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -111,10 +108,9 @@
             this.loginButton.Appearance.ForeColor = System.Drawing.Color.DimGray;
             this.loginButton.Appearance.Options.UseFont = true;
             this.loginButton.Appearance.Options.UseForeColor = true;
-            this.loginButton.Location = new System.Drawing.Point(486, 373);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.loginButton.Location = new System.Drawing.Point(417, 303);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(243, 39);
+            this.loginButton.Size = new System.Drawing.Size(208, 32);
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Đăng Nhập";
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -122,10 +118,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QLSV.Properties.Resources.Campus1;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 96);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 78);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(462, 448);
+            this.pictureBox1.Size = new System.Drawing.Size(396, 364);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -135,9 +130,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(483, 76);
+            this.label1.Location = new System.Drawing.Point(414, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tài Khoản";
             // 
@@ -146,9 +141,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(483, 158);
+            this.label2.Location = new System.Drawing.Point(414, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Mật Khẩu";
             // 
@@ -157,19 +152,19 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(483, 236);
+            this.label3.Location = new System.Drawing.Point(414, 192);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 17);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Khoa";
             // 
             // svgImageBox1
             // 
             this.svgImageBox1.Cursor = System.Windows.Forms.Cursors.Help;
-            this.svgImageBox1.Location = new System.Drawing.Point(700, 181);
-            this.svgImageBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.svgImageBox1.Location = new System.Drawing.Point(600, 147);
+            this.svgImageBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.svgImageBox1.Name = "svgImageBox1";
-            this.svgImageBox1.Size = new System.Drawing.Size(24, 26);
+            this.svgImageBox1.Size = new System.Drawing.Size(21, 21);
             this.svgImageBox1.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Stretch;
             this.svgImageBox1.SvgImage = global::QLSV.Properties.Resources.blind;
             this.svgImageBox1.TabIndex = 8;
@@ -185,7 +180,7 @@
             this.epPassword.ContainerControl = this;
             this.epPassword.Icon = ((System.Drawing.Icon)(resources.GetObject("epPassword.Icon")));
             // 
-            // v_DSPMTableAdapter1
+            // v_DSPMTableAdapter
             // 
             this.v_DSPMTableAdapter.ClearBeforeFill = true;
             // 
@@ -197,9 +192,9 @@
             this.Appearance.ForeColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 527);
+            this.ClientSize = new System.Drawing.Size(664, 428);
             this.Controls.Add(this.svgImageBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -212,7 +207,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.False;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("LoginForm.IconOptions.LargeImage")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Sinh Viên";
