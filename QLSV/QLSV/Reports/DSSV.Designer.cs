@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DSSV));
-            this.ds1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailCaption1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailData1 = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -40,6 +36,7 @@
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.lblGiangVien = new DevExpress.XtraReports.UI.XRLabel();
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -67,23 +64,12 @@
             this.tableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrPdfContent1 = new DevExpress.XtraReports.UI.XRPdfContent();
-            this.lblGiangVien = new DevExpress.XtraReports.UI.XRLabel();
+            this.ds1 = new QLSV.QLDSVDataSet();
+            this.sP_REPORT_DSSVTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_REPORT_DSSVTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
-            // 
-            // ds1
-            // 
-            this.ds1.ConnectionName = "QLDSVConnectionString_DSSV_Report";
-            this.ds1.Name = "ds1";
-            storedProcQuery1.Name = "SP_REPORT_DSSV";
-            queryParameter1.Name = "@MALOP";
-            queryParameter1.Type = typeof(string);
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "SP_REPORT_DSSV";
-            this.ds1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            this.ds1.ResultSchemaSerializable = resources.GetString("ds1.ResultSchemaSerializable");
             // 
             // Title
             // 
@@ -151,6 +137,15 @@
             this.BottomMargin.HeightF = 128F;
             this.BottomMargin.Name = "BottomMargin";
             // 
+            // lblGiangVien
+            // 
+            this.lblGiangVien.LocationFloat = new DevExpress.Utils.PointFloat(10F, 51.30574F);
+            this.lblGiangVien.Multiline = true;
+            this.lblGiangVien.Name = "lblGiangVien";
+            this.lblGiangVien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblGiangVien.SizeF = new System.Drawing.SizeF(299.4361F, 23F);
+            this.lblGiangVien.Text = "lblNguoiIn";
+            // 
             // pageInfo1
             // 
             this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(5F, 5F);
@@ -183,7 +178,7 @@
             this.lblLop.ForeColor = System.Drawing.Color.Black;
             this.lblLop.LocationFloat = new DevExpress.Utils.PointFloat(116.6667F, 40F);
             this.lblLop.Name = "lblLop";
-            this.lblLop.SizeF = new System.Drawing.SizeF(192.7695F, 24.19434F);
+            this.lblLop.SizeF = new System.Drawing.SizeF(523.3333F, 24.19434F);
             this.lblLop.StyleName = "Title";
             this.lblLop.StylePriority.UseFont = false;
             this.lblLop.StylePriority.UseForeColor = false;
@@ -252,8 +247,8 @@
             // 
             this.xrTableCell1.BackColor = System.Drawing.Color.SteelBlue;
             this.xrTableCell1.BorderColor = System.Drawing.Color.Black;
-            this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
-            | DevExpress.XtraPrinting.BorderSide.Right)
+            this.xrTableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell1.ForeColor = System.Drawing.Color.Black;
             this.xrTableCell1.Multiline = true;
@@ -272,8 +267,8 @@
             // 
             this.tableCell1.BackColor = System.Drawing.Color.SteelBlue;
             this.tableCell1.BorderColor = System.Drawing.Color.Black;
-            this.tableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
-            | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell1.ForeColor = System.Drawing.Color.Black;
             this.tableCell1.Name = "tableCell1";
@@ -291,8 +286,8 @@
             // 
             this.tableCell2.BackColor = System.Drawing.Color.SteelBlue;
             this.tableCell2.BorderColor = System.Drawing.Color.Black;
-            this.tableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
-            | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell2.ForeColor = System.Drawing.Color.Black;
             this.tableCell2.Name = "tableCell2";
@@ -310,8 +305,8 @@
             // 
             this.tableCell3.BackColor = System.Drawing.Color.SteelBlue;
             this.tableCell3.BorderColor = System.Drawing.Color.Black;
-            this.tableCell3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
-            | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell3.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell3.ForeColor = System.Drawing.Color.Black;
             this.tableCell3.Name = "tableCell3";
@@ -329,8 +324,8 @@
             // 
             this.tableCell4.BackColor = System.Drawing.Color.SteelBlue;
             this.tableCell4.BorderColor = System.Drawing.Color.Black;
-            this.tableCell4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
-            | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell4.ForeColor = System.Drawing.Color.Black;
             this.tableCell4.Name = "tableCell4";
@@ -348,8 +343,8 @@
             // 
             this.tableCell5.BackColor = System.Drawing.Color.SteelBlue;
             this.tableCell5.BorderColor = System.Drawing.Color.Black;
-            this.tableCell5.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
-            | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell5.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell5.ForeColor = System.Drawing.Color.Black;
             this.tableCell5.Name = "tableCell5";
@@ -367,8 +362,8 @@
             // 
             this.tableCell6.BackColor = System.Drawing.Color.SteelBlue;
             this.tableCell6.BorderColor = System.Drawing.Color.Black;
-            this.tableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top)
-            | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell6.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell6.ForeColor = System.Drawing.Color.Black;
             this.tableCell6.Name = "tableCell6";
@@ -414,22 +409,24 @@
             // xrTableCell2
             // 
             this.xrTableCell2.BorderColor = System.Drawing.Color.Black;
-            this.xrTableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
+            this.xrTableCell2.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTableCell2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DataSource.RowCount]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber()")});
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StyleName = "DetailData1";
             this.xrTableCell2.StylePriority.UseBorderColor = false;
             this.xrTableCell2.StylePriority.UseBorders = false;
+            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.xrTableCell2.Summary = xrSummary1;
             this.xrTableCell2.Text = "STT";
             this.xrTableCell2.Weight = 0.0760329154129107D;
             // 
             // tableCell7
             // 
             this.tableCell7.BorderColor = System.Drawing.Color.Black;
-            this.tableCell7.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell7.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[HO]")});
@@ -442,7 +439,7 @@
             // tableCell8
             // 
             this.tableCell8.BorderColor = System.Drawing.Color.Black;
-            this.tableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell8.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TEN]")});
@@ -455,7 +452,7 @@
             // tableCell9
             // 
             this.tableCell9.BorderColor = System.Drawing.Color.Black;
-            this.tableCell9.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell9.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[PHAI]")});
@@ -468,7 +465,7 @@
             // tableCell10
             // 
             this.tableCell10.BorderColor = System.Drawing.Color.Black;
-            this.tableCell10.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell10.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NGAYSINH]")});
@@ -481,7 +478,7 @@
             // tableCell11
             // 
             this.tableCell11.BorderColor = System.Drawing.Color.Black;
-            this.tableCell11.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell11.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NOISINH]")});
@@ -494,7 +491,7 @@
             // tableCell12
             // 
             this.tableCell12.BorderColor = System.Drawing.Color.Black;
-            this.tableCell12.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right)
+            this.tableCell12.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DIACHI]")});
@@ -510,14 +507,14 @@
             this.xrPdfContent1.Name = "xrPdfContent1";
             this.xrPdfContent1.SizeF = new System.Drawing.SizeF(100F, 23F);
             // 
-            // lblGiangVien
+            // ds1
             // 
-            this.lblGiangVien.LocationFloat = new DevExpress.Utils.PointFloat(10F, 51.30574F);
-            this.lblGiangVien.Multiline = true;
-            this.lblGiangVien.Name = "lblGiangVien";
-            this.lblGiangVien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.lblGiangVien.SizeF = new System.Drawing.SizeF(161.1698F, 23F);
-            this.lblGiangVien.Text = "lblNguoiIn";
+            this.ds1.DataSetName = "QLDSVDataSet";
+            this.ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_REPORT_DSSVTableAdapter
+            // 
+            this.sP_REPORT_DSSVTableAdapter.ClearBeforeFill = true;
             // 
             // DSSV
             // 
@@ -542,13 +539,12 @@
             this.Version = "20.2";
             ((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
 
         #endregion
-
-        private DevExpress.DataAccess.Sql.SqlDataSource ds1;
         private DevExpress.XtraReports.UI.XRControlStyle Title;
         private DevExpress.XtraReports.UI.XRControlStyle DetailCaption1;
         private DevExpress.XtraReports.UI.XRControlStyle DetailData1;
@@ -559,7 +555,6 @@
         private DevExpress.XtraReports.UI.XRPageInfo pageInfo1;
         private DevExpress.XtraReports.UI.XRPageInfo pageInfo2;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
-        private DevExpress.XtraReports.UI.XRLabel lblLop;
         private DevExpress.XtraReports.UI.XRLabel Lop;
         private DevExpress.XtraReports.UI.XRLabel TitleDSSV;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
@@ -582,7 +577,10 @@
         private DevExpress.XtraReports.UI.XRTableCell tableCell10;
         private DevExpress.XtraReports.UI.XRTableCell tableCell11;
         private DevExpress.XtraReports.UI.XRTableCell tableCell12;
-        private DevExpress.XtraReports.UI.XRLabel lblGiangVien;
         private DevExpress.XtraReports.UI.XRPdfContent xrPdfContent1;
+        public DevExpress.XtraReports.UI.XRLabel lblLop;
+        public DevExpress.XtraReports.UI.XRLabel lblGiangVien;
+        private QLDSVDataSet ds1;
+        private QLDSVDataSetTableAdapters.SP_REPORT_DSSVTableAdapter sP_REPORT_DSSVTableAdapter;
     }
 }
