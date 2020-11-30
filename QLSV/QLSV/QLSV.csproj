@@ -281,52 +281,12 @@
     <None Include="QLDSVDataSet.xss">
       <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Resources\Campus.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye.svg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\blind.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\man-desk.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pencil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\previous.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\diskette.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\stop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\curved-arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\power-button.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cloud-computing.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\waring.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icon1.ico" />
@@ -338,16 +298,64 @@
     <None Include="Resources\exclamation %281%29.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Data report-bro.png" />
+    <None Include="Resources\add %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Visual data-pana.png" />
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\At the office-amico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\At the office-pana.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Business Plan-amico.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\At the office-amico.png" />
+    <None Include="Resources\Campus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Career progress-pana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-computing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\curved-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data report-bro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man-desk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visual data-pana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waring.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
