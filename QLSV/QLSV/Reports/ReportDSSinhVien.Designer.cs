@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.inBtn = new DevExpress.XtraEditors.SimpleButton();
             this.maLop = new System.Windows.Forms.TextBox();
@@ -36,7 +37,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
+            this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
+            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.LOPTableAdapter();
+            this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -69,26 +81,36 @@
             this.maLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maLop.Location = new System.Drawing.Point(506, 207);
             this.maLop.Name = "maLop";
+            this.maLop.ReadOnly = true;
             this.maLop.Size = new System.Drawing.Size(120, 29);
             this.maLop.TabIndex = 25;
             // 
             // cbLop
             // 
+            this.cbLop.DataSource = this.vGETDSLOPBindingSource;
+            this.cbLop.DisplayMember = "TENLOP";
+            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLop.FormattingEnabled = true;
             this.cbLop.Location = new System.Drawing.Point(238, 207);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(247, 29);
             this.cbLop.TabIndex = 22;
+            this.cbLop.ValueMember = "MALOP";
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
             // cbKhoa
             // 
+            this.cbKhoa.DataSource = this.vDSPMBindingSource;
+            this.cbKhoa.DisplayMember = "TENKHOA";
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
             this.cbKhoa.Location = new System.Drawing.Point(238, 145);
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.Size = new System.Drawing.Size(388, 29);
             this.cbKhoa.TabIndex = 21;
+            this.cbKhoa.ValueMember = "TENSERVER";
             // 
             // label2
             // 
@@ -120,6 +142,38 @@
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vDSPMBindingSource
+            // 
+            this.vDSPMBindingSource.DataMember = "V_DSPM";
+            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // v_DSPMTableAdapter
+            // 
+            this.v_DSPMTableAdapter.ClearBeforeFill = true;
+            // 
+            // lOPBindingSource
+            // 
+            this.lOPBindingSource.DataMember = "LOP";
+            this.lOPBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // lOPTableAdapter
+            // 
+            this.lOPTableAdapter.ClearBeforeFill = true;
+            // 
+            // vGETDSLOPBindingSource
+            // 
+            this.vGETDSLOPBindingSource.DataMember = "V_GETDSLOP";
+            this.vGETDSLOPBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // v_GETDSLOPTableAdapter
+            // 
+            this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
+            // 
             // ReportDSSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,7 +192,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Sinh Viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ReportDSSinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +213,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private QLDSVDataSet qLDSVDataSet;
+        private System.Windows.Forms.BindingSource vDSPMBindingSource;
+        private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
+        private System.Windows.Forms.BindingSource lOPBindingSource;
+        private QLDSVDataSetTableAdapters.LOPTableAdapter lOPTableAdapter;
+        private System.Windows.Forms.BindingSource vGETDSLOPBindingSource;
+        private QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter v_GETDSLOPTableAdapter;
     }
 }

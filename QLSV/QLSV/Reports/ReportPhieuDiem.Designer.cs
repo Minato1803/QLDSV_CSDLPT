@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.inBtn = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maLop = new System.Windows.Forms.TextBox();
             this.cbLop = new System.Windows.Forms.ComboBox();
+            this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.cbKhoa = new System.Windows.Forms.ComboBox();
+            this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.inBtn2 = new DevExpress.XtraBars.Navigation.TabPane();
@@ -44,13 +48,21 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMaSinhVien = new System.Windows.Forms.ComboBox();
             this.maSV = new System.Windows.Forms.TextBox();
+            this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
+            this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
+            this.vDSSVTaoTKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DSSV_TaoTKTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).BeginInit();
             this.inBtn2.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -98,21 +110,43 @@
             // 
             // cbLop
             // 
+            this.cbLop.DataSource = this.vGETDSLOPBindingSource;
+            this.cbLop.DisplayMember = "TENLOP";
             this.cbLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLop.FormattingEnabled = true;
             this.cbLop.Location = new System.Drawing.Point(144, 102);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(247, 29);
             this.cbLop.TabIndex = 33;
+            this.cbLop.ValueMember = "MALOP";
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
+            // 
+            // vGETDSLOPBindingSource
+            // 
+            this.vGETDSLOPBindingSource.DataMember = "V_GETDSLOP";
+            this.vGETDSLOPBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbKhoa
             // 
+            this.cbKhoa.DataSource = this.vDSPMBindingSource;
+            this.cbKhoa.DisplayMember = "TENKHOA";
             this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
             this.cbKhoa.Location = new System.Drawing.Point(144, 40);
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.Size = new System.Drawing.Size(388, 29);
             this.cbKhoa.TabIndex = 32;
+            this.cbKhoa.ValueMember = "TENSERVER";
+            // 
+            // vDSPMBindingSource
+            // 
+            this.vDSPMBindingSource.DataMember = "V_DSPM";
+            this.vDSPMBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // label2
             // 
@@ -207,7 +241,7 @@
             // 
             this.tabNavigationPage2.Caption = "Chọn Từ Danh Sách";
             this.tabNavigationPage2.Controls.Add(this.label3);
-            this.tabNavigationPage2.Controls.Add(this.comboBox1);
+            this.tabNavigationPage2.Controls.Add(this.cbMaSinhVien);
             this.tabNavigationPage2.Controls.Add(this.maSV);
             this.tabNavigationPage2.Controls.Add(this.simpleButton2);
             this.tabNavigationPage2.Controls.Add(this.cbKhoa);
@@ -229,14 +263,18 @@
             this.label3.TabIndex = 35;
             this.label3.Text = "Sinh Viên";
             // 
-            // comboBox1
+            // cbMaSinhVien
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 168);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 29);
-            this.comboBox1.TabIndex = 36;
+            this.cbMaSinhVien.DataSource = this.vDSSVTaoTKBindingSource;
+            this.cbMaSinhVien.DisplayMember = "HOTEN";
+            this.cbMaSinhVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaSinhVien.FormattingEnabled = true;
+            this.cbMaSinhVien.Location = new System.Drawing.Point(144, 168);
+            this.cbMaSinhVien.Name = "cbMaSinhVien";
+            this.cbMaSinhVien.Size = new System.Drawing.Size(247, 29);
+            this.cbMaSinhVien.TabIndex = 36;
+            this.cbMaSinhVien.ValueMember = "MASV";
+            this.cbMaSinhVien.SelectedIndexChanged += new System.EventHandler(this.cbMaSinhVien_SelectedIndexChanged);
             // 
             // maSV
             // 
@@ -245,6 +283,23 @@
             this.maSV.Name = "maSV";
             this.maSV.Size = new System.Drawing.Size(120, 29);
             this.maSV.TabIndex = 37;
+            // 
+            // v_DSPMTableAdapter
+            // 
+            this.v_DSPMTableAdapter.ClearBeforeFill = true;
+            // 
+            // v_GETDSLOPTableAdapter
+            // 
+            this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
+            // 
+            // vDSSVTaoTKBindingSource
+            // 
+            this.vDSSVTaoTKBindingSource.DataMember = "V_DSSV_TaoTK";
+            this.vDSSVTaoTKBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // v_DSSV_TaoTKTableAdapter
+            // 
+            this.v_DSSV_TaoTKTableAdapter.ClearBeforeFill = true;
             // 
             // ReportPhieuDiem
             // 
@@ -257,13 +312,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu Điểm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ReportPhieuDiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).EndInit();
             this.inBtn2.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage1.PerformLayout();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,7 +346,14 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbMaSinhVien;
         private System.Windows.Forms.TextBox maSV;
+        private QLDSVDataSet qLDSVDataSet;
+        private System.Windows.Forms.BindingSource vDSPMBindingSource;
+        private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
+        private System.Windows.Forms.BindingSource vGETDSLOPBindingSource;
+        private QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter v_GETDSLOPTableAdapter;
+        private System.Windows.Forms.BindingSource vDSSVTaoTKBindingSource;
+        private QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter v_DSSV_TaoTKTableAdapter;
     }
 }
