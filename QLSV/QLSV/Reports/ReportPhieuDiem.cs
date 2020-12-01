@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace QLSV
 {
@@ -84,6 +85,13 @@ namespace QLSV
             {
                 maSV.Text = cbMaSinhVien.SelectedValue.ToString();
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            PHIEUDIEM rpPhieuDiem = new PHIEUDIEM(txMaSinhVien.Text);
+            ReportPrintTool rp = new ReportPrintTool(rpPhieuDiem);
+            rp.ShowPreviewDialog();
         }
     }
 }

@@ -559,3 +559,4 @@ E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.Reports.BDTHI.resources
 E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.Reports.DSDHP.resources
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.Reports.BDTHI.resources
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.Reports.DSDHP.resources
+D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.PHIEUDIEM.resources

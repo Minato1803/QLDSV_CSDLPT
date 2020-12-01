@@ -40,6 +40,7 @@
     <Reference Include="DevExpress.Data.v20.2" />
     <Reference Include="DevExpress.DataAccess.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -148,6 +149,12 @@
     <Compile Include="Reports\DSDHP.Designer.cs">
       <DependentUpon>DSDHP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\PHIEUDIEM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PHIEUDIEM.Designer.cs">
+      <DependentUpon>PHIEUDIEM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportBangDiemThi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\DSSV.resx">
       <DependentUpon>DSSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PHIEUDIEM.resx">
+      <DependentUpon>PHIEUDIEM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportBangDiemThi.resx">
       <DependentUpon>ReportBangDiemThi.cs</DependentUpon>

@@ -240,6 +240,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(180, 49);
             this.simpleButton1.TabIndex = 41;
             this.simpleButton1.Text = "In Báo Cáo";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // tabNavigationPage2
             // 
