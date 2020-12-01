@@ -44,11 +44,14 @@
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.LOPTableAdapter();
             this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
+            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kHOATableAdapter = new QLSV.QLDSVDataSetTableAdapters.KHOATableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -116,8 +119,8 @@
             // 
             // cbKhoa
             // 
-            this.cbKhoa.DataSource = this.vDSPMBindingSource;
-            this.cbKhoa.DisplayMember = "TENKHOA";
+            this.cbKhoa.DataSource = this.kHOABindingSource;
+            this.cbKhoa.DisplayMember = "TENKH";
             this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
@@ -126,7 +129,8 @@
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.Size = new System.Drawing.Size(452, 36);
             this.cbKhoa.TabIndex = 21;
-            this.cbKhoa.ValueMember = "TENSERVER";
+            this.cbKhoa.ValueMember = "MAKH";
+            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
             // 
             // vDSPMBindingSource
             // 
@@ -181,11 +185,20 @@
             // 
             this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
             // 
+            // kHOABindingSource
+            // 
+            this.kHOABindingSource.DataMember = "KHOA";
+            this.kHOABindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // kHOATableAdapter
+            // 
+            this.kHOATableAdapter.ClearBeforeFill = true;
+            // 
             // ReportDSSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1739, 807);
+            this.ClientSize = new System.Drawing.Size(1755, 823);
             this.ControlBox = false;
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.inBtn);
@@ -206,6 +219,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +242,7 @@
         private QLDSVDataSetTableAdapters.LOPTableAdapter lOPTableAdapter;
         private System.Windows.Forms.BindingSource vGETDSLOPBindingSource;
         private QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter v_GETDSLOPTableAdapter;
+        private System.Windows.Forms.BindingSource kHOABindingSource;
+        private QLDSVDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
     }
 }

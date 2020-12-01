@@ -34,6 +34,8 @@
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary xrSummary3 = new DevExpress.XtraReports.UI.XRSummary();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.Title = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailCaption1 = new DevExpress.XtraReports.UI.XRControlStyle();
@@ -65,6 +67,11 @@
             this.tableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ds1 = new QLSV.QLDSVDataSet();
             this.sP_REPORT_DSDHPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_REPORT_DSDHPTableAdapter();
+            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.lblMoney = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblsv = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
@@ -194,13 +201,15 @@
             // lblLop
             // 
             this.lblLop.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblLop.LocationFloat = new DevExpress.Utils.PointFloat(155.8333F, 42F);
+            this.lblLop.LocationFloat = new DevExpress.Utils.PointFloat(123.3333F, 42F);
             this.lblLop.Multiline = true;
             this.lblLop.Name = "lblLop";
             this.lblLop.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.lblLop.SizeF = new System.Drawing.SizeF(100F, 23F);
             this.lblLop.StylePriority.UseFont = false;
+            this.lblLop.StylePriority.UseTextAlignment = false;
             this.lblLop.Text = "lblLOP";
+            this.lblLop.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // Lop
             // 
@@ -211,7 +220,9 @@
             this.Lop.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Lop.SizeF = new System.Drawing.SizeF(100F, 23F);
             this.Lop.StylePriority.UseFont = false;
+            this.Lop.StylePriority.UseTextAlignment = false;
             this.Lop.Text = "LỚP";
+            this.Lop.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -409,6 +420,76 @@
             // 
             this.sP_REPORT_DSDHPTableAdapter.ClearBeforeFill = true;
             // 
+            // ReportFooter
+            // 
+            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lblMoney,
+            this.xrLabel3,
+            this.lblsv,
+            this.xrLabel1});
+            this.ReportFooter.Name = "ReportFooter";
+            // 
+            // lblMoney
+            // 
+            this.lblMoney.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sum([SOTIENDONG])")});
+            this.lblMoney.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.lblMoney.LocationFloat = new DevExpress.Utils.PointFloat(212.5F, 46.33342F);
+            this.lblMoney.Multiline = true;
+            this.lblMoney.Name = "lblMoney";
+            this.lblMoney.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblMoney.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.lblMoney.StylePriority.UseFont = false;
+            this.lblMoney.StylePriority.UseTextAlignment = false;
+            xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.lblMoney.Summary = xrSummary2;
+            this.lblMoney.Text = "lblMoney";
+            this.lblMoney.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lblMoney.TextFormatString = "{0:0đ}";
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(23.33333F, 46.33342F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(189.1667F, 22.99999F);
+            this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
+            this.xrLabel3.Text = "TỔNG SỐ TIỀN ĐÃ ĐÓNG:";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
+            // lblsv
+            // 
+            this.lblsv.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount(Iif([SOTIENDONG] != 0))")});
+            this.lblsv.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.lblsv.LocationFloat = new DevExpress.Utils.PointFloat(180.8333F, 10F);
+            this.lblsv.Multiline = true;
+            this.lblsv.Name = "lblsv";
+            this.lblsv.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblsv.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.lblsv.StylePriority.UseFont = false;
+            this.lblsv.StylePriority.UseTextAlignment = false;
+            xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.lblsv.Summary = xrSummary3;
+            this.lblsv.Text = "lblSinhVien";
+            this.lblsv.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(23.33333F, 10F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(157.5F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "TỔNG SỐ SINH VIÊN:";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            // 
             // DSDHP
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -416,7 +497,8 @@
             this.BottomMargin,
             this.ReportHeader,
             this.GroupHeader1,
-            this.Detail});
+            this.Detail,
+            this.ReportFooter});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1,
             this.ds1});
@@ -467,10 +549,15 @@
         private DevExpress.XtraReports.UI.XRTableCell tableCell6;
         private DevExpress.XtraReports.UI.XRTableCell STT;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
-        private DevExpress.XtraReports.UI.XRLabel lblNguoiIn;
-        private DevExpress.XtraReports.UI.XRLabel lblLop;
         private DevExpress.XtraReports.UI.XRLabel Lop;
         private QLDSVDataSet ds1;
         private QLDSVDataSetTableAdapters.SP_REPORT_DSDHPTableAdapter sP_REPORT_DSDHPTableAdapter;
+        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
+        private DevExpress.XtraReports.UI.XRLabel lblMoney;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
+        private DevExpress.XtraReports.UI.XRLabel lblsv;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        public DevExpress.XtraReports.UI.XRLabel lblNguoiIn;
+        public DevExpress.XtraReports.UI.XRLabel lblLop;
     }
 }

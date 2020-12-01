@@ -12,7 +12,7 @@ namespace QLSV.Reports
         {
             InitializeComponent();
             ds1.EnforceConstraints = false;
-            this.sP_REPORT_DSSVTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.sP_REPORT_DSSVTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sP_REPORT_DSSVTableAdapter.Fill(ds1.SP_REPORT_DSSV, maLop);
         }
 

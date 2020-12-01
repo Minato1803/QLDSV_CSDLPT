@@ -74,7 +74,7 @@
             this.tableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.ds1 = new QLSV.QLDSVDataSet();
-            this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
+            this.sP_REPORT_BDTHITableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_REPORT_BDTHITableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
@@ -563,11 +563,12 @@
             // ds1
             // 
             this.ds1.DataSetName = "QLDSVDataSet";
+            this.ds1.EnforceConstraints = false;
             this.ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // v_DSPMTableAdapter
+            // sP_REPORT_BDTHITableAdapter
             // 
-            this.v_DSPMTableAdapter.ClearBeforeFill = true;
+            this.sP_REPORT_BDTHITableAdapter.ClearBeforeFill = true;
             // 
             // BDTHI
             // 
@@ -580,8 +581,7 @@
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1,
             this.ds1});
-            this.DataAdapter = this.v_DSPMTableAdapter;
-            this.DataMember = "V_DSPM";
+            this.DataMember = "SP_REPORT_BDTHI";
             this.DataSource = this.ds1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
@@ -640,6 +640,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell5;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
         private QLDSVDataSet ds1;
-        private QLDSVDataSetTableAdapters.V_DSPMTableAdapter v_DSPMTableAdapter;
+        private QLDSVDataSetTableAdapters.SP_REPORT_BDTHITableAdapter sP_REPORT_BDTHITableAdapter;
     }
 }

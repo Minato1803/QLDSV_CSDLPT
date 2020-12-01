@@ -20,6 +20,7 @@ namespace QLSV
         public static SqlDataAdapter da;
         public static BindingSource bds = new BindingSource();
         public static BindingSource bds_dsgv = new BindingSource();
+        public static BindingSource bds_lop = new BindingSource();
         public static SqlDataReader myReader =null;
         //public static String servername = "MINATO";
 
