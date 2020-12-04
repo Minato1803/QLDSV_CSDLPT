@@ -110,6 +110,7 @@ namespace QLSV
         private void inBtn_Click(object sender, EventArgs e)
         {
             BDTK report = new BDTK(cbLop.SelectedValue.ToString());
+            report.xrLabel1.Text = cbLop.Text.ToUpper();
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
         }
@@ -122,9 +123,10 @@ namespace QLSV
             String cmd = "SELECT * FROM LINK0.QLDSV.dbo.V_GETDSLOP L WHERE L.MALOP = '" +  txMaLop.Text +"'";
             dtLop = Program.ExecSqlDataTable(cmd);
             Program.bds_lop.DataSource = dtLop;
-            Console.WriteLine(((DataRowView)Program.bds_lop[0])["TENLOP"].ToString());
+            //Console.WriteLine(((DataRowView)Program.bds_lop[0])["TENLOP"].ToString());
 
-            BDTK report = new BDTK(((DataRowView)Program.bds_lop[0])["TENLOP"].ToString());
+            BDTK report = new BDTK(txMaLop.Text);
+            report.xrLabel1.Text = ((DataRowView)Program.bds_lop[0])["TENLOP"].ToString().ToUpper();
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
         }

@@ -562,3 +562,5 @@ D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.Reports.DSDHP.resourc
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.PHIEUDIEM.resources
 E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.PHIEUDIEM.resources
 E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.Reports.BangDiemTongKet.resources
+D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.Reports.BDTK.resources
+D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.Reports.BDMH.resources
