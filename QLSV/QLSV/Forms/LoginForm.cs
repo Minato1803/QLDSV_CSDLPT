@@ -219,6 +219,40 @@ namespace QLSV
             }
         }
 
+        private void userName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(userName.Text))
+            {
+                epUsername.Icon = Properties.Resources.exclamation;
+                userName.Focus();
+                epUsername.SetError(userName, "Tài khoản không được trống!");
+            }
+            else if (userName.Text.Contains(" "))
+            {
+                epUsername.Icon = Properties.Resources.exclamation;
+                userName.Focus();
+                epUsername.SetError(userName, "Trong tài khoản không được chứa khoảng trống!");
+            }
+            else
+            {
+                epUsername.Clear();
+            }
+        }
+
+        private void passWord_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(passWord.Text))
+            {
+                epPassword.Icon = Properties.Resources.exclamation;
+                passWord.Focus();
+                epPassword.SetError(passWord, "Mật khẩu không được trống!");
+            }
+            else
+            {
+                epPassword.Clear();
+            }
+        }
+
         // giới hạn vị trí con trỏ khi nhập
         //private void passWord_TextChanged(object sender, EventArgs e)
         //{
