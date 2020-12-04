@@ -43,8 +43,6 @@
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -64,6 +62,7 @@
             this.qldsvDataSet1 = new QLSV.QLDSVDataSet();
             this.qldsvDataSet2 = new QLSV.QLDSVDataSet();
             this.sP_getPhieuDiemTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_getPhieuDiemTableAdapter();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mvvmContext1)).BeginInit();
@@ -171,29 +170,8 @@
             // 
             // ReportHeader
             // 
-            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel2,
-            this.xrLabel1});
-            this.ReportHeader.HeightF = 128.75F;
+            this.ReportHeader.HeightF = 10.00001F;
             this.ReportHeader.Name = "ReportHeader";
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 27.16669F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(331.5F, 23F);
-            this.xrLabel2.Text = "xrLabel2";
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(331.5F, 27.16669F);
-            this.xrLabel1.Text = "HỌC VIỆN CÔNG NGHỆ BƯU CHÍNH VIỄN THÔNG";
             // 
             // GroupHeader1
             // 
@@ -281,7 +259,7 @@
             // 
             this.xrTableCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount()")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber()")});
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StyleName = "DetailData1";
@@ -310,7 +288,7 @@
             this.tableCell4.Name = "tableCell4";
             this.tableCell4.StyleName = "DetailData1";
             this.tableCell4.StylePriority.UseTextAlignment = false;
-            this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell4.Weight = 0.43802823580228367D;
             // 
             // label1
@@ -321,28 +299,44 @@
             this.label1.SizeF = new System.Drawing.SizeF(648F, 51.87499F);
             this.label1.StyleName = "Title";
             this.label1.StylePriority.UseFont = false;
+            this.label1.StylePriority.UseTextAlignment = false;
             this.label1.Text = "PHIẾU ĐIỂM";
+            this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel1,
             this.label1});
-            this.PageHeader.HeightF = 61.87499F;
+            this.PageHeader.HeightF = 131.0417F;
             this.PageHeader.Name = "PageHeader";
             // 
             // qldsvDataSet1
             // 
             this.qldsvDataSet1.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet1.Locale = new System.Globalization.CultureInfo("en-US");
             this.qldsvDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // qldsvDataSet2
             // 
             this.qldsvDataSet2.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet2.Locale = new System.Globalization.CultureInfo("en-US");
             this.qldsvDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sP_getPhieuDiemTableAdapter
             // 
             this.sP_getPhieuDiemTableAdapter.ClearBeforeFill = true;
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(2.000046F, 51.87499F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(647.9999F, 23F);
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "xrLabel1";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // PHIEUDIEM
             // 
@@ -408,10 +402,9 @@
         private DevExpress.Utils.MVVM.MVVMContext mvvmContext1;
         private DevExpress.Utils.MVVM.MVVMContext mvvmContext2;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private QLDSVDataSet qldsvDataSet1;
         private QLDSVDataSet qldsvDataSet2;
         private QLDSVDataSetTableAdapters.SP_getPhieuDiemTableAdapter sP_getPhieuDiemTableAdapter;
+        public DevExpress.XtraReports.UI.XRLabel xrLabel1;
     }
 }

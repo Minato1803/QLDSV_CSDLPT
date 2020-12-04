@@ -11,7 +11,7 @@ namespace QLSV.Reports
         public BDMH(string maLop, string maMH, string lan)
         {
             InitializeComponent();
-            this.sP_getBangDiemMonHocTableAdapter.Fill(qldsvDataSet2.SP_getBangDiemMonHoc, maLop, maMH, Convert.ToInt32(lan));
+            this.sP_getBangDiemMonHocTableAdapter.Fill(qldsvDataSet1.SP_getBangDiemMonHoc, maLop, maMH, int.Parse(lan));
         }
 
     }

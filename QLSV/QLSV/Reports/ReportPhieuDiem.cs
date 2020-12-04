@@ -128,7 +128,14 @@ namespace QLSV
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            DataTable dtsv = new DataTable();
+            //gọi 1 view và trả về dưới dạng datatable
+            dtsv = Program.ExecSqlDataTable("SELECT * FROM LINK0.QLDSV.dbo.V_DSSV_TaoTK SV WHERE SV.MASV = '" + txMaSinhVien.Text + "'");
+            // cất dt vào biến toàn cục Bds_Dspm
+            Program.bds.DataSource = dtsv;
+           
             PHIEUDIEM rpPhieuDiem = new PHIEUDIEM(txMaSinhVien.Text);
+            rpPhieuDiem.xrLabel1.Text = "SINH VIÊN: " + ((DataRowView)Program.bds[0])["HOTEN"].ToString().ToUpper() + " - " + txMaSinhVien.Text.ToUpper();
             ReportPrintTool rp = new ReportPrintTool(rpPhieuDiem);
             rp.ShowPreviewDialog();
         }
@@ -153,7 +160,11 @@ namespace QLSV
 
         private void inBtn_Click(object sender, EventArgs e)
         {
-
+            PHIEUDIEM rpPhieuDiem = new PHIEUDIEM(maSV.Text);
+            rpPhieuDiem.xrLabel1.Text = "SINH VIÊN: " + cbMaSinhVien.Text.ToUpper() + " - " + maSV.Text.ToUpper();
+            ReportPrintTool rp = new ReportPrintTool(rpPhieuDiem);
+            
+            rp.ShowPreviewDialog();
         }
     }
 }

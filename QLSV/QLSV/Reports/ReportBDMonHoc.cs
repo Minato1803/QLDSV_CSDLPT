@@ -27,7 +27,7 @@ namespace QLSV
             Console.WriteLine(lanThi.Value.ToString());
             BDMH report = new BDMH(maLop.Text, maMon.Text, lanThi.Value.ToString());
             report.xrLabel1.Text = "LỚP: " + cbLop.Text.ToUpper();
-            report.xrLabel2.Text = "Môn HỌC: " + cbMon.Text.ToUpper();
+            report.xrLabel2.Text = "MÔN HỌC: " + cbMon.Text.ToUpper();
             report.xrLabel3.Text = "LẦN THI: " + lanThi.Value.ToString();
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
@@ -35,7 +35,11 @@ namespace QLSV
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("Bạn có thực sự muốn thoát?", "Thông Báo", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void ReportBDMonHoc_Load(object sender, EventArgs e)
@@ -152,15 +156,6 @@ namespace QLSV
             {
                 maMon.Text = cbMon.SelectedValue.ToString();
             }
-        }
-
-        private void cbMon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbKhoa.SelectedValue != null)
-            {
-                maMon.Text = cbMon.SelectedValue.ToString();
-            }
-                
         }
     }
 }

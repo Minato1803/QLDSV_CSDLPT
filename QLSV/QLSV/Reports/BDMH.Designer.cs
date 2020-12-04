@@ -63,13 +63,10 @@
             this.tableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.qldsvDataSet1 = new QLSV.QLDSVDataSet();
-            this.cT_DONGHOCPHITableAdapter = new QLSV.QLDSVDataSetTableAdapters.CT_DONGHOCPHITableAdapter();
-            this.qldsvDataSet2 = new QLSV.QLDSVDataSet();
             this.sP_getBangDiemMonHocTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_getBangDiemMonHocTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // sqlDataSource1
@@ -355,16 +352,6 @@
             this.qldsvDataSet1.Locale = new System.Globalization.CultureInfo("en-US");
             this.qldsvDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cT_DONGHOCPHITableAdapter
-            // 
-            this.cT_DONGHOCPHITableAdapter.ClearBeforeFill = true;
-            // 
-            // qldsvDataSet2
-            // 
-            this.qldsvDataSet2.DataSetName = "QLDSVDataSet";
-            this.qldsvDataSet2.Locale = new System.Globalization.CultureInfo("en-US");
-            this.qldsvDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // sP_getBangDiemMonHocTableAdapter
             // 
             this.sP_getBangDiemMonHocTableAdapter.ClearBeforeFill = true;
@@ -379,9 +366,8 @@
             this.Detail});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1,
-            this.qldsvDataSet1,
-            this.qldsvDataSet2});
-            this.DataAdapter = this.cT_DONGHOCPHITableAdapter;
+            this.qldsvDataSet1});
+            this.DataAdapter = this.sP_getBangDiemMonHocTableAdapter;
             this.DataMember = "SP_getBangDiemMonHoc";
             this.DataSource = this.qldsvDataSet1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
@@ -395,7 +381,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -426,12 +411,10 @@
         private DevExpress.XtraReports.UI.XRTableCell tableCell4;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
-        private QLDSVDataSet qldsvDataSet1;
-        private QLDSVDataSetTableAdapters.CT_DONGHOCPHITableAdapter cT_DONGHOCPHITableAdapter;
-        private QLDSVDataSet qldsvDataSet2;
-        private QLDSVDataSetTableAdapters.SP_getBangDiemMonHocTableAdapter sP_getBangDiemMonHocTableAdapter;
         public DevExpress.XtraReports.UI.XRLabel xrLabel3;
         public DevExpress.XtraReports.UI.XRLabel xrLabel2;
         public DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private QLDSVDataSet qldsvDataSet1;
+        private QLDSVDataSetTableAdapters.SP_getBangDiemMonHocTableAdapter sP_getBangDiemMonHocTableAdapter;
     }
 }
