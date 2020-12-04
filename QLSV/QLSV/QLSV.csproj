@@ -137,12 +137,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reports\BangDiemTongKet.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\BangDiemTongKet.Designer.cs">
-      <DependentUpon>BangDiemTongKet.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\BDTHI.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -244,9 +238,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\BangDiemTongKet.resx">
-      <DependentUpon>BangDiemTongKet.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\BDTHI.resx">
       <DependentUpon>BDTHI.cs</DependentUpon>
     </EmbeddedResource>

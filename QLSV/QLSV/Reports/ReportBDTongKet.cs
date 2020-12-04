@@ -109,7 +109,7 @@ namespace QLSV
 
         private void inBtn_Click(object sender, EventArgs e)
         {
-            BangDiemTongKet report = new BangDiemTongKet(cbLop.SelectedValue.ToString());
+            BDTK report = new BDTK(cbLop.SelectedValue.ToString());
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
         }
@@ -124,7 +124,7 @@ namespace QLSV
             Program.bds_lop.DataSource = dtLop;
             Console.WriteLine(((DataRowView)Program.bds_lop[0])["TENLOP"].ToString());
 
-            BangDiemTongKet report = new BangDiemTongKet(((DataRowView)Program.bds_lop[0])["TENLOP"].ToString());
+            BDTK report = new BDTK(((DataRowView)Program.bds_lop[0])["TENLOP"].ToString());
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
         }

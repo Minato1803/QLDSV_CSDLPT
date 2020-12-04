@@ -591,6 +591,7 @@
             this.DataMember = "SP_REPORT_BDTHI";
             this.DataSource = this.ds1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Margins = new System.Drawing.Printing.Margins(97, 100, 100, 100);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.Title,
             this.DetailCaption1,

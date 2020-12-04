@@ -281,7 +281,7 @@
             // 
             this.xrTableCell1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount()")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumRecordNumber()")});
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StyleName = "DetailData1";
@@ -333,11 +333,13 @@
             // qldsvDataSet1
             // 
             this.qldsvDataSet1.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet1.Locale = new System.Globalization.CultureInfo("en-US");
             this.qldsvDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // qldsvDataSet2
             // 
             this.qldsvDataSet2.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet2.Locale = new System.Globalization.CultureInfo("en-US");
             this.qldsvDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sP_getPhieuDiemTableAdapter

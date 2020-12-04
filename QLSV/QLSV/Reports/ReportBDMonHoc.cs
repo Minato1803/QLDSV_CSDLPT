@@ -30,8 +30,6 @@ namespace QLSV
 
         private void ReportBDMonHoc_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLDSVDataSet.MONHOC' table. You can move, or remove it, as needed.
-            this.mONHOCTableAdapter.Fill(this.qLDSVDataSet.MONHOC);
             
             if (Program.mGroup.Equals("PGV"))
             {
