@@ -168,11 +168,11 @@
             // lblNguoiIn
             // 
             this.lblNguoiIn.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblNguoiIn.LocationFloat = new DevExpress.Utils.PointFloat(5F, 48.83336F);
+            this.lblNguoiIn.LocationFloat = new DevExpress.Utils.PointFloat(5F, 48.83331F);
             this.lblNguoiIn.Multiline = true;
             this.lblNguoiIn.Name = "lblNguoiIn";
             this.lblNguoiIn.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNguoiIn.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.lblNguoiIn.SizeF = new System.Drawing.SizeF(369.2234F, 23F);
             this.lblNguoiIn.StylePriority.UseFont = false;
             this.lblNguoiIn.Text = "lblNguoiIn";
             // 
@@ -211,7 +211,7 @@
             // lblLanThi
             // 
             this.lblLanThi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblLanThi.LocationFloat = new DevExpress.Utils.PointFloat(444.2111F, 111.1666F);
+            this.lblLanThi.LocationFloat = new DevExpress.Utils.PointFloat(545F, 111.1667F);
             this.lblLanThi.Multiline = true;
             this.lblLanThi.Name = "lblLanThi";
             this.lblLanThi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -224,7 +224,7 @@
             // xrLabel7
             // 
             this.xrLabel7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(344.2111F, 111.1667F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(445F, 111.1667F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -241,7 +241,7 @@
             this.lblNgayThi.Multiline = true;
             this.lblNgayThi.Name = "lblNgayThi";
             this.lblNgayThi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNgayThi.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.lblNgayThi.SizeF = new System.Drawing.SizeF(228.3333F, 23F);
             this.lblNgayThi.StylePriority.UseFont = false;
             this.lblNgayThi.StylePriority.UseTextAlignment = false;
             this.lblNgayThi.Text = "lblNgayThi";
@@ -255,7 +255,7 @@
             this.lblMonHoc.Multiline = true;
             this.lblMonHoc.Name = "lblMonHoc";
             this.lblMonHoc.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblMonHoc.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.lblMonHoc.SizeF = new System.Drawing.SizeF(440.8333F, 23F);
             this.lblMonHoc.StylePriority.UseFont = false;
             this.lblMonHoc.StylePriority.UseTextAlignment = false;
             this.lblMonHoc.Text = "lblMonHoc";
@@ -268,7 +268,7 @@
             this.lblLop.Multiline = true;
             this.lblLop.Name = "lblLop";
             this.lblLop.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblLop.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.lblLop.SizeF = new System.Drawing.SizeF(440.8333F, 23F);
             this.lblLop.StylePriority.UseFont = false;
             this.lblLop.StylePriority.UseTextAlignment = false;
             this.lblLop.Text = "lblLop";
@@ -509,9 +509,11 @@
             this.STT.Name = "STT";
             this.STT.StyleName = "DetailData1";
             this.STT.StylePriority.UseBorders = false;
+            this.STT.StylePriority.UseTextAlignment = false;
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.STT.Summary = xrSummary1;
             this.STT.Text = "STT";
+            this.STT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.STT.Weight = 0.12166505328696661D;
             // 
             // tableCell4
@@ -522,6 +524,8 @@
             this.tableCell4.Name = "tableCell4";
             this.tableCell4.StyleName = "DetailData1";
             this.tableCell4.StylePriority.UseBorders = false;
+            this.tableCell4.StylePriority.UseTextAlignment = false;
+            this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell4.Weight = 0.36626814434725635D;
             // 
             // tableCell5
@@ -530,6 +534,8 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[HOTEN]")});
             this.tableCell5.Name = "tableCell5";
             this.tableCell5.StyleName = "DetailData1";
+            this.tableCell5.StylePriority.UseTextAlignment = false;
+            this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell5.Weight = 0.49281182673802953D;
             // 
             // xrTableCell5
@@ -537,7 +543,8 @@
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StyleName = "DetailData1";
-            this.xrTableCell5.Text = "SoTo";
+            this.xrTableCell5.StylePriority.UseTextAlignment = false;
+            this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell5.Weight = 0.21763329430973191D;
             // 
             // tableCell6
@@ -547,7 +554,7 @@
             this.tableCell6.Name = "tableCell6";
             this.tableCell6.StyleName = "DetailData1";
             this.tableCell6.StylePriority.UseTextAlignment = false;
-            this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell6.Weight = 0.21105856041870569D;
             // 
             // xrTableCell4
@@ -556,14 +563,14 @@
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StyleName = "DetailData1";
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
-            this.xrTableCell4.Text = "ChuKy";
-            this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrTableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell4.Weight = 0.29404911710036519D;
             // 
             // ds1
             // 
             this.ds1.DataSetName = "QLDSVDataSet";
             this.ds1.EnforceConstraints = false;
+            this.ds1.Locale = new System.Globalization.CultureInfo("en-US");
             this.ds1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sP_REPORT_BDTHITableAdapter
@@ -625,12 +632,7 @@
         private DevExpress.XtraReports.UI.XRTableCell tableCell5;
         private DevExpress.XtraReports.UI.XRTableCell tableCell6;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
-        private DevExpress.XtraReports.UI.XRLabel lblNguoiIn;
-        private DevExpress.XtraReports.UI.XRLabel lblLanThi;
         private DevExpress.XtraReports.UI.XRLabel xrLabel7;
-        private DevExpress.XtraReports.UI.XRLabel lblNgayThi;
-        private DevExpress.XtraReports.UI.XRLabel lblMonHoc;
-        private DevExpress.XtraReports.UI.XRLabel lblLop;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
@@ -641,5 +643,10 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
         private QLDSVDataSet ds1;
         private QLDSVDataSetTableAdapters.SP_REPORT_BDTHITableAdapter sP_REPORT_BDTHITableAdapter;
+        public DevExpress.XtraReports.UI.XRLabel lblNguoiIn;
+        public DevExpress.XtraReports.UI.XRLabel lblLanThi;
+        public DevExpress.XtraReports.UI.XRLabel lblNgayThi;
+        public DevExpress.XtraReports.UI.XRLabel lblMonHoc;
+        public DevExpress.XtraReports.UI.XRLabel lblLop;
     }
 }

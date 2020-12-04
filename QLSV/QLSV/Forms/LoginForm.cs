@@ -45,7 +45,7 @@ namespace QLSV
             }
             catch (NullReferenceException ex)
             {
-
+                Console.WriteLine(ex);
             }
         }
 
@@ -140,6 +140,7 @@ namespace QLSV
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex);
                         MessageBox.Show("Login bạn nhập không có quyền truy cập vào chương trình", "", MessageBoxButtons.OK);
                         return;
                     }

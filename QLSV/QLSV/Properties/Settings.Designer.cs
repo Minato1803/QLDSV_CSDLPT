@@ -26,11 +26,11 @@ namespace QLSV.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TNCNHAN\\TNCN;Initial Catalog=QLDSV;Persist Security Info=True;User ID" +
-            "=sa;Password=123")]
-        public string QLDSVConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MINATO;Initial Catalog=QLDSV;Persist Security Info=True;User ID=sa;Pa" +
+            "ssword=123456")]
+        public string QLDSVConnectionString {
             get {
-                return ((string)(this["QLDSVConnectionString1"]));
+                return ((string)(this["QLDSVConnectionString"]));
             }
         }
         
@@ -39,9 +39,9 @@ namespace QLSV.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MINATO;Initial Catalog=QLDSV;Persist Security Info=True;User ID=sa;Pa" +
             "ssword=123456")]
-        public string QLDSVConnectionString {
+        public string QLDSVConnectionString1 {
             get {
-                return ((string)(this["QLDSVConnectionString"]));
+                return ((string)(this["QLDSVConnectionString1"]));
             }
         }
     }
