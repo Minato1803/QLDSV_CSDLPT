@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using QLSV.Reports;
+using DevExpress.XtraReports.UI;
 
 namespace QLSV
 {
@@ -20,7 +22,15 @@ namespace QLSV
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            
+            Console.WriteLine(maLop.Text);
+            Console.WriteLine(maMon.Text);
+            Console.WriteLine(lanThi.Value.ToString());
+            BDMH report = new BDMH(maLop.Text, maMon.Text, lanThi.Value.ToString());
+            report.xrLabel1.Text = "LỚP: " + cbLop.Text.ToUpper();
+            report.xrLabel2.Text = "Môn HỌC: " + cbMon.Text.ToUpper();
+            report.xrLabel3.Text = "LẦN THI: " + lanThi.Value.ToString();
+            ReportPrintTool print = new ReportPrintTool(report);
+            print.ShowPreviewDialog();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -47,7 +57,7 @@ namespace QLSV
                 cbLop.DataSource = dtLop;
                 cbLop.DisplayMember = "TENLOP";
                 cbLop.ValueMember = "MALOP";
-
+                cbMon.SelectedIndex = 0;
                 cbLop.SelectedIndex = 0;
             }
             else if (Program.mGroup.Equals("KHOA"))
@@ -59,6 +69,7 @@ namespace QLSV
                 // TODO: This line of code loads data into the 'qLDSVDataSet.KHOA' table. You can move, or remove it, as needed.
                 this.kHOATableAdapter.Fill(this.qLDSVDataSet.KHOA);
                 //để combobox chạy đúng
+                cbMon.SelectedIndex = 0;
                 cbKhoa.SelectedIndex = 0;
                 //khóa hiển thị combobox khoa
                 cbKhoa.SelectedIndex = Program.mKhoa;
@@ -91,6 +102,15 @@ namespace QLSV
 
                 cbLop.SelectedIndex = 0;
             }
+        }
+
+        private void cbMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbKhoa.SelectedValue != null)
+            {
+                maMon.Text = cbMon.SelectedValue.ToString();
+            }
+                
         }
     }
 }
