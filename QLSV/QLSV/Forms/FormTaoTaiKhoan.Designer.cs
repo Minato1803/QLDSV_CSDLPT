@@ -89,6 +89,9 @@
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(301, 32);
             this.userName.TabIndex = 0;
+            this.userName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userName.Leave += new System.EventHandler(this.userName_Leave);
+            this.userName.Validating += new System.ComponentModel.CancelEventHandler(this.userName_Validating);
             // 
             // passWord
             // 
@@ -99,6 +102,9 @@
             this.passWord.PasswordChar = '●';
             this.passWord.Size = new System.Drawing.Size(301, 32);
             this.passWord.TabIndex = 1;
+            this.passWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passWord.Leave += new System.EventHandler(this.passWord_Leave);
+            this.passWord.Validating += new System.ComponentModel.CancelEventHandler(this.passWord_Validating);
             // 
             // label1
             // 
@@ -267,6 +273,7 @@
             // qLDSVDataSet
             // 
             this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.Locale = new System.Globalization.CultureInfo("en-US");
             this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbKhoa
@@ -409,14 +416,19 @@
             // 
             // confirmPassWord
             // 
+            this.confirmPassWord.EditValue = "";
             this.confirmPassWord.Location = new System.Drawing.Point(166, 249);
             this.confirmPassWord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.confirmPassWord.Name = "confirmPassWord";
             this.confirmPassWord.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassWord.Properties.Appearance.Options.UseFont = true;
+            this.confirmPassWord.Properties.Appearance.Options.UseTextOptions = true;
+            this.confirmPassWord.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.confirmPassWord.Properties.PasswordChar = '●';
             this.confirmPassWord.Size = new System.Drawing.Size(302, 30);
             this.confirmPassWord.TabIndex = 2;
+            this.confirmPassWord.Leave += new System.EventHandler(this.confirmPassWord_Leave);
+            this.confirmPassWord.Validating += new System.ComponentModel.CancelEventHandler(this.confirmPassWord_Validating);
             // 
             // v_DSPMTableAdapter
             // 
@@ -452,7 +464,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1915, 981);
+            this.ClientSize = new System.Drawing.Size(1940, 1045);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabPane1);

@@ -35,10 +35,12 @@
             this.maMon = new System.Windows.Forms.TextBox();
             this.maLop = new System.Windows.Forms.TextBox();
             this.cbMon = new System.Windows.Forms.ComboBox();
+            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.cbLop = new System.Windows.Forms.ComboBox();
             this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.cbKhoa = new System.Windows.Forms.ComboBox();
+            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,17 +49,15 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
             this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
-            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOATableAdapter = new QLSV.QLDSVDataSetTableAdapters.KHOATableAdapter();
-            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mONHOCTableAdapter = new QLSV.QLDSVDataSetTableAdapters.MONHOCTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -133,6 +133,18 @@
             this.cbMon.Size = new System.Drawing.Size(287, 32);
             this.cbMon.TabIndex = 23;
             this.cbMon.ValueMember = "MAMH";
+            this.cbMon.SelectedIndexChanged += new System.EventHandler(this.cbMon_SelectedIndexChanged);
+            // 
+            // mONHOCBindingSource
+            // 
+            this.mONHOCBindingSource.DataMember = "MONHOC";
+            this.mONHOCBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.Locale = new System.Globalization.CultureInfo("en-US");
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbLop
             // 
@@ -154,12 +166,6 @@
             this.vGETDSLOPBindingSource.DataMember = "V_GETDSLOP";
             this.vGETDSLOPBindingSource.DataSource = this.qLDSVDataSet;
             // 
-            // qLDSVDataSet
-            // 
-            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
-            this.qLDSVDataSet.Locale = new System.Globalization.CultureInfo("en-US");
-            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cbKhoa
             // 
             this.cbKhoa.DataSource = this.kHOABindingSource;
@@ -174,6 +180,11 @@
             this.cbKhoa.TabIndex = 21;
             this.cbKhoa.ValueMember = "MAKH";
             this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
+            // 
+            // kHOABindingSource
+            // 
+            this.kHOABindingSource.DataMember = "KHOA";
+            this.kHOABindingSource.DataSource = this.qLDSVDataSet;
             // 
             // vDSPMBindingSource
             // 
@@ -252,19 +263,9 @@
             // 
             this.v_GETDSLOPTableAdapter.ClearBeforeFill = true;
             // 
-            // kHOABindingSource
-            // 
-            this.kHOABindingSource.DataMember = "KHOA";
-            this.kHOABindingSource.DataSource = this.qLDSVDataSet;
-            // 
             // kHOATableAdapter
             // 
             this.kHOATableAdapter.ClearBeforeFill = true;
-            // 
-            // mONHOCBindingSource
-            // 
-            this.mONHOCBindingSource.DataMember = "MONHOC";
-            this.mONHOCBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // mONHOCTableAdapter
             // 
@@ -274,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1739, 807);
+            this.ClientSize = new System.Drawing.Size(1771, 839);
             this.ControlBox = false;
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.simpleButton2);
@@ -295,12 +296,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportBDMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

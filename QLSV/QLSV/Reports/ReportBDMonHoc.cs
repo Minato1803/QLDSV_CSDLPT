@@ -49,6 +49,24 @@ namespace QLSV
                 cbLop.ValueMember = "MALOP";
 
                 cbLop.SelectedIndex = 0;
+
+                DataTable dtMon = new DataTable();
+                if (Program.TKhoa[cbKhoa.SelectedIndex] != Program.TKhoa[Program.mKhoa])
+                {
+                    cmd = "SELECT * FROM LINK1.QLDSV.dbo.MONHOC";
+                }
+                else
+                {
+                    cmd = "SELECT * FROM MONHOC";
+                }
+                dtMon = Program.ExecSqlDataTable(cmd);
+                // cất dt vào biến toàn cục Bds_Dspm
+                Program.bds_mon.DataSource = dtMon;
+                cbMon.DataSource = dtMon;
+                cbMon.DisplayMember = "TENMH";
+                cbMon.ValueMember = "MAMH";
+
+                cbMon.SelectedIndex = 0;
             }
             else if (Program.mGroup.Equals("KHOA"))
             {
@@ -63,7 +81,13 @@ namespace QLSV
                 //khóa hiển thị combobox khoa
                 cbKhoa.SelectedIndex = Program.mKhoa;
                 cbKhoa.DropDownStyle = ComboBoxStyle.Simple;
+
+                this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.mONHOCTableAdapter.Fill(this.qLDSVDataSet.MONHOC);
+                cbMon.SelectedIndex = 0;
             }
+            maLop.Text = cbLop.SelectedValue.ToString();
+            maMon.Text = cbMon.SelectedValue.ToString();
 
         }
 
@@ -90,6 +114,32 @@ namespace QLSV
                 cbLop.ValueMember = "MALOP";
 
                 cbLop.SelectedIndex = 0;
+
+                DataTable dtMon = new DataTable();
+                if (Program.TKhoa[cbKhoa.SelectedIndex] != Program.TKhoa[Program.mKhoa])
+                {
+                    cmd = "SELECT * FROM LINK1.QLDSV.dbo.MONHOC";
+                }
+                else
+                {
+                    cmd = "SELECT * FROM MONHOC";
+                }
+                dtMon = Program.ExecSqlDataTable(cmd);
+                // cất dt vào biến toàn cục Bds_Dspm
+                Program.bds_mon.DataSource = dtMon;
+                cbMon.DataSource = dtMon;
+                cbMon.DisplayMember = "TENMH";
+                cbMon.ValueMember = "MAMH";
+
+                cbMon.SelectedIndex = 0;
+            }
+        }
+
+        private void cbMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbMon.SelectedValue != null)
+            {
+                maMon.Text = cbMon.SelectedValue.ToString();
             }
         }
     }

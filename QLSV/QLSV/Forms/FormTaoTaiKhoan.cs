@@ -100,45 +100,6 @@ namespace QLSV
 
         }
 
-        
-
-        private bool CheckInfo()
-        {
-            bool check = false;
-
-
-            if(string.IsNullOrEmpty(this.userName.Text))
-                    {
-                MessageBox.Show("Tên tài khoản không được rỗng", "Lỗi", MessageBoxButtons.OK);
-                userName.Focus();
-            }
-            else if (userName.Text.Contains(" "))
-            {
-                MessageBox.Show("không được chứa khoảng trắng trong tên", "Lỗi", MessageBoxButtons.OK);
-                userName.Focus();
-            }
-            else if (string.IsNullOrEmpty(this.passWord.Text))
-            {
-                MessageBox.Show("Mật khẩu không được rỗng", "Lỗi", MessageBoxButtons.OK);
-                passWord.Focus();
-            }
-            else if (string.IsNullOrEmpty(this.confirmPassWord.Text))
-            {
-                MessageBox.Show("Mật khẩu không được rỗng", "Lỗi", MessageBoxButtons.OK);
-                confirmPassWord.Focus();
-            }
-            else if (confirmPassWord.Text != passWord.Text)
-            {
-                MessageBox.Show("Mật khẩu không khớp", "Lỗi", MessageBoxButtons.OK);
-                confirmPassWord.Focus();
-            }
-            else
-            {
-                check = true;
-            }
-
-            return check;
-        }
 
         private void clearGiaoVien_Click(object sender, EventArgs e)
         {
@@ -322,73 +283,179 @@ namespace QLSV
             String login = userName.Text;
             String pass = passWord.Text;
             String user = cbMaSinhVien.SelectedValue.ToString();
-
-            String subLenh = " EXEC    @return_value = [dbo].[SP_TaoTaiKhoan] " +
-
-                            " @LGNAME = N'" + login + "', " +
-                            " @PASS = N'" + pass + "', " +
-                            " @USERNAME = N'" + user + "', " +
-                            " @ROLE = N'" + "USERS" + "' ";
-
-            if ((Program.mGroup == Program.NhomQuyen[0]))
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                if(cbLop.SelectedValue.ToString() == "CNTT" && Program.servername == ((DataRowView)Program.bds_dspm[1])["TENSERVER"].ToString())
-                {
-                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
+
+                String subLenh = " EXEC    @return_value = [dbo].[SP_TaoTaiKhoan] " +
 
                                 " @LGNAME = N'" + login + "', " +
                                 " @PASS = N'" + pass + "', " +
                                 " @USERNAME = N'" + user + "', " +
                                 " @ROLE = N'" + "USERS" + "' ";
-                }
-                else if(cbLop.SelectedValue.ToString() == "VT" && Program.servername == ((DataRowView)Program.bds_dspm[0])["TENSERVER"].ToString())
+
+                if ((Program.mGroup == Program.NhomQuyen[0]))
                 {
-                    subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
+                    if(cbLop.SelectedValue.ToString() == "CNTT" && Program.servername == ((DataRowView)Program.bds_dspm[1])["TENSERVER"].ToString())
+                    {
+                        subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
 
-                                " @LGNAME = N'" + login + "', " +
-                                " @PASS = N'" + pass + "', " +
-                                " @USERNAME = N'" + user + "', " +
-                                " @ROLE = N'" + "USERS" + "' ";
+                                    " @LGNAME = N'" + login + "', " +
+                                    " @PASS = N'" + pass + "', " +
+                                    " @USERNAME = N'" + user + "', " +
+                                    " @ROLE = N'" + "USERS" + "' ";
+                    }
+                    else if(cbLop.SelectedValue.ToString() == "VT" && Program.servername == ((DataRowView)Program.bds_dspm[0])["TENSERVER"].ToString())
+                    {
+                        subLenh = " EXEC    @return_value = LINK1.QLDSV.[dbo].[SP_TaoTaiKhoan] " +
+
+                                    " @LGNAME = N'" + login + "', " +
+                                    " @PASS = N'" + pass + "', " +
+                                    " @USERNAME = N'" + user + "', " +
+                                    " @ROLE = N'" + "USERS" + "' ";
+                    }
                 }
+
+                // trường hợp tạo tài khoản cho chỉ khoa
+
+                String strLenh = " DECLARE @return_value int " + subLenh +
+                             " SELECT  'Return Value' = @return_value ";
+
+                // kiểm tra valid
+                SqlDataReader dataReader = Program.ExecSqlDataReader(strLenh);
+
+                // nếu null thì thoát luôn  ==> lỗi kết nối
+                if (dataReader == null)
+                {
+                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại !", "", MessageBoxButtons.OK);
+                    this.Close();
+                }
+                dataReader.Read();
+                int result = int.Parse(dataReader.GetValue(0).ToString());
+                dataReader.Close();
+                if (result == 1)
+                {
+                    errorUser.Icon = Properties.Resources.exclamation;
+                    errorUser.SetError(userName, "Tên tài khoản đã tồn tại");
+                }
+                else if (result == 2)
+                {
+                    errorUser.Icon = Properties.Resources.exclamation;
+                    errorUser.SetError(userName, "Người dùng này đã có tài khoản");
+
+                }
+                else if (result == 3)
+                {
+                    MessageBox.Show("Lỗi tạo tài khoản \n vui lòng kiểm tra username và password", "lỗi", MessageBoxButtons.OK);
+                }
+                else if (result == 0)
+                {
+                    MessageBox.Show("Tạo tài khoản thành công", "thành công", MessageBoxButtons.OK);
+                }
+                return;
             }
+        }
 
-            // trường hợp tạo tài khoản cho chỉ khoa
-
-            String strLenh = " DECLARE @return_value int " + subLenh +
-                         " SELECT  'Return Value' = @return_value ";
-
-            // kiểm tra valid
-            SqlDataReader dataReader = Program.ExecSqlDataReader(strLenh);
-
-            // nếu null thì thoát luôn  ==> lỗi kết nối
-            if (dataReader == null)
-            {
-                MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại !", "", MessageBoxButtons.OK);
-                this.Close();
-            }
-            dataReader.Read();
-            int result = int.Parse(dataReader.GetValue(0).ToString());
-            dataReader.Close();
-            if (result == 1)
+        private void userName_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.userName.Text))
             {
                 errorUser.Icon = Properties.Resources.exclamation;
-                errorUser.SetError(userName, "Tên tài khoản đã tồn tại");
+                errorUser.SetError(userName, "Tên tài khoản không được trống");
             }
-            else if (result == 2)
+            else if (userName.Text.Contains(" "))
             {
                 errorUser.Icon = Properties.Resources.exclamation;
-                errorUser.SetError(userName, "Người dùng này đã có tài khoản");
+                errorUser.SetError(userName, "Tên tài khoản không được chứa khoảng trống");
+            }
+            else
+            {
+                errorUser.Clear();
+            }
+        }
 
-            }
-            else if (result == 3)
+        private void passWord_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.passWord.Text))
             {
-                MessageBox.Show("Lỗi tạo tài khoản \n vui lòng kiểm tra username và password", "lỗi", MessageBoxButtons.OK);
+                errorPasswod.Icon = Properties.Resources.exclamation;
+                errorPasswod.SetError(passWord, "Mật khẩu không được trống");
             }
-            else if (result == 0)
+            else
             {
-                MessageBox.Show("Tạo tài khoản thành công", "thành công", MessageBoxButtons.OK);
+                errorPasswod.Clear();
             }
-            return;
+        }
+
+        private void confirmPassWord_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.confirmPassWord.Text))
+            {
+                errorConfirm.Icon = Properties.Resources.exclamation;
+                errorConfirm.SetError(confirmPassWord, "Vui lòng xác thực mật khẩu");
+            }
+            else if (confirmPassWord.Text != passWord.Text)
+            {
+                errorConfirm.Icon = Properties.Resources.exclamation;
+                errorConfirm.SetError(confirmPassWord, "Sai mật khẩu");
+            }
+            else
+            {
+                errorConfirm.Clear();
+            }
+        }
+
+        private void userName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.userName.Text))
+            {
+                errorUser.Icon = Properties.Resources.exclamation;
+                userName.Focus();
+                errorUser.SetError(userName, "Tên tài khoản không được trống");
+            }
+            else if (userName.Text.Contains(" "))
+            {
+                errorUser.Icon = Properties.Resources.exclamation;
+                userName.Focus();
+                errorUser.SetError(userName, "Tên tài khoản không được chứa khoảng trống");
+            }
+            else
+            {
+                errorUser.Clear();
+            }
+        }
+
+        private void passWord_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.passWord.Text))
+            {
+                errorPasswod.Icon = Properties.Resources.exclamation;
+                passWord.Focus();
+                errorPasswod.SetError(passWord, "Mật khẩu không được trống");
+            }
+            else
+            {
+                errorPasswod.Clear();
+            }
+        }
+
+        private void confirmPassWord_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.confirmPassWord.Text))
+            {
+                errorConfirm.Icon = Properties.Resources.exclamation;
+                confirmPassWord.Focus();
+                errorConfirm.SetError(confirmPassWord, "Vui lòng xác thực mật khẩu");
+            }
+            else if (confirmPassWord.Text != passWord.Text)
+            {
+                errorConfirm.Icon = Properties.Resources.exclamation;
+                confirmPassWord.Focus();
+                errorConfirm.SetError(confirmPassWord, "Sai mật khẩu");
+            }
+            else
+            {
+                errorConfirm.Clear();
+            }
         }
     }
 }

@@ -39,7 +39,7 @@
             this.quitFormBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.cbKhoa = new System.Windows.Forms.ToolStripComboBox();
             this.tool.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,11 +58,11 @@
             this.quitFormBtn,
             this.toolStripSeparator1,
             this.toolStripLabel1,
-            this.toolStripComboBox1});
+            this.cbKhoa});
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.tool.Size = new System.Drawing.Size(1491, 27);
+            this.tool.Size = new System.Drawing.Size(1739, 30);
             this.tool.TabIndex = 2;
             this.tool.Text = "toolStrip1";
             // 
@@ -72,7 +72,7 @@
             this.addBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addBtn.Name = "addBtn";
             this.addBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.addBtn.Size = new System.Drawing.Size(71, 24);
+            this.addBtn.Size = new System.Drawing.Size(84, 27);
             this.addBtn.Text = "Thêm";
             // 
             // deleteBtn
@@ -81,7 +81,7 @@
             this.deleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.deleteBtn.Size = new System.Drawing.Size(62, 24);
+            this.deleteBtn.Size = new System.Drawing.Size(70, 27);
             this.deleteBtn.Text = "Xóa";
             // 
             // adjustBtn
@@ -90,7 +90,7 @@
             this.adjustBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.adjustBtn.Name = "adjustBtn";
             this.adjustBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.adjustBtn.Size = new System.Drawing.Size(61, 24);
+            this.adjustBtn.Size = new System.Drawing.Size(69, 27);
             this.adjustBtn.Text = "Sửa";
             // 
             // undoBtn
@@ -99,7 +99,7 @@
             this.undoBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.undoBtn.Size = new System.Drawing.Size(90, 24);
+            this.undoBtn.Size = new System.Drawing.Size(110, 27);
             this.undoBtn.Text = "Phục Hồi";
             // 
             // saveBtn
@@ -108,7 +108,7 @@
             this.saveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.saveBtn.Size = new System.Drawing.Size(58, 24);
+            this.saveBtn.Size = new System.Drawing.Size(67, 27);
             this.saveBtn.Text = "Ghi";
             // 
             // exitBtn
@@ -117,7 +117,7 @@
             this.exitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.exitBtn.Size = new System.Drawing.Size(61, 24);
+            this.exitBtn.Size = new System.Drawing.Size(71, 27);
             this.exitBtn.Text = "Hủy";
             // 
             // reloadBtn
@@ -126,7 +126,7 @@
             this.reloadBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.reloadBtn.Name = "reloadBtn";
             this.reloadBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.reloadBtn.Size = new System.Drawing.Size(90, 24);
+            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
             this.reloadBtn.Text = "Làm Mới";
             // 
             // quitFormBtn
@@ -135,36 +135,37 @@
             this.quitFormBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.quitFormBtn.Name = "quitFormBtn";
             this.quitFormBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.quitFormBtn.Size = new System.Drawing.Size(72, 24);
+            this.quitFormBtn.Size = new System.Drawing.Size(85, 27);
             this.quitFormBtn.Text = "Thoát";
             this.quitFormBtn.Click += new System.EventHandler(this.quitFormBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 30);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(49, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(62, 27);
             this.toolStripLabel1.Text = "Khoa:";
             // 
-            // toolStripComboBox1
+            // cbKhoa
             // 
-            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 27);
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(140, 30);
             // 
             // FormSinhVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 268);
+            this.ClientSize = new System.Drawing.Size(1739, 330);
             this.ControlBox = false;
             this.Controls.Add(this.tool);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormSinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sinh Viên";
@@ -189,6 +190,6 @@
         private System.Windows.Forms.ToolStripButton quitFormBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripComboBox cbKhoa;
     }
 }
