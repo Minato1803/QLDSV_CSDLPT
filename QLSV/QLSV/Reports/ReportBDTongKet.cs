@@ -116,7 +116,15 @@ namespace QLSV
 
         private void inBtnNhap_Click(object sender, EventArgs e)
         {
-            BangDiemTongKet report = new BangDiemTongKet(txMaLop.Text);
+            // lấy tên lớp từ mã lớp
+            DataTable dtLop = new DataTable();
+            //gọi 1 view và trả về dưới dạng datatable
+            String cmd = "SELECT * FROM LINK0.QLDSV.dbo.V_GETDSLOP L WHERE L.MALOP = '" +  txMaLop.Text +"'";
+            dtLop = Program.ExecSqlDataTable(cmd);
+            Program.bds_lop.DataSource = dtLop;
+            Console.WriteLine(((DataRowView)Program.bds_lop[0])["TENLOP"].ToString());
+
+            BangDiemTongKet report = new BangDiemTongKet(((DataRowView)Program.bds_lop[0])["TENLOP"].ToString());
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
         }

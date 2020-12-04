@@ -9,3 +9,10 @@
         }
     }
 }
+
+namespace QLSV.QLDSVDataSetTableAdapters {
+    
+    
+    public partial class V_GETDSLOPTableAdapter {
+    }
+}

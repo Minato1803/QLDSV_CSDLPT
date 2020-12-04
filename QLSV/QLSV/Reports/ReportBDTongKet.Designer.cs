@@ -52,6 +52,7 @@
             this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
             this.kHOATableAdapter = new QLSV.QLDSVDataSetTableAdapters.KHOATableAdapter();
+            this.sP_REPORT_DSSVTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_REPORT_DSSVTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).BeginInit();
             this.inBtn2.SuspendLayout();
@@ -291,11 +292,15 @@
             // 
             this.kHOATableAdapter.ClearBeforeFill = true;
             // 
+            // sP_REPORT_DSSVTableAdapter
+            // 
+            this.sP_REPORT_DSSVTableAdapter.ClearBeforeFill = true;
+            // 
             // ReportBDTongKet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1755, 823);
+            this.ClientSize = new System.Drawing.Size(1771, 839);
             this.ControlBox = false;
             this.Controls.Add(this.inBtn2);
             this.Controls.Add(this.pictureBox1);
@@ -345,5 +350,6 @@
         private System.Windows.Forms.BindingSource vGETDSLOPBindingSource1;
         private System.Windows.Forms.BindingSource kHOABindingSource;
         private QLDSVDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
+        private QLDSVDataSetTableAdapters.SP_REPORT_DSSVTableAdapter sP_REPORT_DSSVTableAdapter;
     }
 }
