@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.tool = new System.Windows.Forms.ToolStrip();
             this.addBtn = new System.Windows.Forms.ToolStripButton();
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
@@ -40,7 +43,42 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
+            this.sPREPORTDSSVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_REPORT_DSSVTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_REPORT_DSSVTableAdapter();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.qldsvDataSet1 = new QLSV.QLDSVDataSet();
+            this.sinhvienTableAdapter1 = new QLSV.QLDSVDataSetTableAdapters.SINHVIENTableAdapter();
+            this.qldsvDataSet2 = new QLSV.QLDSVDataSet();
+            this.monhocTableAdapter1 = new QLSV.QLDSVDataSetTableAdapters.MONHOCTableAdapter();
+            this.qldsvDataSet3 = new QLSV.QLDSVDataSet();
+            this.monhocTableAdapter2 = new QLSV.QLDSVDataSetTableAdapters.MONHOCTableAdapter();
+            this.tuyChinh = new System.Windows.Forms.Panel();
+            this.tenMon = new System.Windows.Forms.TextBox();
+            this.maMon = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.danhSachMon = new DevExpress.XtraGrid.GridControl();
+            this.qldsvDataSet4 = new QLSV.QLDSVDataSet();
+            this.viewDanhSachMon = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.monhocTableAdapter3 = new QLSV.QLDSVDataSetTableAdapters.MONHOCTableAdapter();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.groupEdit = new System.Windows.Forms.Panel();
             this.tool.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPREPORTDSSVBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet3)).BeginInit();
+            this.tuyChinh.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachMon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDanhSachMon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            this.groupEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tool
@@ -92,6 +130,7 @@
             this.adjustBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.adjustBtn.Size = new System.Drawing.Size(61, 24);
             this.adjustBtn.Text = "Sửa";
+            this.adjustBtn.Click += new System.EventHandler(this.adjustBtn_Click);
             // 
             // undoBtn
             // 
@@ -119,6 +158,7 @@
             this.exitBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.exitBtn.Size = new System.Drawing.Size(61, 24);
             this.exitBtn.Text = "Hủy";
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // reloadBtn
             // 
@@ -158,12 +198,223 @@
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 27);
             // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.Locale = new System.Globalization.CultureInfo("en-US");
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPREPORTDSSVBindingSource
+            // 
+            this.sPREPORTDSSVBindingSource.DataMember = "SP_REPORT_DSSV";
+            this.sPREPORTDSSVBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // sP_REPORT_DSSVTableAdapter
+            // 
+            this.sP_REPORT_DSSVTableAdapter.ClearBeforeFill = true;
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "QLSV.Properties.Settings.QLDSVConnectionString";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery3.Name = "SP_getPhieuDiem";
+            queryParameter3.Name = "@MSSV";
+            queryParameter3.Type = typeof(string);
+            queryParameter3.ValueInfo = "N17DCCN115";
+            storedProcQuery3.Parameters.Add(queryParameter3);
+            storedProcQuery3.StoredProcName = "SP_getPhieuDiem";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery3});
+            this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNQX2dldFBoaWV1RGllbSI+P" +
+    "EZpZWxkIE5hbWU9IlRFTk1IIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRJRU0iIFR5cGU9I" +
+    "kRvdWJsZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==";
+            // 
+            // qldsvDataSet1
+            // 
+            this.qldsvDataSet1.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet1.Locale = new System.Globalization.CultureInfo("en-US");
+            this.qldsvDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sinhvienTableAdapter1
+            // 
+            this.sinhvienTableAdapter1.ClearBeforeFill = true;
+            // 
+            // qldsvDataSet2
+            // 
+            this.qldsvDataSet2.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet2.Locale = new System.Globalization.CultureInfo("en-US");
+            this.qldsvDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monhocTableAdapter1
+            // 
+            this.monhocTableAdapter1.ClearBeforeFill = true;
+            // 
+            // qldsvDataSet3
+            // 
+            this.qldsvDataSet3.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet3.Locale = new System.Globalization.CultureInfo("en-US");
+            this.qldsvDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // monhocTableAdapter2
+            // 
+            this.monhocTableAdapter2.ClearBeforeFill = true;
+            // 
+            // tuyChinh
+            // 
+            this.tuyChinh.AccessibleName = "";
+            this.tuyChinh.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tuyChinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tuyChinh.Controls.Add(this.groupEdit);
+            this.tuyChinh.Controls.Add(this.label1);
+            this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
+            this.tuyChinh.Location = new System.Drawing.Point(1078, 27);
+            this.tuyChinh.Name = "tuyChinh";
+            this.tuyChinh.Size = new System.Drawing.Size(413, 422);
+            this.tuyChinh.TabIndex = 3;
+            // 
+            // tenMon
+            // 
+            this.tenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenMon.Location = new System.Drawing.Point(20, 134);
+            this.tenMon.Name = "tenMon";
+            this.tenMon.Size = new System.Drawing.Size(373, 29);
+            this.tenMon.TabIndex = 4;
+            // 
+            // maMon
+            // 
+            this.maMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maMon.Location = new System.Drawing.Point(20, 50);
+            this.maMon.Name = "maMon";
+            this.maMon.Size = new System.Drawing.Size(373, 29);
+            this.maMon.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 16);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(5);
+            this.label3.Size = new System.Drawing.Size(112, 31);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mã Môn Học:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 100);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(5);
+            this.label2.Size = new System.Drawing.Size(113, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tên Môn Học:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-5, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(110, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tùy Chỉnh";
+            // 
+            // danhSachMon
+            // 
+            this.danhSachMon.DataMember = "MONHOC";
+            this.danhSachMon.DataSource = this.qldsvDataSet4;
+            this.danhSachMon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.danhSachMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.danhSachMon.Location = new System.Drawing.Point(0, 27);
+            this.danhSachMon.MainView = this.viewDanhSachMon;
+            this.danhSachMon.Name = "danhSachMon";
+            this.danhSachMon.Size = new System.Drawing.Size(1072, 422);
+            this.danhSachMon.TabIndex = 4;
+            this.danhSachMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.viewDanhSachMon});
+            // 
+            // qldsvDataSet4
+            // 
+            this.qldsvDataSet4.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet4.Locale = new System.Globalization.CultureInfo("en-US");
+            this.qldsvDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // viewDanhSachMon
+            // 
+            this.viewDanhSachMon.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewDanhSachMon.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.viewDanhSachMon.Appearance.HeaderPanel.Options.UseFont = true;
+            this.viewDanhSachMon.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.viewDanhSachMon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAMH,
+            this.colTENMH});
+            this.viewDanhSachMon.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            this.viewDanhSachMon.GridControl = this.danhSachMon;
+            this.viewDanhSachMon.Name = "viewDanhSachMon";
+            this.viewDanhSachMon.OptionsBehavior.Editable = false;
+            this.viewDanhSachMon.OptionsBehavior.ReadOnly = true;
+            this.viewDanhSachMon.OptionsCustomization.AllowSort = false;
+            this.viewDanhSachMon.OptionsMenu.EnableColumnMenu = false;
+            this.viewDanhSachMon.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.True;
+            this.viewDanhSachMon.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.viewDanhSachMon.OptionsView.RowAutoHeight = true;
+            this.viewDanhSachMon.OptionsView.ShowGroupPanel = false;
+            this.viewDanhSachMon.RowHeight = 30;
+            this.viewDanhSachMon.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.viewDanhSachMon_FocusedRowChanged);
+            // 
+            // colMAMH
+            // 
+            this.colMAMH.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMAMH.AppearanceCell.Options.UseFont = true;
+            this.colMAMH.Caption = "Mã Môn Học";
+            this.colMAMH.FieldName = "MAMH";
+            this.colMAMH.Name = "colMAMH";
+            this.colMAMH.OptionsFilter.AllowFilter = false;
+            this.colMAMH.Visible = true;
+            this.colMAMH.VisibleIndex = 0;
+            // 
+            // colTENMH
+            // 
+            this.colTENMH.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTENMH.AppearanceCell.Options.UseFont = true;
+            this.colTENMH.Caption = "Tên Môn Học";
+            this.colTENMH.FieldName = "TENMH";
+            this.colTENMH.Name = "colTENMH";
+            this.colTENMH.OptionsFilter.AllowFilter = false;
+            this.colTENMH.Visible = true;
+            this.colTENMH.VisibleIndex = 1;
+            // 
+            // monhocTableAdapter3
+            // 
+            this.monhocTableAdapter3.ClearBeforeFill = true;
+            // 
+            // groupEdit
+            // 
+            this.groupEdit.Controls.Add(this.label2);
+            this.groupEdit.Controls.Add(this.tenMon);
+            this.groupEdit.Controls.Add(this.label3);
+            this.groupEdit.Controls.Add(this.maMon);
+            this.groupEdit.Enabled = false;
+            this.groupEdit.Location = new System.Drawing.Point(0, 38);
+            this.groupEdit.Name = "groupEdit";
+            this.groupEdit.Size = new System.Drawing.Size(407, 178);
+            this.groupEdit.TabIndex = 5;
+            // 
             // FormMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 268);
+            this.ClientSize = new System.Drawing.Size(1491, 449);
             this.ControlBox = false;
+            this.Controls.Add(this.danhSachMon);
+            this.Controls.Add(this.tuyChinh);
             this.Controls.Add(this.tool);
             this.Name = "FormMonHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -171,6 +422,19 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tool.ResumeLayout(false);
             this.tool.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPREPORTDSSVBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet3)).EndInit();
+            this.tuyChinh.ResumeLayout(false);
+            this.tuyChinh.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachMon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDanhSachMon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            this.groupEdit.ResumeLayout(false);
+            this.groupEdit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +454,29 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.BindingSource sPREPORTDSSVBindingSource;
+        private QLDSVDataSet qLDSVDataSet;
+        private QLDSVDataSetTableAdapters.SP_REPORT_DSSVTableAdapter sP_REPORT_DSSVTableAdapter;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private QLDSVDataSet qldsvDataSet1;
+        private QLDSVDataSetTableAdapters.SINHVIENTableAdapter sinhvienTableAdapter1;
+        private QLDSVDataSet qldsvDataSet2;
+        private QLDSVDataSetTableAdapters.MONHOCTableAdapter monhocTableAdapter1;
+        private QLDSVDataSet qldsvDataSet3;
+        private QLDSVDataSetTableAdapters.MONHOCTableAdapter monhocTableAdapter2;
+        private System.Windows.Forms.Panel tuyChinh;
+        private DevExpress.XtraGrid.GridControl danhSachMon;
+        private QLDSVDataSet qldsvDataSet4;
+        private DevExpress.XtraGrid.Views.Grid.GridView viewDanhSachMon;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
+        private QLDSVDataSetTableAdapters.MONHOCTableAdapter monhocTableAdapter3;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tenMon;
+        private System.Windows.Forms.TextBox maMon;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel groupEdit;
     }
 }
