@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.tool = new System.Windows.Forms.ToolStrip();
             this.addBtn = new System.Windows.Forms.ToolStripButton();
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
@@ -54,10 +54,11 @@
             this.qldsvDataSet3 = new QLSV.QLDSVDataSet();
             this.monhocTableAdapter2 = new QLSV.QLDSVDataSetTableAdapters.MONHOCTableAdapter();
             this.tuyChinh = new System.Windows.Forms.Panel();
-            this.tenMon = new System.Windows.Forms.TextBox();
-            this.maMon = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.groupEdit = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.tenMon = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.maMon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.danhSachMon = new DevExpress.XtraGrid.GridControl();
             this.qldsvDataSet4 = new QLSV.QLDSVDataSet();
@@ -66,7 +67,6 @@
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.monhocTableAdapter3 = new QLSV.QLDSVDataSetTableAdapters.MONHOCTableAdapter();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.groupEdit = new System.Windows.Forms.Panel();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPREPORTDSSVBindingSource)).BeginInit();
@@ -74,11 +74,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet3)).BeginInit();
             this.tuyChinh.SuspendLayout();
+            this.groupEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDanhSachMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            this.groupEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tool
@@ -217,14 +217,14 @@
             // 
             this.sqlDataSource1.ConnectionName = "QLSV.Properties.Settings.QLDSVConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "SP_getPhieuDiem";
-            queryParameter3.Name = "@MSSV";
-            queryParameter3.Type = typeof(string);
-            queryParameter3.ValueInfo = "N17DCCN115";
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "SP_getPhieuDiem";
+            storedProcQuery1.Name = "SP_getPhieuDiem";
+            queryParameter1.Name = "@MSSV";
+            queryParameter1.Type = typeof(string);
+            queryParameter1.ValueInfo = "N17DCCN115";
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "SP_getPhieuDiem";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNQX2dldFBoaWV1RGllbSI+P" +
     "EZpZWxkIE5hbWU9IlRFTk1IIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRJRU0iIFR5cGU9I" +
     "kRvdWJsZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==";
@@ -273,6 +273,30 @@
             this.tuyChinh.Size = new System.Drawing.Size(413, 422);
             this.tuyChinh.TabIndex = 3;
             // 
+            // groupEdit
+            // 
+            this.groupEdit.Controls.Add(this.label2);
+            this.groupEdit.Controls.Add(this.tenMon);
+            this.groupEdit.Controls.Add(this.label3);
+            this.groupEdit.Controls.Add(this.maMon);
+            this.groupEdit.Enabled = false;
+            this.groupEdit.Location = new System.Drawing.Point(0, 38);
+            this.groupEdit.Name = "groupEdit";
+            this.groupEdit.Size = new System.Drawing.Size(407, 178);
+            this.groupEdit.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 100);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(5);
+            this.label2.Size = new System.Drawing.Size(113, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tên Môn Học:";
+            // 
             // tenMon
             // 
             this.tenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,14 +304,6 @@
             this.tenMon.Name = "tenMon";
             this.tenMon.Size = new System.Drawing.Size(373, 29);
             this.tenMon.TabIndex = 4;
-            // 
-            // maMon
-            // 
-            this.maMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maMon.Location = new System.Drawing.Point(20, 50);
-            this.maMon.Name = "maMon";
-            this.maMon.Size = new System.Drawing.Size(373, 29);
-            this.maMon.TabIndex = 3;
             // 
             // label3
             // 
@@ -301,17 +317,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã Môn Học:";
             // 
-            // label2
+            // maMon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 100);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(5);
-            this.label2.Size = new System.Drawing.Size(113, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tên Môn Học:";
+            this.maMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maMon.Location = new System.Drawing.Point(20, 50);
+            this.maMon.Name = "maMon";
+            this.maMon.Size = new System.Drawing.Size(373, 29);
+            this.maMon.TabIndex = 3;
             // 
             // label1
             // 
@@ -335,7 +347,7 @@
             this.danhSachMon.Location = new System.Drawing.Point(0, 27);
             this.danhSachMon.MainView = this.viewDanhSachMon;
             this.danhSachMon.Name = "danhSachMon";
-            this.danhSachMon.Size = new System.Drawing.Size(1072, 422);
+            this.danhSachMon.Size = new System.Drawing.Size(1075, 422);
             this.danhSachMon.TabIndex = 4;
             this.danhSachMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.viewDanhSachMon});
@@ -395,18 +407,6 @@
             // 
             this.monhocTableAdapter3.ClearBeforeFill = true;
             // 
-            // groupEdit
-            // 
-            this.groupEdit.Controls.Add(this.label2);
-            this.groupEdit.Controls.Add(this.tenMon);
-            this.groupEdit.Controls.Add(this.label3);
-            this.groupEdit.Controls.Add(this.maMon);
-            this.groupEdit.Enabled = false;
-            this.groupEdit.Location = new System.Drawing.Point(0, 38);
-            this.groupEdit.Name = "groupEdit";
-            this.groupEdit.Size = new System.Drawing.Size(407, 178);
-            this.groupEdit.TabIndex = 5;
-            // 
             // FormMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,12 +429,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet3)).EndInit();
             this.tuyChinh.ResumeLayout(false);
             this.tuyChinh.PerformLayout();
+            this.groupEdit.ResumeLayout(false);
+            this.groupEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDanhSachMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            this.groupEdit.ResumeLayout(false);
-            this.groupEdit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
