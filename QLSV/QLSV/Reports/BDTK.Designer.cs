@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell xrCrossTabCell5;
             DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition crossTabColumnDefinition1 = new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition(93.66666F);
             DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition crossTabColumnDefinition2 = new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition(661.1801F);
             DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition crossTabColumnDefinition3 = new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition(45.1532F);
@@ -38,7 +39,6 @@
             DevExpress.XtraReports.UI.CrossTab.CrossTabRowDefinition crossTabRowDefinition2 = new DevExpress.XtraReports.UI.CrossTab.CrossTabRowDefinition(25F);
             DevExpress.XtraReports.UI.CrossTab.CrossTabRowField crossTabRowField1 = new DevExpress.XtraReports.UI.CrossTab.CrossTabRowField();
             DevExpress.XtraReports.UI.CrossTab.CrossTabRowField crossTabRowField2 = new DevExpress.XtraReports.UI.CrossTab.CrossTabRowField();
-            DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell xrCrossTabCell5;
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BDTK));
@@ -70,13 +70,20 @@
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.TitleStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.qldsvDataSet1 = new QLSV.QLDSVDataSet();
-            this.cT_DONGHOCPHITableAdapter = new QLSV.QLDSVDataSetTableAdapters.CT_DONGHOCPHITableAdapter();
             this.sP_getBangDiemTongKetTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_getBangDiemTongKetTableAdapter();
             xrCrossTabCell5 = new DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell();
             ((System.ComponentModel.ISupportInitialize)(this.crossTab1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // xrCrossTabCell5
+            // 
+            xrCrossTabCell5.ColumnIndex = 3;
+            xrCrossTabCell5.KeepTogether = false;
+            xrCrossTabCell5.Name = "xrCrossTabCell5";
+            xrCrossTabCell5.RowIndex = 0;
+            xrCrossTabCell5.Text = "Grand Total";
             // 
             // crossTab1
             // 
@@ -164,14 +171,6 @@
             this.xrCrossTabCell4.Name = "xrCrossTabCell4";
             this.xrCrossTabCell4.RowIndex = 0;
             this.xrCrossTabCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrCrossTabCell5
-            // 
-            xrCrossTabCell5.ColumnIndex = 3;
-            xrCrossTabCell5.KeepTogether = false;
-            xrCrossTabCell5.Name = "xrCrossTabCell5";
-            xrCrossTabCell5.RowIndex = 0;
-            xrCrossTabCell5.Text = "Grand Total";
             // 
             // xrCrossTabCell6
             // 
@@ -349,10 +348,6 @@
             this.qldsvDataSet1.Locale = new System.Globalization.CultureInfo("en-US");
             this.qldsvDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cT_DONGHOCPHITableAdapter
-            // 
-            this.cT_DONGHOCPHITableAdapter.ClearBeforeFill = true;
-            // 
             // sP_getBangDiemTongKetTableAdapter
             // 
             this.sP_getBangDiemTongKetTableAdapter.ClearBeforeFill = true;
@@ -368,7 +363,9 @@
             this.sqlDataSource1,
             this.qldsvDataSet1,
             this.qldsvDataSet2});
-            this.DataAdapter = this.cT_DONGHOCPHITableAdapter;
+            this.DataAdapter = this.sP_getBangDiemTongKetTableAdapter;
+            this.DataMember = "SP_getBangDiemTongKet";
+            this.DataSource = this.qldsvDataSet2;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.HorizontalContentSplitting = DevExpress.XtraPrinting.HorizontalContentSplitting.Smart;
             this.Landscape = true;
@@ -415,11 +412,10 @@
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.XRControlStyle TitleStyle;
         private QLDSVDataSet qldsvDataSet1;
-        private QLDSVDataSetTableAdapters.CT_DONGHOCPHITableAdapter cT_DONGHOCPHITableAdapter;
         private QLDSVDataSet qldsvDataSet2;
-        private QLDSVDataSetTableAdapters.SP_getBangDiemTongKetTableAdapter sP_getBangDiemTongKetTableAdapter;
         private DevExpress.XtraReports.UI.DetailBand Detail;
         public DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRCrossTab crossTab1;
+        private QLDSVDataSetTableAdapters.SP_getBangDiemTongKetTableAdapter sP_getBangDiemTongKetTableAdapter;
     }
 }

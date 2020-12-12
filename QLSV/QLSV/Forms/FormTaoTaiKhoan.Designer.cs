@@ -90,7 +90,6 @@
             this.userName.Size = new System.Drawing.Size(301, 32);
             this.userName.TabIndex = 0;
             this.userName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.userName.Leave += new System.EventHandler(this.userName_Leave);
             this.userName.Validating += new System.ComponentModel.CancelEventHandler(this.userName_Validating);
             // 
             // passWord
@@ -103,7 +102,6 @@
             this.passWord.Size = new System.Drawing.Size(301, 32);
             this.passWord.TabIndex = 1;
             this.passWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.passWord.Leave += new System.EventHandler(this.passWord_Leave);
             this.passWord.Validating += new System.ComponentModel.CancelEventHandler(this.passWord_Validating);
             // 
             // label1
@@ -427,7 +425,6 @@
             this.confirmPassWord.Properties.PasswordChar = '●';
             this.confirmPassWord.Size = new System.Drawing.Size(302, 30);
             this.confirmPassWord.TabIndex = 2;
-            this.confirmPassWord.Leave += new System.EventHandler(this.confirmPassWord_Leave);
             this.confirmPassWord.Validating += new System.ComponentModel.CancelEventHandler(this.confirmPassWord_Validating);
             // 
             // v_DSPMTableAdapter

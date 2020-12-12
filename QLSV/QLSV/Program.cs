@@ -22,6 +22,7 @@ namespace QLSV
         public static BindingSource bds_dsgv = new BindingSource();
         public static BindingSource bds_lop = new BindingSource();
         public static BindingSource bds_mon = new BindingSource();
+        public static BindingSource bds_khoa = new BindingSource();
         public static SqlDataReader myReader =null;
         //public static String servername = "MINATO";
         //public static String[] GetServerName = new string[3] { "MINATO\\MSSQLSERVER1", "MINATO\\MSSQLSERVER2", "MINATO\\MSSQLSERVER3" };

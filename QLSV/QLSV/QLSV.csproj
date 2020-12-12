@@ -137,11 +137,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSVDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\BDMH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BDMH.Designer.cs">
+      <DependentUpon>BDMH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\BDTHI.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\BDTHI.Designer.cs">
       <DependentUpon>BDTHI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BDTK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BDTK.Designer.cs">
+      <DependentUpon>BDTK.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\DSDHP.cs">
       <SubType>Component</SubType>
@@ -238,8 +250,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\BDMH.resx">
+      <DependentUpon>BDMH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\BDTHI.resx">
       <DependentUpon>BDTHI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BDTK.resx">
+      <DependentUpon>BDTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\DSDHP.resx">
       <DependentUpon>DSDHP.cs</DependentUpon>

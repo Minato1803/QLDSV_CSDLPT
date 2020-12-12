@@ -59,7 +59,6 @@ namespace QLSV
                 cbLop.DataSource = dtLop;
                 cbLop.DisplayMember = "TENLOP";
                 cbLop.ValueMember = "MALOP";
-                cbMon.SelectedIndex = 0;
                 cbLop.SelectedIndex = 0;
 
                 DataTable dtMon = new DataTable();
@@ -78,7 +77,7 @@ namespace QLSV
                 cbMon.DisplayMember = "TENMH";
                 cbMon.ValueMember = "MAMH";
 
-                cbMon.SelectedIndex = 0;
+                //cbMon.SelectedIndex = 0;
             }
             else if (Program.mGroup.Equals("KHOA"))
             {
@@ -89,7 +88,6 @@ namespace QLSV
                 // TODO: This line of code loads data into the 'qLDSVDataSet.KHOA' table. You can move, or remove it, as needed.
                 this.kHOATableAdapter.Fill(this.qLDSVDataSet.KHOA);
                 //để combobox chạy đúng
-                cbMon.SelectedIndex = 0;
                 cbKhoa.SelectedIndex = 0;
                 //khóa hiển thị combobox khoa
                 cbKhoa.SelectedIndex = Program.mKhoa;
