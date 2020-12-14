@@ -37,13 +37,13 @@
             this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.cbKhoa = new System.Windows.Forms.ComboBox();
+            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.inBtn2 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.txMaSinhVien = new System.Windows.Forms.TextBox();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -54,28 +54,28 @@
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
             this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
             this.v_DSSV_TaoTKTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter();
-            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOATableAdapter = new QLSV.QLDSVDataSetTableAdapters.KHOATableAdapter();
+            this.txMaSinhVien = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).BeginInit();
             this.inBtn2.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txMaSinhVien.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(411, 302);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton2.Location = new System.Drawing.Point(352, 245);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(210, 60);
+            this.simpleButton2.Size = new System.Drawing.Size(180, 49);
             this.simpleButton2.TabIndex = 37;
             this.simpleButton2.Text = "Thoát";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -88,10 +88,9 @@
             this.inBtn.Appearance.Options.UseBackColor = true;
             this.inBtn.Appearance.Options.UseBorderColor = true;
             this.inBtn.Appearance.Options.UseFont = true;
-            this.inBtn.Location = new System.Drawing.Point(168, 302);
-            this.inBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.inBtn.Location = new System.Drawing.Point(144, 245);
             this.inBtn.Name = "inBtn";
-            this.inBtn.Size = new System.Drawing.Size(210, 60);
+            this.inBtn.Size = new System.Drawing.Size(180, 49);
             this.inBtn.TabIndex = 36;
             this.inBtn.Text = "In Báo Cáo";
             this.inBtn.Click += new System.EventHandler(this.inBtn_Click);
@@ -99,10 +98,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QLSV.Properties.Resources.Career_progress_pana;
-            this.pictureBox1.Location = new System.Drawing.Point(945, 62);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(810, 50);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(629, 684);
+            this.pictureBox1.Size = new System.Drawing.Size(539, 556);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
@@ -111,11 +109,10 @@
             // 
             this.maLop.Enabled = false;
             this.maLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maLop.Location = new System.Drawing.Point(481, 126);
-            this.maLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.maLop.Location = new System.Drawing.Point(412, 102);
             this.maLop.Name = "maLop";
             this.maLop.ReadOnly = true;
-            this.maLop.Size = new System.Drawing.Size(139, 34);
+            this.maLop.Size = new System.Drawing.Size(120, 29);
             this.maLop.TabIndex = 34;
             // 
             // cbLop
@@ -125,10 +122,9 @@
             this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(168, 126);
-            this.cbLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbLop.Location = new System.Drawing.Point(144, 102);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(287, 36);
+            this.cbLop.Size = new System.Drawing.Size(247, 29);
             this.cbLop.TabIndex = 33;
             this.cbLop.ValueMember = "MALOP";
             this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
@@ -151,13 +147,17 @@
             this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(168, 49);
-            this.cbKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbKhoa.Location = new System.Drawing.Point(144, 40);
             this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(452, 36);
+            this.cbKhoa.Size = new System.Drawing.Size(388, 29);
             this.cbKhoa.TabIndex = 32;
             this.cbKhoa.ValueMember = "MAKH";
             this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
+            // 
+            // kHOABindingSource
+            // 
+            this.kHOABindingSource.DataMember = "KHOA";
+            this.kHOABindingSource.DataSource = this.qLDSVDataSet;
             // 
             // vDSPMBindingSource
             // 
@@ -168,9 +168,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 129);
+            this.label2.Location = new System.Drawing.Point(50, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 24);
+            this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 31;
             this.label2.Text = "Tên Lớp";
             // 
@@ -178,9 +178,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(85, 53);
+            this.label1.Location = new System.Drawing.Point(73, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 24);
+            this.label1.Size = new System.Drawing.Size(50, 19);
             this.label1.TabIndex = 30;
             this.label1.Text = "Khoa";
             // 
@@ -189,56 +189,44 @@
             this.inBtn2.Controls.Add(this.tabNavigationPage1);
             this.inBtn2.Controls.Add(this.tabNavigationPage2);
             this.inBtn2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inBtn2.Location = new System.Drawing.Point(107, 110);
-            this.inBtn2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.inBtn2.Location = new System.Drawing.Point(92, 89);
             this.inBtn2.Name = "inBtn2";
             this.inBtn2.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2});
-            this.inBtn2.RegularSize = new System.Drawing.Size(714, 407);
+            this.inBtn2.RegularSize = new System.Drawing.Size(612, 331);
             this.inBtn2.SelectedPage = this.tabNavigationPage1;
-            this.inBtn2.Size = new System.Drawing.Size(714, 407);
+            this.inBtn2.Size = new System.Drawing.Size(612, 331);
             this.inBtn2.TabIndex = 38;
             this.inBtn2.Text = "tabPane1";
             // 
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Nhập Mã";
-            this.tabNavigationPage1.Controls.Add(this.label4);
             this.tabNavigationPage1.Controls.Add(this.txMaSinhVien);
+            this.tabNavigationPage1.Controls.Add(this.label4);
             this.tabNavigationPage1.Controls.Add(this.simpleButton3);
             this.tabNavigationPage1.Controls.Add(this.simpleButton1);
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(714, 360);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(612, 294);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(129, 134);
+            this.label4.Location = new System.Drawing.Point(111, 109);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 28);
+            this.label4.Size = new System.Drawing.Size(111, 21);
             this.label4.TabIndex = 43;
             this.label4.Text = "Mã Sinh Viên";
-            // 
-            // txMaSinhVien
-            // 
-            this.txMaSinhVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txMaSinhVien.Location = new System.Drawing.Point(290, 129);
-            this.txMaSinhVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txMaSinhVien.Name = "txMaSinhVien";
-            this.txMaSinhVien.Size = new System.Drawing.Size(329, 34);
-            this.txMaSinhVien.TabIndex = 40;
             // 
             // simpleButton3
             // 
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Location = new System.Drawing.Point(411, 302);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton3.Location = new System.Drawing.Point(352, 245);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(210, 60);
+            this.simpleButton3.Size = new System.Drawing.Size(180, 49);
             this.simpleButton3.TabIndex = 42;
             this.simpleButton3.Text = "Thoát";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -251,10 +239,9 @@
             this.simpleButton1.Appearance.Options.UseBackColor = true;
             this.simpleButton1.Appearance.Options.UseBorderColor = true;
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(168, 302);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton1.Location = new System.Drawing.Point(144, 245);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(210, 60);
+            this.simpleButton1.Size = new System.Drawing.Size(180, 49);
             this.simpleButton1.TabIndex = 41;
             this.simpleButton1.Text = "In Báo Cáo";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -272,17 +259,16 @@
             this.tabNavigationPage2.Controls.Add(this.label2);
             this.tabNavigationPage2.Controls.Add(this.cbLop);
             this.tabNavigationPage2.Controls.Add(this.maLop);
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(714, 360);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(612, 294);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 212);
+            this.label3.Location = new System.Drawing.Point(38, 172);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 24);
+            this.label3.Size = new System.Drawing.Size(85, 19);
             this.label3.TabIndex = 35;
             this.label3.Text = "Sinh Viên";
             // 
@@ -293,10 +279,9 @@
             this.cbMaSinhVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaSinhVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaSinhVien.FormattingEnabled = true;
-            this.cbMaSinhVien.Location = new System.Drawing.Point(168, 207);
-            this.cbMaSinhVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbMaSinhVien.Location = new System.Drawing.Point(144, 168);
             this.cbMaSinhVien.Name = "cbMaSinhVien";
-            this.cbMaSinhVien.Size = new System.Drawing.Size(287, 36);
+            this.cbMaSinhVien.Size = new System.Drawing.Size(247, 29);
             this.cbMaSinhVien.TabIndex = 36;
             this.cbMaSinhVien.ValueMember = "MASV";
             this.cbMaSinhVien.SelectedIndexChanged += new System.EventHandler(this.cbMaSinhVien_SelectedIndexChanged);
@@ -310,11 +295,10 @@
             // 
             this.maSV.Enabled = false;
             this.maSV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maSV.Location = new System.Drawing.Point(481, 207);
-            this.maSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.maSV.Location = new System.Drawing.Point(412, 168);
             this.maSV.Name = "maSV";
             this.maSV.ReadOnly = true;
-            this.maSV.Size = new System.Drawing.Size(139, 34);
+            this.maSV.Size = new System.Drawing.Size(120, 29);
             this.maSV.TabIndex = 37;
             // 
             // v_DSPMTableAdapter
@@ -329,23 +313,31 @@
             // 
             this.v_DSSV_TaoTKTableAdapter.ClearBeforeFill = true;
             // 
-            // kHOABindingSource
-            // 
-            this.kHOABindingSource.DataMember = "KHOA";
-            this.kHOABindingSource.DataSource = this.qLDSVDataSet;
-            // 
             // kHOATableAdapter
             // 
             this.kHOATableAdapter.ClearBeforeFill = true;
             // 
+            // txMaSinhVien
+            // 
+            this.txMaSinhVien.Location = new System.Drawing.Point(249, 104);
+            this.txMaSinhVien.Name = "txMaSinhVien";
+            this.txMaSinhVien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txMaSinhVien.Properties.Appearance.Options.UseFont = true;
+            this.txMaSinhVien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txMaSinhVien.Properties.DataSource = this.vDSSVTaoTKBindingSource;
+            this.txMaSinhVien.Properties.DisplayMember = "MASV";
+            this.txMaSinhVien.Properties.ValueMember = "MASV";
+            this.txMaSinhVien.Size = new System.Drawing.Size(283, 26);
+            this.txMaSinhVien.TabIndex = 44;
+            // 
             // ReportPhieuDiem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1739, 807);
+            this.ClientSize = new System.Drawing.Size(1491, 656);
             this.Controls.Add(this.inBtn2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ReportPhieuDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phiếu Điểm";
@@ -354,6 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).EndInit();
             this.inBtn2.ResumeLayout(false);
@@ -362,7 +355,7 @@
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txMaSinhVien.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,7 +373,6 @@
         private DevExpress.XtraBars.Navigation.TabPane inBtn2;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txMaSinhVien;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
@@ -396,5 +388,6 @@
         private QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter v_DSSV_TaoTKTableAdapter;
         private System.Windows.Forms.BindingSource kHOABindingSource;
         private QLDSVDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
+        private DevExpress.XtraEditors.LookUpEdit txMaSinhVien;
     }
 }

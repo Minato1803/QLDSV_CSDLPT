@@ -79,6 +79,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormChuyenLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormChuyenLop.Designer.cs">
+      <DependentUpon>FormChuyenLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     <Compile Include="ThongTin.Designer.cs">
       <DependentUpon>ThongTin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormChuyenLop.resx">
+      <DependentUpon>FormChuyenLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDiem.resx">
       <DependentUpon>FormDiem.cs</DependentUpon>
     </EmbeddedResource>
