@@ -62,6 +62,7 @@
             this.fKDIEMMONHOC1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.errorMaMon = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorTenMon = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dIEMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.DIEMTableAdapter();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             this.tuyChinh.SuspendLayout();
@@ -94,7 +95,7 @@
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.tool.Size = new System.Drawing.Size(1819, 30);
+            this.tool.Size = new System.Drawing.Size(1851, 30);
             this.tool.TabIndex = 1;
             this.tool.Text = "toolStrip1";
             // 
@@ -228,10 +229,10 @@
             this.tuyChinh.Controls.Add(this.label1);
             this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
             this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
-            this.tuyChinh.Location = new System.Drawing.Point(1337, 30);
+            this.tuyChinh.Location = new System.Drawing.Point(1369, 30);
             this.tuyChinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tuyChinh.Name = "tuyChinh";
-            this.tuyChinh.Size = new System.Drawing.Size(482, 603);
+            this.tuyChinh.Size = new System.Drawing.Size(482, 635);
             this.tuyChinh.TabIndex = 3;
             // 
             // groupEdit
@@ -267,7 +268,7 @@
             this.tenMon.Name = "tenMon";
             this.tenMon.Size = new System.Drawing.Size(434, 34);
             this.tenMon.TabIndex = 4;
-            this.tenMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tenMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -309,13 +310,14 @@
             // 
             this.danhSachMon.DataMember = null;
             this.danhSachMon.DataSource = this.mONHOCBindingSource;
+            this.danhSachMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.danhSachMon.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhSachMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.danhSachMon.Location = new System.Drawing.Point(0, 30);
             this.danhSachMon.MainView = this.viewDanhSachMon;
             this.danhSachMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhSachMon.Name = "danhSachMon";
-            this.danhSachMon.Size = new System.Drawing.Size(1254, 539);
+            this.danhSachMon.Size = new System.Drawing.Size(1369, 635);
             this.danhSachMon.TabIndex = 4;
             this.danhSachMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.viewDanhSachMon});
@@ -392,11 +394,15 @@
             // 
             this.errorTenMon.ContainerControl = this;
             // 
+            // dIEMTableAdapter
+            // 
+            this.dIEMTableAdapter.ClearBeforeFill = true;
+            // 
             // FormMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1819, 633);
+            this.ClientSize = new System.Drawing.Size(1851, 665);
             this.ControlBox = false;
             this.Controls.Add(this.danhSachMon);
             this.Controls.Add(this.tuyChinh);
@@ -459,5 +465,6 @@
         private System.Windows.Forms.BindingSource fKDIEMMONHOC1BindingSource;
         private System.Windows.Forms.ErrorProvider errorMaMon;
         private System.Windows.Forms.ErrorProvider errorTenMon;
+        private QLDSVDataSetTableAdapters.DIEMTableAdapter dIEMTableAdapter;
     }
 }
