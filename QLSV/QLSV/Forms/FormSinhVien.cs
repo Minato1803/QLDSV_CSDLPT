@@ -22,5 +22,7 @@ namespace QLSV
         {
             this.Close();
         }
+
+
     }
 }
