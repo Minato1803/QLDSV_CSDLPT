@@ -301,6 +301,7 @@
             this.toolStripComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toolStripComboBox2.Name = "toolStripComboBox2";
             this.toolStripComboBox2.Size = new System.Drawing.Size(121, 27);
+            this.toolStripComboBox2.Click += new System.EventHandler(this.toolStripComboBox2_Click);
             // 
             // toolStripSeparator7
             // 
