@@ -22,5 +22,10 @@ namespace QLSV
         {
             this.Close();
         }
+
+        private void toolStripComboBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

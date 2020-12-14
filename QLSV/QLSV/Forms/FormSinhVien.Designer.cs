@@ -38,11 +38,6 @@
             this.reloadBtn = new System.Windows.Forms.ToolStripButton();
             this.quitFormBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.cbKhoa = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tuyChinh = new System.Windows.Forms.Panel();
@@ -52,11 +47,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.maMon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbLop = new System.Windows.Forms.ComboBox();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tuyChinh.SuspendLayout();
             this.groupEdit.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tool
@@ -72,12 +73,7 @@
             this.exitBtn,
             this.reloadBtn,
             this.quitFormBtn,
-            this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.cbKhoa,
-            this.toolStripSeparator2,
-            this.toolStripLabel2,
-            this.toolStripComboBox1});
+            this.toolStripSeparator1});
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
@@ -163,44 +159,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(49, 24);
-            this.toolStripLabel1.Text = "Khoa:";
-            // 
-            // cbKhoa
-            // 
-            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(121, 27);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(43, 24);
-            this.toolStripLabel2.Text = "Lớp: ";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 27);
-            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gridControl1.Location = new System.Drawing.Point(0, 27);
+            this.gridControl1.Location = new System.Drawing.Point(0, 72);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1084, 827);
+            this.gridControl1.Size = new System.Drawing.Size(1084, 782);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -290,14 +255,65 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tùy Chỉnh";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.cbLop);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1090, 45);
+            this.panel1.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Khoa: ";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(83, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(334, 35);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(459, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 25);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Lớp: ";
+            // 
+            // cbLop
+            // 
+            this.cbLop.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.Location = new System.Drawing.Point(521, 4);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.Size = new System.Drawing.Size(334, 35);
+            this.cbLop.TabIndex = 2;
+            // 
             // FormSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1503, 854);
             this.ControlBox = false;
-            this.Controls.Add(this.tuyChinh);
             this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tuyChinh);
             this.Controls.Add(this.tool);
             this.Name = "FormSinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -311,6 +327,8 @@
             this.tuyChinh.PerformLayout();
             this.groupEdit.ResumeLayout(false);
             this.groupEdit.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,11 +346,6 @@
         private System.Windows.Forms.ToolStripButton reloadBtn;
         private System.Windows.Forms.ToolStripButton quitFormBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox cbKhoa;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Panel tuyChinh;
@@ -342,5 +355,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox maMon;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbLop;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

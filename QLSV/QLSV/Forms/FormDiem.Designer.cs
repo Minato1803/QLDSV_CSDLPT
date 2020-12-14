@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDiem));
             this.tool = new System.Windows.Forms.ToolStrip();
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
             this.adjustBtn = new System.Windows.Forms.ToolStripButton();
@@ -38,8 +37,6 @@
             this.reloadBtn = new System.Windows.Forms.ToolStripButton();
             this.quitFormBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.cbKhoa = new System.Windows.Forms.ToolStripComboBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tuyChinh = new System.Windows.Forms.Panel();
@@ -49,22 +46,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.maMon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel8 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbKhoa = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbLop = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbMon = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbLan = new System.Windows.Forms.ComboBox();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tuyChinh.SuspendLayout();
             this.groupEdit.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tool
@@ -79,9 +77,7 @@
             this.exitBtn,
             this.reloadBtn,
             this.quitFormBtn,
-            this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.cbKhoa});
+            this.toolStripSeparator1});
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
@@ -158,27 +154,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(49, 24);
-            this.toolStripLabel1.Text = "Khoa:";
-            // 
-            // cbKhoa
-            // 
-            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(121, 27);
-            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gridControl1.Location = new System.Drawing.Point(0, 54);
+            this.gridControl1.Location = new System.Drawing.Point(0, 117);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1075, 800);
+            this.gridControl1.Size = new System.Drawing.Size(1075, 737);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -197,9 +179,9 @@
             this.tuyChinh.Controls.Add(this.label1);
             this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
             this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
-            this.tuyChinh.Location = new System.Drawing.Point(1078, 54);
+            this.tuyChinh.Location = new System.Drawing.Point(1078, 27);
             this.tuyChinh.Name = "tuyChinh";
-            this.tuyChinh.Size = new System.Drawing.Size(413, 800);
+            this.tuyChinh.Size = new System.Drawing.Size(413, 827);
             this.tuyChinh.TabIndex = 5;
             // 
             // groupEdit
@@ -267,88 +249,105 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tùy Chỉnh";
             // 
-            // toolStrip1
+            // panel1
             // 
-            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel6,
-            this.toolStripComboBox2,
-            this.toolStripSeparator7,
-            this.toolStripLabel7,
-            this.toolStripComboBox3,
-            this.toolStripSeparator8,
-            this.toolStripLabel8,
-            this.toolStripComboBox4,
-            this.toolStripButton9});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 27);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1491, 27);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cbKhoa);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1078, 45);
+            this.panel1.TabIndex = 6;
             // 
-            // toolStripLabel6
+            // label4
             // 
-            this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(43, 24);
-            this.toolStripLabel6.Text = "Lớp: ";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(349, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Khoa: ";
             // 
-            // toolStripComboBox2
+            // cbKhoa
             // 
-            this.toolStripComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.toolStripComboBox2.Name = "toolStripComboBox2";
-            this.toolStripComboBox2.Size = new System.Drawing.Size(121, 27);
+            this.cbKhoa.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.Location = new System.Drawing.Point(422, 4);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(395, 35);
+            this.cbKhoa.TabIndex = 0;
             // 
-            // toolStripSeparator7
+            // panel2
             // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.cbLan);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.cbMon);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.cbLop);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1078, 45);
+            this.panel2.TabIndex = 7;
             // 
-            // toolStripLabel7
+            // label5
             // 
-            this.toolStripLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.Size = new System.Drawing.Size(49, 24);
-            this.toolStripLabel7.Text = "Môn: ";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(48, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 25);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Lớp: ";
             // 
-            // toolStripComboBox3
+            // cbLop
             // 
-            this.toolStripComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.toolStripComboBox3.Name = "toolStripComboBox3";
-            this.toolStripComboBox3.Size = new System.Drawing.Size(121, 27);
+            this.cbLop.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.Location = new System.Drawing.Point(110, 4);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.Size = new System.Drawing.Size(160, 35);
+            this.cbLop.TabIndex = 0;
             // 
-            // toolStripSeparator8
+            // label6
             // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(316, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 25);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Môn Học:";
             // 
-            // toolStripLabel8
+            // cbMon
             // 
-            this.toolStripLabel8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel8.Name = "toolStripLabel8";
-            this.toolStripLabel8.Size = new System.Drawing.Size(38, 24);
-            this.toolStripLabel8.Text = "Lần:";
+            this.cbMon.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMon.FormattingEnabled = true;
+            this.cbMon.Location = new System.Drawing.Point(422, 3);
+            this.cbMon.Name = "cbMon";
+            this.cbMon.Size = new System.Drawing.Size(160, 35);
+            this.cbMon.TabIndex = 2;
             // 
-            // toolStripComboBox4
+            // label7
             // 
-            this.toolStripComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.toolStripComboBox4.Name = "toolStripComboBox4";
-            this.toolStripComboBox4.Size = new System.Drawing.Size(121, 27);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(646, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 25);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Lần Thi:";
             // 
-            // toolStripButton9
+            // cbLan
             // 
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.toolStripButton9.Size = new System.Drawing.Size(87, 24);
-            this.toolStripButton9.Text = "Bắt Đầu";
-            this.toolStripButton9.ToolTipText = "Bắt Đầu";
+            this.cbLan.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLan.FormattingEnabled = true;
+            this.cbLan.Location = new System.Drawing.Point(733, 3);
+            this.cbLan.Name = "cbLan";
+            this.cbLan.Size = new System.Drawing.Size(160, 35);
+            this.cbLan.TabIndex = 4;
             // 
             // FormDiem
             // 
@@ -356,9 +355,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 854);
             this.ControlBox = false;
-            this.Controls.Add(this.tuyChinh);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tuyChinh);
             this.Controls.Add(this.tool);
             this.Name = "FormDiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -372,8 +372,10 @@
             this.tuyChinh.PerformLayout();
             this.groupEdit.ResumeLayout(false);
             this.groupEdit.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,8 +392,6 @@
         private System.Windows.Forms.ToolStripButton reloadBtn;
         private System.Windows.Forms.ToolStripButton quitFormBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox cbKhoa;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Panel tuyChinh;
@@ -401,15 +401,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox maMon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel7;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel8;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbKhoa;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbLop;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbLan;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbMon;
     }
 }
