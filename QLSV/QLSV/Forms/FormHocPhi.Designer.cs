@@ -37,7 +37,31 @@
             this.exitBtn = new System.Windows.Forms.ToolStripButton();
             this.reloadBtn = new System.Windows.Forms.ToolStripButton();
             this.quitFormBtn = new System.Windows.Forms.ToolStripButton();
+            this.tuyChinh = new System.Windows.Forms.Panel();
+            this.groupEdit = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tenMon = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.maMon = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tool.SuspendLayout();
+            this.tuyChinh.SuspendLayout();
+            this.groupEdit.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tool
@@ -133,12 +157,213 @@
             this.quitFormBtn.Text = "Thoát";
             this.quitFormBtn.Click += new System.EventHandler(this.quitFormBtn_Click);
             // 
+            // tuyChinh
+            // 
+            this.tuyChinh.AccessibleName = "";
+            this.tuyChinh.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tuyChinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tuyChinh.Controls.Add(this.groupEdit);
+            this.tuyChinh.Controls.Add(this.label1);
+            this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
+            this.tuyChinh.Location = new System.Drawing.Point(1078, 27);
+            this.tuyChinh.Name = "tuyChinh";
+            this.tuyChinh.Size = new System.Drawing.Size(413, 827);
+            this.tuyChinh.TabIndex = 4;
+            // 
+            // groupEdit
+            // 
+            this.groupEdit.Controls.Add(this.label7);
+            this.groupEdit.Controls.Add(this.textBox3);
+            this.groupEdit.Controls.Add(this.label6);
+            this.groupEdit.Controls.Add(this.textBox2);
+            this.groupEdit.Controls.Add(this.label5);
+            this.groupEdit.Controls.Add(this.textBox1);
+            this.groupEdit.Controls.Add(this.label2);
+            this.groupEdit.Controls.Add(this.tenMon);
+            this.groupEdit.Controls.Add(this.label3);
+            this.groupEdit.Controls.Add(this.maMon);
+            this.groupEdit.Enabled = false;
+            this.groupEdit.Location = new System.Drawing.Point(0, 38);
+            this.groupEdit.Name = "groupEdit";
+            this.groupEdit.Size = new System.Drawing.Size(407, 423);
+            this.groupEdit.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 100);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(5);
+            this.label2.Size = new System.Drawing.Size(67, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Học Kì:";
+            // 
+            // tenMon
+            // 
+            this.tenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenMon.Location = new System.Drawing.Point(20, 134);
+            this.tenMon.Name = "tenMon";
+            this.tenMon.Size = new System.Drawing.Size(373, 29);
+            this.tenMon.TabIndex = 4;
+            this.tenMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 16);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(5);
+            this.label3.Size = new System.Drawing.Size(95, 31);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Niên Khóa:";
+            // 
+            // maMon
+            // 
+            this.maMon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.maMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maMon.Location = new System.Drawing.Point(20, 50);
+            this.maMon.Name = "maMon";
+            this.maMon.Size = new System.Drawing.Size(373, 29);
+            this.maMon.TabIndex = 3;
+            this.maMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(-5, 0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(110, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tùy Chỉnh";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lookUpEdit1);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1078, 45);
+            this.panel1.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(277, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Mã Sinh Viên: ";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gridControl1.Location = new System.Drawing.Point(0, 72);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1075, 782);
+            this.gridControl1.TabIndex = 7;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(422, 3);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Size = new System.Drawing.Size(308, 32);
+            this.lookUpEdit1.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 179);
+            this.label5.Name = "label5";
+            this.label5.Padding = new System.Windows.Forms.Padding(5);
+            this.label5.Size = new System.Drawing.Size(76, 31);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Học Phí:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(20, 213);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(373, 29);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 260);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(5);
+            this.label6.Size = new System.Drawing.Size(84, 31);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Đã Đóng:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(20, 294);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(373, 29);
+            this.textBox2.TabIndex = 8;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(3, 344);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(5);
+            this.label7.Size = new System.Drawing.Size(61, 31);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Đóng:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(20, 378);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(373, 29);
+            this.textBox3.TabIndex = 10;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FormHocPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 268);
+            this.ClientSize = new System.Drawing.Size(1491, 854);
             this.ControlBox = false;
+            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tuyChinh);
             this.Controls.Add(this.tool);
             this.Name = "FormHocPhi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -146,6 +371,15 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tool.ResumeLayout(false);
             this.tool.PerformLayout();
+            this.tuyChinh.ResumeLayout(false);
+            this.tuyChinh.PerformLayout();
+            this.groupEdit.ResumeLayout(false);
+            this.groupEdit.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +396,23 @@
         private System.Windows.Forms.ToolStripButton exitBtn;
         private System.Windows.Forms.ToolStripButton reloadBtn;
         private System.Windows.Forms.ToolStripButton quitFormBtn;
+        private System.Windows.Forms.Panel tuyChinh;
+        private System.Windows.Forms.Panel groupEdit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tenMon;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox maMon;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private System.Windows.Forms.Label label4;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
