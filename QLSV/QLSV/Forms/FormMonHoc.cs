@@ -31,6 +31,17 @@ namespace QLSV
 
         private void FormMonHoc_Load(object sender, EventArgs e)
         {
+            addBtn.Enabled
+                = deleteBtn.Enabled
+                = adjustBtn.Enabled
+                = undoBtn.Enabled
+                = reloadBtn.Enabled
+                = quitFormBtn.Enabled = true;
+            saveBtn.Enabled
+                = exitBtn.Enabled = false;
+               
+            // TODO: This line of code loads data into the 'qLDSVDataSet.DIEM' table. You can move, or remove it, as needed.
+            this.dIEMTableAdapter.Fill(this.qLDSVDataSet.DIEM);
             // TODO: This line of code loads data into the 'qLDSVDataSet.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.qLDSVDataSet.MONHOC);
@@ -86,6 +97,7 @@ namespace QLSV
             danhSachMon.Enabled = false;
             tuyChinh.Enabled
                 = groupEdit.Enabled = true;
+            tenMon.Select(tenMon.Text.Length,0);
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
