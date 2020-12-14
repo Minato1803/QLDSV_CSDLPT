@@ -31,6 +31,24 @@ namespace QLSV
 
         private void FormMonHoc_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLDSVDataSet.V_DSPM' table. You can move, or remove it, as needed.
+            this.v_DSPMTableAdapter.Fill(this.qLDSVDataSet.V_DSPM);
+            if(Program.mGroup == "PGV")
+            {
+                DataTable dt = new DataTable();
+                dt = this.qLDSVDataSet.V_DSPM;
+                dt.Rows[2].Delete();
+                Program.bds_khoa.DataSource = dt;
+                cbKhoa.DataSource = dt;
+                cbKhoa.DisplayMember = "TENKHOA";
+                cbKhoa.ValueMember = "TENSERVER";
+                cbKhoa.SelectedIndex = Program.mKhoa;
+            }
+            else if(Program.mGroup == "KHOA")
+            {
+                cbKhoa.SelectedIndex = Program.mKhoa;
+                cbKhoa.DropDownStyle = ComboBoxStyle.Simple;
+            }
             addBtn.Enabled
                 = deleteBtn.Enabled
                 = adjustBtn.Enabled
@@ -45,7 +63,7 @@ namespace QLSV
             // TODO: This line of code loads data into the 'qLDSVDataSet.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.qLDSVDataSet.MONHOC);
-
+            this.mONHOCBindingSource.AllowNew = true;
         }
 
         private void quitFormBtn_Click(object sender, EventArgs e)
@@ -92,7 +110,9 @@ namespace QLSV
                 = deleteBtn.Enabled
                 = adjustBtn.Enabled
                 = undoBtn.Enabled
-                = reloadBtn.Enabled = false;
+                = reloadBtn.Enabled
+                = cbKhoa.Enabled
+                = false;
 
             danhSachMon.Enabled = false;
             tuyChinh.Enabled
@@ -131,8 +151,9 @@ namespace QLSV
             danhSachMon.Enabled = false;
             maMon.Focus();
             // TODO : Thao tác chuẩn bị thêm
-            undoBds.Push(mONHOCBindingSource);
-            mONHOCBindingSource.AddNew();
+            //undoBds.Push(mONHOCBindingSource);
+            this.mONHOCBindingSource.AddNew();
+
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -177,6 +198,12 @@ namespace QLSV
                 {
                     try
                     {
+                        //this.qLDSVDataSet.MONHOC.Rows.Add(maMon.Text, tenMon.Text);
+
+                        this.mONHOCBindingSource.EndEdit();
+                        this.mONHOCBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
+                        this.mONHOCTableAdapter.Update(this.qLDSVDataSet);
+                        dataGridView1.DataSource = mONHOCBindingSource;
                         addBtn.Enabled
                         = deleteBtn.Enabled
                         = adjustBtn.Enabled
@@ -185,11 +212,6 @@ namespace QLSV
 
                         danhSachMon.Enabled = true;
                         groupEdit.Enabled = false;
-
-                        this.mONHOCBindingSource.EndEdit();
-                        this.mONHOCBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
-                        this.mONHOCTableAdapter.Update(this.qLDSVDataSet.MONHOC);
-
                     }
                     catch (Exception ex)
                     {
@@ -242,7 +264,7 @@ namespace QLSV
                 //TODO: Check mã môn học có tồn tại chưa
                 string queryMa = "DECLARE  @return_value int \n"
                             + "EXEC @return_value = SP_CHECKID \n"
-                            + "@Code = N'" + maMon.Text + "',@Type = N'MAMONHOC' \n"
+                            + "@Code = N'" + maMon.Text.Trim() + "',@Type = N'MAMONHOC' \n"
                             + "SELECT 'Return Value' = @return_value";
 
                 int result = -1;
@@ -267,7 +289,7 @@ namespace QLSV
                 // TODO : Check tên môn học có tồn tại chưa
                 string queryTen = "DECLARE  @return_value int \n"
                             + "EXEC @return_value = SP_CHECKNAME \n"
-                            + "@Name = N'" + tenMon.Text + "',@Type = N'TENMONHOC' \n"
+                            + "@Name = N'" + tenMon.Text.Trim() + "',@Type = N'TENMONHOC' \n"
                             + "SELECT 'Return Value' = @return_value";
 
                 result = -1;
@@ -302,7 +324,7 @@ namespace QLSV
                     //TODO: Check mã môn học có tồn tại chưa
                     string queryMa = "DECLARE  @return_value int \n"
                                 + "EXEC @return_value = SP_CHECKID \n"
-                                + "@Code = N'" + maMon.Text + "',@Type = N'MAMONHOC' \n"
+                                + "@Code = N'" + maMon.Text.Trim() + "',@Type = N'MAMONHOC' \n"
                                 + "SELECT 'Return Value' = @return_value";
 
                     int result = -1;
@@ -329,7 +351,7 @@ namespace QLSV
                     // TODO : Check tên môn học có tồn tại chưa
                     string queryTen = "DECLARE  @return_value int \n"
                                 + "EXEC @return_value = SP_CHECKNAME \n"
-                                + "@Name = N'" + tenMon.Text + "',@Type = N'TENMONHOC' \n"
+                                + "@Name = N'" + tenMon.Text.Trim() + "',@Type = N'TENMONHOC' \n"
                                 + "SELECT 'Return Value' = @return_value";
 
                     int result = -1;
@@ -360,5 +382,24 @@ namespace QLSV
 
             return true;
         }
+
+        private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbKhoa.SelectedValue != null)
+            {
+                Program.serverRemote = cbKhoa.SelectedValue.ToString();
+                this.mONHOCTableAdapter.Connection = new SqlConnection(
+                                    new SqlConnectionStringBuilder()
+                                    {
+                                        DataSource = Program.serverRemote,
+                                        InitialCatalog = Program.database,
+                                        UserID = Program.remotelogin,
+                                        Password = Program.remotepassword
+                                    }.ConnectionString
+                                );
+                this.mONHOCTableAdapter.Fill(this.qLDSVDataSet.MONHOC);
+            }
+        }
+
     }
 }

@@ -10,9 +10,12 @@
     }
 }
 
-namespace QLSV.QLDSVDataSetTableAdapters {
-    
-    
+namespace QLSV.QLDSVDataSetTableAdapters
+{
+    partial class MONHOCTableAdapter
+    {
+    }
+
     public partial class V_GETDSLOPTableAdapter {
     }
 }

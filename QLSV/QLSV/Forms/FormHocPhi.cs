@@ -22,5 +22,14 @@ namespace QLSV
         {
             this.Close();
         }
+
+        private void FormHocPhi_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLDSVDataSet.CT_DONGHOCPHI' table. You can move, or remove it, as needed.
+            this.cT_DONGHOCPHITableAdapter.Fill(this.qLDSVDataSet.CT_DONGHOCPHI);
+            // TODO: This line of code loads data into the 'qLDSVDataSet.HOCPHI' table. You can move, or remove it, as needed.
+            this.hOCPHITableAdapter.Fill(this.qLDSVDataSet.HOCPHI);
+
+        }
     }
 }

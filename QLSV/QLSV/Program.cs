@@ -24,11 +24,13 @@ namespace QLSV
         public static BindingSource bds_mon = new BindingSource();
         public static BindingSource bds_khoa = new BindingSource();
         public static SqlDataReader myReader =null;
-        //public static String servername = "MINATO";
-        //public static String[] GetServerName = new string[3] { "MINATO\\MSSQLSERVER1", "MINATO\\MSSQLSERVER2", "MINATO\\MSSQLSERVER3" };
-        public static String servername = "TNCNHAN\\TNCN";
+        public static String servername = "MINATO";
+        public static String[] GetServerName = new string[3] { "MINATO\\MSSQLSERVER1", "MINATO\\MSSQLSERVER2", "MINATO\\MSSQLSERVER3" };
+        public static String serverRemote = "MINATO";
 
-        public static String[] GetServerName = new string[3]{ "TNCNHAN\\TNCN\\MSSQLSERVER1", "TNCNHAN\\TNCN\\MSSQLSERVER2", "TNCNHAN\\TNCN\\MSSQLSERVER3" };
+        //public static String servername = "TNCNHAN\\TNCN";
+        //public static String serverRemote = "TNCNHAN\\TNCN";
+        //public static String[] GetServerName = new string[3]{ "TNCNHAN\\TNCN\\MSSQLSERVER1", "TNCNHAN\\TNCN\\MSSQLSERVER2", "TNCNHAN\\TNCN\\MSSQLSERVER3" };
         public static String username = "";
         // lưu các login và password từ các form khi chương trình chạy
         public static String mlogin = "";
@@ -58,6 +60,16 @@ namespace QLSV
         public static BindingSource bds_dspm = new BindingSource();  // giữ bdsPM khi đăng nhập
         public static LoginForm frmLogin;
 
+        public static SqlConnection connrmt = new SqlConnection(
+                                    new SqlConnectionStringBuilder()
+                                    {
+                                        DataSource = Program.serverRemote,
+                                        InitialCatalog = Program.database,
+                                        UserID = Program.remotelogin,
+                                        Password = Program.remotepassword
+                                    }.ConnectionString
+                                );
+
         // hàm thực hiện kết nối tới Database
         public static int KetNoi()
         {
@@ -79,6 +91,8 @@ namespace QLSV
                 return 0;
             }
         }
+
+        
 
         // ExecSqlDataReader tôc độ tải về nhanh hơn ExecSqlDataTable vì đối tượng nó chỉ quam tân chỉ select
         // chỉ duyệt 1 chiều từ trên xuống
