@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.tool = new System.Windows.Forms.ToolStrip();
             this.addBtn = new System.Windows.Forms.ToolStripButton();
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
@@ -41,8 +41,6 @@
             this.reloadBtn = new System.Windows.Forms.ToolStripButton();
             this.quitFormBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.tuyChinh = new System.Windows.Forms.Panel();
@@ -62,6 +60,9 @@
             this.fKDIEMMONHOC1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.errorMaMon = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorTenMon = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             this.tuyChinh.SuspendLayout();
@@ -73,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKDIEMMONHOC1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMaMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenMon)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tool
@@ -88,13 +90,11 @@
             this.exitBtn,
             this.reloadBtn,
             this.quitFormBtn,
-            this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.toolStripComboBox1});
+            this.toolStripSeparator1});
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.tool.Size = new System.Drawing.Size(1819, 30);
+            this.tool.Size = new System.Drawing.Size(1571, 27);
             this.tool.TabIndex = 1;
             this.tool.Text = "toolStrip1";
             // 
@@ -104,7 +104,7 @@
             this.addBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addBtn.Name = "addBtn";
             this.addBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.addBtn.Size = new System.Drawing.Size(84, 27);
+            this.addBtn.Size = new System.Drawing.Size(71, 24);
             this.addBtn.Text = "Thêm";
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
@@ -114,7 +114,7 @@
             this.deleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.deleteBtn.Size = new System.Drawing.Size(70, 27);
+            this.deleteBtn.Size = new System.Drawing.Size(62, 24);
             this.deleteBtn.Text = "Xóa";
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
@@ -124,7 +124,7 @@
             this.adjustBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.adjustBtn.Name = "adjustBtn";
             this.adjustBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.adjustBtn.Size = new System.Drawing.Size(69, 27);
+            this.adjustBtn.Size = new System.Drawing.Size(61, 24);
             this.adjustBtn.Text = "Sửa";
             this.adjustBtn.Click += new System.EventHandler(this.adjustBtn_Click);
             // 
@@ -134,7 +134,7 @@
             this.undoBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.undoBtn.Size = new System.Drawing.Size(110, 27);
+            this.undoBtn.Size = new System.Drawing.Size(90, 24);
             this.undoBtn.Text = "Phục Hồi";
             this.undoBtn.Click += new System.EventHandler(this.undoBtn_Click);
             // 
@@ -144,7 +144,7 @@
             this.saveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.saveBtn.Size = new System.Drawing.Size(67, 27);
+            this.saveBtn.Size = new System.Drawing.Size(58, 24);
             this.saveBtn.Text = "Ghi";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
@@ -154,7 +154,7 @@
             this.exitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.exitBtn.Size = new System.Drawing.Size(71, 27);
+            this.exitBtn.Size = new System.Drawing.Size(61, 24);
             this.exitBtn.Text = "Hủy";
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
@@ -164,7 +164,7 @@
             this.reloadBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.reloadBtn.Name = "reloadBtn";
             this.reloadBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.reloadBtn.Size = new System.Drawing.Size(107, 27);
+            this.reloadBtn.Size = new System.Drawing.Size(90, 24);
             this.reloadBtn.Text = "Làm Mới";
             this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
             // 
@@ -174,28 +174,14 @@
             this.quitFormBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.quitFormBtn.Name = "quitFormBtn";
             this.quitFormBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.quitFormBtn.Size = new System.Drawing.Size(85, 27);
+            this.quitFormBtn.Size = new System.Drawing.Size(72, 24);
             this.quitFormBtn.Text = "Thoát";
             this.quitFormBtn.Click += new System.EventHandler(this.quitFormBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 30);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(62, 27);
-            this.toolStripLabel1.Text = "Khoa:";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(140, 30);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // qLDSVDataSet
             // 
@@ -207,14 +193,14 @@
             // 
             this.sqlDataSource1.ConnectionName = "QLSV.Properties.Settings.QLDSVConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "SP_getPhieuDiem";
-            queryParameter1.Name = "@MSSV";
-            queryParameter1.Type = typeof(string);
-            queryParameter1.ValueInfo = "N17DCCN115";
-            storedProcQuery1.Parameters.Add(queryParameter1);
-            storedProcQuery1.StoredProcName = "SP_getPhieuDiem";
+            storedProcQuery2.Name = "SP_getPhieuDiem";
+            queryParameter2.Name = "@MSSV";
+            queryParameter2.Type = typeof(string);
+            queryParameter2.ValueInfo = "N17DCCN115";
+            storedProcQuery2.Parameters.Add(queryParameter2);
+            storedProcQuery2.StoredProcName = "SP_getPhieuDiem";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNQX2dldFBoaWV1RGllbSI+P" +
     "EZpZWxkIE5hbWU9IlRFTk1IIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRJRU0iIFR5cGU9I" +
     "kRvdWJsZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==";
@@ -228,10 +214,9 @@
             this.tuyChinh.Controls.Add(this.label1);
             this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
             this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
-            this.tuyChinh.Location = new System.Drawing.Point(1337, 30);
-            this.tuyChinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tuyChinh.Location = new System.Drawing.Point(1158, 27);
             this.tuyChinh.Name = "tuyChinh";
-            this.tuyChinh.Size = new System.Drawing.Size(482, 603);
+            this.tuyChinh.Size = new System.Drawing.Size(413, 499);
             this.tuyChinh.TabIndex = 3;
             // 
             // groupEdit
@@ -241,10 +226,9 @@
             this.groupEdit.Controls.Add(this.label3);
             this.groupEdit.Controls.Add(this.maMon);
             this.groupEdit.Enabled = false;
-            this.groupEdit.Location = new System.Drawing.Point(0, 47);
-            this.groupEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupEdit.Location = new System.Drawing.Point(0, 38);
             this.groupEdit.Name = "groupEdit";
-            this.groupEdit.Size = new System.Drawing.Size(475, 219);
+            this.groupEdit.Size = new System.Drawing.Size(407, 178);
             this.groupEdit.TabIndex = 5;
             // 
             // label2
@@ -252,20 +236,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 123);
+            this.label2.Location = new System.Drawing.Point(3, 100);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(6);
-            this.label2.Size = new System.Drawing.Size(143, 40);
+            this.label2.Padding = new System.Windows.Forms.Padding(5);
+            this.label2.Size = new System.Drawing.Size(113, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên Môn Học:";
             // 
             // tenMon
             // 
             this.tenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenMon.Location = new System.Drawing.Point(23, 165);
-            this.tenMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tenMon.Location = new System.Drawing.Point(20, 134);
             this.tenMon.Name = "tenMon";
-            this.tenMon.Size = new System.Drawing.Size(434, 34);
+            this.tenMon.Size = new System.Drawing.Size(373, 29);
             this.tenMon.TabIndex = 4;
             this.tenMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -274,10 +257,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 20);
+            this.label3.Location = new System.Drawing.Point(3, 16);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(6);
-            this.label3.Size = new System.Drawing.Size(142, 40);
+            this.label3.Padding = new System.Windows.Forms.Padding(5);
+            this.label3.Size = new System.Drawing.Size(112, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã Môn Học:";
             // 
@@ -285,10 +268,9 @@
             // 
             this.maMon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.maMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maMon.Location = new System.Drawing.Point(23, 62);
-            this.maMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.maMon.Location = new System.Drawing.Point(20, 50);
             this.maMon.Name = "maMon";
-            this.maMon.Size = new System.Drawing.Size(434, 34);
+            this.maMon.Size = new System.Drawing.Size(373, 29);
             this.maMon.TabIndex = 3;
             this.maMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -298,10 +280,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-6, 0);
+            this.label1.Location = new System.Drawing.Point(-5, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(6);
-            this.label1.Size = new System.Drawing.Size(139, 44);
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(110, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tùy Chỉnh";
             // 
@@ -309,13 +291,12 @@
             // 
             this.danhSachMon.DataMember = null;
             this.danhSachMon.DataSource = this.mONHOCBindingSource;
-            this.danhSachMon.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.danhSachMon.Dock = System.Windows.Forms.DockStyle.Left;
             this.danhSachMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.danhSachMon.Location = new System.Drawing.Point(0, 30);
+            this.danhSachMon.Location = new System.Drawing.Point(0, 72);
             this.danhSachMon.MainView = this.viewDanhSachMon;
-            this.danhSachMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhSachMon.Name = "danhSachMon";
-            this.danhSachMon.Size = new System.Drawing.Size(1254, 539);
+            this.danhSachMon.Size = new System.Drawing.Size(1155, 454);
             this.danhSachMon.TabIndex = 4;
             this.danhSachMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.viewDanhSachMon});
@@ -334,7 +315,6 @@
             this.viewDanhSachMon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAMH,
             this.colTENMH});
-            this.viewDanhSachMon.DetailHeight = 431;
             this.viewDanhSachMon.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
             this.viewDanhSachMon.GridControl = this.danhSachMon;
             this.viewDanhSachMon.Name = "viewDanhSachMon";
@@ -346,7 +326,7 @@
             this.viewDanhSachMon.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.viewDanhSachMon.OptionsView.RowAutoHeight = true;
             this.viewDanhSachMon.OptionsView.ShowGroupPanel = false;
-            this.viewDanhSachMon.RowHeight = 37;
+            this.viewDanhSachMon.RowHeight = 30;
             this.viewDanhSachMon.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.viewDanhSachMon_FocusedRowChanged);
             // 
             // colMAMH
@@ -355,12 +335,10 @@
             this.colMAMH.AppearanceCell.Options.UseFont = true;
             this.colMAMH.Caption = "Mã Môn Học";
             this.colMAMH.FieldName = "MAMH";
-            this.colMAMH.MinWidth = 23;
             this.colMAMH.Name = "colMAMH";
             this.colMAMH.OptionsFilter.AllowFilter = false;
             this.colMAMH.Visible = true;
             this.colMAMH.VisibleIndex = 0;
-            this.colMAMH.Width = 87;
             // 
             // colTENMH
             // 
@@ -368,12 +346,10 @@
             this.colTENMH.AppearanceCell.Options.UseFont = true;
             this.colTENMH.Caption = "Tên Môn Học";
             this.colTENMH.FieldName = "TENMH";
-            this.colTENMH.MinWidth = 23;
             this.colTENMH.Name = "colTENMH";
             this.colTENMH.OptionsFilter.AllowFilter = false;
             this.colTENMH.Visible = true;
             this.colTENMH.VisibleIndex = 1;
-            this.colTENMH.Width = 87;
             // 
             // mONHOCTableAdapter
             // 
@@ -392,16 +368,45 @@
             // 
             this.errorTenMon.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cbKhoa);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1158, 45);
+            this.panel1.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(349, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Khoa: ";
+            // 
+            // cbKhoa
+            // 
+            this.cbKhoa.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.Location = new System.Drawing.Point(422, 4);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(395, 35);
+            this.cbKhoa.TabIndex = 0;
+            // 
             // FormMonHoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1819, 633);
+            this.ClientSize = new System.Drawing.Size(1571, 526);
             this.ControlBox = false;
             this.Controls.Add(this.danhSachMon);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tuyChinh);
             this.Controls.Add(this.tool);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMonHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Môn Học";
@@ -421,6 +426,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKDIEMMONHOC1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMaMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenMon)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,8 +445,6 @@
         private System.Windows.Forms.ToolStripButton reloadBtn;
         private System.Windows.Forms.ToolStripButton quitFormBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private QLDSVDataSet qLDSVDataSet;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private System.Windows.Forms.Panel tuyChinh;
@@ -459,5 +464,8 @@
         private System.Windows.Forms.BindingSource fKDIEMMONHOC1BindingSource;
         private System.Windows.Forms.ErrorProvider errorMaMon;
         private System.Windows.Forms.ErrorProvider errorTenMon;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbKhoa;
     }
 }

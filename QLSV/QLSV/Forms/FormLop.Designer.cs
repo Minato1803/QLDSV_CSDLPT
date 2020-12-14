@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tool = new System.Windows.Forms.ToolStrip();
-            this.addBtn = new System.Windows.Forms.ToolStripButton();
-            this.deleteBtn = new System.Windows.Forms.ToolStripButton();
             this.adjustBtn = new System.Windows.Forms.ToolStripButton();
             this.undoBtn = new System.Windows.Forms.ToolStripButton();
             this.saveBtn = new System.Windows.Forms.ToolStripButton();
@@ -39,8 +37,6 @@
             this.reloadBtn = new System.Windows.Forms.ToolStripButton();
             this.quitFormBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.qldsvDataSet1 = new QLSV.QLDSVDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -58,6 +54,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.deleteBtn = new System.Windows.Forms.ToolStripButton();
+            this.addBtn = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).BeginInit();
@@ -66,6 +67,7 @@
             this.groupEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tool
@@ -81,33 +83,13 @@
             this.exitBtn,
             this.reloadBtn,
             this.quitFormBtn,
-            this.toolStripSeparator1,
-            this.toolStripLabel1,
-            this.toolStripComboBox1});
+            this.toolStripSeparator1});
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.tool.Size = new System.Drawing.Size(1491, 27);
             this.tool.TabIndex = 2;
             this.tool.Text = "toolStrip1";
-            // 
-            // addBtn
-            // 
-            this.addBtn.Image = global::QLSV.Properties.Resources.add__1_;
-            this.addBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.addBtn.Size = new System.Drawing.Size(71, 24);
-            this.addBtn.Text = "Thêm";
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Image = global::QLSV.Properties.Resources.remove;
-            this.deleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.deleteBtn.Size = new System.Drawing.Size(62, 24);
-            this.deleteBtn.Text = "Xóa";
             // 
             // adjustBtn
             // 
@@ -169,34 +151,15 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(49, 24);
-            this.toolStripLabel1.Text = "Khoa:";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.toolStripComboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 27);
-            // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl1.DataMember = "LOP";
             this.gridControl1.DataSource = this.qldsvDataSet1;
-            this.gridControl1.Location = new System.Drawing.Point(0, 30);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gridControl1.Location = new System.Drawing.Point(0, 72);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1075, 494);
+            this.gridControl1.Size = new System.Drawing.Size(1075, 782);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -249,16 +212,15 @@
             // tuyChinh
             // 
             this.tuyChinh.AccessibleName = "";
-            this.tuyChinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tuyChinh.BackColor = System.Drawing.Color.DodgerBlue;
             this.tuyChinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tuyChinh.Controls.Add(this.groupEdit);
             this.tuyChinh.Controls.Add(this.label1);
+            this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
             this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
-            this.tuyChinh.Location = new System.Drawing.Point(1078, 30);
+            this.tuyChinh.Location = new System.Drawing.Point(1078, 27);
             this.tuyChinh.Name = "tuyChinh";
-            this.tuyChinh.Size = new System.Drawing.Size(413, 494);
+            this.tuyChinh.Size = new System.Drawing.Size(413, 827);
             this.tuyChinh.TabIndex = 4;
             // 
             // groupEdit
@@ -342,15 +304,63 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Image = global::QLSV.Properties.Resources.remove;
+            this.deleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.deleteBtn.Size = new System.Drawing.Size(62, 24);
+            this.deleteBtn.Text = "Xóa";
+            // 
+            // addBtn
+            // 
+            this.addBtn.Image = global::QLSV.Properties.Resources.add__1_;
+            this.addBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.addBtn.Size = new System.Drawing.Size(71, 24);
+            this.addBtn.Text = "Thêm";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.cbKhoa);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1078, 45);
+            this.panel1.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(349, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Khoa: ";
+            // 
+            // cbKhoa
+            // 
+            this.cbKhoa.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.Location = new System.Drawing.Point(422, 4);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(395, 35);
+            this.cbKhoa.TabIndex = 0;
+            // 
             // FormLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1491, 854);
             this.ControlBox = false;
+            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.tuyChinh);
-            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.tool);
             this.MaximizeBox = false;
             this.Name = "FormLop";
@@ -368,6 +378,8 @@
             this.groupEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,8 +388,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip tool;
-        private System.Windows.Forms.ToolStripButton addBtn;
-        private System.Windows.Forms.ToolStripButton deleteBtn;
         private System.Windows.Forms.ToolStripButton adjustBtn;
         private System.Windows.Forms.ToolStripButton undoBtn;
         private System.Windows.Forms.ToolStripButton saveBtn;
@@ -385,8 +395,6 @@
         private System.Windows.Forms.ToolStripButton reloadBtn;
         private System.Windows.Forms.ToolStripButton quitFormBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private QLDSVDataSet qldsvDataSet1;
@@ -404,5 +412,10 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.ToolStripButton addBtn;
+        private System.Windows.Forms.ToolStripButton deleteBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbKhoa;
     }
 }
