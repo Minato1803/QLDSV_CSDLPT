@@ -16,7 +16,7 @@ namespace QLSV
     public partial class FormMonHoc : DevExpress.XtraEditors.XtraForm
     {
         private int pos = 0;
-        private Boolean flag = false; // true = add ; false = update ; default of boolean = false
+        private Boolean flag = false; // true = add ; false = update
         private string oldMaMonHoc = "";
         private string oldTenMonHoc = "";
         Stack undoBds = new Stack();
@@ -63,7 +63,6 @@ namespace QLSV
             // TODO: This line of code loads data into the 'qLDSVDataSet.MONHOC' table. You can move, or remove it, as needed.
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.qLDSVDataSet.MONHOC);
-            this.mONHOCBindingSource.AllowNew = true;
         }
 
         private void quitFormBtn_Click(object sender, EventArgs e)
@@ -203,7 +202,6 @@ namespace QLSV
                         this.mONHOCBindingSource.EndEdit();
                         this.mONHOCBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
                         this.mONHOCTableAdapter.Update(this.qLDSVDataSet);
-                        dataGridView1.DataSource = mONHOCBindingSource;
                         addBtn.Enabled
                         = deleteBtn.Enabled
                         = adjustBtn.Enabled
@@ -401,5 +399,9 @@ namespace QLSV
             }
         }
 
+        private void maMon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

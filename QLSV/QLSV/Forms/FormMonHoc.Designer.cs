@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.tool = new System.Windows.Forms.ToolStrip();
             this.addBtn = new System.Windows.Forms.ToolStripButton();
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
@@ -47,11 +47,11 @@
             this.groupEdit = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.tenMon = new System.Windows.Forms.TextBox();
+            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.maMon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.danhSachMon = new DevExpress.XtraGrid.GridControl();
-            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewDanhSachMon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,23 +65,20 @@
             this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.mAMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tENMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fKDIEMMONHOC1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableAdapterManager = new QLSV.QLDSVDataSetTableAdapters.TableAdapterManager();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             this.tuyChinh.SuspendLayout();
             this.groupEdit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.danhSachMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDanhSachMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMaMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenMon)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKDIEMMONHOC1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,14 +198,14 @@
             // 
             this.sqlDataSource1.ConnectionName = "QLSV.Properties.Settings.QLDSVConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery3.Name = "SP_getPhieuDiem";
-            queryParameter3.Name = "@MSSV";
-            queryParameter3.Type = typeof(string);
-            queryParameter3.ValueInfo = "N17DCCN115";
-            storedProcQuery3.Parameters.Add(queryParameter3);
-            storedProcQuery3.StoredProcName = "SP_getPhieuDiem";
+            storedProcQuery1.Name = "SP_getPhieuDiem";
+            queryParameter1.Name = "@MSSV";
+            queryParameter1.Type = typeof(string);
+            queryParameter1.ValueInfo = "N17DCCN115";
+            storedProcQuery1.Parameters.Add(queryParameter1);
+            storedProcQuery1.StoredProcName = "SP_getPhieuDiem";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery3});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNQX2dldFBoaWV1RGllbSI+P" +
     "EZpZWxkIE5hbWU9IlRFTk1IIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkRJRU0iIFR5cGU9I" +
     "kRvdWJsZSIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==";
@@ -222,10 +219,10 @@
             this.tuyChinh.Controls.Add(this.label1);
             this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
             this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
-            this.tuyChinh.Location = new System.Drawing.Point(1458, 30);
+            this.tuyChinh.Location = new System.Drawing.Point(1445, 30);
             this.tuyChinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tuyChinh.Name = "tuyChinh";
-            this.tuyChinh.Size = new System.Drawing.Size(482, 777);
+            this.tuyChinh.Size = new System.Drawing.Size(495, 830);
             this.tuyChinh.TabIndex = 3;
             // 
             // groupEdit
@@ -255,6 +252,7 @@
             // 
             // tenMon
             // 
+            this.tenMon.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "TENMH", true));
             this.tenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tenMon.Location = new System.Drawing.Point(23, 165);
             this.tenMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -262,6 +260,11 @@
             this.tenMon.Size = new System.Drawing.Size(434, 34);
             this.tenMon.TabIndex = 4;
             this.tenMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // mONHOCBindingSource
+            // 
+            this.mONHOCBindingSource.DataMember = "MONHOC";
+            this.mONHOCBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // label3
             // 
@@ -278,6 +281,8 @@
             // maMon
             // 
             this.maMon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.maMon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.maMon.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mONHOCBindingSource, "MAMH", true));
             this.maMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maMon.Location = new System.Drawing.Point(23, 62);
             this.maMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -285,6 +290,7 @@
             this.maMon.Size = new System.Drawing.Size(434, 34);
             this.maMon.TabIndex = 3;
             this.maMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maMon.TextChanged += new System.EventHandler(this.maMon_TextChanged);
             // 
             // label1
             // 
@@ -310,15 +316,10 @@
             this.danhSachMon.MainView = this.viewDanhSachMon;
             this.danhSachMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhSachMon.Name = "danhSachMon";
-            this.danhSachMon.Size = new System.Drawing.Size(1458, 722);
+            this.danhSachMon.Size = new System.Drawing.Size(1445, 775);
             this.danhSachMon.TabIndex = 4;
             this.danhSachMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.viewDanhSachMon});
-            // 
-            // mONHOCBindingSource
-            // 
-            this.mONHOCBindingSource.DataMember = "MONHOC";
-            this.mONHOCBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // viewDanhSachMon
             // 
@@ -394,7 +395,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1458, 55);
+            this.panel1.Size = new System.Drawing.Size(1445, 55);
             this.panel1.TabIndex = 7;
             // 
             // label4
@@ -430,44 +431,31 @@
             // 
             this.v_DSPMTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mAMHDataGridViewTextBoxColumn,
-            this.tENMHDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.mONHOCBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 281);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(673, 150);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // mAMHDataGridViewTextBoxColumn
-            // 
-            this.mAMHDataGridViewTextBoxColumn.DataPropertyName = "MAMH";
-            this.mAMHDataGridViewTextBoxColumn.HeaderText = "MAMH";
-            this.mAMHDataGridViewTextBoxColumn.Name = "mAMHDataGridViewTextBoxColumn";
-            // 
-            // tENMHDataGridViewTextBoxColumn
-            // 
-            this.tENMHDataGridViewTextBoxColumn.DataPropertyName = "TENMH";
-            this.tENMHDataGridViewTextBoxColumn.HeaderText = "TENMH";
-            this.tENMHDataGridViewTextBoxColumn.Name = "tENMHDataGridViewTextBoxColumn";
-            // 
             // fKDIEMMONHOC1BindingSource
             // 
             this.fKDIEMMONHOC1BindingSource.DataMember = "FK_DIEM_MONHOC1";
             this.fKDIEMMONHOC1BindingSource.DataSource = this.mONHOCBindingSource;
             // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CT_DONGHOCPHITableAdapter = null;
+            this.tableAdapterManager.DIEMTableAdapter = this.dIEMTableAdapter;
+            this.tableAdapterManager.GIANGVIENTableAdapter = null;
+            this.tableAdapterManager.HOCPHITableAdapter = null;
+            this.tableAdapterManager.KHOATableAdapter = null;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = this.mONHOCTableAdapter;
+            this.tableAdapterManager.SINHVIENTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = QLSV.QLDSVDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // FormMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1940, 807);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1940, 860);
             this.ControlBox = false;
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.danhSachMon);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tuyChinh);
@@ -485,8 +473,8 @@
             this.tuyChinh.PerformLayout();
             this.groupEdit.ResumeLayout(false);
             this.groupEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.danhSachMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDanhSachMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMaMon)).EndInit();
@@ -494,7 +482,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKDIEMMONHOC1BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -537,9 +524,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView viewDanhSachMon;
         private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mAMHDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tENMHDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource fKDIEMMONHOC1BindingSource;
+        private QLDSVDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

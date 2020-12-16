@@ -565,3 +565,4 @@ D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.Reports.BDTK.resource
 D:\C-Ptit\CSDLPT\Git\QLDSV_CSDLPT\QLSV\QLSV\obj\Debug\QLSV.Reports.BDMH.resources
 E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.Reports.BDTK.resources
 E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.Reports.BDMH.resources
+E:\hoc\CSDLPT\QLDSV\QLSV\QLSV\obj\Debug\QLSV.FormChuyenLop.resources
