@@ -46,7 +46,7 @@
             this.btnNam = new System.Windows.Forms.RadioButton();
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.ngaySinh = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.nghiHoc = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.ghiChu = new System.Windows.Forms.TextBox();
@@ -215,7 +215,7 @@
             this.groupEdit.Controls.Add(this.btnNam);
             this.groupEdit.Controls.Add(this.radioGroup1);
             this.groupEdit.Controls.Add(this.ngaySinh);
-            this.groupEdit.Controls.Add(this.checkBox1);
+            this.groupEdit.Controls.Add(this.nghiHoc);
             this.groupEdit.Controls.Add(this.label9);
             this.groupEdit.Controls.Add(this.label10);
             this.groupEdit.Controls.Add(this.ghiChu);
@@ -233,6 +233,7 @@
             this.groupEdit.Controls.Add(this.ho);
             this.groupEdit.Controls.Add(this.label3);
             this.groupEdit.Controls.Add(this.maSinhVien);
+            this.groupEdit.Enabled = false;
             this.groupEdit.Location = new System.Drawing.Point(0, 38);
             this.groupEdit.Name = "groupEdit";
             this.groupEdit.Size = new System.Drawing.Size(407, 717);
@@ -243,7 +244,7 @@
             this.btnNu.AutoSize = true;
             this.btnNu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNu.ForeColor = System.Drawing.Color.White;
-            this.btnNu.Location = new System.Drawing.Point(260, 279);
+            this.btnNu.Location = new System.Drawing.Point(119, 270);
             this.btnNu.Name = "btnNu";
             this.btnNu.Size = new System.Drawing.Size(45, 21);
             this.btnNu.TabIndex = 25;
@@ -256,7 +257,7 @@
             this.btnNam.AutoSize = true;
             this.btnNam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNam.ForeColor = System.Drawing.Color.White;
-            this.btnNam.Location = new System.Drawing.Point(71, 279);
+            this.btnNam.Location = new System.Drawing.Point(20, 270);
             this.btnNam.Name = "btnNam";
             this.btnNam.Size = new System.Drawing.Size(55, 21);
             this.btnNam.TabIndex = 24;
@@ -272,6 +273,7 @@
             this.radioGroup1.Properties.Appearance.ForeColor = System.Drawing.Color.Transparent;
             this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
             this.radioGroup1.Properties.Appearance.Options.UseForeColor = true;
+            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioGroup1.Size = new System.Drawing.Size(373, 30);
             this.radioGroup1.TabIndex = 23;
             // 
@@ -283,14 +285,14 @@
             this.ngaySinh.Size = new System.Drawing.Size(373, 21);
             this.ngaySinh.TabIndex = 22;
             // 
-            // checkBox1
+            // nghiHoc
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(90, 596);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.nghiHoc.AutoSize = true;
+            this.nghiHoc.Location = new System.Drawing.Point(90, 596);
+            this.nghiHoc.Name = "nghiHoc";
+            this.nghiHoc.Size = new System.Drawing.Size(15, 14);
+            this.nghiHoc.TabIndex = 21;
+            this.nghiHoc.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -600,7 +602,7 @@
         private System.Windows.Forms.TextBox maLop;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox ten;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox nghiHoc;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton btnNu;
         private System.Windows.Forms.RadioButton btnNam;
