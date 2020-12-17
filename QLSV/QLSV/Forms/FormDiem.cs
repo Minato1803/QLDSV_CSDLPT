@@ -27,5 +27,12 @@ namespace QLSV
         {
 
         }
+
+        private void FormDiem_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLDSVDataSet.DIEM' table. You can move, or remove it, as needed.
+            this.dIEMTableAdapter.Fill(this.qLDSVDataSet.DIEM);
+
+        }
     }
 }

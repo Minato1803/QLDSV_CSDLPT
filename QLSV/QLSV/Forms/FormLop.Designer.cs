@@ -40,6 +40,7 @@
             this.quitFormBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.danhsachLop = new DevExpress.XtraGrid.GridControl();
+            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qldsvDataSet1 = new QLSV.QLDSVDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,7 +61,6 @@
             this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.LOPTableAdapter();
             this.fKSINHVIENLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SINHVIENTableAdapter();
@@ -68,6 +68,7 @@
             this.errorTenLop = new System.Windows.Forms.ErrorProvider(this.components);
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachLop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tuyChinh.SuspendLayout();
@@ -76,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKSINHVIENLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMaLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenLop)).BeginInit();
@@ -99,7 +99,7 @@
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.tool.Size = new System.Drawing.Size(1755, 30);
+            this.tool.Size = new System.Drawing.Size(1771, 30);
             this.tool.TabIndex = 2;
             this.tool.Text = "toolStrip1";
             // 
@@ -197,10 +197,15 @@
             this.danhsachLop.MainView = this.gridView1;
             this.danhsachLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhsachLop.Name = "danhsachLop";
-            this.danhsachLop.Size = new System.Drawing.Size(1273, 977);
+            this.danhsachLop.Size = new System.Drawing.Size(1289, 977);
             this.danhsachLop.TabIndex = 3;
             this.danhsachLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // lOPBindingSource
+            // 
+            this.lOPBindingSource.DataMember = "LOP";
+            this.lOPBindingSource.DataSource = this.qldsvDataSet1;
             // 
             // qldsvDataSet1
             // 
@@ -257,9 +262,10 @@
             this.tuyChinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tuyChinh.Controls.Add(this.groupEdit);
             this.tuyChinh.Controls.Add(this.label1);
+            this.tuyChinh.Controls.Add(this.gridControl2);
             this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
             this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
-            this.tuyChinh.Location = new System.Drawing.Point(1273, 30);
+            this.tuyChinh.Location = new System.Drawing.Point(1289, 30);
             this.tuyChinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tuyChinh.Name = "tuyChinh";
             this.tuyChinh.Size = new System.Drawing.Size(482, 1032);
@@ -340,11 +346,11 @@
             // 
             this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl2.Location = new System.Drawing.Point(0, 652);
+            this.gridControl2.Location = new System.Drawing.Point(-1289, 611);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1739, 399);
+            this.gridControl2.Size = new System.Drawing.Size(1771, 399);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -363,7 +369,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1273, 55);
+            this.panel1.Size = new System.Drawing.Size(1289, 55);
             this.panel1.TabIndex = 6;
             // 
             // label4
@@ -399,11 +405,6 @@
             // 
             this.v_DSPMTableAdapter.ClearBeforeFill = true;
             // 
-            // lOPBindingSource
-            // 
-            this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.qldsvDataSet1;
-            // 
             // lOPTableAdapter
             // 
             this.lOPTableAdapter.ClearBeforeFill = true;
@@ -429,11 +430,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1755, 1062);
+            this.ClientSize = new System.Drawing.Size(1771, 1062);
             this.ControlBox = false;
             this.Controls.Add(this.danhsachLop);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.tuyChinh);
             this.Controls.Add(this.tool);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -446,6 +446,7 @@
             this.tool.ResumeLayout(false);
             this.tool.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachLop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tuyChinh.ResumeLayout(false);
@@ -457,7 +458,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKSINHVIENLOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMaLop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorTenLop)).EndInit();

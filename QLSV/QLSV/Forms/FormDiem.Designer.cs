@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tool = new System.Windows.Forms.ToolStrip();
             this.deleteBtn = new System.Windows.Forms.ToolStripButton();
             this.adjustBtn = new System.Windows.Forms.ToolStripButton();
@@ -56,6 +57,13 @@
             this.cbMon = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbLop = new System.Windows.Forms.ComboBox();
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
+            this.dIEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dIEMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.DIEMTableAdapter();
+            this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIEM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -63,6 +71,8 @@
             this.groupEdit.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dIEMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tool
@@ -81,7 +91,7 @@
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.tool.Size = new System.Drawing.Size(1739, 30);
+            this.tool.Size = new System.Drawing.Size(1755, 30);
             this.tool.TabIndex = 2;
             this.tool.Text = "toolStrip1";
             // 
@@ -156,19 +166,25 @@
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = this.dIEMBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.Location = new System.Drawing.Point(0, 140);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1254, 911);
+            this.gridControl1.Size = new System.Drawing.Size(1254, 922);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMASV,
+            this.colMAMH,
+            this.colLAN,
+            this.colDIEM});
             this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -182,10 +198,10 @@
             this.tuyChinh.Controls.Add(this.label1);
             this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
             this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
-            this.tuyChinh.Location = new System.Drawing.Point(1257, 30);
+            this.tuyChinh.Location = new System.Drawing.Point(1273, 30);
             this.tuyChinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tuyChinh.Name = "tuyChinh";
-            this.tuyChinh.Size = new System.Drawing.Size(482, 1021);
+            this.tuyChinh.Size = new System.Drawing.Size(482, 1032);
             this.tuyChinh.TabIndex = 5;
             // 
             // groupEdit
@@ -208,7 +224,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 123);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.label2.Padding = new System.Windows.Forms.Padding(6);
             this.label2.Size = new System.Drawing.Size(143, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên Môn Học:";
@@ -229,7 +245,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 20);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.label3.Padding = new System.Windows.Forms.Padding(6);
             this.label3.Size = new System.Drawing.Size(142, 40);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã Môn Học:";
@@ -251,7 +267,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(-6, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.label1.Padding = new System.Windows.Forms.Padding(6);
             this.label1.Size = new System.Drawing.Size(139, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tùy Chỉnh";
@@ -264,7 +280,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1257, 55);
+            this.panel1.Size = new System.Drawing.Size(1273, 55);
             this.panel1.TabIndex = 6;
             // 
             // label4
@@ -299,7 +315,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 85);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1257, 55);
+            this.panel2.Size = new System.Drawing.Size(1273, 55);
             this.panel2.TabIndex = 7;
             // 
             // label7
@@ -362,11 +378,62 @@
             this.cbLop.Size = new System.Drawing.Size(186, 41);
             this.cbLop.TabIndex = 0;
             // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.Locale = new System.Globalization.CultureInfo("en-US");
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dIEMBindingSource
+            // 
+            this.dIEMBindingSource.DataMember = "DIEM";
+            this.dIEMBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // dIEMTableAdapter
+            // 
+            this.dIEMTableAdapter.ClearBeforeFill = true;
+            // 
+            // colMASV
+            // 
+            this.colMASV.FieldName = "MASV";
+            this.colMASV.MinWidth = 25;
+            this.colMASV.Name = "colMASV";
+            this.colMASV.Visible = true;
+            this.colMASV.VisibleIndex = 0;
+            this.colMASV.Width = 94;
+            // 
+            // colMAMH
+            // 
+            this.colMAMH.FieldName = "MAMH";
+            this.colMAMH.MinWidth = 25;
+            this.colMAMH.Name = "colMAMH";
+            this.colMAMH.Visible = true;
+            this.colMAMH.VisibleIndex = 1;
+            this.colMAMH.Width = 94;
+            // 
+            // colLAN
+            // 
+            this.colLAN.FieldName = "LAN";
+            this.colLAN.MinWidth = 25;
+            this.colLAN.Name = "colLAN";
+            this.colLAN.Visible = true;
+            this.colLAN.VisibleIndex = 2;
+            this.colLAN.Width = 94;
+            // 
+            // colDIEM
+            // 
+            this.colDIEM.FieldName = "DIEM";
+            this.colDIEM.MinWidth = 25;
+            this.colDIEM.Name = "colDIEM";
+            this.colDIEM.Visible = true;
+            this.colDIEM.VisibleIndex = 3;
+            this.colDIEM.Width = 94;
+            // 
             // FormDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1739, 1051);
+            this.ClientSize = new System.Drawing.Size(1755, 1062);
             this.ControlBox = false;
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel2);
@@ -378,6 +445,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Điểm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormDiem_Load);
             this.tool.ResumeLayout(false);
             this.tool.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -390,6 +458,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dIEMBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,5 +495,12 @@
         private System.Windows.Forms.ComboBox cbLan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbMon;
+        private QLDSVDataSet qLDSVDataSet;
+        private System.Windows.Forms.BindingSource dIEMBindingSource;
+        private QLDSVDataSetTableAdapters.DIEMTableAdapter dIEMTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colMASV;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colLAN;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIEM;
     }
 }
