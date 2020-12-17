@@ -47,6 +47,8 @@
             this.bangDiemMonHoc = new DevExpress.XtraBars.BarButtonItem();
             this.bangDiemTongKet = new DevExpress.XtraBars.BarButtonItem();
             this.phieuDiem = new DevExpress.XtraBars.BarButtonItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -58,8 +60,7 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.qlChuyenLop = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -88,10 +89,11 @@
             this.bangDiemTongKet,
             this.phieuDiem,
             this.barStaticItem1,
-            this.barStaticItem2});
+            this.barStaticItem2,
+            this.qlChuyenLop});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbon.MaxItemId = 24;
+            this.ribbon.MaxItemId = 25;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsMenuMinWidth = 385;
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -237,6 +239,22 @@
             this.phieuDiem.Name = "phieuDiem";
             this.phieuDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.phieuDiem_ItemClick);
             // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.AllowRightClickInMenu = false;
+            this.barStaticItem1.Caption = "|";
+            this.barStaticItem1.Id = 22;
+            this.barStaticItem1.Name = "barStaticItem1";
+            this.barStaticItem1.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // barStaticItem2
+            // 
+            this.barStaticItem2.AllowRightClickInMenu = false;
+            this.barStaticItem2.Caption = "|";
+            this.barStaticItem2.Id = 23;
+            this.barStaticItem2.Name = "barStaticItem2";
+            this.barStaticItem2.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -251,6 +269,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.qlLop);
             this.ribbonPageGroup1.ItemLinks.Add(this.qlSinhVien);
             this.ribbonPageGroup1.ItemLinks.Add(this.qlDiem);
+            this.ribbonPageGroup1.ItemLinks.Add(this.qlChuyenLop);
             this.ribbonPageGroup1.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Lớp Học";
@@ -327,21 +346,14 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // barStaticItem1
+            // qlChuyenLop
             // 
-            this.barStaticItem1.AllowRightClickInMenu = false;
-            this.barStaticItem1.Caption = "|";
-            this.barStaticItem1.Id = 22;
-            this.barStaticItem1.Name = "barStaticItem1";
-            this.barStaticItem1.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
-            // 
-            // barStaticItem2
-            // 
-            this.barStaticItem2.AllowRightClickInMenu = false;
-            this.barStaticItem2.Caption = "|";
-            this.barStaticItem2.Id = 23;
-            this.barStaticItem2.Name = "barStaticItem2";
-            this.barStaticItem2.ShowItemShortcut = DevExpress.Utils.DefaultBoolean.False;
+            this.qlChuyenLop.Caption = "CHUYỂN LỚP";
+            this.qlChuyenLop.Id = 24;
+            this.qlChuyenLop.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.qlChuyenLop.LargeWidth = 75;
+            this.qlChuyenLop.Name = "qlChuyenLop";
+            this.qlChuyenLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MainForm
             // 
@@ -403,5 +415,6 @@
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarButtonItem qlChuyenLop;
     }
 }

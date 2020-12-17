@@ -143,6 +143,11 @@ namespace QLSV
         {
             ShowMdiChildren(typeof(ReportPhieuDiem));
         }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMdiChildren(typeof(FormChuyenLop));
+        }
     }
 
     
