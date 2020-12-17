@@ -41,15 +41,15 @@
             this.tuyChinh = new System.Windows.Forms.Panel();
             this.groupEdit = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.daDong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.hocPhi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tenMon = new System.Windows.Forms.TextBox();
+            this.hocKi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.maMon = new System.Windows.Forms.TextBox();
+            this.nienKhoa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
@@ -189,15 +189,15 @@
             // groupEdit
             // 
             this.groupEdit.Controls.Add(this.label7);
-            this.groupEdit.Controls.Add(this.textBox3);
+            this.groupEdit.Controls.Add(this.dong);
             this.groupEdit.Controls.Add(this.label6);
-            this.groupEdit.Controls.Add(this.textBox2);
+            this.groupEdit.Controls.Add(this.daDong);
             this.groupEdit.Controls.Add(this.label5);
-            this.groupEdit.Controls.Add(this.textBox1);
+            this.groupEdit.Controls.Add(this.hocPhi);
             this.groupEdit.Controls.Add(this.label2);
-            this.groupEdit.Controls.Add(this.tenMon);
+            this.groupEdit.Controls.Add(this.hocKi);
             this.groupEdit.Controls.Add(this.label3);
-            this.groupEdit.Controls.Add(this.maMon);
+            this.groupEdit.Controls.Add(this.nienKhoa);
             this.groupEdit.Enabled = false;
             this.groupEdit.Location = new System.Drawing.Point(0, 38);
             this.groupEdit.Name = "groupEdit";
@@ -211,19 +211,19 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 344);
             this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label7.Padding = new System.Windows.Forms.Padding(5);
             this.label7.Size = new System.Drawing.Size(61, 31);
             this.label7.TabIndex = 9;
             this.label7.Text = "Đóng:";
             // 
-            // textBox3
+            // dong
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(20, 378);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(373, 29);
-            this.textBox3.TabIndex = 10;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dong.Location = new System.Drawing.Point(20, 378);
+            this.dong.Name = "dong";
+            this.dong.Size = new System.Drawing.Size(373, 29);
+            this.dong.TabIndex = 10;
+            this.dong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -232,19 +232,19 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(3, 260);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label6.Padding = new System.Windows.Forms.Padding(5);
             this.label6.Size = new System.Drawing.Size(84, 31);
             this.label6.TabIndex = 7;
             this.label6.Text = "Đã Đóng:";
             // 
-            // textBox2
+            // daDong
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(20, 294);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(373, 29);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.daDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daDong.Location = new System.Drawing.Point(20, 294);
+            this.daDong.Name = "daDong";
+            this.daDong.Size = new System.Drawing.Size(373, 29);
+            this.daDong.TabIndex = 8;
+            this.daDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -253,19 +253,19 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 179);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label5.Padding = new System.Windows.Forms.Padding(5);
             this.label5.Size = new System.Drawing.Size(76, 31);
             this.label5.TabIndex = 5;
             this.label5.Text = "Học Phí:";
             // 
-            // textBox1
+            // hocPhi
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(20, 213);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(373, 29);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.hocPhi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hocPhi.Location = new System.Drawing.Point(20, 213);
+            this.hocPhi.Name = "hocPhi";
+            this.hocPhi.Size = new System.Drawing.Size(373, 29);
+            this.hocPhi.TabIndex = 6;
+            this.hocPhi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
@@ -274,19 +274,19 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 100);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label2.Padding = new System.Windows.Forms.Padding(5);
             this.label2.Size = new System.Drawing.Size(67, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Học Kì:";
             // 
-            // tenMon
+            // hocKi
             // 
-            this.tenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenMon.Location = new System.Drawing.Point(20, 134);
-            this.tenMon.Name = "tenMon";
-            this.tenMon.Size = new System.Drawing.Size(373, 29);
-            this.tenMon.TabIndex = 4;
-            this.tenMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.hocKi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hocKi.Location = new System.Drawing.Point(20, 134);
+            this.hocKi.Name = "hocKi";
+            this.hocKi.Size = new System.Drawing.Size(373, 29);
+            this.hocKi.TabIndex = 4;
+            this.hocKi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -295,20 +295,20 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 16);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label3.Padding = new System.Windows.Forms.Padding(5);
             this.label3.Size = new System.Drawing.Size(95, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "Niên Khóa:";
             // 
-            // maMon
+            // nienKhoa
             // 
-            this.maMon.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.maMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maMon.Location = new System.Drawing.Point(20, 50);
-            this.maMon.Name = "maMon";
-            this.maMon.Size = new System.Drawing.Size(373, 29);
-            this.maMon.TabIndex = 3;
-            this.maMon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nienKhoa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nienKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nienKhoa.Location = new System.Drawing.Point(20, 50);
+            this.nienKhoa.Name = "nienKhoa";
+            this.nienKhoa.Size = new System.Drawing.Size(373, 29);
+            this.nienKhoa.TabIndex = 3;
+            this.nienKhoa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -318,7 +318,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(-5, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
             this.label1.Size = new System.Drawing.Size(110, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tùy Chỉnh";
@@ -379,7 +379,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 72);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1075, 796);
+            this.gridControl1.Size = new System.Drawing.Size(1138, 796);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -491,9 +491,9 @@
         private System.Windows.Forms.Panel tuyChinh;
         private System.Windows.Forms.Panel groupEdit;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tenMon;
+        private System.Windows.Forms.TextBox hocKi;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox maMon;
+        private System.Windows.Forms.TextBox nienKhoa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
@@ -501,11 +501,11 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox dong;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox daDong;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox hocPhi;
         private QLDSVDataSet qLDSVDataSet;
         private System.Windows.Forms.BindingSource hOCPHIBindingSource;
         private QLDSVDataSetTableAdapters.HOCPHITableAdapter hOCPHITableAdapter;

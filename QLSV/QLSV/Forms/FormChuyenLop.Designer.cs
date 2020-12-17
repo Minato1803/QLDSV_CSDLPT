@@ -32,37 +32,37 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChuyenLop));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOk = new System.Windows.Forms.Button();
-            this.txNamSinh = new System.Windows.Forms.TextBox();
-            this.txPhai = new System.Windows.Forms.TextBox();
-            this.txTen = new System.Windows.Forms.TextBox();
+            this.namSinh = new System.Windows.Forms.TextBox();
+            this.phai = new System.Windows.Forms.TextBox();
+            this.ten = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.maLop = new DevExpress.XtraEditors.LookUpEdit();
+            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.maSinhVien = new DevExpress.XtraEditors.LookUpEdit();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sINHVIENTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SINHVIENTableAdapter();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.LOPTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maLop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maSinhVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnOk);
-            this.panel1.Controls.Add(this.txNamSinh);
-            this.panel1.Controls.Add(this.txPhai);
-            this.panel1.Controls.Add(this.txTen);
+            this.panel1.Controls.Add(this.namSinh);
+            this.panel1.Controls.Add(this.phai);
+            this.panel1.Controls.Add(this.ten);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -85,32 +85,32 @@
             this.btnOk.Text = "Xác Nhận";
             this.btnOk.UseVisualStyleBackColor = true;
             // 
-            // txNamSinh
+            // namSinh
             // 
-            this.txNamSinh.Enabled = false;
-            this.txNamSinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txNamSinh.Location = new System.Drawing.Point(178, 183);
-            this.txNamSinh.Name = "txNamSinh";
-            this.txNamSinh.Size = new System.Drawing.Size(190, 29);
-            this.txNamSinh.TabIndex = 9;
+            this.namSinh.Enabled = false;
+            this.namSinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namSinh.Location = new System.Drawing.Point(178, 183);
+            this.namSinh.Name = "namSinh";
+            this.namSinh.Size = new System.Drawing.Size(190, 29);
+            this.namSinh.TabIndex = 9;
             // 
-            // txPhai
+            // phai
             // 
-            this.txPhai.Enabled = false;
-            this.txPhai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txPhai.Location = new System.Drawing.Point(178, 140);
-            this.txPhai.Name = "txPhai";
-            this.txPhai.Size = new System.Drawing.Size(190, 29);
-            this.txPhai.TabIndex = 8;
+            this.phai.Enabled = false;
+            this.phai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phai.Location = new System.Drawing.Point(178, 140);
+            this.phai.Name = "phai";
+            this.phai.Size = new System.Drawing.Size(190, 29);
+            this.phai.TabIndex = 8;
             // 
-            // txTen
+            // ten
             // 
-            this.txTen.Enabled = false;
-            this.txTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txTen.Location = new System.Drawing.Point(178, 93);
-            this.txTen.Name = "txTen";
-            this.txTen.Size = new System.Drawing.Size(332, 29);
-            this.txTen.TabIndex = 7;
+            this.ten.Enabled = false;
+            this.ten.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ten.Location = new System.Drawing.Point(178, 93);
+            this.ten.Name = "ten";
+            this.ten.Size = new System.Drawing.Size(332, 29);
+            this.ten.TabIndex = 7;
             // 
             // label5
             // 
@@ -175,10 +175,14 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MALOP", "MALOP", 41, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.maLop.Properties.DataSource = this.lOPBindingSource;
             this.maLop.Properties.DisplayMember = "MALOP";
-            this.maLop.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.maLop.Properties.ValueMember = "MALOP";
             this.maLop.Size = new System.Drawing.Size(190, 28);
             this.maLop.TabIndex = 1;
+            // 
+            // lOPBindingSource
+            // 
+            this.lOPBindingSource.DataMember = "LOP";
+            this.lOPBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // qLDSVDataSet
             // 
@@ -235,11 +239,6 @@
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // lOPBindingSource
-            // 
-            this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.qLDSVDataSet;
-            // 
             // lOPTableAdapter
             // 
             this.lOPTableAdapter.ClearBeforeFill = true;
@@ -262,11 +261,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maLop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maSinhVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,9 +278,9 @@
         private DevExpress.XtraEditors.LookUpEdit maLop;
         private DevExpress.XtraEditors.LookUpEdit maSinhVien;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.TextBox txNamSinh;
-        private System.Windows.Forms.TextBox txPhai;
-        private System.Windows.Forms.TextBox txTen;
+        private System.Windows.Forms.TextBox namSinh;
+        private System.Windows.Forms.TextBox phai;
+        private System.Windows.Forms.TextBox ten;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

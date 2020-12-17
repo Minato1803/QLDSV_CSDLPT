@@ -42,10 +42,28 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tuyChinh = new System.Windows.Forms.Panel();
             this.groupEdit = new System.Windows.Forms.Panel();
+            this.btnNu = new System.Windows.Forms.RadioButton();
+            this.btnNam = new System.Windows.Forms.RadioButton();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.ngaySinh = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ghiChu = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.diaChi = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.noiSinh = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.maLop = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ten = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tenMon = new System.Windows.Forms.TextBox();
+            this.ho = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.maMon = new System.Windows.Forms.TextBox();
+            this.maSinhVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tuyChinh.SuspendLayout();
             this.groupEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,55 +211,263 @@
             // 
             // groupEdit
             // 
+            this.groupEdit.Controls.Add(this.btnNu);
+            this.groupEdit.Controls.Add(this.btnNam);
+            this.groupEdit.Controls.Add(this.radioGroup1);
+            this.groupEdit.Controls.Add(this.ngaySinh);
+            this.groupEdit.Controls.Add(this.checkBox1);
+            this.groupEdit.Controls.Add(this.label9);
+            this.groupEdit.Controls.Add(this.label10);
+            this.groupEdit.Controls.Add(this.ghiChu);
+            this.groupEdit.Controls.Add(this.label11);
+            this.groupEdit.Controls.Add(this.diaChi);
+            this.groupEdit.Controls.Add(this.label12);
+            this.groupEdit.Controls.Add(this.noiSinh);
+            this.groupEdit.Controls.Add(this.label13);
+            this.groupEdit.Controls.Add(this.label8);
+            this.groupEdit.Controls.Add(this.label7);
+            this.groupEdit.Controls.Add(this.maLop);
+            this.groupEdit.Controls.Add(this.label6);
+            this.groupEdit.Controls.Add(this.ten);
             this.groupEdit.Controls.Add(this.label2);
-            this.groupEdit.Controls.Add(this.tenMon);
+            this.groupEdit.Controls.Add(this.ho);
             this.groupEdit.Controls.Add(this.label3);
-            this.groupEdit.Controls.Add(this.maMon);
-            this.groupEdit.Enabled = false;
+            this.groupEdit.Controls.Add(this.maSinhVien);
             this.groupEdit.Location = new System.Drawing.Point(0, 38);
             this.groupEdit.Name = "groupEdit";
-            this.groupEdit.Size = new System.Drawing.Size(407, 178);
+            this.groupEdit.Size = new System.Drawing.Size(407, 717);
             this.groupEdit.TabIndex = 5;
+            // 
+            // btnNu
+            // 
+            this.btnNu.AutoSize = true;
+            this.btnNu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNu.ForeColor = System.Drawing.Color.White;
+            this.btnNu.Location = new System.Drawing.Point(260, 279);
+            this.btnNu.Name = "btnNu";
+            this.btnNu.Size = new System.Drawing.Size(45, 21);
+            this.btnNu.TabIndex = 25;
+            this.btnNu.TabStop = true;
+            this.btnNu.Text = "Nữ";
+            this.btnNu.UseVisualStyleBackColor = true;
+            // 
+            // btnNam
+            // 
+            this.btnNam.AutoSize = true;
+            this.btnNam.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNam.ForeColor = System.Drawing.Color.White;
+            this.btnNam.Location = new System.Drawing.Point(71, 279);
+            this.btnNam.Name = "btnNam";
+            this.btnNam.Size = new System.Drawing.Size(55, 21);
+            this.btnNam.TabIndex = 24;
+            this.btnNam.TabStop = true;
+            this.btnNam.Text = "Nam";
+            this.btnNam.UseVisualStyleBackColor = true;
+            // 
+            // radioGroup1
+            // 
+            this.radioGroup1.Location = new System.Drawing.Point(20, 270);
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroup1.Properties.Appearance.ForeColor = System.Drawing.Color.Transparent;
+            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroup1.Properties.Appearance.Options.UseForeColor = true;
+            this.radioGroup1.Size = new System.Drawing.Size(373, 30);
+            this.radioGroup1.TabIndex = 23;
+            // 
+            // ngaySinh
+            // 
+            this.ngaySinh.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ngaySinh.Location = new System.Drawing.Point(20, 333);
+            this.ngaySinh.Name = "ngaySinh";
+            this.ngaySinh.Size = new System.Drawing.Size(373, 21);
+            this.ngaySinh.TabIndex = 22;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(90, 596);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(8, 588);
+            this.label9.Name = "label9";
+            this.label9.Padding = new System.Windows.Forms.Padding(5);
+            this.label9.Size = new System.Drawing.Size(80, 27);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Nghỉ Học:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(3, 474);
+            this.label10.Name = "label10";
+            this.label10.Padding = new System.Windows.Forms.Padding(5);
+            this.label10.Size = new System.Drawing.Size(71, 27);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Ghi Chú:";
+            // 
+            // ghiChu
+            // 
+            this.ghiChu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ghiChu.Location = new System.Drawing.Point(20, 504);
+            this.ghiChu.Multiline = true;
+            this.ghiChu.Name = "ghiChu";
+            this.ghiChu.Size = new System.Drawing.Size(373, 81);
+            this.ghiChu.TabIndex = 18;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(3, 417);
+            this.label11.Name = "label11";
+            this.label11.Padding = new System.Windows.Forms.Padding(5);
+            this.label11.Size = new System.Drawing.Size(67, 27);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Địa Chỉ:";
+            // 
+            // diaChi
+            // 
+            this.diaChi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diaChi.Location = new System.Drawing.Point(20, 447);
+            this.diaChi.Name = "diaChi";
+            this.diaChi.Size = new System.Drawing.Size(373, 25);
+            this.diaChi.TabIndex = 16;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(3, 360);
+            this.label12.Name = "label12";
+            this.label12.Padding = new System.Windows.Forms.Padding(5);
+            this.label12.Size = new System.Drawing.Size(75, 27);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Nơi Sinh:";
+            // 
+            // noiSinh
+            // 
+            this.noiSinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noiSinh.Location = new System.Drawing.Point(20, 390);
+            this.noiSinh.Name = "noiSinh";
+            this.noiSinh.Size = new System.Drawing.Size(373, 25);
+            this.noiSinh.TabIndex = 14;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(3, 303);
+            this.label13.Name = "label13";
+            this.label13.Padding = new System.Windows.Forms.Padding(5);
+            this.label13.Size = new System.Drawing.Size(85, 27);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Ngày Sinh:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 248);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(5);
+            this.label8.Size = new System.Drawing.Size(49, 27);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Phái:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(3, 191);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(5);
+            this.label7.Size = new System.Drawing.Size(68, 27);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Mã Lớp:";
+            // 
+            // maLop
+            // 
+            this.maLop.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maLop.Location = new System.Drawing.Point(20, 221);
+            this.maLop.Name = "maLop";
+            this.maLop.Size = new System.Drawing.Size(373, 25);
+            this.maLop.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 134);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(5);
+            this.label6.Size = new System.Drawing.Size(44, 27);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Tên:";
+            // 
+            // ten
+            // 
+            this.ten.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ten.Location = new System.Drawing.Point(20, 164);
+            this.ten.Name = "ten";
+            this.ten.Size = new System.Drawing.Size(373, 25);
+            this.ten.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 100);
+            this.label2.Location = new System.Drawing.Point(3, 77);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(5);
-            this.label2.Size = new System.Drawing.Size(113, 31);
+            this.label2.Size = new System.Drawing.Size(40, 27);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Tên Môn Học:";
+            this.label2.Text = "Họ:";
             // 
-            // tenMon
+            // ho
             // 
-            this.tenMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenMon.Location = new System.Drawing.Point(20, 134);
-            this.tenMon.Name = "tenMon";
-            this.tenMon.Size = new System.Drawing.Size(373, 29);
-            this.tenMon.TabIndex = 4;
+            this.ho.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ho.Location = new System.Drawing.Point(20, 107);
+            this.ho.Name = "ho";
+            this.ho.Size = new System.Drawing.Size(373, 25);
+            this.ho.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 16);
+            this.label3.Location = new System.Drawing.Point(3, 20);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(5);
-            this.label3.Size = new System.Drawing.Size(112, 31);
+            this.label3.Size = new System.Drawing.Size(104, 27);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Mã Môn Học:";
+            this.label3.Text = "Mã Sinh Viên:";
             // 
-            // maMon
+            // maSinhVien
             // 
-            this.maMon.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maMon.Location = new System.Drawing.Point(20, 50);
-            this.maMon.Name = "maMon";
-            this.maMon.Size = new System.Drawing.Size(373, 29);
-            this.maMon.TabIndex = 3;
+            this.maSinhVien.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maSinhVien.Location = new System.Drawing.Point(20, 50);
+            this.maSinhVien.Name = "maSinhVien";
+            this.maSinhVien.Size = new System.Drawing.Size(373, 25);
+            this.maSinhVien.TabIndex = 3;
             // 
             // label1
             // 
@@ -327,6 +554,7 @@
             this.tuyChinh.PerformLayout();
             this.groupEdit.ResumeLayout(false);
             this.groupEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -351,14 +579,32 @@
         private System.Windows.Forms.Panel tuyChinh;
         private System.Windows.Forms.Panel groupEdit;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tenMon;
+        private System.Windows.Forms.TextBox ho;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox maMon;
+        private System.Windows.Forms.TextBox maSinhVien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbLop;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox ghiChu;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox diaChi;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox noiSinh;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox maLop;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox ten;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RadioButton btnNu;
+        private System.Windows.Forms.RadioButton btnNam;
+        private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private System.Windows.Forms.DateTimePicker ngaySinh;
     }
 }

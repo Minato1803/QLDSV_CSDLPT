@@ -34,16 +34,16 @@ namespace QLSV
             DataRowView dataRow = maSinhVien.GetSelectedDataRow() as DataRowView;
             if(dataRow != null)
             {
-                txTen.Text = (string)dataRow["HO"] + " " + (string)dataRow["TEN"];
+                ten.Text = (string)dataRow["HO"] + " " + (string)dataRow["TEN"];
                 if((bool)dataRow["PHAI"])
                 {
-                    txPhai.Text = "Nam";
+                    phai.Text = "Nam";
                 }
                 else
                 {
-                    txPhai.Text = "Nữ";
+                    phai.Text = "Nữ";
                 }
-                txNamSinh.Text = dataRow["NGAYSINH"].ToString();
+                namSinh.Text = dataRow["NGAYSINH"].ToString();
             }
         }
 
@@ -52,16 +52,16 @@ namespace QLSV
             DataRowView dataRow = maSinhVien.GetSelectedDataRow() as DataRowView;
             if (dataRow != null)
             {
-                txTen.Text = (string)dataRow["HO"] + " " + (string)dataRow["TEN"];
+                ten.Text = (string)dataRow["HO"] + " " + (string)dataRow["TEN"];
                 if ((bool)dataRow["PHAI"])
                 {
-                    txPhai.Text = "Nam";
+                    phai.Text = "Nam";
                 }
                 else
                 {
-                    txPhai.Text = "Nữ";
+                    phai.Text = "Nữ";
                 }
-                txNamSinh.Text = dataRow["NGAYSINH"].ToString();
+                namSinh.Text = dataRow["NGAYSINH"].ToString();
             }
         }
     }
