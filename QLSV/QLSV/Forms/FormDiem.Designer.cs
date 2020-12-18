@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tool = new System.Windows.Forms.ToolStrip();
-            this.deleteBtn = new System.Windows.Forms.ToolStripButton();
             this.adjustBtn = new System.Windows.Forms.ToolStripButton();
             this.undoBtn = new System.Windows.Forms.ToolStripButton();
             this.saveBtn = new System.Windows.Forms.ToolStripButton();
@@ -58,6 +57,9 @@
             this.cbMon = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbLop = new System.Windows.Forms.ComboBox();
+            this.deleteBtn = new System.Windows.Forms.ToolStripButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnTiep = new System.Windows.Forms.Button();
             this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -86,15 +88,6 @@
             this.tool.Size = new System.Drawing.Size(1503, 27);
             this.tool.TabIndex = 2;
             this.tool.Text = "toolStrip1";
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Image = global::QLSV.Properties.Resources.remove;
-            this.deleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.deleteBtn.Size = new System.Drawing.Size(62, 24);
-            this.deleteBtn.Text = "Xóa";
             // 
             // adjustBtn
             // 
@@ -188,6 +181,7 @@
             // 
             // groupEdit
             // 
+            this.groupEdit.Controls.Add(this.btnTiep);
             this.groupEdit.Controls.Add(this.label8);
             this.groupEdit.Controls.Add(this.diem);
             this.groupEdit.Controls.Add(this.label2);
@@ -306,6 +300,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cbLan);
             this.panel2.Controls.Add(this.label6);
@@ -322,7 +317,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(639, 6);
+            this.label7.Location = new System.Drawing.Point(592, 3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 25);
             this.label7.TabIndex = 5;
@@ -332,7 +327,7 @@
             // 
             this.cbLan.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLan.FormattingEnabled = true;
-            this.cbLan.Location = new System.Drawing.Point(733, 3);
+            this.cbLan.Location = new System.Drawing.Point(686, 0);
             this.cbLan.Name = "cbLan";
             this.cbLan.Size = new System.Drawing.Size(160, 35);
             this.cbLan.TabIndex = 4;
@@ -341,7 +336,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(308, 6);
+            this.label6.Location = new System.Drawing.Point(261, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 25);
             this.label6.TabIndex = 3;
@@ -351,7 +346,7 @@
             // 
             this.cbMon.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMon.FormattingEnabled = true;
-            this.cbMon.Location = new System.Drawing.Point(422, 3);
+            this.cbMon.Location = new System.Drawing.Point(375, 0);
             this.cbMon.Name = "cbMon";
             this.cbMon.Size = new System.Drawing.Size(160, 35);
             this.cbMon.TabIndex = 2;
@@ -360,7 +355,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 6);
+            this.label5.Location = new System.Drawing.Point(1, 3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 25);
             this.label5.TabIndex = 1;
@@ -370,10 +365,39 @@
             // 
             this.cbLop.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(110, 4);
+            this.cbLop.Location = new System.Drawing.Point(63, 1);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(160, 35);
             this.cbLop.TabIndex = 0;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Image = global::QLSV.Properties.Resources.remove;
+            this.deleteBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.deleteBtn.Size = new System.Drawing.Size(62, 24);
+            this.deleteBtn.Text = "Xóa";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(900, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 35);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Bắt Đầu";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnTiep
+            // 
+            this.btnTiep.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiep.Location = new System.Drawing.Point(288, 274);
+            this.btnTiep.Name = "btnTiep";
+            this.btnTiep.Size = new System.Drawing.Size(105, 28);
+            this.btnTiep.TabIndex = 7;
+            this.btnTiep.Text = "Tiếp";
+            this.btnTiep.UseVisualStyleBackColor = true;
             // 
             // FormDiem
             // 
@@ -410,7 +434,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip tool;
-        private System.Windows.Forms.ToolStripButton deleteBtn;
         private System.Windows.Forms.ToolStripButton adjustBtn;
         private System.Windows.Forms.ToolStripButton undoBtn;
         private System.Windows.Forms.ToolStripButton saveBtn;
@@ -439,5 +462,8 @@
         private System.Windows.Forms.ComboBox cbMon;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox diem;
+        private System.Windows.Forms.ToolStripButton deleteBtn;
+        private System.Windows.Forms.Button btnTiep;
+        private System.Windows.Forms.Button button1;
     }
 }
