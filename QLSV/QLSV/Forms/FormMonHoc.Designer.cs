@@ -222,7 +222,7 @@
             this.tuyChinh.Location = new System.Drawing.Point(1445, 30);
             this.tuyChinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tuyChinh.Name = "tuyChinh";
-            this.tuyChinh.Size = new System.Drawing.Size(495, 830);
+            this.tuyChinh.Size = new System.Drawing.Size(495, 846);
             this.tuyChinh.TabIndex = 3;
             // 
             // groupEdit
@@ -316,7 +316,7 @@
             this.danhSachMon.MainView = this.viewDanhSachMon;
             this.danhSachMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhSachMon.Name = "danhSachMon";
-            this.danhSachMon.Size = new System.Drawing.Size(1445, 775);
+            this.danhSachMon.Size = new System.Drawing.Size(1445, 791);
             this.danhSachMon.TabIndex = 4;
             this.danhSachMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.viewDanhSachMon});
@@ -454,7 +454,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1940, 860);
+            this.ClientSize = new System.Drawing.Size(1940, 876);
             this.ControlBox = false;
             this.Controls.Add(this.danhSachMon);
             this.Controls.Add(this.panel1);
@@ -463,7 +463,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMonHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Môn Học";
+            this.Text = "7";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMonHoc_Load);
             this.tool.ResumeLayout(false);

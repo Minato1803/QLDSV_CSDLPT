@@ -28,7 +28,25 @@ namespace QLSV
 
         private void quitFormBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (groupEdit.Enabled)
+            {
+                DialogResult dr = MessageBox.Show(" Dữ liệu LỚP chưa lưu vào Database. \n Bạn có chắc muốn thoát !", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dr == DialogResult.No)
+                {
+                    return;
+                }
+                else if (dr == DialogResult.Yes)
+                {
+                    this.Close();
+
+                }
+            }
+            else
+            {
+                this.Close();
+                return;
+            }
         }
 
         private void FormLop_Load(object sender, EventArgs e)
@@ -57,7 +75,9 @@ namespace QLSV
                 = undoBtn.Enabled
                 = reloadBtn.Enabled
                 = quitFormBtn.Enabled = true;
+
             saveBtn.Enabled
+                = groupEdit.Enabled
                 = exitBtn.Enabled = false;
 
             // TODO: This line of code loads data into the 'qldsvDataSet1.LOP' table. You can move, or remove it, as needed.
@@ -86,6 +106,7 @@ namespace QLSV
             // TODO : Thao tác chuẩn bị thêm
             //undoBds.Push(mONHOCBindingSource);
             this.lOPBindingSource.AddNew();
+            //nhập sẵn mã khoa
             ((DataRowView)this.lOPBindingSource[this.lOPBindingSource.Position])["MAKH"] = Program.TKhoa[Program.mKhoa];
         }
 
@@ -236,7 +257,7 @@ namespace QLSV
             {
                 //TODO: Check mã lớp có tồn tại chưa
                 string queryMa = "DECLARE  @return_value int \n"
-                            + "EXEC @return_value = SP_CHECKID \n"
+                            + "EXEC @return_value = SP_CHECKCODE \n"
                             + "@Code = N'" + maLop.Text.Trim() + "',@Type = N'MALOP' \n"
                             + "SELECT 'Return Value' = @return_value";
 
@@ -296,7 +317,7 @@ namespace QLSV
                 {
                     //TODO: Check mã lớp có tồn tại chưa
                     string queryMa = "DECLARE  @return_value int \n"
-                                + "EXEC @return_value = SP_CHECKID \n"
+                                + "EXEC @return_value = SP_CHECKCODE \n"
                                 + "@Code = N'" + maLop.Text.Trim() + "',@Type = N'MALOP' \n"
                                 + "SELECT 'Return Value' = @return_value";
 

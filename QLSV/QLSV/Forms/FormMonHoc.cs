@@ -261,7 +261,7 @@ namespace QLSV
             {
                 //TODO: Check mã môn học có tồn tại chưa
                 string queryMa = "DECLARE  @return_value int \n"
-                            + "EXEC @return_value = SP_CHECKID \n"
+                            + "EXEC @return_value = SP_CHECKCODE \n"
                             + "@Code = N'" + maMon.Text.Trim() + "',@Type = N'MAMONHOC' \n"
                             + "SELECT 'Return Value' = @return_value";
 
@@ -321,7 +321,7 @@ namespace QLSV
                 {
                     //TODO: Check mã môn học có tồn tại chưa
                     string queryMa = "DECLARE  @return_value int \n"
-                                + "EXEC @return_value = SP_CHECKID \n"
+                                + "EXEC @return_value = SP_CHECKCODE \n"
                                 + "@Code = N'" + maMon.Text.Trim() + "',@Type = N'MAMONHOC' \n"
                                 + "SELECT 'Return Value' = @return_value";
 
