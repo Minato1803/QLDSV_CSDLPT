@@ -11,6 +11,7 @@ namespace QLSV.Reports
         public BDTK(string maLop)
         {
             InitializeComponent();
+            qldsvDataSet2.EnforceConstraints = false;
             this.sP_getBangDiemTongKetTableAdapter.Fill(qldsvDataSet2.SP_getBangDiemTongKet, maLop);
         }
 

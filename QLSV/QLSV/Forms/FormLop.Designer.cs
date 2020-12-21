@@ -204,6 +204,7 @@
             // qldsvDataSet1
             // 
             this.qldsvDataSet1.DataSetName = "QLDSVDataSet";
+            this.qldsvDataSet1.EnforceConstraints = false;
             this.qldsvDataSet1.Locale = new System.Globalization.CultureInfo("en-US");
             this.qldsvDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 

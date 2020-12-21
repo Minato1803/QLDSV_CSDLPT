@@ -41,6 +41,8 @@ namespace QLSV
 
         private void ReportBDTongKet_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLDSVDataSet.LOP' table. You can move, or remove it, as needed.
+            this.lOPTableAdapter.Fill(this.qLDSVDataSet.LOP);
             // TODO: This line of code loads data into the 'qLDSVDataSet.SINHVIEN' table. You can move, or remove it, as needed.
             this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
 
@@ -79,7 +81,10 @@ namespace QLSV
                 cbKhoa.SelectedIndex = Program.mKhoa;
                 cbKhoa.DropDownStyle = ComboBoxStyle.Simple;
             }
-            maLop.Text = cbLop.SelectedValue.ToString();
+            if (cbLop.SelectedValue != null)
+            {
+                maLop.Text = cbLop.SelectedValue.ToString();
+            }
 
         }
 

@@ -10,6 +10,8 @@
 
 #pragma warning disable 1591
 
+using System;
+
 namespace QLSV {
     
     
@@ -14137,6 +14139,14 @@ SELECT MASV, HO, TEN, MALOP, PHAI, NGAYSINH, NOISINH, DIACHI, GHICHU, NGHIHOC FR
                 dataTable.Clear();
             }
             int returnValue = this.Adapter.Fill(dataTable);
+            //try
+            //{
+            //    returnValue = this.Adapter.Fill(dataTable);
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
             return returnValue;
         }
         

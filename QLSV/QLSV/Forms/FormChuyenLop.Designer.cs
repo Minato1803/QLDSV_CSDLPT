@@ -256,7 +256,7 @@
             this.MinimizeBox = false;
             this.Name = "FormChuyenLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormChuyenLop";
+            this.Text = "Chuyển Lớp";
             this.Load += new System.EventHandler(this.FormChuyenLop_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

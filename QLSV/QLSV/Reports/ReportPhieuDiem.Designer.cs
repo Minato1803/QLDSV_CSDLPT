@@ -43,19 +43,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.inBtn2 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.txMaSinhVien = new DevExpress.XtraEditors.LookUpEdit();
+            this.vDSSVTaoTKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.label3 = new System.Windows.Forms.Label();
             this.cbMaSinhVien = new System.Windows.Forms.ComboBox();
-            this.vDSSVTaoTKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maSV = new System.Windows.Forms.TextBox();
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
             this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
             this.v_DSSV_TaoTKTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSSV_TaoTKTableAdapter();
             this.kHOATableAdapter = new QLSV.QLDSVDataSetTableAdapters.KHOATableAdapter();
-            this.txMaSinhVien = new DevExpress.XtraEditors.LookUpEdit();
+            this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SINHVIENTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
@@ -64,9 +66,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).BeginInit();
             this.inBtn2.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
-            this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txMaSinhVien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).BeginInit();
+            this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
@@ -210,6 +213,26 @@
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(612, 294);
             // 
+            // txMaSinhVien
+            // 
+            this.txMaSinhVien.EditValue = "";
+            this.txMaSinhVien.Location = new System.Drawing.Point(249, 104);
+            this.txMaSinhVien.Name = "txMaSinhVien";
+            this.txMaSinhVien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txMaSinhVien.Properties.Appearance.Options.UseFont = true;
+            this.txMaSinhVien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txMaSinhVien.Properties.DataSource = this.sINHVIENBindingSource;
+            this.txMaSinhVien.Properties.DisplayMember = "MASV";
+            this.txMaSinhVien.Properties.ValueMember = "MASV";
+            this.txMaSinhVien.Size = new System.Drawing.Size(283, 26);
+            this.txMaSinhVien.TabIndex = 44;
+            // 
+            // vDSSVTaoTKBindingSource
+            // 
+            this.vDSSVTaoTKBindingSource.DataMember = "V_DSSV_TaoTK";
+            this.vDSSVTaoTKBindingSource.DataSource = this.qLDSVDataSet;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -286,11 +309,6 @@
             this.cbMaSinhVien.ValueMember = "MASV";
             this.cbMaSinhVien.SelectedIndexChanged += new System.EventHandler(this.cbMaSinhVien_SelectedIndexChanged);
             // 
-            // vDSSVTaoTKBindingSource
-            // 
-            this.vDSSVTaoTKBindingSource.DataMember = "V_DSSV_TaoTK";
-            this.vDSSVTaoTKBindingSource.DataSource = this.qLDSVDataSet;
-            // 
             // maSV
             // 
             this.maSV.Enabled = false;
@@ -317,19 +335,14 @@
             // 
             this.kHOATableAdapter.ClearBeforeFill = true;
             // 
-            // txMaSinhVien
+            // sINHVIENBindingSource
             // 
-            this.txMaSinhVien.Location = new System.Drawing.Point(249, 104);
-            this.txMaSinhVien.Name = "txMaSinhVien";
-            this.txMaSinhVien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txMaSinhVien.Properties.Appearance.Options.UseFont = true;
-            this.txMaSinhVien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txMaSinhVien.Properties.DataSource = this.vDSSVTaoTKBindingSource;
-            this.txMaSinhVien.Properties.DisplayMember = "MASV";
-            this.txMaSinhVien.Properties.ValueMember = "MASV";
-            this.txMaSinhVien.Size = new System.Drawing.Size(283, 26);
-            this.txMaSinhVien.TabIndex = 44;
+            this.sINHVIENBindingSource.DataMember = "SINHVIEN";
+            this.sINHVIENBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // sINHVIENTableAdapter
+            // 
+            this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
             // ReportPhieuDiem
             // 
@@ -352,10 +365,11 @@
             this.inBtn2.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txMaSinhVien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vDSSVTaoTKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txMaSinhVien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,5 +403,7 @@
         private System.Windows.Forms.BindingSource kHOABindingSource;
         private QLDSVDataSetTableAdapters.KHOATableAdapter kHOATableAdapter;
         private DevExpress.XtraEditors.LookUpEdit txMaSinhVien;
+        private System.Windows.Forms.BindingSource sINHVIENBindingSource;
+        private QLDSVDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
     }
 }

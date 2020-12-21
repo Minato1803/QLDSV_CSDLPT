@@ -19,34 +19,17 @@ namespace QLSV
         private Boolean flag = false; // true = add ; false = update
         private string oldMaLop = "";
         private string oldTenLop = "";
-        Stack undoBds = new Stack();
+        UndoStack undoStk;
 
         public FormLop()
         {
             InitializeComponent();
+            undoStk = new UndoStack("MALOP", this.lOPBindingSource);
         }
 
         private void quitFormBtn_Click(object sender, EventArgs e)
         {
-            if (groupEdit.Enabled)
-            {
-                DialogResult dr = MessageBox.Show(" Dữ liệu LỚP chưa lưu vào Database. \n Bạn có chắc muốn thoát !", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (dr == DialogResult.No)
-                {
-                    return;
-                }
-                else if (dr == DialogResult.Yes)
-                {
-                    this.Close();
-
-                }
-            }
-            else
-            {
-                this.Close();
-                return;
-            }
+            this.Close();
         }
 
         private void FormLop_Load(object sender, EventArgs e)
@@ -72,16 +55,15 @@ namespace QLSV
             addBtn.Enabled
                 = deleteBtn.Enabled
                 = adjustBtn.Enabled
-                = undoBtn.Enabled
                 = reloadBtn.Enabled
                 = quitFormBtn.Enabled = true;
-
             saveBtn.Enabled
-                = groupEdit.Enabled
-                = exitBtn.Enabled = false;
+                = exitBtn.Enabled
+                = undoBtn.Enabled = false;
 
             // TODO: This line of code loads data into the 'qldsvDataSet1.LOP' table. You can move, or remove it, as needed.
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+
             this.lOPTableAdapter.Fill(this.qldsvDataSet1.LOP);
             // TODO: This line of code loads data into the 'qldsvDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -106,8 +88,8 @@ namespace QLSV
             // TODO : Thao tác chuẩn bị thêm
             //undoBds.Push(mONHOCBindingSource);
             this.lOPBindingSource.AddNew();
-            //nhập sẵn mã khoa
             ((DataRowView)this.lOPBindingSource[this.lOPBindingSource.Position])["MAKH"] = Program.TKhoa[Program.mKhoa];
+            
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -121,7 +103,7 @@ namespace QLSV
             {
                 try
                 {
-                    undoBds.Push(lOPBindingSource);
+                    //undoBds.Push(lOPBindingSource);
                     lOPBindingSource.RemoveCurrent();
                     this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.lOPTableAdapter.Update(this.qldsvDataSet1.LOP);
@@ -164,10 +146,31 @@ namespace QLSV
 
         private void undoBtn_Click(object sender, EventArgs e)
         {
-            this.lOPBindingSource = (BindingSource)undoBds.Pop();
-            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.lOPTableAdapter.Update(this.qldsvDataSet1.LOP);
+            //QLDSVDataSet.LOPDataTable dttb = (QLDSVDataSet.LOPDataTable)undoBds.Pop();
+            //((QLDSVDataSet)this.lOPBindingSource.DataSource).LOP.Load(dttb.CreateDataReader());
+            //this.qldsvDataSet1.LOP.Load(dttb.CreateDataReader());
+            //this.lOPBindingSource.EndEdit();
+            //this.lOPBindingSource.ResetCurrentItem();
+
+
+            //this.lOPTableAdapter.Update(this.qldsvDataSet1.LOP);
+            //this.qldsvDataSet1.AcceptChanges();
+            ////this.lOPTableAdapter.Fill(this.qldsvDataSet1.LOP);
+
+
+            //if (undoBds.Count == 0)
+            //{
+            //    undoBtn.Enabled = false;
+            //}
+            undoStk.Undo();
+            this.lOPBindingSource.EndEdit();
             this.lOPBindingSource.ResetCurrentItem();
+            this.lOPTableAdapter.Update(this.qldsvDataSet1);
+
+            if (undoStk.Empty())
+            {
+                undoBtn.Enabled = false;
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -182,7 +185,7 @@ namespace QLSV
                     try
                     {
                         //this.qLDSVDataSet.MONHOC.Rows.Add(maMon.Text, tenMon.Text);
-
+                        undoStk.PushUndo("ADJUST", ((DataRowView)this.lOPBindingSource[this.lOPBindingSource.Position]));
                         this.lOPBindingSource.EndEdit();
                         this.lOPBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
                         this.lOPTableAdapter.Update(this.qldsvDataSet1);
@@ -191,9 +194,11 @@ namespace QLSV
                         = adjustBtn.Enabled
                         = undoBtn.Enabled
                         = reloadBtn.Enabled = true;
-
+                        oldMaLop = oldTenLop = "";
                         danhsachLop.Enabled = true;
                         groupEdit.Enabled = false;
+                        
+                        
                     }
                     catch (Exception ex)
                     {
@@ -257,7 +262,7 @@ namespace QLSV
             {
                 //TODO: Check mã lớp có tồn tại chưa
                 string queryMa = "DECLARE  @return_value int \n"
-                            + "EXEC @return_value = SP_CHECKCODE \n"
+                            + "EXEC @return_value = SP_CHECKID \n"
                             + "@Code = N'" + maLop.Text.Trim() + "',@Type = N'MALOP' \n"
                             + "SELECT 'Return Value' = @return_value";
 
@@ -317,7 +322,7 @@ namespace QLSV
                 {
                     //TODO: Check mã lớp có tồn tại chưa
                     string queryMa = "DECLARE  @return_value int \n"
-                                + "EXEC @return_value = SP_CHECKCODE \n"
+                                + "EXEC @return_value = SP_CHECKID \n"
                                 + "@Code = N'" + maLop.Text.Trim() + "',@Type = N'MALOP' \n"
                                 + "SELECT 'Return Value' = @return_value";
 
@@ -408,6 +413,14 @@ namespace QLSV
                 }
             }
 
+        }
+
+        private void push_undo()
+        {
+            undoBtn.Enabled = true;
+            DataTable dttb;
+            dttb = ((QLDSVDataSet)lOPBindingSource.DataSource).LOP.Copy();
+            //undoBds.Push(dttb);
         }
     }
 }
