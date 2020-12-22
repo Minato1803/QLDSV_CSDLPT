@@ -18,6 +18,7 @@ namespace QLSV
         private Boolean flag = false; // true = add ; false = update
         private string oldMaLop = "";
         private string oldMaSV = "";
+        BindingSource bds_SV = new BindingSource();
         UndoStack undoStk;
 
         public FormSinhVien()
@@ -64,8 +65,12 @@ namespace QLSV
             //gọi 1 view và trả về dưới dạng datatable
             dtsv = Program.ExecSqlDataTable("SELECT * FROM LINK0.QLDSV.dbo.SINHVIEN SV WHERE SV.MALOP = '" + cbLop.GetItemText(cbLop.SelectedItem) + "'");
 
-            sINHVIENBindingSource.DataSource = dtsv;
-            this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
+            //this.bds_SV.DataSource = dtsv;
+            //this.danhSachSV.DataSource = this.bds_SV;
+
+            this.sINHVIENBindingSource.DataSource = dtsv;
+            this.danhSachSV.DataSource = this.sINHVIENBindingSource;
+            //this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
 
             addBtn.Enabled
                 = deleteBtn.Enabled
@@ -107,8 +112,9 @@ namespace QLSV
                     //gọi 1 view và trả về dưới dạng datatable
                     dtsv = Program.ExecSqlDataTable("SELECT * FROM LINK0.QLDSV.dbo.SINHVIEN SV WHERE SV.MALOP = '" + cbLop.GetItemText(cbLop.SelectedItem) + "'");
 
-                    sINHVIENBindingSource.DataSource = dtsv;
-                    this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
+                    this.sINHVIENBindingSource.DataSource = dtsv;
+                    this.danhSachSV.DataSource = this.sINHVIENBindingSource;
+                    //this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
                 }
                 else
                 {
@@ -136,8 +142,9 @@ namespace QLSV
                 //gọi 1 view và trả về dưới dạng datatable
                 dtsv = Program.ExecSqlDataTable("SELECT * FROM LINK0.QLDSV.dbo.SINHVIEN SV WHERE SV.MALOP = '" + cbLop.GetItemText(cbLop.SelectedItem) + "'");
 
-                sINHVIENBindingSource.DataSource = dtsv;
-                this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
+                this.sINHVIENBindingSource.DataSource = dtsv;
+                this.danhSachSV.DataSource = this.sINHVIENBindingSource;
+                //this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
 
                 if (viewDSSV.SelectedRowsCount <= 0)
                 {
@@ -171,7 +178,7 @@ namespace QLSV
                 {
                     nGHIHOCCheckEdit.Checked = true;
                 }
-                pos = sINHVIENBindingSource.Position;
+                pos = this.sINHVIENBindingSource.Position;
                 maLop.Text = cbLop.SelectedValue.ToString();
             }
             else
@@ -203,8 +210,8 @@ namespace QLSV
                 = false;
 
             maSinhVien.Focus();
-            btnNam.Enabled = true;
-            nGHIHOCCheckEdit.Enabled = true;
+            btnNam.Checked = true;
+            nGHIHOCCheckEdit.Checked = false;
             // TODO : Thao tác chuẩn bị thêm
             //undoBds.Push(mONHOCBindingSource);
             this.sINHVIENBindingSource.AddNew();
@@ -213,11 +220,11 @@ namespace QLSV
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            String CurrMaSV = ((DataRowView) sINHVIENBindingSource[this.viewDSSV.FocusedRowHandle])["MASV"].ToString();
+            String CurrMaSV = ((DataRowView)this.sINHVIENBindingSource[this.viewDSSV.FocusedRowHandle])["MASV"].ToString();
             Console.WriteLine("mã sinh viên xóa: " + CurrMaSV);
 
             // kiểm tra HP
-            if (CheckHP(CurrMaSV))
+            if (CheckHP(CurrMaSV) || CheckDiem(CurrMaSV))
             {
                 MessageBox.Show("Sinh viên này có dữ liệu, Không được xóa !", "Thông báo", MessageBoxButtons.OK);
                 return;
@@ -228,7 +235,7 @@ namespace QLSV
                 try
                 {
                     undoStk.PushUndo("REMOVE", ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position]));
-                    sINHVIENBindingSource.RemoveCurrent();
+                    this.sINHVIENBindingSource.RemoveCurrent();
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.qLDSVDataSet.SINHVIEN);
                     this.sINHVIENBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
@@ -245,7 +252,7 @@ namespace QLSV
             if (pos > 0)
             {
 
-                sINHVIENBindingSource.Position = pos;
+                this.sINHVIENBindingSource.Position = pos;
             }
         }
 
@@ -255,7 +262,11 @@ namespace QLSV
             oldMaLop = this.maLop.Text.Trim().ToString();
             //oldTenLop = this.cbLop.Text.Trim().ToString();
             oldMaSV = this.maSinhVien.Text.Trim().ToString();
-
+            if(viewDSSV.DataRowCount<=0)
+            {
+                MessageBox.Show("Không có dữ liệu để sửa", "", MessageBoxButtons.OK);
+                return;
+            }
             saveBtn.Enabled 
                 = exitBtn.Enabled 
                 = maLop.Enabled
@@ -286,8 +297,8 @@ namespace QLSV
         private void saveBtn_Click(object sender, EventArgs e)
         {
 
-            ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position])["PHAI"] = btnNam.Enabled?true:false;
-            ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position])["NGHIHOC"] = nGHIHOCCheckEdit.Enabled?true:false;
+            ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position])["PHAI"] = btnNam.Checked?true:false;
+            ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position])["NGHIHOC"] = nGHIHOCCheckEdit.Checked?true:false;
             ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position])["MALOP"] = cbLop.SelectedValue.ToString();
 
             bool check = CheckInfoSinhVien();
@@ -299,8 +310,6 @@ namespace QLSV
                 {
                     try
                     {
-                        //this.qLDSVDataSet.MONHOC.Rows.Add(maMon.Text, tenMon.Text);
-
                         this.sINHVIENBindingSource.EndEdit();
                         this.sINHVIENBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
                         this.sINHVIENTableAdapter.Update(this.qLDSVDataSet);
@@ -315,7 +324,7 @@ namespace QLSV
                     }
                     catch (Exception ex)
                     {
-                        sINHVIENBindingSource.RemoveCurrent();
+                        this.sINHVIENBindingSource.RemoveCurrent();
                         MessageBox.Show("Ghi dữ liệu thất lại. Vui lòng kiểm tra lại!\n" + ex.Message, "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -329,19 +338,19 @@ namespace QLSV
 
             if (pos > 0)
             {
-               sINHVIENBindingSource.Position = pos;
+               this.sINHVIENBindingSource.Position = pos;
             }
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             //xóa trạng thái
-            sINHVIENBindingSource.CancelEdit();
+            this.sINHVIENBindingSource.CancelEdit();
 
             FormSinhVien_Load(sender, e);
             if (pos > 0)
             {
-                lOPBindingSource.Position = pos;
+                this.lOPBindingSource.Position = pos;
             }
 
             danhSachSV.Enabled = true;
@@ -377,6 +386,42 @@ namespace QLSV
         }
 
         //==================================================== XỬ LÝ RÀNG BUỘC ====================================================//
+
+        private bool CheckDiem(string maSV)
+        {
+
+
+
+            string qr = " DECLARE @return_value int " +
+
+                            " EXEC    @return_value = [dbo].[SP_CHECKCODEDIEM] " +
+
+                            " @masv = N'" + maSV + "'" +
+
+                            " SELECT  'Return Value' = @return_value ";
+            int result = -1;
+            SqlDataReader dataReader = Program.ExecSqlDataReader(qr);
+
+            // nếu null thì thoát luôn  ==> lỗi kết nối
+            if (dataReader == null)
+            {
+                MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                this.Close();
+            }
+            dataReader.Read();
+            result = int.Parse(dataReader.GetValue(0).ToString());
+            dataReader.Close();
+
+            if (result == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         private bool CheckHP(string maSV)
         {
@@ -563,15 +608,18 @@ namespace QLSV
 
         private void btnNu_CheckedChanged(object sender, EventArgs e)
         {
-            if(btnNu.Checked)
+            if(this.btnNu.Checked)
             {
-                btnNam.Checked = false;
-            }
-            else
-            {
-                btnNam.Checked = true;
+                this.btnNam.Checked = false;
             }
         }
-    
+
+        private void btnNam_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.btnNam.Checked)
+            {
+                this.btnNu.Checked = false;
+            }
+        }
     }
 }

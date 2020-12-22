@@ -27,11 +27,7 @@ namespace QLSV
             undoStk = new UndoStack("MALOP", this.lOPBindingSource);
         }
 
-        private void quitFormBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        //==================================================== XỬ LÝ DỮ LIỆU ĐỔ VÀO====================================================//
         private void FormLop_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qldsvDataSet1.V_DSPM' table. You can move, or remove it, as needed.
@@ -70,6 +66,39 @@ namespace QLSV
             this.sINHVIENTableAdapter.Fill(this.qldsvDataSet1.SINHVIEN);
         }
 
+        private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbKhoa.SelectedValue != null)
+            {
+                if (cbKhoa.SelectedIndex != Program.mKhoa)
+                {
+                    Program.mlogin = Program.remotelogin;
+                    Program.password = Program.remotepassword;
+                }
+                else
+                { // ở B về lại A dùng login ban đầu
+                    Program.mlogin = Program.mloginDN ;
+                    Program.password = Program.passwordDN;
+                }
+                Program.servername = cbKhoa.SelectedValue.ToString();
+
+                if (Program.KetNoi() == 1)
+                {
+                    // TODO: This line of code loads data into the 'qldsvDataSet1.LOP' table. You can move, or remove it, as needed.
+                    this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.lOPTableAdapter.Fill(this.qldsvDataSet1.LOP);
+                    // TODO: This line of code loads data into the 'qldsvDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
+                    this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.sINHVIENTableAdapter.Fill(this.qldsvDataSet1.SINHVIEN);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
+                }
+            }
+
+        }
+        //==================================================== XỬ LÝ NÚT ====================================================//
         private void addBtn_Click(object sender, EventArgs e)
         {
             flag = true;  // Add
@@ -79,7 +108,9 @@ namespace QLSV
                 = deleteBtn.Enabled
                 = adjustBtn.Enabled
                 = undoBtn.Enabled
-                = reloadBtn.Enabled = false;
+                = reloadBtn.Enabled
+                = cbKhoa.Enabled
+                = false;
 
             tuyChinh.Enabled
                 = groupEdit.Enabled = true;
@@ -182,7 +213,10 @@ namespace QLSV
                         = reloadBtn.Enabled = true;
                         oldMaLop = oldTenLop = "";
                         danhsachLop.Enabled = true;
-                        groupEdit.Enabled = false;
+                        groupEdit.Enabled 
+                            = saveBtn.Enabled
+                            = exitBtn.Enabled
+                            = false;
                         
                         
                     }
@@ -222,7 +256,29 @@ namespace QLSV
             MessageBox.Show("Làm mới dữ liệu thành công", "", MessageBoxButtons.OK);
         }
 
+        private void quitFormBtn_Click(object sender, EventArgs e)
+        {
+            if (groupEdit.Enabled)
+            {
+                DialogResult dr = MessageBox.Show(" Dữ liệu Sinh viên chưa lưu vào Database \n Bạn có chắc muốn thoát !", "Cảnh báo", MessageBoxButtons.YesNo);
 
+                if (dr == DialogResult.No)
+                {
+                    return;
+                }
+                else if (dr == DialogResult.Yes)
+                {
+                    this.Close();
+
+                }
+            }
+            else
+            {
+                this.Close();
+                return;
+            }
+        }
+        //==================================================== XỬ LÝ RÀNG BUỘC ====================================================//
         private bool checkInfoLop()
         {
 
@@ -248,7 +304,7 @@ namespace QLSV
             {
                 //TODO: Check mã lớp có tồn tại chưa
                 string queryMa = "DECLARE  @return_value int \n"
-                            + "EXEC @return_value = SP_CHECKID \n"
+                            + "EXEC @return_value = SP_CHECKCODE \n"
                             + "@Code = N'" + maLop.Text.Trim() + "',@Type = N'MALOP' \n"
                             + "SELECT 'Return Value' = @return_value";
 
@@ -312,7 +368,7 @@ namespace QLSV
                 {
                     //TODO: Check mã lớp có tồn tại chưa
                     string queryMa = "DECLARE  @return_value int \n"
-                                + "EXEC @return_value = SP_CHECKID \n"
+                                + "EXEC @return_value = SP_CHECKCODE \n"
                                 + "@Code = N'" + maLop.Text.Trim() + "',@Type = N'MALOP' \n"
                                 + "SELECT 'Return Value' = @return_value";
 
@@ -373,38 +429,6 @@ namespace QLSV
             return true;
         }
 
-        private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(cbKhoa.SelectedValue != null)
-            {
-                if (cbKhoa.SelectedIndex != Program.mKhoa)
-                {
-                    Program.mlogin = Program.remotelogin;
-                    Program.password = Program.remotepassword;
-                }
-                else
-                { // ở B về lại A dùng login ban đầu
-                    Program.mlogin = Program.mloginDN ;
-                    Program.password = Program.passwordDN;
-                }
-                Program.servername = cbKhoa.SelectedValue.ToString();
-
-                if (Program.KetNoi() == 1)
-                {
-                    // TODO: This line of code loads data into the 'qldsvDataSet1.LOP' table. You can move, or remove it, as needed.
-                    this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.lOPTableAdapter.Fill(this.qldsvDataSet1.LOP);
-                    // TODO: This line of code loads data into the 'qldsvDataSet1.SINHVIEN' table. You can move, or remove it, as needed.
-                    this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.sINHVIENTableAdapter.Fill(this.qldsvDataSet1.SINHVIEN);
-                }
-                else
-                {
-                    MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
-                }
-            }
-
-        }
 
         private void push_undo()
         {

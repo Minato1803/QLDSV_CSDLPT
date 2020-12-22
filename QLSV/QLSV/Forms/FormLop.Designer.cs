@@ -95,7 +95,7 @@
             this.tool.Location = new System.Drawing.Point(0, 0);
             this.tool.Name = "tool";
             this.tool.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.tool.Size = new System.Drawing.Size(1769, 30);
+            this.tool.Size = new System.Drawing.Size(1801, 30);
             this.tool.TabIndex = 2;
             this.tool.Text = "toolStrip1";
             // 
@@ -193,7 +193,7 @@
             this.danhsachLop.MainView = this.gridView1;
             this.danhsachLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhsachLop.Name = "danhsachLop";
-            this.danhsachLop.Size = new System.Drawing.Size(1287, 977);
+            this.danhsachLop.Size = new System.Drawing.Size(1319, 977);
             this.danhsachLop.TabIndex = 3;
             this.danhsachLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -226,6 +226,7 @@
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.MinWidth = 23;
             this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.AllowEdit = false;
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 0;
             this.colMALOP.Width = 87;
@@ -235,6 +236,7 @@
             this.colTENLOP.FieldName = "TENLOP";
             this.colTENLOP.MinWidth = 23;
             this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.OptionsColumn.AllowEdit = false;
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
             this.colTENLOP.Width = 87;
@@ -244,6 +246,7 @@
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.MinWidth = 23;
             this.colMAKH.Name = "colMAKH";
+            this.colMAKH.OptionsColumn.AllowEdit = false;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 2;
             this.colMAKH.Width = 87;
@@ -261,7 +264,7 @@
             this.tuyChinh.Controls.Add(this.label1);
             this.tuyChinh.Dock = System.Windows.Forms.DockStyle.Right;
             this.tuyChinh.ForeColor = System.Drawing.Color.Gray;
-            this.tuyChinh.Location = new System.Drawing.Point(1287, 30);
+            this.tuyChinh.Location = new System.Drawing.Point(1319, 30);
             this.tuyChinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tuyChinh.Name = "tuyChinh";
             this.tuyChinh.Size = new System.Drawing.Size(482, 1032);
@@ -287,7 +290,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 123);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.label2.Padding = new System.Windows.Forms.Padding(6);
             this.label2.Size = new System.Drawing.Size(95, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên Lớp:";
@@ -301,6 +304,7 @@
             this.tenLop.Name = "tenLop";
             this.tenLop.Size = new System.Drawing.Size(434, 34);
             this.tenLop.TabIndex = 4;
+            this.tenLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -309,7 +313,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 20);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.label3.Padding = new System.Windows.Forms.Padding(6);
             this.label3.Size = new System.Drawing.Size(94, 40);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã Lớp:";
@@ -324,6 +328,7 @@
             this.maLop.Name = "maLop";
             this.maLop.Size = new System.Drawing.Size(434, 34);
             this.maLop.TabIndex = 3;
+            this.maLop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -333,7 +338,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(-6, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.label1.Padding = new System.Windows.Forms.Padding(6);
             this.label1.Size = new System.Drawing.Size(139, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tùy Chỉnh";
@@ -346,7 +351,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1287, 55);
+            this.panel1.Size = new System.Drawing.Size(1319, 55);
             this.panel1.TabIndex = 6;
             // 
             // label4
@@ -407,7 +412,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1769, 1062);
+            this.ClientSize = new System.Drawing.Size(1801, 1062);
             this.ControlBox = false;
             this.Controls.Add(this.danhsachLop);
             this.Controls.Add(this.panel1);

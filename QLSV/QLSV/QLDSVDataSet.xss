@@ -13,7 +13,6 @@
     <Shape ID="DesignTable:KHOA" ZOrder="23" X="24" Y="271" Height="135" Width="209" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="99" SplitterPosition="76" />
     <Shape ID="DesignTable:LOP" ZOrder="22" X="35" Y="151" Height="158" Width="194" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="122" SplitterPosition="99" />
     <Shape ID="DesignTable:MONHOC" ZOrder="21" X="668" Y="-27" Height="135" Width="237" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="99" SplitterPosition="76" />
-    <Shape ID="DesignTable:SINHVIEN" ZOrder="20" X="63" Y="-17" Height="319" Width="238" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="283" SplitterPosition="260" />
     <Shape ID="DesignTable:V_DSGV" ZOrder="19" X="635" Y="214" Height="87" Width="223" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="99" SplitterPosition="28" />
     <Shape ID="DesignTable:V_DSPM" ZOrder="18" X="615" Y="336" Height="87" Width="226" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="76" SplitterPosition="28" />
     <Shape ID="DesignTable:V_DSSV_TaoTK" ZOrder="17" X="875" Y="335" Height="87" Width="273" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="122" SplitterPosition="28" />
@@ -25,6 +24,7 @@
     <Shape ID="DesignTable:SP_getBangDiemMonHoc" ZOrder="3" X="732" Y="478" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:SP_getBangDiemTongKet" ZOrder="4" X="1053" Y="28" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:V_DSHPSV" ZOrder="1" X="1281" Y="-27" Height="227" Width="242" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
+    <Shape ID="DesignTable:SINHVIEN" ZOrder="20" X="63" Y="-17" Height="319" Width="238" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="283" SplitterPosition="260" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_CT_DONGHOCPHI_HOCPHI" ZOrder="13" LineWidth="11">
@@ -51,18 +51,6 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_DIEM_SINHVIEN" ZOrder="11" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>301</X>
-          <Y>72</Y>
-        </Point>
-        <Point>
-          <X>399</X>
-          <Y>72</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
     <Connector ID="DesignRelation:FK_GIANGVIEN_KHOA" ZOrder="10" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -72,22 +60,6 @@
         <Point>
           <X>341</X>
           <Y>278</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_HOCPHI_SINHVIEN" ZOrder="9" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>283</X>
-          <Y>302</Y>
-        </Point>
-        <Point>
-          <X>283</X>
-          <Y>310</Y>
-        </Point>
-        <Point>
-          <X>302</X>
-          <Y>310</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -108,6 +80,34 @@
         <Point>
           <X>229</X>
           <Y>263</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_DIEM_SINHVIEN" ZOrder="11" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>301</X>
+          <Y>72</Y>
+        </Point>
+        <Point>
+          <X>399</X>
+          <Y>72</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_HOCPHI_SINHVIEN" ZOrder="9" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>283</X>
+          <Y>302</Y>
+        </Point>
+        <Point>
+          <X>283</X>
+          <Y>310</Y>
+        </Point>
+        <Point>
+          <X>302</X>
+          <Y>310</Y>
         </Point>
       </RoutePoints>
     </Connector>

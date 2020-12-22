@@ -153,28 +153,31 @@
             // 
             // undoBtn
             // 
+            this.undoBtn.Image = global::QLSV.Properties.Resources.curved_arrow;
             this.undoBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.undoBtn.Size = new System.Drawing.Size(90, 27);
+            this.undoBtn.Size = new System.Drawing.Size(110, 27);
             this.undoBtn.Text = "Phục Hồi";
             this.undoBtn.Click += new System.EventHandler(this.undoBtn_Click);
             // 
             // saveBtn
             // 
+            this.saveBtn.Image = global::QLSV.Properties.Resources.cloud_computing;
             this.saveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.saveBtn.Size = new System.Drawing.Size(47, 27);
+            this.saveBtn.Size = new System.Drawing.Size(67, 27);
             this.saveBtn.Text = "Ghi";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // exitBtn
             // 
+            this.exitBtn.Image = global::QLSV.Properties.Resources.stop;
             this.exitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.exitBtn.Size = new System.Drawing.Size(51, 27);
+            this.exitBtn.Size = new System.Drawing.Size(71, 27);
             this.exitBtn.Text = "Hủy";
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 

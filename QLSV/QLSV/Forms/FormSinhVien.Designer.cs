@@ -284,6 +284,7 @@
             this.colMASV.FieldName = "MASV";
             this.colMASV.MinWidth = 25;
             this.colMASV.Name = "colMASV";
+            this.colMASV.OptionsColumn.AllowEdit = false;
             this.colMASV.Visible = true;
             this.colMASV.VisibleIndex = 0;
             this.colMASV.Width = 87;
@@ -293,6 +294,7 @@
             this.colHO.FieldName = "HO";
             this.colHO.MinWidth = 25;
             this.colHO.Name = "colHO";
+            this.colHO.OptionsColumn.AllowEdit = false;
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
             this.colHO.Width = 87;
@@ -302,6 +304,7 @@
             this.colTEN.FieldName = "TEN";
             this.colTEN.MinWidth = 25;
             this.colTEN.Name = "colTEN";
+            this.colTEN.OptionsColumn.AllowEdit = false;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
             this.colTEN.Width = 87;
@@ -311,6 +314,7 @@
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.MinWidth = 25;
             this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.AllowEdit = false;
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 3;
             this.colMALOP.Width = 87;
@@ -320,6 +324,7 @@
             this.colPHAI.FieldName = "PHAI";
             this.colPHAI.MinWidth = 25;
             this.colPHAI.Name = "colPHAI";
+            this.colPHAI.OptionsColumn.AllowEdit = false;
             this.colPHAI.Visible = true;
             this.colPHAI.VisibleIndex = 4;
             this.colPHAI.Width = 87;
@@ -329,6 +334,7 @@
             this.colNGAYSINH.FieldName = "NGAYSINH";
             this.colNGAYSINH.MinWidth = 25;
             this.colNGAYSINH.Name = "colNGAYSINH";
+            this.colNGAYSINH.OptionsColumn.AllowEdit = false;
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 5;
             this.colNGAYSINH.Width = 87;
@@ -338,6 +344,7 @@
             this.colNOISINH.FieldName = "NOISINH";
             this.colNOISINH.MinWidth = 25;
             this.colNOISINH.Name = "colNOISINH";
+            this.colNOISINH.OptionsColumn.AllowEdit = false;
             this.colNOISINH.Visible = true;
             this.colNOISINH.VisibleIndex = 6;
             this.colNOISINH.Width = 87;
@@ -347,6 +354,7 @@
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.MinWidth = 25;
             this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 7;
             this.colDIACHI.Width = 87;
@@ -356,6 +364,7 @@
             this.colGHICHU.FieldName = "GHICHU";
             this.colGHICHU.MinWidth = 25;
             this.colGHICHU.Name = "colGHICHU";
+            this.colGHICHU.OptionsColumn.AllowEdit = false;
             this.colGHICHU.Visible = true;
             this.colGHICHU.VisibleIndex = 8;
             this.colGHICHU.Width = 87;
@@ -365,6 +374,7 @@
             this.colNGHIHOC.FieldName = "NGHIHOC";
             this.colNGHIHOC.MinWidth = 25;
             this.colNGHIHOC.Name = "colNGHIHOC";
+            this.colNGHIHOC.OptionsColumn.AllowEdit = false;
             this.colNGHIHOC.Visible = true;
             this.colNGHIHOC.VisibleIndex = 9;
             this.colNGHIHOC.Width = 87;
@@ -457,6 +467,7 @@
             this.btnNam.TabStop = true;
             this.btnNam.Text = "Nam";
             this.btnNam.UseVisualStyleBackColor = true;
+            this.btnNam.CheckedChanged += new System.EventHandler(this.btnNam_CheckedChanged);
             // 
             // radioPhai
             // 
