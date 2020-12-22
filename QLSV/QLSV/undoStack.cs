@@ -30,8 +30,8 @@ namespace QLSV
             switch (state){
                 case "ADD":
                     {
-                        int pos = bds.Find(keyCol, row[keyCol]);
-                        stack.Push(new stackObj(state, dt.DefaultView[pos]));
+                        int pos = bds.Position;
+                        stack.Push(new stackObj(state, (DataRowView) bds[pos]));
                         break;
                     }
                 case "ADJUST":
@@ -68,8 +68,6 @@ namespace QLSV
                             int pos = bds.Find(keyCol, now.Row[keyCol]);
                             for(int idx = 0; idx < now.Row.DataView.Table.Columns.Count; idx++)
                             {
-                                string a = (string)((DataRowView)bds[pos])[idx];
-                                string b = (string)now.Row[idx];
                                 ((DataRowView)bds[pos])[idx] = now.Row[idx];
                                 
                             }
@@ -77,7 +75,15 @@ namespace QLSV
                         }
                     case "REMOVE":
                         {
-                            bds.Add(now.Row);
+                            bds.AddNew();
+                            int pos = bds.Position;
+                            for (int idx = 0; idx < now.Row.DataView.Table.Columns.Count; idx++)
+                            {
+                                //string a = (string)((DataRowView)bds[pos])[idx];
+                                //string b = (string)now.Row[idx];
+                                ((DataRowView)bds[pos])[idx] = now.Row[idx];
+
+                            }
                             break;
                         }
                 }

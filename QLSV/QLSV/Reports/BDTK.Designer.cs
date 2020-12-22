@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell xrCrossTabCell5;
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BDTK));
@@ -41,7 +42,6 @@
             DevExpress.XtraReports.UI.CrossTab.CrossTabRowDefinition crossTabRowDefinition2 = new DevExpress.XtraReports.UI.CrossTab.CrossTabRowDefinition(25F);
             DevExpress.XtraReports.UI.CrossTab.CrossTabRowField crossTabRowField1 = new DevExpress.XtraReports.UI.CrossTab.CrossTabRowField();
             DevExpress.XtraReports.UI.CrossTab.CrossTabRowField crossTabRowField2 = new DevExpress.XtraReports.UI.CrossTab.CrossTabRowField();
-            DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell xrCrossTabCell5;
             this.qldsvDataSet2 = new QLSV.QLDSVDataSet();
             this.sP_getBangDiemTongKetTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_getBangDiemTongKetTableAdapter();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
@@ -52,9 +52,10 @@
             this.crossTabDataStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.crossTabGeneralStyle = new DevExpress.XtraReports.UI.XRControlStyle();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.xrPanel1 = new DevExpress.XtraReports.UI.XRPanel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.name = new DevExpress.XtraReports.UI.XRLabel();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
-            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.crossTab1 = new DevExpress.XtraReports.UI.XRCrossTab();
             this.xrCrossTabCell1 = new DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell();
             this.xrCrossTabCell2 = new DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell();
@@ -69,14 +70,19 @@
             this.xrCrossTabCell12 = new DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell();
             this.xrCrossTabCell13 = new DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell();
             this.xrCrossTabCell14 = new DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell();
-            this.xrPanel1 = new DevExpress.XtraReports.UI.XRPanel();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.name = new DevExpress.XtraReports.UI.XRLabel();
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             xrCrossTabCell5 = new DevExpress.XtraReports.UI.CrossTab.XRCrossTabCell();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qldsvDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crossTab1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // xrCrossTabCell5
+            // 
+            xrCrossTabCell5.ColumnIndex = 3;
+            xrCrossTabCell5.Name = "xrCrossTabCell5";
+            xrCrossTabCell5.RowIndex = 0;
             // 
             // qldsvDataSet2
             // 
@@ -151,6 +157,41 @@
             this.ReportHeader.HeightF = 108.25F;
             this.ReportHeader.Name = "ReportHeader";
             // 
+            // xrPanel1
+            // 
+            this.xrPanel1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel1,
+            this.name});
+            this.xrPanel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.xrPanel1.Name = "xrPanel1";
+            this.xrPanel1.SizeF = new System.Drawing.SizeF(900F, 108.25F);
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 75.25001F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(880F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "xrLabel1";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // name
+            // 
+            this.name.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 25.16667F);
+            this.name.Multiline = true;
+            this.name.Name = "name";
+            this.name.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.name.SizeF = new System.Drawing.SizeF(879.9999F, 50.08334F);
+            this.name.StylePriority.UseFont = false;
+            this.name.StylePriority.UseTextAlignment = false;
+            this.name.Text = "BẢNG ĐIỂM TỔNG KẾT";
+            this.name.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
             // Detail
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -160,15 +201,6 @@
             this.Detail.KeepTogether = true;
             this.Detail.MultiColumn.Mode = DevExpress.XtraReports.UI.MultiColumnMode.UseColumnCount;
             this.Detail.Name = "Detail";
-            // 
-            // TopMargin
-            // 
-            this.TopMargin.HeightF = 111.4583F;
-            this.TopMargin.Name = "TopMargin";
-            // 
-            // BottomMargin
-            // 
-            this.BottomMargin.Name = "BottomMargin";
             // 
             // crossTab1
             // 
@@ -249,12 +281,7 @@
             this.xrCrossTabCell4.ColumnIndex = 2;
             this.xrCrossTabCell4.Name = "xrCrossTabCell4";
             this.xrCrossTabCell4.RowIndex = 0;
-            // 
-            // xrCrossTabCell5
-            // 
-            xrCrossTabCell5.ColumnIndex = 3;
-            xrCrossTabCell5.Name = "xrCrossTabCell5";
-            xrCrossTabCell5.RowIndex = 0;
+            this.xrCrossTabCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrCrossTabCell6
             // 
@@ -273,6 +300,7 @@
             this.xrCrossTabCell8.ColumnIndex = 1;
             this.xrCrossTabCell8.Name = "xrCrossTabCell8";
             this.xrCrossTabCell8.RowIndex = 1;
+            this.xrCrossTabCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrCrossTabCell9
             // 
@@ -315,40 +343,14 @@
             this.xrCrossTabCell14.Name = "xrCrossTabCell14";
             this.xrCrossTabCell14.RowIndex = 3;
             // 
-            // xrPanel1
+            // TopMargin
             // 
-            this.xrPanel1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel1,
-            this.name});
-            this.xrPanel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrPanel1.Name = "xrPanel1";
-            this.xrPanel1.SizeF = new System.Drawing.SizeF(900F, 108.25F);
+            this.TopMargin.HeightF = 111.4583F;
+            this.TopMargin.Name = "TopMargin";
             // 
-            // xrLabel1
+            // BottomMargin
             // 
-            this.xrLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 75.25001F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(880F, 23F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "xrLabel1";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // name
-            // 
-            this.name.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 25.16667F);
-            this.name.Multiline = true;
-            this.name.Name = "name";
-            this.name.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.name.SizeF = new System.Drawing.SizeF(879.9999F, 50.08334F);
-            this.name.StylePriority.UseFont = false;
-            this.name.StylePriority.UseTextAlignment = false;
-            this.name.Text = "BẢNG ĐIỂM TỔNG KẾT";
-            this.name.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.BottomMargin.Name = "BottomMargin";
             // 
             // BDTK
             // 

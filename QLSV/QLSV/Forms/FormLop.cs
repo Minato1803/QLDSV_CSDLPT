@@ -99,15 +99,17 @@ namespace QLSV
                 MessageBox.Show("Không thể xóa lóp này vì đang chứa sinh viên", "cảnh báo", MessageBoxButtons.OK);
                 return;
             }
-            if (MessageBox.Show("Bạn có thực sự muốn xóa Môn này?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có thực sự muốn xóa lớp này?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
                     //undoBds.Push(lOPBindingSource);
+                    undoStk.PushUndo("REMOVE", ((DataRowView)this.lOPBindingSource[this.lOPBindingSource.Position]));
                     lOPBindingSource.RemoveCurrent();
                     this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.lOPTableAdapter.Update(this.qldsvDataSet1.LOP);
                     this.lOPBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
+                    this.undoBtn.Enabled = true;
                 }
                 catch (Exception ex)
                 {
@@ -146,22 +148,6 @@ namespace QLSV
 
         private void undoBtn_Click(object sender, EventArgs e)
         {
-            //QLDSVDataSet.LOPDataTable dttb = (QLDSVDataSet.LOPDataTable)undoBds.Pop();
-            //((QLDSVDataSet)this.lOPBindingSource.DataSource).LOP.Load(dttb.CreateDataReader());
-            //this.qldsvDataSet1.LOP.Load(dttb.CreateDataReader());
-            //this.lOPBindingSource.EndEdit();
-            //this.lOPBindingSource.ResetCurrentItem();
-
-
-            //this.lOPTableAdapter.Update(this.qldsvDataSet1.LOP);
-            //this.qldsvDataSet1.AcceptChanges();
-            ////this.lOPTableAdapter.Fill(this.qldsvDataSet1.LOP);
-
-
-            //if (undoBds.Count == 0)
-            //{
-            //    undoBtn.Enabled = false;
-            //}
             undoStk.Undo();
             this.lOPBindingSource.EndEdit();
             this.lOPBindingSource.ResetCurrentItem();
@@ -185,7 +171,7 @@ namespace QLSV
                     try
                     {
                         //this.qLDSVDataSet.MONHOC.Rows.Add(maMon.Text, tenMon.Text);
-                        undoStk.PushUndo("ADJUST", ((DataRowView)this.lOPBindingSource[this.lOPBindingSource.Position]));
+                        
                         this.lOPBindingSource.EndEdit();
                         this.lOPBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
                         this.lOPTableAdapter.Update(this.qldsvDataSet1);
@@ -314,6 +300,10 @@ namespace QLSV
                     this.errorTenLop.SetError(tenLop, "Tên lớp đã tồn tại!");
                     return false;
                 }
+                //this.lOPBindingSource.EndEdit();
+                //this.lOPBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
+                //this.lOPTableAdapter.Update(this.qldsvDataSet1);
+                undoStk.PushUndo("ADD", ((DataRowView)this.lOPBindingSource[this.lOPBindingSource.Position]));
             }
 
             if (flag == false)
@@ -377,6 +367,7 @@ namespace QLSV
                         return false;
                     }
                 }
+                undoStk.PushUndo("ADJUST", ((DataRowView)this.lOPBindingSource[this.lOPBindingSource.Position]));
             }
 
             return true;

@@ -33,7 +33,7 @@
             this.inBtn2 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.txMaLop = new DevExpress.XtraEditors.LookUpEdit();
-            this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -48,6 +48,7 @@
             this.cbLop = new System.Windows.Forms.ComboBox();
             this.vGETDSLOPBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.maLop = new System.Windows.Forms.TextBox();
+            this.vGETDSLOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vDSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_GETDSLOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_GETDSLOPTableAdapter();
             this.v_DSPMTableAdapter = new QLSV.QLDSVDataSetTableAdapters.V_DSPMTableAdapter();
@@ -55,21 +56,22 @@
             this.sP_REPORT_DSSVTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SP_REPORT_DSSVTableAdapter();
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SINHVIENTableAdapter();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.LOPTableAdapter();
+            this.errorML = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBtn2)).BeginInit();
             this.inBtn2.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txMaLop.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorML)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -117,16 +119,21 @@
             this.txMaLop.Properties.Appearance.Options.UseFont = true;
             this.txMaLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txMaLop.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MALOP", "MALOP", 41, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.txMaLop.Properties.DataSource = this.lOPBindingSource;
             this.txMaLop.Properties.DisplayMember = "MALOP";
+            this.txMaLop.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txMaLop.Properties.ValueMember = "MALOP";
             this.txMaLop.Size = new System.Drawing.Size(283, 26);
             this.txMaLop.TabIndex = 44;
+            this.txMaLop.EditValueChanged += new System.EventHandler(this.txMaLop_EditValueChanged);
+            this.txMaLop.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txMaLop_EditValueChanging);
             // 
-            // vGETDSLOPBindingSource
+            // lOPBindingSource
             // 
-            this.vGETDSLOPBindingSource.DataMember = "V_GETDSLOP";
-            this.vGETDSLOPBindingSource.DataSource = this.qLDSVDataSet;
+            this.lOPBindingSource.DataMember = "LOP";
+            this.lOPBindingSource.DataSource = this.qLDSVDataSet;
             // 
             // qLDSVDataSet
             // 
@@ -163,6 +170,7 @@
             this.inBtnNhap.Appearance.Options.UseBackColor = true;
             this.inBtnNhap.Appearance.Options.UseBorderColor = true;
             this.inBtnNhap.Appearance.Options.UseFont = true;
+            this.inBtnNhap.Enabled = false;
             this.inBtnNhap.Location = new System.Drawing.Point(144, 206);
             this.inBtnNhap.Name = "inBtnNhap";
             this.inBtnNhap.Size = new System.Drawing.Size(180, 49);
@@ -277,6 +285,11 @@
             this.maLop.Size = new System.Drawing.Size(120, 29);
             this.maLop.TabIndex = 34;
             // 
+            // vGETDSLOPBindingSource
+            // 
+            this.vGETDSLOPBindingSource.DataMember = "V_GETDSLOP";
+            this.vGETDSLOPBindingSource.DataSource = this.qLDSVDataSet;
+            // 
             // vDSPMBindingSource
             // 
             this.vDSPMBindingSource.DataMember = "V_DSPM";
@@ -307,14 +320,13 @@
             // 
             this.sINHVIENTableAdapter.ClearBeforeFill = true;
             // 
-            // lOPBindingSource
-            // 
-            this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.qLDSVDataSet;
-            // 
             // lOPTableAdapter
             // 
             this.lOPTableAdapter.ClearBeforeFill = true;
+            // 
+            // errorML
+            // 
+            this.errorML.ContainerControl = this;
             // 
             // ReportBDTongKet
             // 
@@ -335,15 +347,16 @@
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txMaLop.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSet)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vGETDSLOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDSPMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorML)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,5 +390,6 @@
         private QLDSVDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
         private System.Windows.Forms.BindingSource lOPBindingSource;
         private QLDSVDataSetTableAdapters.LOPTableAdapter lOPTableAdapter;
+        private System.Windows.Forms.ErrorProvider errorML;
     }
 }
