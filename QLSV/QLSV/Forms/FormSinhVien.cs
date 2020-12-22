@@ -211,14 +211,8 @@ namespace QLSV
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            //kiểm tra ĐIỂM
-            if (fKDIEMSINHVIENBindingSource.Count > 0)
-            {
-                MessageBox.Show("Sinh viên này có dữ liệu, Không được xóa !", "Thông báo", MessageBoxButtons.OK);
-                return;
-            }
-
             String CurrMaSV = ((DataRowView) sINHVIENBindingSource[this.viewDSSV.FocusedRowHandle])["MASV"].ToString();
+            Console.WriteLine("mã sinh viên xóa: " + CurrMaSV);
 
             // kiểm tra HP
             if (CheckHP(CurrMaSV))

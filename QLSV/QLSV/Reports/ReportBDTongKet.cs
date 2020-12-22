@@ -70,17 +70,15 @@ namespace QLSV
                 this.v_GETDSLOPTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.v_GETDSLOPTableAdapter.Fill(this.qLDSVDataSet.V_GETDSLOP);
                 cbLop.SelectedIndex = 0;
-
-                //cbMaSinhVien.SelectedIndex = 0;
-                // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DSGV' table. You can move, or remove it, as needed.
                 // TODO: This line of code loads data into the 'qLDSVDataSet1.V_DSPM' table. You can move, or remove it, as needed.
-                this.v_DSPMTableAdapter.Fill(this.qLDSVDataSet.V_DSPM);
+                this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
+                this.kHOATableAdapter.Fill(this.qLDSVDataSet.KHOA);
                 //để combobox chạy đúng
-                cbKhoa.SelectedIndex = 0;
                 //khóa hiển thị combobox khoa
                 cbKhoa.SelectedIndex = Program.mKhoa;
                 cbKhoa.DropDownStyle = ComboBoxStyle.Simple;
             }
+
             if (cbLop.SelectedValue != null)
             {
                 maLop.Text = cbLop.SelectedValue.ToString();

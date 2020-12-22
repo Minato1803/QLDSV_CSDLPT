@@ -78,18 +78,10 @@ namespace QLSV
                 this.mONHOCTableAdapter.Fill(this.qLDSVDataSet.MONHOC);
                 cbLop.SelectedIndex = 0;
                 cbMon.SelectedIndex = 0;
-                DataTable dtLop = new DataTable();
-                //gọi 1 view và trả về dưới dạng datatable
-                String cmd = "SELECT * FROM LINK0.QLDSV.dbo.V_GETDSLOP L WHERE L.MAKH = '" + Program.TKhoa[cbKhoa.SelectedIndex] + "'";
-                dtLop = Program.ExecSqlDataTable(cmd);
-                // cất dt vào biến toàn cục Bds_Dspm
-                Program.bds_lop.DataSource = dtLop;
-                cbLop.DataSource = dtLop;
-                cbLop.DisplayMember = "TENLOP";
-                cbLop.ValueMember = "MALOP";
-
-                cbLop.SelectedIndex = 0;
                 //khóa hiển thị combobox khoa
+                // TODO: This line of code loads data into the 'qLDSVDataSet.KHOA' table. You can move, or remove it, as needed.
+                this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
+                this.kHOATableAdapter.Fill(this.qLDSVDataSet.KHOA);
                 cbKhoa.SelectedIndex = Program.mKhoa;
                 cbKhoa.DropDownStyle = ComboBoxStyle.Simple;
             }

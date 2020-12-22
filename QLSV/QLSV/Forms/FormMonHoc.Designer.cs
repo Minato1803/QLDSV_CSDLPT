@@ -222,7 +222,7 @@
             this.tuyChinh.Location = new System.Drawing.Point(1445, 30);
             this.tuyChinh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tuyChinh.Name = "tuyChinh";
-            this.tuyChinh.Size = new System.Drawing.Size(495, 846);
+            this.tuyChinh.Size = new System.Drawing.Size(495, 862);
             this.tuyChinh.TabIndex = 3;
             // 
             // groupEdit
@@ -316,7 +316,7 @@
             this.danhSachMon.MainView = this.viewDanhSachMon;
             this.danhSachMon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhSachMon.Name = "danhSachMon";
-            this.danhSachMon.Size = new System.Drawing.Size(1445, 791);
+            this.danhSachMon.Size = new System.Drawing.Size(1445, 807);
             this.danhSachMon.TabIndex = 4;
             this.danhSachMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.viewDanhSachMon});
@@ -454,7 +454,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1940, 876);
+            this.ClientSize = new System.Drawing.Size(1940, 892);
             this.ControlBox = false;
             this.Controls.Add(this.danhSachMon);
             this.Controls.Add(this.panel1);
