@@ -134,8 +134,29 @@ namespace QLSV
 
             BDTK report = new BDTK(txMaLop.Text);
             report.xrLabel1.Text = ((DataRowView)Program.bds_lop[0])["TENLOP"].ToString().ToUpper();
+            //report.xrLabel1.Text = txMaLop.selected;
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
+        }
+
+        private void txMaLop_EditValueChanged(object sender, EventArgs e)
+        {
+            DataRowView dataRow = txMaLop.GetSelectedDataRow() as DataRowView;
+            if (dataRow != null)
+            {
+                inBtnNhap.Enabled = true;
+                errorML.Clear();
+            }
+            else
+            {
+                errorML.SetError(txMaLop, "Mã Lớp không có!");
+                inBtnNhap.Enabled = false;
+            }
+        }
+
+        private void txMaLop_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            txMaLop_EditValueChanged(sender, e);
         }
     }
 }

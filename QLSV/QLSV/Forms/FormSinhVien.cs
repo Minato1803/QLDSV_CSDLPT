@@ -18,10 +18,12 @@ namespace QLSV
         private Boolean flag = false; // true = add ; false = update
         private string oldMaLop = "";
         private string oldMaSV = "";
+        UndoStack undoStk;
 
         public FormSinhVien()
         {
             InitializeComponent();
+            undoStk = new UndoStack("MASV", this.sINHVIENBindingSource);
         }
 
 
@@ -231,6 +233,7 @@ namespace QLSV
             {
                 try
                 {
+                    undoStk.PushUndo("REMOVE", ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position]));
                     sINHVIENBindingSource.RemoveCurrent();
                     this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.sINHVIENTableAdapter.Update(this.qLDSVDataSet.SINHVIEN);
@@ -275,7 +278,15 @@ namespace QLSV
 
         private void undoBtn_Click(object sender, EventArgs e)
         {
+            undoStk.Undo();
+            this.sINHVIENBindingSource.EndEdit();
+            this.sINHVIENBindingSource.ResetCurrentItem();
+            this.sINHVIENTableAdapter.Update(this.qLDSVDataSet);
 
+            if (undoStk.Empty())
+            {
+                undoBtn.Enabled = false;
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -484,6 +495,7 @@ namespace QLSV
                     MessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK);
                     return false;
                 }
+                undoStk.PushUndo("ADD", ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position]));
             }
 
             if (flag == false)
@@ -550,7 +562,7 @@ namespace QLSV
                     MessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK);
                     return false;
                 }
-
+                undoStk.PushUndo("ADJUST", ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position]));
             }
             return true;
         }

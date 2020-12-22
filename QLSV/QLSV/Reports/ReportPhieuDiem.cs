@@ -41,6 +41,7 @@ namespace QLSV
         private void ReportPhieuDiem_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLDSVDataSet.SINHVIEN' table. You can move, or remove it, as needed.
+            this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
             if (Program.mGroup.Equals("PGV"))
             {
@@ -98,8 +99,16 @@ namespace QLSV
                 cbMaSinhVien.DisplayMember = "HOTEN";
                 cbMaSinhVien.ValueMember = "MASV";
             }
+            if (cbLop.SelectedValue != null)
+            {
                 maLop.Text = cbLop.SelectedValue.ToString();
+            }
+            if (cbMaSinhVien.SelectedValue != null)
+            {
                 maSV.Text = cbMaSinhVien.SelectedValue.ToString();
+            }
+                
+                
         }
 
         private void cbLop_SelectedIndexChanged(object sender, EventArgs e)
@@ -167,6 +176,27 @@ namespace QLSV
             ReportPrintTool rp = new ReportPrintTool(rpPhieuDiem);
             
             rp.ShowPreviewDialog();
+        }
+
+        private void txMaSinhVien_EditValueChanged(object sender, EventArgs e)
+        {
+            DataRowView dataRow = txMaSinhVien.GetSelectedDataRow() as DataRowView;
+            if (dataRow != null)
+            {
+                inBnt.Enabled = true;
+                errorML.Clear();
+            }
+            else
+            {
+                errorML.SetError(txMaSinhVien, "Mã Sinh Viên không có!");
+                inBnt.Enabled = false;
+            }
+        }
+
+
+        private void txMaSinhVien_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            txMaSinhVien_EditValueChanged(sender, e);
         }
     }
 }

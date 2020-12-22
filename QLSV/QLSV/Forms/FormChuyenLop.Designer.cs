@@ -48,6 +48,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sINHVIENTableAdapter = new QLSV.QLDSVDataSetTableAdapters.SINHVIENTableAdapter();
             this.lOPTableAdapter = new QLSV.QLDSVDataSetTableAdapters.LOPTableAdapter();
+            this.maSinhVienMoi = new System.Windows.Forms.TextBox();
+            this.errorMSV = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorMLop = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
@@ -55,10 +58,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.maSinhVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMSV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMLop)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.maSinhVienMoi);
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Controls.Add(this.namSinh);
             this.panel1.Controls.Add(this.phai);
@@ -72,11 +78,12 @@
             this.panel1.Controls.Add(this.maSinhVien);
             this.panel1.Location = new System.Drawing.Point(112, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(581, 345);
+            this.panel1.Size = new System.Drawing.Size(619, 345);
             this.panel1.TabIndex = 0;
             // 
             // btnOk
             // 
+            this.btnOk.Enabled = false;
             this.btnOk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.Location = new System.Drawing.Point(178, 293);
             this.btnOk.Name = "btnOk";
@@ -84,6 +91,7 @@
             this.btnOk.TabIndex = 10;
             this.btnOk.Text = "Xác Nhận";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // namSinh
             // 
@@ -175,9 +183,11 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MALOP", "MALOP", 41, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.maLop.Properties.DataSource = this.lOPBindingSource;
             this.maLop.Properties.DisplayMember = "MALOP";
+            this.maLop.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.maLop.Properties.ValueMember = "MALOP";
             this.maLop.Size = new System.Drawing.Size(190, 28);
             this.maLop.TabIndex = 1;
+            this.maLop.EditValueChanged += new System.EventHandler(this.maLop_EditValueChanged);
             // 
             // lOPBindingSource
             // 
@@ -200,16 +210,7 @@
             this.maSinhVien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.maSinhVien.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MASV", "MASV", 34, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("HO", "HO", 22, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TEN", "TEN", 26, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MALOP", "MALOP", 41, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PHAI", "PHAI", 31, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NGAYSINH", "NGAYSINH", 58, DevExpress.Utils.FormatType.DateTime, "M/d/yyyy", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NOISINH", "NOISINH", 50, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DIACHI", "DIACHI", 43, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("GHICHU", "GHICHU", 46, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NGHIHOC", "NGHIHOC", 54, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MASV", "MASV", 34, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.maSinhVien.Properties.DataSource = this.sINHVIENBindingSource;
             this.maSinhVien.Properties.DisplayMember = "MASV";
             this.maSinhVien.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -243,6 +244,23 @@
             // 
             this.lOPTableAdapter.ClearBeforeFill = true;
             // 
+            // maSinhVienMoi
+            // 
+            this.maSinhVienMoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maSinhVienMoi.Location = new System.Drawing.Point(425, 46);
+            this.maSinhVienMoi.Name = "maSinhVienMoi";
+            this.maSinhVienMoi.Size = new System.Drawing.Size(191, 29);
+            this.maSinhVienMoi.TabIndex = 11;
+            this.maSinhVienMoi.Visible = false;
+            // 
+            // errorMSV
+            // 
+            this.errorMSV.ContainerControl = this;
+            // 
+            // errorMLop
+            // 
+            this.errorMLop.ContainerControl = this;
+            // 
             // FormChuyenLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +284,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.maSinhVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMSV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMLop)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +310,8 @@
         private QLDSVDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
         private System.Windows.Forms.BindingSource lOPBindingSource;
         private QLDSVDataSetTableAdapters.LOPTableAdapter lOPTableAdapter;
+        private System.Windows.Forms.TextBox maSinhVienMoi;
+        private System.Windows.Forms.ErrorProvider errorMSV;
+        private System.Windows.Forms.ErrorProvider errorMLop;
     }
 }
