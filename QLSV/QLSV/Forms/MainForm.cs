@@ -37,7 +37,6 @@ namespace QLSV
                 qlMonHoc.Enabled
                     = qlLop.Enabled
                     = qlSinhVien.Enabled
-                    = qlHocPhi.Enabled
                     = qlDiem.Enabled
                     = qlChuyenLop.Enabled
                     = dsSinhVien.Enabled

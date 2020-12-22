@@ -42,8 +42,6 @@
             this.groupEdit = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.daDong = new System.Windows.Forms.TextBox();
-            this.vDSHPSVBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.label6 = new System.Windows.Forms.Label();
             this.Dong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +51,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nienKhoa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.vDSHPSVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDSVDataSet = new QLSV.QLDSVDataSet();
             this.fKCTDONGHOCPHIHOCPHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fKHOCPHISINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -122,7 +122,7 @@
             // 
             // addBtn
             // 
-            this.addBtn.Image = global::QLSV.Properties.Resources.add__1_;
+            this.addBtn.Image = global::QLSV.Properties.Resources.add;
             this.addBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addBtn.Name = "addBtn";
             this.addBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
@@ -148,35 +148,33 @@
             this.adjustBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.adjustBtn.Size = new System.Drawing.Size(69, 27);
             this.adjustBtn.Text = "Sửa";
+            this.adjustBtn.Visible = false;
             this.adjustBtn.Click += new System.EventHandler(this.adjustBtn_Click);
             // 
             // undoBtn
             // 
-            this.undoBtn.Image = global::QLSV.Properties.Resources.curved_arrow;
             this.undoBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.undoBtn.Name = "undoBtn";
             this.undoBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.undoBtn.Size = new System.Drawing.Size(110, 27);
+            this.undoBtn.Size = new System.Drawing.Size(90, 27);
             this.undoBtn.Text = "Phục Hồi";
             this.undoBtn.Click += new System.EventHandler(this.undoBtn_Click);
             // 
             // saveBtn
             // 
-            this.saveBtn.Image = global::QLSV.Properties.Resources.cloud_computing;
             this.saveBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.saveBtn.Size = new System.Drawing.Size(67, 27);
+            this.saveBtn.Size = new System.Drawing.Size(47, 27);
             this.saveBtn.Text = "Ghi";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // exitBtn
             // 
-            this.exitBtn.Image = global::QLSV.Properties.Resources.stop;
             this.exitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.exitBtn.Size = new System.Drawing.Size(71, 27);
+            this.exitBtn.Size = new System.Drawing.Size(51, 27);
             this.exitBtn.Text = "Hủy";
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
@@ -192,11 +190,10 @@
             // 
             // quitFormBtn
             // 
-            this.quitFormBtn.Image = global::QLSV.Properties.Resources.power_button;
             this.quitFormBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.quitFormBtn.Name = "quitFormBtn";
             this.quitFormBtn.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.quitFormBtn.Size = new System.Drawing.Size(85, 27);
+            this.quitFormBtn.Size = new System.Drawing.Size(65, 27);
             this.quitFormBtn.Text = "Thoát";
             this.quitFormBtn.Click += new System.EventHandler(this.quitFormBtn_Click);
             // 
@@ -248,7 +245,6 @@
             // 
             // daDong
             // 
-            this.daDong.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vDSHPSVBindingSource, "SOTIENDADONG", true));
             this.daDong.Enabled = false;
             this.daDong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.daDong.Location = new System.Drawing.Point(23, 465);
@@ -258,21 +254,9 @@
             this.daDong.TabIndex = 10;
             this.daDong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // vDSHPSVBindingSource
-            // 
-            this.vDSHPSVBindingSource.DataMember = "V_DSHPSV";
-            this.vDSHPSVBindingSource.DataSource = this.qLDSVDataSet;
-            // 
-            // qLDSVDataSet
-            // 
-            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
-            this.qLDSVDataSet.Locale = new System.Globalization.CultureInfo("en-US");
-            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vDSHPSVBindingSource, "SOTIENDONG", true));
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(3, 320);
@@ -284,15 +268,13 @@
             // 
             // Dong
             // 
-            this.Dong.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vDSHPSVBindingSource, "SOTIENDONG", true));
             this.Dong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dong.Location = new System.Drawing.Point(23, 362);
+            this.Dong.Location = new System.Drawing.Point(23, 375);
             this.Dong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Dong.Name = "Dong";
             this.Dong.Size = new System.Drawing.Size(434, 34);
             this.Dong.TabIndex = 8;
             this.Dong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Dong.TextChanged += new System.EventHandler(this.Dong_TextChanged);
             // 
             // label5
             // 
@@ -308,7 +290,6 @@
             // 
             // hocPhi
             // 
-            this.hocPhi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vDSHPSVBindingSource, "HOCPHI", true));
             this.hocPhi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hocPhi.Location = new System.Drawing.Point(23, 262);
             this.hocPhi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -331,7 +312,6 @@
             // 
             // hocKi
             // 
-            this.hocKi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vDSHPSVBindingSource, "HOCKY", true));
             this.hocKi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hocKi.Location = new System.Drawing.Point(23, 165);
             this.hocKi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -355,7 +335,6 @@
             // nienKhoa
             // 
             this.nienKhoa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.nienKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vDSHPSVBindingSource, "NIENKHOA", true));
             this.nienKhoa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nienKhoa.Location = new System.Drawing.Point(23, 62);
             this.nienKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -376,6 +355,17 @@
             this.label1.Size = new System.Drawing.Size(139, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tùy Chỉnh";
+            // 
+            // vDSHPSVBindingSource
+            // 
+            this.vDSHPSVBindingSource.DataMember = "V_DSHPSV";
+            this.vDSHPSVBindingSource.DataSource = this.qLDSVDataSet;
+            // 
+            // qLDSVDataSet
+            // 
+            this.qLDSVDataSet.DataSetName = "QLDSVDataSet";
+            this.qLDSVDataSet.Locale = new System.Globalization.CultureInfo("en-US");
+            this.qLDSVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fKCTDONGHOCPHIHOCPHIBindingSource
             // 
@@ -485,7 +475,6 @@
             // 
             // danhSachHPSV
             // 
-            this.danhSachHPSV.DataSource = this.vDSHPSVBindingSource;
             this.danhSachHPSV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.danhSachHPSV.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhSachHPSV.Location = new System.Drawing.Point(0, 143);
@@ -531,7 +520,9 @@
             // colHOCKI
             // 
             this.colHOCKI.Caption = "HOCKI";
+            this.colHOCKI.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colHOCKI.FieldName = "HOCKY";
+            this.colHOCKI.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colHOCKI.MinWidth = 25;
             this.colHOCKI.Name = "colHOCKI";
             this.colHOCKI.OptionsColumn.AllowEdit = false;
@@ -541,7 +532,9 @@
             // 
             // colHOCPHI
             // 
+            this.colHOCPHI.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colHOCPHI.FieldName = "HOCPHI";
+            this.colHOCPHI.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colHOCPHI.MinWidth = 24;
             this.colHOCPHI.Name = "colHOCPHI";
             this.colHOCPHI.OptionsColumn.AllowEdit = false;
@@ -552,23 +545,27 @@
             // colSOTIENDADONG
             // 
             this.colSOTIENDADONG.Caption = "SOTIENDADONG";
+            this.colSOTIENDADONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSOTIENDADONG.FieldName = "SOTIENDADONG";
+            this.colSOTIENDADONG.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSOTIENDADONG.MinWidth = 25;
             this.colSOTIENDADONG.Name = "colSOTIENDADONG";
             this.colSOTIENDADONG.OptionsColumn.AllowEdit = false;
             this.colSOTIENDADONG.Visible = true;
-            this.colSOTIENDADONG.VisibleIndex = 4;
+            this.colSOTIENDADONG.VisibleIndex = 3;
             this.colSOTIENDADONG.Width = 87;
             // 
             // colSOTIENDONG
             // 
             this.colSOTIENDONG.Caption = "SỐ TIỀN ĐÓNG";
+            this.colSOTIENDONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSOTIENDONG.FieldName = "SOTIENDONG";
+            this.colSOTIENDONG.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSOTIENDONG.MinWidth = 25;
             this.colSOTIENDONG.Name = "colSOTIENDONG";
             this.colSOTIENDONG.OptionsColumn.AllowEdit = false;
             this.colSOTIENDONG.Visible = true;
-            this.colSOTIENDONG.VisibleIndex = 3;
+            this.colSOTIENDONG.VisibleIndex = 4;
             this.colSOTIENDONG.Width = 94;
             // 
             // cTDONGHOCPHIBindingSource

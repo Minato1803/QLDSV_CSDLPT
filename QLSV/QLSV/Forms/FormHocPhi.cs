@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SqlClient;
 
 namespace QLSV
 {
@@ -18,6 +19,7 @@ namespace QLSV
         private int pos;
         private Boolean flag = false; //add 0 update 1
         private String currNienKhoa = ""; //niên khóa hiện tại
+        private String maSV = "";
         private int currHK = 1; // kì học hiện tại
         private int currHP;
         private int currMEarned;
@@ -59,68 +61,71 @@ namespace QLSV
 
         private void cbMaSV_EditValueChanged(object sender, EventArgs e)
         {
-            String maSV = leMaSV.Properties.GetDisplayText(leMaSV.EditValue);
+            maSV = leMaSV.Properties.GetDisplayText(leMaSV.EditValue);
             DataTable dtsv = new DataTable();
             //gọi 1 view và trả về dưới dạng datatable
             dtsv = Program.ExecSqlDataTable("SELECT * FROM LINK0.QLDSV.dbo.V_DSSV_TaoTK SV WHERE SV.MASV = '" + maSV + "'");
             hoTen.Text = dtsv.Rows[0].Field<String>("HOTEN");
             maLop.Text = dtsv.Rows[0].Field<String>("MALOP");
 
-            DataTable dthpSV = new DataTable();
-            //gọi 1 view và trả về dưới dạng datatable
-            dthpSV = Program.ExecSqlDataTable("SELECT * FROM LINK0.QLDSV.dbo.V_DSHPSV SV WHERE SV.MASV = '" + maSV + "'");
+            // đổ table Add vào gridControl
+            string cmdload = "EXEC [dbo].[SP_DSHPSinhVien] " +
+                          "@masv = N'" + maSV + "'";
+            DataTable dtHPSV = Program.ExecSqlDataTable(cmdload);
 
-            if (dthpSV.Rows.Count > 0)
+            if (dtHPSV.Rows.Count > 0)
             {
                 //tính tổng số tiền đã đóng cho mỗi cell
                 int sum = 0;
-                String tmpNienKhoa = dthpSV.Rows[0].Field<String>("NIENKHOA");
-                int tmpHK = dthpSV.Rows[0].Field<Int32>("HOCKY");
-                for (int i = 0; i < dthpSV.Rows.Count; ++i)
+                String tmpNienKhoa = dtHPSV.Rows[0].Field<String>("NIENKHOA");
+                int tmpHK = dtHPSV.Rows[0].Field<Int32>("HOCKY");
+                for (int i = 0; i < dtHPSV.Rows.Count; ++i)
                 {
-                    if (tmpNienKhoa != dthpSV.Rows[i].Field<String>("NIENKHOA") || tmpHK != dthpSV.Rows[0].Field<Int32>("HOCKY"))
+                    if (tmpNienKhoa != dtHPSV.Rows[i].Field<String>("NIENKHOA") || tmpHK != dtHPSV.Rows[0].Field<Int32>("HOCKY"))
                     {
                         sum = 0;
                     }
-                    sum += Convert.ToInt32(dthpSV.Rows[i].Field<Int32>("SOTIENDONG"));
+                    sum += Convert.ToInt32(dtHPSV.Rows[i].Field<Int32>("SOTIENDONG"));
                     //DataRow dr = dthpSV.Rows[i];
-                    dthpSV.Rows[i]["SOTIENDADONG"] = sum;
+                    dtHPSV.Rows[i]["SOTIENDADONG"] = sum;
                     Console.WriteLine(sum);
                 }
                 //daDong.Text = sum.ToString();
             }
-            dthpSV.AcceptChanges();
-            this.vDSHPSVBindingSource.DataSource = dthpSV;
-            this.v_DSHPSVTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.v_DSHPSVTableAdapter.Fill(this.qLDSVDataSet.V_DSHPSV);
-
+            else
+            {
+                MessageBox.Show("Sinh viên chưa có dữ liệu học phí", "Thông báo", MessageBoxButtons.OK);
+            }
+            dtHPSV.AcceptChanges();
+            this.bds_HPSV.DataSource = dtHPSV;
+            this.danhSachHPSV.DataSource = this.bds_HPSV;
+            this.viewHPSV.RefreshData();
+            pos = bds_HPSV.Position;
             // kiểm tra tiền học phí
-            currNienKhoa = dthpSV.Rows[dthpSV.Rows.Count - 1].Field<String>("NIENKHOA");
-            currHK = dthpSV.Rows[dthpSV.Rows.Count - 1].Field<Int32>("HOCKY");
-            currHP = dthpSV.Rows[dthpSV.Rows.Count - 1].Field<Int32>("HOCPHI");
-            currMEarned = dthpSV.Rows[dthpSV.Rows.Count - 1].Field<Int32>("SOTIENDADONG");
-            if (currHP != currMEarned) // HP != STDONG
+            if(bds_HPSV.Count>0)
             {
-                enoughMoney = false;
+                currNienKhoa = ((DataRowView)bds_HPSV[pos])["NIENKHOA"].ToString();
+                currHK = (int) ((DataRowView)bds_HPSV[pos])["HOCKY"];
+                currHP = (int) ((DataRowView)bds_HPSV[pos])["HOCPHI"];
+                Console.WriteLine("sotiendadong: " + ((DataRowView)bds_HPSV[pos])["SOTIENDADONG"]);
+                currMEarned = int.Parse(((DataRowView)bds_HPSV[pos])["SOTIENDADONG"].ToString());
+                //currMEarned = 0;
+                if (currHP != currMEarned) // HP != STDONG
+                {
+                    enoughMoney = false;
+                }
+                else
+                    enoughMoney = true;
+
             }
             else
+            {
                 enoughMoney = true;
-            Console.WriteLine("checkcurrHP: " + currNienKhoa + " " + currHK);
+            }
+            Console.WriteLine("checkcurrHP: " + currNienKhoa + " " + currHK + " " + enoughMoney);
 
         }
 
-        private void Dong_TextChanged(object sender, EventArgs e)
-        {
-            if(daDong.Text != null)
-            {
-                //daDong.Text = (int.Parse(daDong.Text) + int.Parse(Dong.Text)).ToString();
-
-            }
-            else
-            {
-                daDong.Text = Dong.Text;
-            }
-        }
 
         //==================================================== XỬ LÝ NÚT ====================================================//
         private void addBtn_Click(object sender, EventArgs e)
@@ -136,28 +141,29 @@ namespace QLSV
                 = adjustBtn.Enabled
                 = undoBtn.Enabled
                 = reloadBtn.Enabled
-                = danhSachHPSV.Enabled
                 = leMaSV.Enabled
                 = false;
-            pos = vDSHPSVBindingSource.Position;
+            pos = bds_HPSV.Position;
             nienKhoa.Focus();
 
             // TODO : Thao tác chuẩn bị thêm
+            bds_HPSV.AddNew();
             if(!enoughMoney) // nếu không đóng đủ thì không cho nhập NK HK
             {
-                nienKhoa.Text = currNienKhoa;
+                ((DataRowView) bds_HPSV[pos])["NIENKHOA"] 
+                    = nienKhoa.Text
+                    = currNienKhoa;
+                ((DataRowView) bds_HPSV[pos])["HOCKY"] = currHK;
                 hocKi.Text = currHK.ToString();
+                ((DataRowView) bds_HPSV[pos])["HOCPHI"] = currHP;
                 hocPhi.Text = currHP.ToString();
+                this.viewHPSV.RefreshData();
+                Console.WriteLine("add: " + currNienKhoa + " " + currHK + " " + enoughMoney);
                 nienKhoa.Enabled
                     = hocKi.Enabled
                     = hocPhi.Enabled
                     = false;
-
             }
-            daDong.Text = (currMEarned + int.Parse(daDong.Text.Trim().Equals("")?"0":daDong.Text.Trim())).ToString();
-            this.hOCPHIBindingSource.AddNew();
-            this.cTDONGHOCPHIBindingSource.AddNew();
-            this.vDSHPSVBindingSource.AddNew();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -167,12 +173,12 @@ namespace QLSV
                 try
                 {
                     cTDONGHOCPHIBindingSource.RemoveCurrent();
-                    hOCPHIBindingSource.RemoveCurrent();
                     this.cT_DONGHOCPHITableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.hOCPHITableAdapter.Connection.ConnectionString = Program.connstr;
                     this.cT_DONGHOCPHITableAdapter.Update(this.qLDSVDataSet.CT_DONGHOCPHI);
-                    this.hOCPHITableAdapter.Update(this.qLDSVDataSet.HOCPHI);
-                    this.vDSHPSVBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
+                    bds_HPSV.RemoveCurrent();
+                    this.bds_HPSV.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
+                    this.danhSachHPSV.DataSource = bds_HPSV;
+                    this.viewHPSV.RefreshData();
                 }
                 catch (Exception ex)
                 {
@@ -185,11 +191,11 @@ namespace QLSV
 
             if (pos > 0)
             {
-                vDSHPSVBindingSource.Position = pos;
-                currNienKhoa = (String) ((DataRowView)this.vDSHPSVBindingSource[pos])["NIENKHOA"];
-                currHK =(int) ((DataRowView)this.vDSHPSVBindingSource[pos])["HOCKY"];
-                currHP = (int) ((DataRowView)this.sINHVIENBindingSource[pos])["HOCPHI"];
-                currMEarned = (int)((DataRowView)this.sINHVIENBindingSource[pos])["SOTIENDADONG"];
+                bds_HPSV.Position = pos;
+                currNienKhoa = (String) ((DataRowView)this.bds_HPSV[pos])["NIENKHOA"];
+                currHK =(int) ((DataRowView)this.bds_HPSV[pos])["HOCKY"];
+                currHP = (int) ((DataRowView)this.bds_HPSV[pos])["HOCPHI"];
+                currMEarned = int.Parse(((DataRowView)bds_HPSV[pos])["SOTIENDADONG"].ToString());
                 if (currHP != currMEarned) // HP != STDONG
                 {
                     enoughMoney = false;
@@ -233,47 +239,134 @@ namespace QLSV
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
+                    ((DataRowView)bds_HPSV[pos])["NIENKHOA"] = nienKhoa.Text;
+                    ((DataRowView)bds_HPSV[pos])["HOCKY"] = hocKi.Text;
+                    ((DataRowView)bds_HPSV[pos])["HOCPHI"] = hocPhi.Text;
+                    ((DataRowView)bds_HPSV[pos])["SOTIENDONG"] = Dong.Text;
+
+
                     try
                     {
-                        // cập nhật học phí
-                        ((DataRowView)this.hOCPHIBindingSource[this.sINHVIENBindingSource.Position])["MASV"] = leMaSV.Properties.GetDisplayText(leMaSV.EditValue);
-                        ((DataRowView)this.hOCPHIBindingSource[this.hOCPHIBindingSource.Position])["NIENKHOA"] = nienKhoa.Text;
-                        ((DataRowView)this.hOCPHIBindingSource[this.hOCPHIBindingSource.Position])["HOCKY"] = hocKi.Text;
-                        ((DataRowView)this.hOCPHIBindingSource[this.hOCPHIBindingSource.Position])["HOCPHI"] = hocPhi.Text;
-                        this.hOCPHIBindingSource.EndEdit();
-                        this.hOCPHITableAdapter.Update(this.qLDSVDataSet);
-                        // câp nhật ct_HP
-                        ((DataRowView)this.cTDONGHOCPHIBindingSource[this.cTDONGHOCPHIBindingSource.Position])["MASV"] = leMaSV.Properties.GetDisplayText(leMaSV.EditValue);
-                        ((DataRowView)this.cTDONGHOCPHIBindingSource[this.cTDONGHOCPHIBindingSource.Position])["NIENKHOA"] = nienKhoa.Text;
-                        ((DataRowView)this.cTDONGHOCPHIBindingSource[this.cTDONGHOCPHIBindingSource.Position])["HOCKY"] = hocKi.Text;
-                        DateTime myDateTime = DateTime.Now;
-                        string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
-                        ((DataRowView)this.cTDONGHOCPHIBindingSource[this.cTDONGHOCPHIBindingSource.Position])["NGAYDONG"] = sqlFormattedDate.ToString();
-                        ((DataRowView)this.cTDONGHOCPHIBindingSource[this.cTDONGHOCPHIBindingSource.Position])["SOTIENDONG"] = Dong.Text;
-                        this.cTDONGHOCPHIBindingSource.EndEdit();
-                        this.cT_DONGHOCPHITableAdapter.Update(this.qLDSVDataSet);
+                        bds_HPSV.EndEdit();
+                        SqlConnection conn = new SqlConnection(Program.connstr);
+                        // bắt đầu transaction
+                        SqlTransaction tran;
 
-                        //
-                        this.vDSHPSVBindingSource.CancelEdit();
-                        this.vDSHPSVBindingSource.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
-                        addBtn.Enabled
-                        = deleteBtn.Enabled
-                        = adjustBtn.Enabled
-                        = undoBtn.Enabled
-                        = reloadBtn.Enabled = true;
+                        conn.Open();
+                        tran = conn.BeginTransaction();
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("SP_NHAPHOCPHI", conn);
+                            cmd.Connection = conn;
+                            cmd.Transaction = tran;
 
-                        danhSachHPSV.Enabled = true;
-                        groupEdit.Enabled = false;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            int soTienDong = (int)((DataRowView)bds_HPSV[pos])["SOTIENDONG"];
+                            cmd.Parameters.Add(new SqlParameter("@MASV", maSV));
+                            cmd.Parameters.Add(new SqlParameter("@NIENKHOA", ((DataRowView)bds_HPSV[pos])["NIENKHOA"]));
+                            cmd.Parameters.Add(new SqlParameter("@HOCKY", ((DataRowView)bds_HPSV[pos])["HOCKY"]));
+                            cmd.Parameters.Add(new SqlParameter("@HOCPHI", ((DataRowView)bds_HPSV[pos])["HOCPHI"]));
+                            cmd.ExecuteNonQuery();
+
+                            cmd = new SqlCommand("SP_NHAPCTHOCPHI", conn);
+                            cmd.Connection = conn;
+                            cmd.Transaction = tran;
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter("@MASV", maSV));
+                            cmd.Parameters.Add(new SqlParameter("@NIENKHOA", ((DataRowView)bds_HPSV[pos])["NIENKHOA"]));
+                            cmd.Parameters.Add(new SqlParameter("@HOCKY", ((DataRowView)bds_HPSV[pos])["HOCKY"]));
+                            DateTime myDateTime = DateTime.Now;
+                            string sqlFormattedDate = myDateTime.Date.ToString("yyyy-MM-dd");
+
+                            cmd.Parameters.Add(new SqlParameter("@NGAYDONG", sqlFormattedDate));
+                            cmd.Parameters.Add(new SqlParameter("@SOTIENDONG", ((DataRowView)bds_HPSV[pos])["SOTIENDONG"]));
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (SqlException sqlex)
+                        {
+                            try
+                            {
+
+                                tran.Rollback();
+                                MessageBox.Show("Lỗi ghi toàn bộ điểm vào Database. Bạn hãy xem lại ! " + sqlex.Message, "", MessageBoxButtons.OK);
+
+                            }
+                            catch (Exception ex2)
+                            {
+                                Console.WriteLine("Rollback Exception Type: {0}", ex2.GetType());
+                                Console.WriteLine("  Message: {0}", ex2.Message);
+                            }
+                            conn.Close();
+                            return;
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                         tran.Commit();
+                        // ct_hocphi
+                        conn = new SqlConnection(Program.connstr);
+                        // bắt đầu transaction
+
+                        conn.Open();
+                        tran = conn.BeginTransaction();
+                        try
+                        {
+                            SqlCommand cmd = new SqlCommand("SP_NHAPCTHOCPHI", conn);
+                            cmd.Connection = conn;
+                            cmd.Transaction = tran;
+
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter("@MASV", maSV));
+                            cmd.Parameters.Add(new SqlParameter("@NIENKHOA", ((DataRowView)bds_HPSV[pos])["NIENKHOA"]));
+                            cmd.Parameters.Add(new SqlParameter("@HOCKY", ((DataRowView)bds_HPSV[pos])["HOCKY"]));
+                            DateTime myDateTime = DateTime.Now;
+                            string sqlFormattedDate = myDateTime.Date.ToString("yyyy-MM-dd");
+
+                            cmd.Parameters.Add(new SqlParameter("@NGAYDONG", sqlFormattedDate));
+                            cmd.Parameters.Add(new SqlParameter("@SOTIENDONG", ((DataRowView)bds_HPSV[pos])["SOTIENDONG"]));
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (SqlException sqlex)
+                        {
+                            try
+                            {
+
+                                tran.Rollback();
+                                MessageBox.Show("Lỗi ghi toàn bộ điểm vào Database. Bạn hãy xem lại ! " + sqlex.Message, "", MessageBoxButtons.OK);
+
+                            }
+                            catch (Exception ex2)
+                            {
+                                Console.WriteLine("Rollback Exception Type: {0}", ex2.GetType());
+                                Console.WriteLine("  Message: {0}", ex2.Message);
+                            }
+                            conn.Close();
+                            return;
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                        tran.Commit();
                     }
                     catch (Exception ex)
                     {
-                        sINHVIENBindingSource.RemoveCurrent();
+                        bds_HPSV.RemoveCurrent();
                         MessageBox.Show("Ghi dữ liệu thất lại. Vui lòng kiểm tra lại!\n" + ex.Message, "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    this.bds_HPSV.ResetCurrentItem();// tự động render để hiển thị dữ liệu mới
+                    addBtn.Enabled
+                    = deleteBtn.Enabled
+                    = adjustBtn.Enabled
+                    = undoBtn.Enabled
+                    = reloadBtn.Enabled = true;
+
+                    danhSachHPSV.Enabled = true;
+                    groupEdit.Enabled = false;
                 }
-
-
             }
             else
             {
@@ -284,13 +377,12 @@ namespace QLSV
         private void exitBtn_Click(object sender, EventArgs e)
         {
             //xóa trạng thái
-            hOCPHIBindingSource.CancelEdit();
-            cTDONGHOCPHIBindingSource.CancelEdit();
+            bds_HPSV.CancelEdit();
 
             FormHocPhi_Load(sender, e);
             if (pos > 0)
             {
-                vDSHPSVBindingSource.Position = pos;
+                bds_HPSV.Position = pos;
             }
 
             danhSachHPSV.Enabled = true;
@@ -366,7 +458,7 @@ namespace QLSV
                     MessageBox.Show("Học kì này đã đóng đủ!", "Thông báo", MessageBoxButtons.OK);
                     return false;
                 }
-                int tienDaDong = int.Parse(daDong.Text);
+                int tienDaDong = int.Parse(Dong.Text.Trim().ToString()) + int.Parse(((DataRowView)bds_HPSV[pos])["SOTIENDADONG"].ToString());
                 int tienHocPhi = int.Parse(hocPhi.Text);
                 if (tienDaDong > tienHocPhi)
                 {
