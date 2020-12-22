@@ -29,8 +29,23 @@ namespace QLSV
             bottomName.Caption = name;
             if(Program.mGroup == "PGV" || Program.mGroup == "KHOA")
             {
-                qlHocPhi.Enabled = false;
-                dsDongHocPhi.Enabled = false;
+                qlHocPhi.Enabled
+                    = dsDongHocPhi.Enabled = false;
+            }
+            if(Program.mGroup == "PKeToan")
+            {
+                qlMonHoc.Enabled
+                    = qlLop.Enabled
+                    = qlSinhVien.Enabled
+                    = qlHocPhi.Enabled
+                    = qlDiem.Enabled
+                    = qlChuyenLop.Enabled
+                    = dsSinhVien.Enabled
+                    = bangDiemTongKet.Enabled
+                    = bangDiemMonHoc.Enabled
+                    = bangDiemThi.Enabled
+                    = phieuDiem.Enabled
+                    = false;
             }
         }
 
