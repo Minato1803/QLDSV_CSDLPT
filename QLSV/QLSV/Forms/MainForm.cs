@@ -27,6 +27,11 @@ namespace QLSV
         {
             bottomRule.Caption = rule;
             bottomName.Caption = name;
+            if(Program.mGroup == "PGV" || Program.mGroup == "KHOA")
+            {
+                qlHocPhi.Enabled = false;
+                dsDongHocPhi.Enabled = false;
+            }
         }
 
         private void thongTin_ItemClick(object sender, ItemClickEventArgs e)
