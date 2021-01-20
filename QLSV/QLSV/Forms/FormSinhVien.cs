@@ -121,15 +121,15 @@ namespace QLSV
                     MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
                 }
 
-                if (viewDSSV.SelectedRowsCount <= 0)
-                {
-                    maLop.Clear();
-                    MessageBox.Show("Lớp này chưa có sinh viên", "Thông báo", MessageBoxButtons.OK);
-                }
-                else
-                {
+                //if (viewDSSV.SelectedRowsCount <= 0)
+                //{
+                //    maLop.Clear();
+                //    MessageBox.Show("Lớp này chưa có sinh viên", "Thông báo", MessageBoxButtons.OK);
+                //}
+                //else
+                //{
                     maLop.Text = cbLop.SelectedValue.ToString();
-                }
+                //}
             }
 
         }
@@ -146,15 +146,15 @@ namespace QLSV
                 this.danhSachSV.DataSource = this.sINHVIENBindingSource;
                 //this.sINHVIENTableAdapter.Fill(this.qLDSVDataSet.SINHVIEN);
 
-                if (viewDSSV.SelectedRowsCount <= 0)
-                {
-                    MessageBox.Show("Lớp này chưa có sinh viên", "Thông báo", MessageBoxButtons.OK);
-                    maLop.Clear();
-                }
-                else
-                {
+                //if (viewDSSV.SelectedRowsCount <= 0)
+                //{
+                //    MessageBox.Show("Lớp này chưa có sinh viên", "Thông báo", MessageBoxButtons.OK);
+                //    maLop.Clear();
+                //}
+                //else
+                //{
                     maLop.Text = cbLop.SelectedValue.ToString();
-                }
+                //}
             }
         }
 
@@ -220,6 +220,11 @@ namespace QLSV
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            if(viewDSSV.DataRowCount<=0)
+            {
+                MessageBox.Show("Lớp này không có sinh viên", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
             String CurrMaSV = ((DataRowView)this.sINHVIENBindingSource[this.viewDSSV.FocusedRowHandle])["MASV"].ToString();
             Console.WriteLine("mã sinh viên xóa: " + CurrMaSV);
 
@@ -320,7 +325,10 @@ namespace QLSV
                         = reloadBtn.Enabled = true;
 
                         danhSachSV.Enabled = true;
-                        groupEdit.Enabled = false;
+                        groupEdit.Enabled 
+                            = saveBtn.Enabled
+                            = exitBtn.Enabled
+                            = false;
                     }
                     catch (Exception ex)
                     {
@@ -567,40 +575,7 @@ namespace QLSV
                         return false;
                     }
                 }
-                //Check mã sinh viên có tồn tại chưa
-                string qr = " DECLARE @return_value INT " +
-
-                                " EXEC @return_value = [dbo].[SP_CHECKCODE] " +
-
-                                " @Code = N'" + maSinhVien.Text + "',  " +
-
-                                " @Type = N'MASV' " +
-
-                                " SELECT  'Return Value' = @return_value ";
-
-                result = -1;
-                dataReader = Program.ExecSqlDataReader(qr);
-
-                // nếu null thì thoát luôn  ==> lỗi kết nối
-                if (dataReader == null)
-                {
-                    MessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-                    this.Close();
-                }
-                dataReader.Read();
-                result = int.Parse(dataReader.GetValue(0).ToString());
-                dataReader.Close();
-
-                if (result == 1)
-                {
-                    MessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn chon mã khác !", "Cảnh báo", MessageBoxButtons.OK);
-                    return false;
-                }
-                if (result == 2)
-                {
-                    MessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK);
-                    return false;
-                }
+               
                 undoStk.PushUndo("ADJUST", ((DataRowView)this.sINHVIENBindingSource[this.sINHVIENBindingSource.Position]));
             }
             return true;

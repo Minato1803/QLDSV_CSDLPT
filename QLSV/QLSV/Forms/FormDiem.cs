@@ -182,7 +182,14 @@ namespace QLSV
                             for (int i = dtCheck.Rows.Count - 1; i >= 0; i--)
                             {
                                 DataRow dr = dtCheck.Rows[i];
-                                dr["DIEM"] = "";
+                                if(float.Parse(dr["DIEM"].ToString()) < 4)
+                                {
+                                    dr.Delete();
+                                }
+                                else
+                                {
+                                    dr["DIEM"] = "";
+                                }
                             }
                         
                             dtCheck.AcceptChanges();

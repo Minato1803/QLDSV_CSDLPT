@@ -75,6 +75,7 @@ namespace QLSV
                 this.kHOATableAdapter.Fill(this.qLDSVDataSet.KHOA);
                 //để combobox chạy đúng
                 //khóa hiển thị combobox khoa
+                cbKhoa.Enabled = false;
                 cbKhoa.SelectedIndex = Program.mKhoa;
                 cbKhoa.DropDownStyle = ComboBoxStyle.Simple;
             }

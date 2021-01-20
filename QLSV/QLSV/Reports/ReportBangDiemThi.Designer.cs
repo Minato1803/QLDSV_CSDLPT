@@ -169,6 +169,7 @@
             this.cbMon.Size = new System.Drawing.Size(287, 32);
             this.cbMon.TabIndex = 10;
             this.cbMon.ValueMember = "MAMH";
+            this.cbMon.SelectedIndexChanged += new System.EventHandler(this.cbMon_SelectedIndexChanged);
             // 
             // mONHOCBindingSource
             // 
@@ -303,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1755, 823);
+            this.ClientSize = new System.Drawing.Size(1771, 839);
             this.ControlBox = false;
             this.Controls.Add(this.cNgayThi);
             this.Controls.Add(this.label5);

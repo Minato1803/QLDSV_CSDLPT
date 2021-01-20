@@ -135,5 +135,13 @@ namespace QLSV
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
         }
+
+        private void cbMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbMon.SelectedValue != null)
+            {
+                maMon.Text = cbMon.SelectedValue.ToString();
+            }
+        }
     }
 }

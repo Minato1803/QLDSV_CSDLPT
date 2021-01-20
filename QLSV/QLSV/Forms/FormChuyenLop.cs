@@ -193,7 +193,7 @@ namespace QLSV
             }
             else
             {
-                errorMSV.SetError(maSinhVien, "Mã Lớp không có!");
+                errorMSV.SetError(maLop, "Mã Lớp không có!");
                 flagMaLop = false;
                 btnOk.Enabled = false;
             }

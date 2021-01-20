@@ -85,6 +85,7 @@ namespace QLSV
                 //để combobox chạy đúng
                 cbKhoa.SelectedIndex = 0;
                 //khóa hiển thị combobox khoa
+                cbKhoa.Enabled = false;
                 cbKhoa.SelectedIndex = Program.mKhoa;
                 cbKhoa.DropDownStyle = ComboBoxStyle.Simple;
                 maLop.Text = cbLop.SelectedValue.ToString();

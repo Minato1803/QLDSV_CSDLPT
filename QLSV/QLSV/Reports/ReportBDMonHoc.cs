@@ -85,6 +85,7 @@ namespace QLSV
                 this.v_GETDSLOPTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.v_GETDSLOPTableAdapter.Fill(this.qLDSVDataSet.V_GETDSLOP);
                 cbLop.SelectedIndex = 0;
+                cbKhoa.Enabled = false;
                 // TODO: This line of code loads data into the 'qLDSVDataSet.KHOA' table. You can move, or remove it, as needed.
                 this.kHOATableAdapter.Fill(this.qLDSVDataSet.KHOA);
                 //để combobox chạy đúng
